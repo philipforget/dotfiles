@@ -1,0 +1,17 @@
+# Function to list the git branch we are on
+parse_git_branch() {
+	git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/[\1]/'
+}
+
+check_if_vim() {
+	if [ "$VIM" != "" ]; then echo "[vim:sh]"; fi
+}
+
+PS1="\[\033[01;34m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[31m\]\$(parse_git_branch)\$(check_if_vim)\[\033[00m\]\n# "
+
+export PATH=$PATH:~/workspace/bin
+export PATH=$PATH:~/workspace/sdk/flex_3.5/bin
+export PATH=$PATH:~/bin
+
+# Mac
+alias ls='ls -G'
