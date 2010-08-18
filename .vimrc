@@ -39,11 +39,17 @@ imap <silent> <Up> <C-o>gk
 nmap <silent> <Down> gj
 nmap <silent> <Up> gk
 
+nnoremap <C-e> 3<C-e>
+nnoremap <C-y> 3<C-y>
+
 " Hide the toolbar
 set go-=T
 
 " Enable the status bar
 set laststatus=2
+
+" Keep some space between the current line and the window frame
+set scrolloff=4
 
 " Indent Rules
 filetype on
@@ -74,6 +80,8 @@ setlocal cursorline
 set wildmode=longest:full
 set wildmenu
 
+set history=1000
+
 " Search Options
 " enable search highlighting
 set hlsearch
@@ -83,6 +91,17 @@ set incsearch
 set ignorecase
 " unless there's uppercase letters on the pattern
 set smartcase
+
+
+" Map shortcut leader to ','
+let mapleader = ","
+
+" Clear the highlight with <leader>n
+nmap <silent> <leader>n :silent :nohlsearch<CR>
+
+set listchars=tab:>-,trail:-,eol:$
+nmap <silent> <leader>s :set nolist!<CR>
+
 
 " do not move the cursor when highlighting
 noremap * *N
@@ -109,10 +128,13 @@ nmap <C-J> <C-W>j
 nmap <C-K> <C-W>k
 nmap <C-L> <C-W>l
 
-" Automatically reload vimrc when save
-autocmd! BufWritePost .vimrc source %
-
 " Turn on 256 colors if this is xterm or xterm compatible
 if &term == 'xterm'
 	set t_Co=256
 endif
+
+" Remove some of the more annoying Press ENTER to continue messages
+set shortmess=atI
+
+" Automatically reload vimrc when save
+autocmd! BufWritePost .vimrc source %

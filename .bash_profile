@@ -23,8 +23,8 @@ export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 export MANPATH=/opt/local/share/man:$MANPATH
 # Finished adapting your MANPATH environment variable for use with MacPorts.
 
-if [ -f ~/.bash_philip ]; then
-	. ~/.bash_philip
+if [ -f ~/.bash_custom ]; then
+	. ~/.bash_custom
 fi
 
 export EDITOR=/usr/bin/vim
