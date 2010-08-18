@@ -43,7 +43,11 @@ def main():
                 # Delete the current symlink and create a new one
                 else:
                     _conditional_print("- %s already exists, overwriting" % (os.path.join(OUTPUT_DIR, file)))
-                    os.remove(os.path.join(OUTPUT_DIR, file));
+                    try:
+                        os.remove(os.path.join(OUTPUT_DIR, file))
+                    # Dealing with a folder
+                    except OSError:
+                        shutil.rmtree(os.path.join(OUTPUT_DIR, file))
                     os.symlink(os.path.abspath(file), os.path.join(OUTPUT_DIR, file))
 
             # Create the symlink
