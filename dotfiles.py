@@ -6,8 +6,9 @@ import sys, os, shutil
 OUTPUT_DIR = os.path.expanduser("~")
 IGNORE =  {
     "filenames": [
-        # Ignore this script
-        sys.argv[0].split("/")[-1]
+        # Ignore this script and readme
+        sys.argv[0].split("/")[-1],
+        "README.md"
     ],
     "extensions": [
         "swp",

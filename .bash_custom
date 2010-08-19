@@ -15,6 +15,8 @@ export PATH=$PATH:~/bin
 
 # Mac
 alias ls='ls -G'
+# Linux
+#alias ls='ls --color=auto'
 
 export HISTSIZE=2000
 export HISTCONTROL=ignoreboth
