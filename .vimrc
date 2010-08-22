@@ -102,6 +102,9 @@ nmap <silent> <leader>n :silent :nohlsearch<CR>
 set listchars=tab:>-,trail:-,eol:$
 nmap <silent> <leader>s :set nolist!<CR>
 
+" softwrap text
+nmap <silent> <leader>w :set wrap! linebreak! textwidth=0<CR>
+
 
 " do not move the cursor when highlighting
 noremap * *N
@@ -133,7 +136,7 @@ if &term == 'xterm'
 	set t_Co=256
 endif
 
-" Remove some of the more annoying Press ENTER to continue messages
+" Remove some of the more annoying 'Press ENTER to continue' messages
 set shortmess=atI
 
 " Automatically reload vimrc when save
