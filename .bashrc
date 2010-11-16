@@ -1,1 +1,1 @@
-source ~/.bash_philip
+source ~/.bash_profile

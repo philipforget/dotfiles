@@ -16,8 +16,14 @@ autocmd BufNewFile, BufRead *.as set filetype=actionscript
 "Filetype detection for haxe
 autocmd BufNewFile, BufRead *.hx set filetype=haxe
 
-" Visual bell
+"Filetype detection for json
+autocmd BufNewFile, BufRead *.json set filetype=javascript
+
+" Visual bell and no beep
 set vb
+set noerrorbells
+
+set title
 
 " Allow backspacing over everything in insert mode
 set bs=indent,eol,start
@@ -52,7 +58,6 @@ set laststatus=2
 set scrolloff=4
 
 " Indent Rules
-filetype on
 filetype plugin indent on
 " Default to tabs (for html, javascript etc.) and auto indent
 set autoindent
@@ -73,14 +78,16 @@ set number
 set ruler
 setlocal cursorline
 
-" Insert Mode Map hh to be esc
-"imap jj <ESC>
+" Insert Mode Map jj to esc
+imap jj <ESC>
 
 " set bash style word completion
 set wildmode=longest:full
 set wildmenu
+set wildignore=*.swp,*.bak,*.pyc,*.class
 
 set history=1000
+set undolevels=1000
 
 " Search Options
 " enable search highlighting
@@ -92,19 +99,37 @@ set ignorecase
 " unless there's uppercase letters on the pattern
 set smartcase
 
-
+" Leader Stuff "
 " Map shortcut leader to ','
 let mapleader = ","
 
-" Clear the highlight with <leader>n
+" Clear the search highlight with <leader>n
 nmap <silent> <leader>n :silent :nohlsearch<CR>
 
-set listchars=tab:>-,trail:-,eol:$
-nmap <silent> <leader>s :set nolist!<CR>
+nmap <silent> <leader>l :set nolist!<CR>
+set listchars=tab:>.,trail:.,extends:#,nbsp:.
 
-" softwrap text
+" Paste mode toggle
+nmap <silent> <leader>p :set paste!<CR>
+
+" Softwarp text
 nmap <silent> <leader>w :set wrap! linebreak! textwidth=0<CR>
 
+" Toggle NERDTree
+let NERDTreeIgnore=['\.pyc']
+map <leader>t :NERDTreeToggle<CR>
+
+" Opens an edit command with the path of the currently edited file filled in
+" Normal mode: <Leader>e
+map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
+
+" Opens a split command with the path of the currently edited file filled in
+" Normal mode: <Leader>s
+map <Leader>se :split <C-R>=expand("%:p:h") . "/" <CR>
+
+" Opens a tab edit command with the path of the currently edited file filled in
+" Normal mode: <Leader>v
+map <Leader>ve :vsplit <C-R>=expand("%:p:h") . "/" <CR>
 
 " do not move the cursor when highlighting
 noremap * *N
@@ -141,3 +166,20 @@ set shortmess=atI
 
 " Automatically reload vimrc when save
 autocmd! BufWritePost .vimrc source %
+
+" Remember cursor position on files
+autocmd BufReadPost * normal `"
+
+" I don't need help dammit
+inoremap <F1> <ESC>
+nnoremap <F1> <ESC>
+vnoremap <F1> <ESC>
+
+" Show highlighting groups for current word, useful for developing themes
+nmap <C-S-P> :call <SID>SynStack()<CR>
+function! <SID>SynStack()
+	if !exists("*synstack")
+		return
+	endif
+	echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc
