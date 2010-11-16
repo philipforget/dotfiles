@@ -8,7 +8,9 @@ IGNORE =  {
     "filenames": [
         # Ignore this script and readme
         sys.argv[0].split("/")[-1],
-        "README.md"
+        "README.md",
+        ".bashrc",
+        ".bash_profile",
     ],
     "extensions": [
         "swp",

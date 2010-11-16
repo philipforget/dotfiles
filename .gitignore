@@ -1,0 +1,3 @@
+# Don't track these files, just have them source .bash_custom
+.bash_profile
+.bashrc
