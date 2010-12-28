@@ -16,7 +16,7 @@ autocmd BufNewFile, BufRead *.as set filetype=actionscript
 "Filetype detection for haxe
 autocmd BufNewFile, BufRead *.hx set filetype=haxe
 
-"Filetype detection for json
+"Filetype detection for javascript
 autocmd BufNewFile, BufRead *.json set filetype=javascript
 
 " Visual bell and no beep
@@ -59,19 +59,15 @@ set scrolloff=4
 
 " Indent Rules
 filetype plugin indent on
-" Default to tabs (for html, javascript etc.) and auto indent
 set autoindent
-set sw=4 sts=4 ts=4 noexpandtab
-
-"Python specific tabbing
-autocmd FileType python setlocal expandtab
+set sw=4 sts=4 ts=4 expandtab
 
 "Enable folding with the spacebar
 set foldmethod=indent
 nnoremap <space> za
 vnoremap <space> zf
 
-colorscheme kellys
+colorscheme wombat256
 
 " See lines numbers, ruler, and current line
 set number
@@ -156,6 +152,10 @@ nmap <C-J> <C-W>j
 nmap <C-K> <C-W>k
 nmap <C-L> <C-W>l
 
+" Add a blank line with the return key in normal mode
+map <S-Enter> O<Esc>
+map <CR> o<Esc>
+
 " Turn on 256 colors if this is xterm or xterm compatible
 if &term == 'xterm'
 	set t_Co=256
@@ -174,6 +174,9 @@ autocmd BufReadPost * normal `"
 inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
+
+" autocomplete on dashes too, woo!
+set iskeyword+=-
 
 " Show highlighting groups for current word, useful for developing themes
 nmap <C-S-P> :call <SID>SynStack()<CR>
