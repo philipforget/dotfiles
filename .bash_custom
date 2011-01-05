@@ -9,6 +9,7 @@ check_if_vim() {
 
 PS1="\[\033[01;34m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[31m\]\$(parse_git_branch)\$(check_if_vim)\[\033[00m\]\n# "
 
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 export PATH=$PATH:~/workspace/bin
 export PATH=$PATH:~/workspace/sdk/flex_3.5/bin
 export PATH=$PATH:~/bin
