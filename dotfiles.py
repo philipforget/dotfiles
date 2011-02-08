@@ -3,7 +3,8 @@
 from optparse import OptionParser
 import sys, os, shutil
 
-OUTPUT_DIR = os.path.expanduser("~")
+DOTFILES_DIR = os.path.dirname(__file__)
+OUTPUT_DIR   = os.path.expanduser("~")
 IGNORE =  {
     "filenames": [
         # Ignore this script and readme
@@ -31,6 +32,7 @@ def main():
 
     (options, args) = parser.parse_args()
     
+    os.chdir(DOTFILES_DIR)
     # For every file in this directory
     for file in os.listdir("."):
         # If the file is not explictely ignored by name or extension

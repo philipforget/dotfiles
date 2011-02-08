@@ -1,13 +1,8 @@
-# Function to list the git branch we are on
-parse_git_branch() {
-	git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/[\1]/'
-}
-
 check_if_vim() {
 	if [ "$VIM" != "" ]; then echo "[vim:sh]"; fi
 }
 
-PS1="\[\033[01;34m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[31m\]\$(parse_git_branch)\$(check_if_vim)\[\033[00m\]\n# "
+PS1="\[\033[01;34m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[31m\]\$(vcprompt)\$(check_if_vim)\[\033[00m\]\n# "
 
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 export PATH=$PATH:~/workspace/bin
