@@ -1,0 +1,24 @@
+[submodule ".vim/bundle/nerdtree"]
+	path = .vim/bundle/nerdtree
+	url = http://github.com/scrooloose/nerdtree.git
+[submodule ".vim/bundle/yankring"]
+	path = .vim/bundle/yankring
+	url = https://github.com/chrismetcalf/vim-yankring.git
+[submodule ".vim/bundle/json"]
+	path = .vim/bundle/json
+	url = https://github.com/leshill/vim-json.git
+[submodule ".vim/bundle/repeat"]
+	path = .vim/bundle/repeat
+	url = https://github.com/tpope/vim-repeat.git
+[submodule ".vim/bundle/speeddating"]
+	path = .vim/bundle/speeddating
+	url = https://github.com/tpope/vim-speeddating.git
+[submodule ".vim/bundle/surround"]
+	path = .vim/bundle/surround
+	url = https://github.com/tpope/vim-surround.git
+[submodule ".vim/bundle/tabular"]
+	path = .vim/bundle/tabular
+	url = https://github.com/godlygeek/tabular.git
+[submodule ".vim/bundle/snipmate"]
+	path = .vim/bundle/snipmate
+	url = https://github.com/msanders/snipmate.vim.git
