@@ -1,23 +1,24 @@
+" Pathogen stuff!
+filetype off
+call pathogen#runtime_append_all_bundles()
+
 " Disable compatibility with vi
 set nocompatible
 
 " Turn on syntax highlighting
 syntax on
+colorscheme kellys
 
-" Automatically reload file when changed outside of vim
+" Automatically reload file when changed outside of buffer
 set autoread
 
 " Change buffers without saving them
 set hidden
 
-"Filetype detection for AS3
+"Filetype detection
 autocmd BufNewFile, BufRead *.as set filetype=actionscript
-
-"Filetype detection for haxe
 autocmd BufNewFile, BufRead *.hx set filetype=haxe
-
-"Filetype detection for javascript
-autocmd BufNewFile, BufRead *.json set filetype=javascript
+autocmd BufNewFile, BufRead *.json set filetype=json
 
 " Visual bell and no beep
 set vb
@@ -66,8 +67,6 @@ set sw=4 sts=4 ts=4 expandtab
 set foldmethod=indent
 nnoremap <space> za
 vnoremap <space> zf
-
-colorscheme wombat256
 
 " See lines numbers, ruler, and current line
 set number

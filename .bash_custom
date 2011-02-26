@@ -8,6 +8,9 @@ export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 export PATH=$PATH:~/workspace/bin
 export PATH=$PATH:~/workspace/sdk/flex_3.5/bin
 export PATH=$PATH:~/bin
+export PATH=$PATH:/usr/local/share/npm/bin
+
+export NODE_PATH=/usr/local/lib/node:$NODE_PATH
 
 # Mac
 alias ls='ls -G'
@@ -20,3 +23,7 @@ alias vlc=/Applications/VLC.app/Contents/MacOS/VLC
 
 export HISTSIZE=2000
 export HISTCONTROL=ignoreboth
+
+if [ -f `brew --prefix`/etc/autojump ]; then
+    . `brew --prefix`/etc/autojump
+fi
