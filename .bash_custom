@@ -1,7 +1,6 @@
 check_if_vim() {
 	if [ "$VIM" != "" ]; then echo "[vim:sh]"; fi
 }
-
 PS1="\[\033[01;34m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[31m\]\$(vcprompt)\$(check_if_vim)\[\033[00m\]\n# "
 
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
@@ -10,7 +9,14 @@ export PATH=$PATH:~/workspace/sdk/flex_3.5/bin
 export PATH=$PATH:~/bin
 export PATH=$PATH:/usr/local/share/npm/bin
 
+# AWS
+export JAVA_HOME=/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
+export AWS_RDS_HOME=~/bin/RDSCli
+export AWS_CREDENTIAL_FILE=~/.awskeys
+export PATH=$PATH:${AWS_RDS_HOME}/bin
+
 export NODE_PATH=/usr/local/lib/node:$NODE_PATH
+
 
 # Mac
 alias ls='ls -G'
