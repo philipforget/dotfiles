@@ -8,7 +8,7 @@ set nocompatible
 
 " Turn on syntax highlighting
 syntax on
-colorscheme kellys
+colorscheme wombat256
 
 " Automatically reload file when changed outside of buffer
 set autoread
@@ -177,6 +177,9 @@ vnoremap <F1> <ESC>
 
 " autocomplete on dashes too, woo!
 set iskeyword+=-
+
+" Don't flicker when executing macros/functions
+set lazyredraw
 
 " Show highlighting groups for current word, useful for developing themes
 nmap <C-S-P> :call <SID>SynStack()<CR>

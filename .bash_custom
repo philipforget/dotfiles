@@ -27,7 +27,7 @@ alias vlc=/Applications/VLC.app/Contents/MacOS/VLC
 # Linux
 #alias ls='ls --color=auto'
 
-export HISTSIZE=2000
+export HISTSIZE=200000
 export HISTCONTROL=ignoreboth
 
 if [ -f `brew --prefix`/etc/autojump ]; then
