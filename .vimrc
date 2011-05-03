@@ -152,6 +152,7 @@ nmap <C-J> <C-W>j
 nmap <C-K> <C-W>k
 nmap <C-L> <C-W>l
 
+
 " Add a blank line with the return key in normal mode
 map <S-Enter> O<Esc>
 map <CR> o<Esc>

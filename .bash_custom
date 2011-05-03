@@ -19,13 +19,19 @@ export NODE_PATH=/usr/local/lib/node:$NODE_PATH
 
 
 # Mac
+# bash-completion
+source /usr/local/etc/bash_completion
+
 alias ls='ls -G'
 alias py=python
 alias sb='source bin/activate'
 alias tmux='tmux -2'
 alias vlc=/Applications/VLC.app/Contents/MacOS/VLC
+
 # Linux
 #alias ls='ls --color=auto'
+
+alias ve='virtualenv --no-site-packages --distribute'
 
 export HISTSIZE=200000
 export HISTCONTROL=ignoreboth

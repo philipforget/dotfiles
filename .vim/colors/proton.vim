@@ -62,3 +62,7 @@ hi SpellBad gui=undercurl guisp=#f02020
 
 hi treeDir guifg=#603020 guibg=#f0ece8 gui=italic
 hi treeUp guifg=#603020 guibg=#f0ece8 gui=italic
+
+" NERDTree was looking sickly
+hi NERDTreeDir guifg=#603020 guibg=#f0ece8 gui=italic
+hi NERDTreeUp guifg=#603020 guibg=#f0ece8 gui=italic

@@ -8,4 +8,4 @@ set guioptions-=L
 set rows=85
 set lines=55
 
-colorscheme wombat
+colorscheme proton
