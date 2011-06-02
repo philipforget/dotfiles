@@ -8,7 +8,7 @@ set nocompatible
 
 " Turn on syntax highlighting
 syntax on
-colorscheme wombat256
+colorscheme kellys
 
 " Automatically reload file when changed outside of buffer
 set autoread
@@ -20,6 +20,9 @@ set hidden
 autocmd BufNewFile, BufRead *.as set filetype=actionscript
 autocmd BufNewFile, BufRead *.hx set filetype=haxe
 autocmd BufNewFile, BufRead *.json set filetype=json
+
+autocmd BufNewFile, BufRead *.ncx set filetype=xml
+autocmd BufNewFile, BufRead *.opf set filetype=xml
 
 " Visual bell and no beep
 set vb
@@ -61,7 +64,8 @@ set scrolloff=4
 
 " Indent Rules
 filetype plugin indent on
-set autoindent
+
+" set autoindent
 set sw=4 sts=4 ts=4 expandtab
 
 "Enable folding with the spacebar

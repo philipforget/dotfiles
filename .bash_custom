@@ -27,15 +27,19 @@ alias py=python
 alias sb='source bin/activate'
 alias tmux='tmux -2'
 alias vlc=/Applications/VLC.app/Contents/MacOS/VLC
+alias ve='virtualenv --no-site-packages --distribute'
 
 # Linux
 #alias ls='ls --color=auto'
 
-alias ve='virtualenv --no-site-packages --distribute'
-
-export HISTSIZE=200000
+export HISTSIZE=2000000
 export HISTCONTROL=ignoreboth
 
+export EDITOR=/usr/bin/vim
+
+# Homebrew bash completion
+source `brew --prefix`/Library/Contributions/brew_bash_completion.sh
 if [ -f `brew --prefix`/etc/autojump ]; then
     . `brew --prefix`/etc/autojump
 fi
+# vim:ft=sh
