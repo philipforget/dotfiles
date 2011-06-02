@@ -29,6 +29,8 @@ alias py=python
 alias sb='source bin/activate'
 alias tmux='tmux -2'
 alias ve='virtualenv --no-site-packages --distribute'
+
+alias test=vim
  
 unamestr=$(uname)
 if [[ $unamestr == 'Linux' ]]; then
