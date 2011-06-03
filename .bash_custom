@@ -42,3 +42,9 @@ elif [[ $unamestr == 'Darwin' ]]; then
         . `brew --prefix`/etc/autojump
     fi
 fi
+
+# Virtualenvwrapper
+export WORKON_HOME=~/Envs
+if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
+    . /usr/local/bin/virtualenvwrapper.sh
+fi
