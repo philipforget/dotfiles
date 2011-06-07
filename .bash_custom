@@ -1,5 +1,5 @@
 # vim:ft=sh
-#
+
 check_if_vim() {
 	if [ "$VIM" != "" ]; then echo "[vim:sh]"; fi
 }
@@ -28,7 +28,7 @@ export EDITOR=/usr/bin/vim
 alias py=python
 alias sb='source bin/activate'
 alias tmux='tmux -2'
-alias ve='virtualenv --no-site-packages --distribute'
+alias mkv='mkvirtualenv --no-site-packages --distribute'
 
 unamestr=$(uname)
 if [[ $unamestr == 'Linux' ]]; then
@@ -36,15 +36,24 @@ if [[ $unamestr == 'Linux' ]]; then
     alias ls='ls --color=auto'
 ##
 elif [[ $unamestr == 'Darwin' ]]; then
-# Homebrew bash completion
+    alias ls='ls -G'
+    # Bash completion
+    if [ -f /usr/local/etc/bash_completion ]; then
+        . /usr/local/etc/bash_completion
+    fi
+    # Homebrew bash completion
     source `brew --prefix`/Library/Contributions/brew_bash_completion.sh
+    # Autojump
     if [ -f `brew --prefix`/etc/autojump ]; then
         . `brew --prefix`/etc/autojump
     fi
 fi
 
 # Virtualenvwrapper
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
 export WORKON_HOME=~/Envs
 if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
     . /usr/local/bin/virtualenvwrapper.sh
 fi
+
+export PYTHONDONTWRITEBYTECODE=1
