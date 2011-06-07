@@ -1,8 +1,3 @@
-" Pathogen stuff!
-filetype off
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
-
 " Disable compatibility with vi
 set nocompatible
 
@@ -185,6 +180,8 @@ set iskeyword+=-
 
 " Don't flicker when executing macros/functions
 set lazyredraw
+
+let g:pydiction_location='~/.vim/pydiction/complete-dict'
 
 " Show highlighting groups for current word, useful for developing themes
 nmap <C-S-P> :call <SID>SynStack()<CR>
