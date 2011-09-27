@@ -23,12 +23,20 @@ export PATH=$PATH:${AWS_RDS_HOME}/bin
 export HISTSIZE=2000000
 export HISTCONTROL=ignoreboth
 
-export EDITOR=/usr/bin/vim
+export EDITOR=vim
 
+# ipython needs these two
+export PAGER=less
+export less=-r
+
+alias g=git
+alias gc='git commit'
 alias py=python
-alias sb='source bin/activate'
+alias n=ncmpcpp
+alias nt='ncmpcpp toggle'
 alias tmux='tmux -2'
 alias mkv='mkvirtualenv --no-site-packages --distribute'
+alias ctor='scp ~/Downloads/*.torrent cleveland:~/Torrents/watch && rm ~/Downloads/*.torrent'
 
 unamestr=$(uname)
 if [[ $unamestr == 'Linux' ]]; then
@@ -56,4 +64,5 @@ if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
     . /usr/local/bin/virtualenvwrapper.sh
 fi
 
+# Don't write .pyc files
 export PYTHONDONTWRITEBYTECODE=1

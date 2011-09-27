@@ -32,7 +32,7 @@ hi Operator guifg=#a77039 guibg=#f0f0f0 gui=none
 hi Title guibg=#f0f0f0 guifg=#202020 gui=underline
 
 " Python: @ in front of decorators
-"hi Define guifg=#906000 guibg=#f0e8c0 gui=bold
+hi Define guifg=#906000 guibg=#f0e8c0 gui=bold
 hi Define guifg=#605080 guibg=#ece8f0 gui=italic,bold
 hi Include guifg=#605080 guibg=#dcd8e0 gui=none
 

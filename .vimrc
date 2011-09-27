@@ -3,13 +3,16 @@ set nocompatible
 
 " Turn on syntax highlighting
 syntax on
-colorscheme kellys
+colorscheme jellybeans
 
 " Automatically reload file when changed outside of buffer
 set autoread
 
 " Change buffers without saving them
 set hidden
+
+" Use the already open buffer if it exists
+set switchbuf=useopen,usetab 
 
 "Filetype detection
 autocmd BufNewFile, BufRead *.as set filetype=actionscript
@@ -23,16 +26,17 @@ autocmd BufNewFile, BufRead *.opf set filetype=xml
 set vb
 set noerrorbells
 
-set title
-
 " Allow backspacing over everything in insert mode
 set bs=indent,eol,start
 
 " Change backup directory
 set backupdir=/tmp
+" Change swp directory
+set directory=/tmp
 
 " Turn on mouse
 set mouse=a
+set ttymouse=xterm
 
 " wrapping options
 set nowrap
@@ -45,6 +49,7 @@ imap <silent> <Up> <C-o>gk
 nmap <silent> <Down> gj
 nmap <silent> <Up> gk
 
+" Scroll 3 lines at a time with C-y and C-x
 nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
 
@@ -60,11 +65,10 @@ set scrolloff=4
 " Indent Rules
 filetype plugin indent on
 
-" set autoindent
+" 4 spaces, expand tab
 set sw=4 sts=4 ts=4 expandtab
 
-"Enable folding with the spacebar
-set foldmethod=indent
+" Enable folding with the spacebar
 nnoremap <space> za
 vnoremap <space> zf
 
@@ -81,8 +85,8 @@ set wildmode=longest:full
 set wildmenu
 set wildignore=*.swp,*.bak,*.pyc,*.class
 
-set history=1000
-set undolevels=1000
+set history=100000
+set undolevels=100000
 
 " Search Options
 " enable search highlighting
@@ -93,46 +97,42 @@ set incsearch
 set ignorecase
 " unless there's uppercase letters on the pattern
 set smartcase
+" do not move the cursor when highlighting
+noremap * *N
+noremap # #N
 
-" Leader Stuff "
-" Map shortcut leader to ','
+" Map shortcut leader to ',' instead of '/'
 let mapleader = ","
 
 " Clear the search highlight with <leader>n
-nmap <silent> <leader>n :silent :nohlsearch<CR>
-
-nmap <silent> <leader>l :set nolist!<CR>
-set listchars=tab:>.,trail:.,extends:#,nbsp:.
+nmap <silent> <leader>n :noh<CR>
 
 " Paste mode toggle
 nmap <silent> <leader>p :set paste!<CR>
-
 " Softwarp text
 nmap <silent> <leader>w :set wrap! linebreak! textwidth=0<CR>
-
 " Toggle NERDTree
-let NERDTreeIgnore=['\.pyc']
 map <leader>t :NERDTreeToggle<CR>
 
 " Opens an edit command with the path of the currently edited file filled in
 " Normal mode: <Leader>e
 map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
-
 " Opens a split command with the path of the currently edited file filled in
 " Normal mode: <Leader>s
 map <Leader>se :split <C-R>=expand("%:p:h") . "/" <CR>
-
 " Opens a tab edit command with the path of the currently edited file filled in
 " Normal mode: <Leader>v
 map <Leader>ve :vsplit <C-R>=expand("%:p:h") . "/" <CR>
 
-" do not move the cursor when highlighting
-noremap * *N
-noremap # #N
+let NERDTreeIgnore=['\.pyc']
+
+set listchars=tab:>.,trail:.,extends:#,nbsp:.
 
 " When splitting window, split to bottom and to right
 set splitright
 set splitbelow
+
+set foldmethod=indent
 
 " Resize windows when loading sessions
 set sessionoptions+=resize
@@ -151,10 +151,12 @@ nmap <C-J> <C-W>j
 nmap <C-K> <C-W>k
 nmap <C-L> <C-W>l
 
-
 " Add a blank line with the return key in normal mode
 map <S-Enter> O<Esc>
 map <CR> o<Esc>
+
+" Split to the file under the cursor and line number
+map gs <C-W>F
 
 " Turn on 256 colors if this is xterm or xterm compatible
 if &term == 'xterm'
@@ -175,19 +177,23 @@ inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
 
-" autocomplete on dashes too, woo!
+" W SAVE DAMNIT
+command! W w
+
+" autocomplete on dashed-words
 set iskeyword+=-
 
 " Don't flicker when executing macros/functions
 set lazyredraw
 
-let g:pydiction_location='~/.vim/pydiction/complete-dict'
-
-" Show highlighting groups for current word, useful for developing themes
+" Show syntax highlighting groups for word under cursor
 nmap <C-S-P> :call <SID>SynStack()<CR>
 function! <SID>SynStack()
-	if !exists("*synstack")
-		return
-	endif
-	echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+  if !exists("*synstack")
+    return
+  endif
+  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunc
+
+" jslint fix
+let $JS_CMD='node'
