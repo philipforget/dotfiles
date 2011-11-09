@@ -58,11 +58,12 @@ hi DiffDelete guifg=#ff7f50 guibg=#a62910
 hi DiffChange guifg=#7fbdff guibg=#425c78
 hi DiffText guifg=#8ae234 guibg=#4e9a06
 
-hi SpellBad gui=undercurl guisp=#f02020
-
 hi treeDir guifg=#603020 guibg=#f0ece8 gui=italic
 hi treeUp guifg=#603020 guibg=#f0ece8 gui=italic
 
 " NERDTree was looking sickly
 hi NERDTreeDir guifg=#603020 guibg=#f0ece8 gui=italic
 hi NERDTreeUp guifg=#603020 guibg=#f0ece8 gui=italic
+
+hi Error guibg=#FFE3EA
+hi SpellBad guibg=#FFE3EA

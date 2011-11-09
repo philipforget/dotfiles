@@ -49,7 +49,7 @@ alias n=ncmpcpp
 alias nt='ncmpcpp toggle'
 alias tmux='tmux -2'
 alias mkv='mkvirtualenv --no-site-packages --distribute'
-alias ctor='scp ~/Downloads/*.torrent cleveland:~/Torrents/watch && rm ~/Downloads/*.torrent'
+alias ctor='scp ~/Downloads/*.torrent cleveland:~/torrents/watch && rm ~/Downloads/*.torrent'
 
 unamestr=$(uname)
 if [[ $unamestr == 'Linux' ]]; then
@@ -72,7 +72,7 @@ fi
 
 # Virtualenvwrapper
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
-export WORKON_HOME=~/Envs
+export WORKON_HOME=~/.virtualenvs
 if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
     . /usr/local/bin/virtualenvwrapper.sh
 fi

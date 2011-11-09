@@ -53,6 +53,9 @@ nmap <silent> <Up> gk
 nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
 
+" Make Y yank til the end of the line like other capital letters
+map Y y$
+
 " Hide the toolbar
 set go-=T
 
