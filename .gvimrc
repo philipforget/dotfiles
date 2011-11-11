@@ -8,4 +8,4 @@ set guioptions-=L
 set lines=55
 
 " colorscheme jellybeans
-colorscheme proton
+" colorscheme proton

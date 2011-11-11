@@ -3,7 +3,9 @@ set nocompatible
 
 " Turn on syntax highlighting
 syntax on
-colorscheme jellybeans
+
+set background=light
+colorscheme solarized
 
 " Automatically reload file when changed outside of buffer
 set autoread
