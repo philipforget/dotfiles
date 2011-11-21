@@ -51,6 +51,10 @@ alias tmux='tmux -2'
 alias mkv='mkvirtualenv --no-site-packages --distribute'
 alias ctor='scp ~/Downloads/*.torrent cleveland:~/torrents/watch && rm ~/Downloads/*.torrent'
 
+# Because vim has slowly rotted my brain
+alias :q=logout
+alias :e=vim
+
 unamestr=$(uname)
 if [[ $unamestr == 'Linux' ]]; then
 ##
