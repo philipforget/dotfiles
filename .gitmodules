@@ -40,3 +40,6 @@
 [submodule ".vim/bundle/rainbow_parenthesis"]
 	path = .vim/bundle/rainbow_parenthesis
 	url = https://github.com/philipforget/rainbow_parentheses.vim.git
+[submodule ".vim/bundle/commentary"]
+	path = .vim/bundle/commentary
+	url = git://github.com/tpope/vim-commentary.git
