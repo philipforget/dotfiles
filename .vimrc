@@ -209,3 +209,6 @@ au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
+
+" Compile coffeescript files on write
+au BufWritePost *.coffee silent CoffeeMake! -b | cwindow | redraw
