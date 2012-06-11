@@ -1,11 +1,13 @@
+call pathogen#infect()
+
 " Disable compatibility with vi
 set nocompatible
 
 " Turn on syntax highlighting
 syntax on
 
-set background=light
-colorscheme solarized
+" Indent Rules
+filetype plugin indent on
 
 " Automatically reload file when changed outside of buffer
 set autoread
@@ -16,13 +18,14 @@ set hidden
 " Use the already open buffer if it exists
 set switchbuf=useopen,usetab 
 
-"Filetype detection
+" Filetype detection
 autocmd BufNewFile, BufRead *.as set filetype=actionscript
 autocmd BufNewFile, BufRead *.hx set filetype=haxe
 autocmd BufNewFile, BufRead *.json set filetype=json
-
+autocmd BufNewFile, BufRead *.ino setlocal filetype=arduino
 autocmd BufNewFile, BufRead *.ncx set filetype=xml
 autocmd BufNewFile, BufRead *.opf set filetype=xml
+autocmd BufRead,BufNewFile *.jar,*.war,*.ear,*.sar,*.rar,*.epub set filetype=zip
 
 " Visual bell and no beep
 set vb
@@ -32,9 +35,14 @@ set noerrorbells
 set bs=indent,eol,start
 
 " Change backup directory
-set backupdir=/tmp
+"set backupdir=/tmp
 " Change swp directory
-set directory=/tmp
+"set directory=/tmp
+" Turning these off as vim is messing up watching files
+" Fuck a swp file
+set nobackup
+set nowritebackup
+set noswapfile
 
 " Turn on mouse
 set mouse=a
@@ -55,8 +63,9 @@ nmap <silent> <Up> gk
 nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
 
-" Make Y yank til the end of the line like other capital letters
+" Make Y and D yank til the end of the line like other capital letters
 map Y y$
+map D d$
 
 " Hide the toolbar
 set go-=T
@@ -66,9 +75,6 @@ set laststatus=2
 
 " Keep some space between the current line and the window frame
 set scrolloff=4
-
-" Indent Rules
-filetype plugin indent on
 
 " 4 spaces, expand tab
 set sw=4 sts=4 ts=4 expandtab
@@ -137,6 +143,7 @@ set listchars=tab:>.,trail:.,extends:#,nbsp:.
 set splitright
 set splitbelow
 
+" Python specific, override where necessary
 set foldmethod=indent
 
 " Resize windows when loading sessions
@@ -156,10 +163,6 @@ nmap <C-J> <C-W>j
 nmap <C-K> <C-W>k
 nmap <C-L> <C-W>l
 
-" Add a blank line with the return key in normal mode
-map <S-Enter> O<Esc>
-map <CR> o<Esc>
-
 " Split to the file under the cursor and line number
 map gs <C-W>F
 
@@ -173,6 +176,7 @@ set shortmess=atI
 
 " Automatically reload vimrc when save
 autocmd! BufWritePost .vimrc source %
+autocmd! BufWritePost .gvimrc source %
 
 " Remember cursor position on files
 autocmd BufReadPost * normal `"
@@ -182,10 +186,10 @@ inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
 
-" W SAVE DAMNIT
+" I'm not quick enough when releasing shift
 command! W w
 
-" autocomplete on dashed-words
+" autocomplete on dashed-words, very useful for css
 set iskeyword+=-
 
 " Don't flicker when executing macros/functions
@@ -200,5 +204,11 @@ function! <SID>SynStack()
   echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunc
 
-" jslint fix
-let $JS_CMD='node'
+" Rainbow parenthesis
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+
+" Compile coffeescript files on write
+au BufWritePost *.coffee silent CoffeeMake! -b | cwindow | redraw

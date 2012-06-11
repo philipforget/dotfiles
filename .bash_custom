@@ -19,39 +19,53 @@ PS1=$PS1"$PINK\$(vcprompt)"
 # White: newline, prompt
 PS1=$PS1"$WHITE\n# "
 
+
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 export PATH=$PATH:~/workspace/bin
 export PATH=$PATH:~/bin
 
-# Node stuff
-export PATH=$PATH:/usr/local/share/npm/bin
-export NODE_PATH=/usr/local/lib/node:$NODE_PATH
-
-# Amazon Web Crap
-export JAVA_HOME=/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
-export AWS_RDS_HOME=~/bin/RDSCli
-export AWS_CREDENTIAL_FILE=~/.awskeys
-export PATH=$PATH:${AWS_RDS_HOME}/bin
-
 export HISTSIZE=2000000
+# Ignore duplicates and commands with leading whitespace
 export HISTCONTROL=ignoreboth
+
+export VCPROMPT_FORMAT='%s:%b%m%u'
 
 export EDITOR=vim
 
 # ipython needs these two
 export PAGER=less
 export less=-r
+# Don't write .pyc files
+export PYTHONDONTWRITEBYTECODE=1
 
+
+# Aliases
 alias g=git
-alias gc='git commit'
 alias py=python
+alias d=django-admin.py
+
 alias n=ncmpcpp
+alias nn='ncmpcpp next'
+alias np='ncmpcpp prev'
+alias nr='ncmpcpp next && ncmpcpp prev' # Replay
 alias nt='ncmpcpp toggle'
+alias nnp='ncmpcpp --now-playing'
+
+# For checking epub integrity
+alias epubcheck='java -jar ~/bin/epubcheck/epubcheck-3.0b5.jar'
+
+# Tmux normally tries to run without 256 color mode.
 alias tmux='tmux -2'
-alias mkv='mkvirtualenv --no-site-packages --distribute'
+
+alias mkv='mkvirtualenv  --no-site-packages --distribute'
 alias ctor='scp ~/Downloads/*.torrent cleveland:~/torrents/watch && rm ~/Downloads/*.torrent'
 
+# Pipe to this to pretty-print json
+alias ppj='python -mjson.tool'
+
+# Platform dependant stuff
 unamestr=$(uname)
+
 if [[ $unamestr == 'Linux' ]]; then
 ##
     alias ls='ls --color=auto'
@@ -70,6 +84,7 @@ elif [[ $unamestr == 'Darwin' ]]; then
     fi
 fi
 
+
 # Virtualenvwrapper
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
 export WORKON_HOME=~/.virtualenvs
@@ -77,5 +92,9 @@ if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
     . /usr/local/bin/virtualenvwrapper.sh
 fi
 
-# Don't write .pyc files
-export PYTHONDONTWRITEBYTECODE=1
+# Default to a global virtualenv if we aren't one one
+# Fuck that, it was slow
+#set | grep VIRTUAL_ENV 2>&1> /dev/null
+#if [ "$?" -eq "0" ]; then
+#    workon g
+#fi
