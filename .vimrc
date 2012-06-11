@@ -5,7 +5,7 @@ set nocompatible
 syntax on
 
 set background=light
-colorscheme solarized
+colorscheme peachpuff
 
 " Automatically reload file when changed outside of buffer
 set autoread
@@ -20,9 +20,11 @@ set switchbuf=useopen,usetab
 autocmd BufNewFile, BufRead *.as set filetype=actionscript
 autocmd BufNewFile, BufRead *.hx set filetype=haxe
 autocmd BufNewFile, BufRead *.json set filetype=json
-
+autocmd BufNewFile, BufRead *.ino setlocal filetype=arduino
 autocmd BufNewFile, BufRead *.ncx set filetype=xml
 autocmd BufNewFile, BufRead *.opf set filetype=xml
+
+au BufRead,BufNewFile *.jar,*.war,*.ear,*.sar,*.rar,*.epub set filetype=zip
 
 " Visual bell and no beep
 set vb
@@ -32,9 +34,14 @@ set noerrorbells
 set bs=indent,eol,start
 
 " Change backup directory
-set backupdir=/tmp
+"set backupdir=/tmp
 " Change swp directory
-set directory=/tmp
+"set directory=/tmp
+" Turning these off as vim is messing up watching files
+" Fuck a swp file
+set nobackup
+set nowritebackup
+set noswapfile
 
 " Turn on mouse
 set mouse=a
@@ -112,6 +119,8 @@ let mapleader = ","
 " Clear the search highlight with <leader>n
 nmap <silent> <leader>n :noh<CR>
 
+nmap <leader>c :cnext<CR>
+
 " Paste mode toggle
 nmap <silent> <leader>p :set paste!<CR>
 " Softwarp text
@@ -156,10 +165,6 @@ nmap <C-J> <C-W>j
 nmap <C-K> <C-W>k
 nmap <C-L> <C-W>l
 
-" Add a blank line with the return key in normal mode
-map <S-Enter> O<Esc>
-map <CR> o<Esc>
-
 " Split to the file under the cursor and line number
 map gs <C-W>F
 
@@ -182,10 +187,10 @@ inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
 
-" W SAVE DAMNIT
+" I'm not quick enough when releasing shift
 command! W w
 
-" autocomplete on dashed-words
+" autocomplete on dashed-words, very useful for css
 set iskeyword+=-
 
 " Don't flicker when executing macros/functions

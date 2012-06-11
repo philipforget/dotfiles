@@ -1,6 +1,6 @@
 info_begin
 format: 1
-mpd_version: 0.16.3
+mpd_version: 0.16.5
 fs_charset: UTF-8
 tag: Artist
 tag: ArtistSort
@@ -1178,10 +1178,10 @@ AlbumArtist: A Tribe Called Quest
 AlbumArtist: A Tribe Called Quest
 mtime: 1309203564
 song_end
-playlist_begin: A Tribe Called Quest - The Anthology.m3u
+playlist_begin: The Anthology.cue
 mtime: 1309198965
 playlist_end
-playlist_begin: The Anthology.cue
+playlist_begin: A Tribe Called Quest - The Anthology.m3u
 mtime: 1309198965
 playlist_end
 end: A Tribe Called Quest FLAC/A Tribe Called Quest - The Anthology/Album
@@ -1272,11 +1272,11 @@ AlbumArtist: A Tribe Called Quest
 AlbumArtist: A Tribe Called Quest
 mtime: 1309203446
 song_end
-playlist_begin: A Tribe Called Quest - The Anthology Bonus CD.m3u
-mtime: 1309199257
-playlist_end
 playlist_begin: The Anthology Bonus CD.cue
 mtime: 1309199258
+playlist_end
+playlist_begin: A Tribe Called Quest - The Anthology Bonus CD.m3u
+mtime: 1309199257
 playlist_end
 end: A Tribe Called Quest FLAC/A Tribe Called Quest - The Anthology/Bonus Disc
 end: A Tribe Called Quest FLAC/A Tribe Called Quest - The Anthology
@@ -21912,11 +21912,11 @@ Date: 2005
 Genre: Rock
 mtime: 1139370605
 song_end
-playlist_begin: 100-foo_fighters_-_in_your_honor-cd1-2005-fpm.m3u
-mtime: 1117852955
-playlist_end
 playlist_begin: 200-foo_fighters_-_in_your_honor-cd2-2005-fpm.m3u
 mtime: 1117852322
+playlist_end
+playlist_begin: 100-foo_fighters_-_in_your_honor-cd1-2005-fpm.m3u
+mtime: 1117852955
 playlist_end
 end: Foo Fighters/In Your Honor
 directory: One By One
@@ -24711,6 +24711,170 @@ Genre: Hip-Hop
 mtime: 1311528381
 song_end
 end: Gorillaz
+directory: Gotye
+mtime: 1337214819
+begin: Gotye
+directory: Making Mirrors
+mtime: 1337214877
+begin: Gotye/Making Mirrors
+song_begin: 01 - Making Mirrors.mp3
+Time: 61
+Artist: Gotye
+AlbumArtist: Gotye
+Title: Making Mirrors
+Album: Making Mirrors
+Track: 1/12
+Date: 2012
+Genre: Alternative Rock
+Composer: Wally De Backer
+Disc: 1/1
+mtime: 1337214877
+song_end
+song_begin: 02 - Easy Way Out.mp3
+Time: 118
+Artist: Gotye
+AlbumArtist: Gotye
+Title: Easy Way Out
+Album: Making Mirrors
+Track: 2/12
+Date: 2012
+Genre: Alternative Rock
+Composer: Wally De Backer
+Disc: 1/1
+mtime: 1337214875
+song_end
+song_begin: 03 - Somebody That I Used To Know.mp3
+Time: 245
+Artist: Gotye
+AlbumArtist: Gotye
+Title: Somebody That I Used To Know
+Album: Making Mirrors
+Track: 3/12
+Date: 2012
+Genre: Alternative Rock
+Composer: Wally De Backer
+Disc: 1/1
+mtime: 1337214873
+song_end
+song_begin: 04 - Eyes Wide Open.mp3
+Time: 191
+Artist: Gotye
+AlbumArtist: Gotye
+Title: Eyes Wide Open
+Album: Making Mirrors
+Track: 4/12
+Date: 2012
+Genre: Alternative Rock
+Composer: Wally De Backer
+Disc: 1/1
+mtime: 1337214867
+song_end
+song_begin: 05 - Smoke And Mirrors.mp3
+Time: 313
+Artist: Gotye
+AlbumArtist: Gotye
+Title: Smoke And Mirrors
+Album: Making Mirrors
+Track: 5/12
+Date: 2012
+Genre: Alternative Rock
+Composer: Wally De Backer
+Disc: 1/1
+mtime: 1337214863
+song_end
+song_begin: 06 - I Feel Better.mp3
+Time: 199
+Artist: Gotye
+AlbumArtist: Gotye
+Title: I Feel Better
+Album: Making Mirrors
+Track: 6/12
+Date: 2012
+Genre: Alternative Rock
+Composer: Wally De Backer
+Disc: 1/1
+mtime: 1337214856
+song_end
+song_begin: 07 - In Your Light.mp3
+Time: 279
+Artist: Gotye
+AlbumArtist: Gotye
+Title: In Your Light
+Album: Making Mirrors
+Track: 7/12
+Date: 2012
+Genre: Alternative Rock
+Composer: Wally De Backer
+Disc: 1/1
+mtime: 1337214852
+song_end
+song_begin: 08 - State Of The Art.mp3
+Time: 322
+Artist: Gotye
+AlbumArtist: Gotye
+Title: State Of The Art
+Album: Making Mirrors
+Track: 8/12
+Date: 2012
+Genre: Alternative Rock
+Composer: Wally De Backer
+Disc: 1/1
+mtime: 1337214845
+song_end
+song_begin: 09 - Don't Worry, We'll Be Watching You.mp3
+Time: 199
+Artist: Gotye
+AlbumArtist: Gotye
+Title: Don’t Worry, We’ll Be Watching You
+Album: Making Mirrors
+Track: 9/12
+Date: 2012
+Genre: Alternative Rock
+Composer: Wally De Backer
+Disc: 1/1
+mtime: 1337214839
+song_end
+song_begin: 10 - Giving Me A Chance.mp3
+Time: 187
+Artist: Gotye
+AlbumArtist: Gotye
+Title: Giving Me A Chance
+Album: Making Mirrors
+Track: 10/12
+Date: 2012
+Genre: Alternative Rock
+Composer: Wally De Backer
+Disc: 1/1
+mtime: 1337214835
+song_end
+song_begin: 11 - Save Me.mp3
+Time: 231
+Artist: Gotye
+AlbumArtist: Gotye
+Title: Save Me
+Album: Making Mirrors
+Track: 11/12
+Date: 2012
+Genre: Alternative Rock
+Composer: Wally De Backer
+Disc: 1/1
+mtime: 1337214830
+song_end
+song_begin: 12 - Bronte.mp3
+Time: 199
+Artist: Gotye
+AlbumArtist: Gotye
+Title: Bronte
+Album: Making Mirrors
+Track: 12/12
+Date: 2012
+Genre: Alternative Rock
+Composer: Wally De Backer
+Disc: 1/1
+mtime: 1337214824
+song_end
+end: Gotye/Making Mirrors
+end: Gotye
 directory: Grateful Dead
 mtime: 1205079781
 begin: Grateful Dead
@@ -29866,6 +30030,177 @@ mtime: 1265681666
 song_end
 end: Jay-Z/The Blueprint 3
 end: Jay-Z
+directory: Jay-Z and Kanye West
+mtime: 1326131175
+begin: Jay-Z and Kanye West
+directory: Watch the Throne
+mtime: 1326130696
+begin: Jay-Z and Kanye West/Watch the Throne
+song_begin: 01-jay-z_and_kanye_west-no_church_in_the_wild_(feat._frank_ocean).flac
+Time: 273
+Artist: Jay-Z & Kanye West
+Title: No Church In The Wild (Feat. Frank Ocean)
+Album: Watch The Throne (Deluxe Edition)
+Date: 2011
+Track: 1
+Genre: Hip-Hop
+mtime: 1326130695
+song_end
+song_begin: 02-jay-z_and_kanye_west-lift_off_(feat._beyonce).flac
+Time: 267
+Artist: Jay-Z & Kanye West
+Title: Lift Off (Feat. Beyoncé)
+Album: Watch The Throne (Deluxe Edition)
+Date: 2011
+Track: 2
+Genre: Hip-Hop
+mtime: 1326130695
+song_end
+song_begin: 03-jay-z_and_kanye_west-niggas_in_paris.flac
+Time: 220
+Artist: Jay-Z & Kanye West
+Title: Niggas In Paris
+Album: Watch The Throne (Deluxe Edition)
+Date: 2011
+Track: 3
+Genre: Hip-Hop
+mtime: 1326130695
+song_end
+song_begin: 04-jay-z_and_kanye_west-otis_(feat._otis_redding).flac
+Time: 179
+Artist: Jay-Z & Kanye West
+Title: Otis (Feat. Otis Redding)
+Album: Watch The Throne (Deluxe Edition)
+Date: 2011
+Track: 4
+Genre: Hip-Hop
+mtime: 1326130691
+song_end
+song_begin: 05-jay-z_and_kanye_west-gotta_have_it.flac
+Time: 141
+Artist: Jay-Z & Kanye West
+Title: Gotta Have It
+Album: Watch The Throne (Deluxe Edition)
+Date: 2011
+Track: 5
+Genre: Hip-Hop
+mtime: 1326130695
+song_end
+song_begin: 06-jay-z_and_kanye_west-new_day.flac
+Time: 273
+Artist: Jay-Z & Kanye West
+Title: New Day
+Album: Watch The Throne (Deluxe Edition)
+Date: 2011
+Track: 6
+Genre: Hip-Hop
+mtime: 1326130695
+song_end
+song_begin: 07-jay-z_and_kanye_west-thats_my_bitch.flac
+Time: 203
+Artist: Jay-Z & Kanye West
+Title: That's My Bitch
+Album: Watch The Throne (Deluxe Edition)
+Date: 2011
+Track: 7
+Genre: Hip-Hop
+mtime: 1326130696
+song_end
+song_begin: 08-jay-z_and_kanye_west-welcome_to_the_jungle.flac
+Time: 175
+Artist: Jay-Z & Kanye West
+Title: Welcome To The Jungle
+Album: Watch The Throne (Deluxe Edition)
+Date: 2011
+Track: 8
+Genre: Hip-Hop
+mtime: 1326130694
+song_end
+song_begin: 09-jay-z_and_kanye_west-who_gon_stop_me.flac
+Time: 257
+Artist: Jay-Z & Kanye West
+Title: Who Gon Stop Me
+Album: Watch The Throne (Deluxe Edition)
+Date: 2011
+Track: 9
+Genre: Hip-Hop
+mtime: 1326130695
+song_end
+song_begin: 10-jay-z_and_kanye_west-murder_to_excellence.flac
+Time: 301
+Artist: Jay-Z & Kanye West
+Title: Murder To Excellence
+Album: Watch The Throne (Deluxe Edition)
+Date: 2011
+Track: 10
+Genre: Hip-Hop
+mtime: 1326130695
+song_end
+song_begin: 11-jay-z_and_kanye_west-made_in_america_(feat._frank_ocean).flac
+Time: 293
+Artist: Jay-Z & Kanye West
+Title: Made In America (Feat. Frank Ocean)
+Album: Watch The Throne (Deluxe Edition)
+Date: 2011
+Track: 11
+Genre: Hip-Hop
+mtime: 1326130695
+song_end
+song_begin: 12-jay-z_and_kanye_west-why_i_love_you_(feat._mr._hudson).flac
+Time: 202
+Artist: Jay-Z & Kanye West
+Title: Why I Love You (Feat. Mr. Hudson)
+Album: Watch The Throne (Deluxe Edition)
+Date: 2011
+Track: 12
+Genre: Hip-Hop
+mtime: 1326130695
+song_end
+song_begin: 13-jay-z_and_kanye_west-illest_motherfucker_alive.flac
+Time: 504
+Artist: Jay-Z & Kanye West
+Title: Illest Motherfucker Alive
+Album: Watch The Throne (Deluxe Edition)
+Date: 2011
+Track: 13
+Genre: Hip-Hop
+mtime: 1326130695
+song_end
+song_begin: 14-jay-z_and_kanye_west-hoaom.flac
+Time: 276
+Artist: Jay-Z & Kanye West
+Album: Watch The Throne (Deluxe Edition)
+Date: 2011
+Track: 14
+Genre: Hip-Hop
+Title: HAM
+mtime: 1326130695
+song_end
+song_begin: 15-jay-z_and_kanye_west-primetime.flac
+Time: 200
+Artist: Jay-Z & Kanye West
+Title: Primetime
+Album: Watch The Throne (Deluxe Edition)
+Date: 2011
+Track: 15
+Genre: Hip-Hop
+mtime: 1326130695
+song_end
+song_begin: 16-jay-z_and_kanye_west-the_joy_(feat._curtis_mayfield).flac
+Time: 318
+Artist: Jay-Z & Kanye West
+Title: The Joy (Feat. Curtis Mayfield)
+Album: Watch The Throne (Deluxe Edition)
+Date: 2011
+Track: 16
+Genre: Hip-Hop
+mtime: 1326130696
+song_end
+playlist_begin: 00-jay-z_and_kanye_west-watch_the_throne-deluxe_edition-cd-flac-2011.m3u
+mtime: 1326130576
+playlist_end
+end: Jay-Z and Kanye West/Watch the Throne
+end: Jay-Z and Kanye West
 directory: Jaylib
 mtime: 1205079613
 begin: Jaylib
@@ -34180,7 +34515,7 @@ song_end
 end: Kaiser Chiefs/Kaiser Chiefs - Employment
 end: Kaiser Chiefs
 directory: Kanye West
-mtime: 1205079512
+mtime: 1326144300
 begin: Kanye West
 directory: Graduation
 mtime: 1205079516
@@ -35030,6 +35365,156 @@ Genre: Rap & Hip-Hop
 mtime: 1139376065
 song_end
 end: Kanye West/Late Registration
+directory: My Beautiful Dark Twisted Fantasy
+mtime: 1326136032
+begin: Kanye West/My Beautiful Dark Twisted Fantasy
+song_begin: 01-kanye_west-dark_fantasy.flac
+Time: 282
+Artist: Kanye West
+Title: Dark Fantasy
+Album: My Beautiful Dark Twisted Fantasy
+Date: 2010
+Track: 1
+Genre: Hip-Hop
+Disc: 1
+mtime: 1326136004
+song_end
+song_begin: 02-kanye_west-gorgeous_(feat._kid_cudi_and_raekwon).flac
+Time: 358
+Artist: Kanye West
+Title: Gorgeous (Feat. Kid Cudi & Raekwon)
+Album: My Beautiful Dark Twisted Fantasy
+Date: 2010
+Track: 2
+Genre: Hip-Hop
+Disc: 1
+mtime: 1326135977
+song_end
+song_begin: 03-kanye_west-power.flac
+Time: 293
+Artist: Kanye West
+Title: Power
+Album: My Beautiful Dark Twisted Fantasy
+Date: 2010
+Track: 3
+Genre: Hip-Hop
+Disc: 1
+mtime: 1326135989
+song_end
+song_begin: 04-kanye_west-all_of_the_lights_(interlude).flac
+Time: 63
+Artist: Kanye West
+Title: All of the Lights (Interlude)
+Album: My Beautiful Dark Twisted Fantasy
+Date: 2010
+Track: 4
+Genre: Hip-Hop
+Disc: 1
+mtime: 1326135177
+song_end
+song_begin: 05-kanye_west-all_of_the_lights.flac
+Time: 300
+Artist: Kanye West
+Title: All of the Lights
+Album: My Beautiful Dark Twisted Fantasy
+Date: 2010
+Track: 5
+Genre: Hip-Hop
+Disc: 1
+mtime: 1326136029
+song_end
+song_begin: 06-kanye_west-monster_(feat._jay-z_rick_ross_nicki_minaj_and_bon_iver).flac
+Time: 379
+Artist: Kanye West
+Title: Monster (Feat. Jay-Z, Rick Ross, Nicki Minaj & Bon Iver)
+Album: My Beautiful Dark Twisted Fantasy
+Date: 2010
+Track: 6
+Genre: Hip-Hop
+Disc: 1
+mtime: 1326135944
+song_end
+song_begin: 07-kanye_west-so_appalled_(feat._jay-z_pusha_t_prynce_cy_hi_swizz_beatz_and_the_rza).flac
+Time: 399
+Artist: Kanye West
+Title: So Appalled (Feat. Jay-Z, Pusha T, Prynce Cy Hi, Swizz Beatz & the RZA)
+Album: My Beautiful Dark Twisted Fantasy
+Date: 2010
+Track: 7
+Genre: Hip-Hop
+Disc: 1
+mtime: 1326136032
+song_end
+song_begin: 08-kanye_west-devil_in_a_new_dress_(feat._rick_ross).flac
+Time: 353
+Artist: Kanye West
+Title: Devil in a New Dress (Feat. Rick Ross)
+Album: My Beautiful Dark Twisted Fantasy
+Date: 2010
+Track: 8
+Genre: Hip-Hop
+Disc: 1
+mtime: 1326136001
+song_end
+song_begin: 09-kanye_west-runaway_(feat._pusha_t).flac
+Time: 549
+Artist: Kanye West
+Title: Runaway (Feat. Pusha T)
+Album: My Beautiful Dark Twisted Fantasy
+Date: 2010
+Track: 9
+Genre: Hip-Hop
+Disc: 1
+mtime: 1326136017
+song_end
+song_begin: 10-kanye_west-hell_of_a_life.flac
+Time: 328
+Artist: Kanye West
+Title: Hell of a Life
+Album: My Beautiful Dark Twisted Fantasy
+Date: 2010
+Track: 10
+Genre: Hip-Hop
+Disc: 1
+mtime: 1326135984
+song_end
+song_begin: 11-kanye_west-blame_game_(feat._john_legend).flac
+Time: 470
+Artist: Kanye West
+Title: Blame Game (Feat. John Legend)
+Album: My Beautiful Dark Twisted Fantasy
+Date: 2010
+Track: 11
+Genre: Hip-Hop
+Disc: 1
+mtime: 1326136007
+song_end
+song_begin: 12-kanye_west-lost_in_the_world_(feat._bon_iver).flac
+Time: 257
+Artist: Kanye West
+Title: Lost in the World (Feat. Bon Iver)
+Album: My Beautiful Dark Twisted Fantasy
+Date: 2010
+Track: 12
+Genre: Hip-Hop
+Disc: 1
+mtime: 1326136019
+song_end
+song_begin: 13-kanye_west-who_will_survive_in_america.flac
+Time: 99
+Artist: Kanye West
+Title: Who Will Survive in America
+Album: My Beautiful Dark Twisted Fantasy
+Date: 2010
+Track: 13
+Genre: Hip-Hop
+Disc: 1
+mtime: 1326136013
+song_end
+playlist_begin: 00-kanye_west-my_beautiful_dark_twisted_fantasy-cd-flac-2010.m3u
+mtime: 1326130643
+playlist_end
+end: Kanye West/My Beautiful Dark Twisted Fantasy
 directory: Unregistered
 mtime: 1205079494
 begin: Kanye West/Unregistered
@@ -35515,6 +36000,368 @@ mtime: 1166339726
 song_end
 end: Keane/Under The Iron Sea
 end: Keane
+directory: Kid Cudi
+mtime: 1326996680
+begin: Kid Cudi
+directory: Man On The Moon
+mtime: 1326832757
+begin: Kid Cudi/Man On The Moon
+song_begin: 01-kid cudi-in my dreams (cudder anthem).mp3
+Time: 199
+Artist: KiD CuDi
+AlbumArtist: KiD CuDi
+Title: In My Dreams (Cudder Anthem)
+Album: Man On The Moon: The End Of Day
+Track: 1
+Date: 2009
+Genre: Hip-Hop
+mtime: 1326832745
+song_end
+song_begin: 02-kid cudi-soundtrack 2 my life.mp3
+Time: 236
+Artist: KiD CuDi
+AlbumArtist: KiD CuDi
+Title: Soundtrack 2 My Life
+Album: Man On The Moon: The End Of Day
+Track: 2
+Date: 2009
+Genre: Hip-Hop
+mtime: 1326832757
+song_end
+song_begin: 03-kid cudi-simple as....mp3
+Time: 151
+Artist: KiD CuDi
+AlbumArtist: KiD CuDi
+Title: Simple As...
+Album: Man On The Moon: The End Of Day
+Track: 3
+Date: 2009
+Genre: Hip-Hop
+mtime: 1326832745
+song_end
+song_begin: 04-kid cudi-solo dolo.mp3
+Time: 266
+Artist: KiD CuDi
+AlbumArtist: KiD CuDi
+Title: Solo Dolo
+Album: Man On The Moon: The End Of Day
+Track: 4
+Date: 2009
+Genre: Hip-Hop
+mtime: 1326832749
+song_end
+song_begin: 05-kid cudi-heart of a lion (kid cudi theme music).mp3
+Time: 261
+Artist: KiD CuDi
+AlbumArtist: KiD CuDi
+Title: Heart of a Lion (KiD CuDi Theme Music)
+Album: Man On The Moon: The End Of Day
+Track: 5
+Date: 2009
+Genre: Hip-Hop
+mtime: 1326832742
+song_end
+song_begin: 06-kid cudi-my world (ft. billy cravens).mp3
+Time: 243
+Artist: KiD CuDi
+AlbumArtist: KiD CuDi
+Title: My World (Ft. Billy Cravens)
+Album: Man On The Moon: The End Of Day
+Track: 6
+Date: 2009
+Genre: Hip-Hop
+mtime: 1326832737
+song_end
+song_begin: 07-kid cudi-day n nite.mp3
+Time: 221
+Artist: KiD CuDi
+AlbumArtist: KiD CuDi
+Title: Day n Nite
+Album: Man On The Moon: The End Of Day
+Track: 7
+Date: 2009
+Genre: Hip-Hop
+mtime: 1326832739
+song_end
+song_begin: 08-kid cudi-sky might fall.mp3
+Time: 221
+Artist: KiD CuDi
+AlbumArtist: KiD CuDi
+Title: Sky Might Fall
+Album: Man On The Moon: The End Of Day
+Track: 8
+Date: 2009
+Genre: Hip-Hop
+mtime: 1326832747
+song_end
+song_begin: 09-kid cudi-enter galactic (love connection part 1).mp3
+Time: 260
+Artist: KiD CuDi
+AlbumArtist: KiD CuDi
+Title: Enter Galactic (Love Connection Part 1)
+Album: Man On The Moon: The End Of Day
+Track: 9
+Date: 2009
+Genre: Hip-Hop
+mtime: 1326832749
+song_end
+song_begin: 10-kid cudi-alive (ft. ratatat).mp3
+Time: 247
+Artist: KiD CuDi
+AlbumArtist: KiD CuDi
+Title: Alive (Ft. Ratatat)
+Album: Man On The Moon: The End Of Day
+Track: 10
+Date: 2009
+Genre: Hip-Hop
+mtime: 1326832742
+song_end
+song_begin: 11-kid cudi-cudi zone.mp3
+Time: 259
+Artist: KiD CuDi
+AlbumArtist: KiD CuDi
+Title: CuDi Zone
+Album: Man On The Moon: The End Of Day
+Track: 11
+Date: 2009
+Genre: Hip-Hop
+mtime: 1326832747
+song_end
+song_begin: 12-kid cudi-make her say (ft. kanye west & common).mp3
+Time: 217
+Artist: KiD CuDi
+AlbumArtist: KiD CuDi
+Title: Make Her Say (Ft. Kanye West & Common)
+Album: Man On The Moon: The End Of Day
+Track: 12
+Date: 2009
+Genre: Hip-Hop
+mtime: 1326832743
+song_end
+song_begin: 13-kid cudi-pusuit of happiness (ft. mgmt & ratatat).mp3
+Time: 295
+Artist: KiD CuDi
+AlbumArtist: KiD CuDi
+Title: Pusuit of Happiness (Ft. MGMT & Ratatat)
+Album: Man On The Moon: The End Of Day
+Track: 13
+Date: 2009
+Genre: Hip-Hop
+mtime: 1326832751
+song_end
+song_begin: 14-kid cudi-hyyerr (ft. chip tha ripper).mp3
+Time: 212
+Artist: KiD CuDi
+AlbumArtist: KiD CuDi
+Title: Hyyerr (Ft. Chip Tha Ripper)
+Album: Man On The Moon: The End Of Day
+Track: 14
+Date: 2009
+Genre: Hip-Hop
+mtime: 1326832748
+song_end
+song_begin: 15-kid cudi-up up & away.mp3
+Time: 227
+Artist: KiD CuDi
+AlbumArtist: KiD CuDi
+Title: Up Up & Away
+Album: Man On The Moon: The End Of Day
+Track: 15
+Date: 2009
+Genre: Hip-Hop
+mtime: 1326832739
+song_end
+playlist_begin: 00-kid cudi-man on the moon the end of day.m3u
+mtime: 1326832643
+playlist_end
+end: Kid Cudi/Man On The Moon
+directory: Man On The Moon II: The Legend Of Mr. Rager
+mtime: 1326832764
+begin: Kid Cudi/Man On The Moon II: The Legend Of Mr. Rager
+song_begin: 02 REVOFEV.mp3
+Time: 183
+Artist: Kid Cudi
+Title: REVOFEV
+Album: Man On The Moon II: The Legend
+Track: 2
+Date: 2010
+Genre: Rap
+mtime: 1326832761
+song_end
+song_begin: 04 We Aite (Wake Your Mind Up).mp3
+Time: 87
+Artist: Kid Cudi
+Title: We Aite (Wake Your Mind Up)
+Album: Man On The Moon II: The Legend
+Track: 4
+Date: 2010
+Genre: Rap
+mtime: 1326832759
+song_end
+song_begin: 05 Marijuana.mp3
+Time: 260
+Artist: Kid Cudi
+Title: Marijuana
+Album: Man On The Moon II: The Legend
+Track: 5
+Date: 2010
+Genre: Rap
+mtime: 1326832762
+song_end
+song_begin: 06 Mojo So Dope.mp3
+Time: 211
+Artist: Kid Cudi
+Title: Mojo So Dope
+Album: Man On The Moon II: The Legend
+Track: 6
+Date: 2010
+Genre: Rap
+mtime: 1326832759
+song_end
+song_begin: 07 Ashin' Kusher.mp3
+Time: 229
+Artist: Kid Cudi
+Title: Ashin' Kusher
+Album: Man On The Moon II: The Legend
+Track: 7
+Date: 2010
+Genre: Rap
+mtime: 1326832760
+song_end
+song_begin: 09 Wild'n Cuz I'm Young.mp3
+Time: 254
+Artist: Kid Cudi
+Title: Wild'n Cuz I'm Young
+Album: Man On The Moon II: The Legend
+Track: 9
+Date: 2010
+Genre: Rap
+mtime: 1326832756
+song_end
+song_begin: 10 The Mood.mp3
+Time: 156
+Artist: Kid Cudi
+Title: The Mood
+Album: Man On The Moon II: The Legend
+Track: 10
+Date: 2010
+Genre: Rap
+mtime: 1326832764
+song_end
+song_begin: 12 Mr. Rager.mp3
+Time: 294
+Artist: Kid Cudi
+Title: Mr. Rager
+Album: Man On The Moon II: The Legend
+Track: 12
+Date: 2010
+Genre: Rap
+mtime: 1326832762
+song_end
+song_begin: 15 All Along.mp3
+Time: 203
+Artist: Kid Cudi
+Title: All Along
+Album: Man On The Moon II: The Legend
+Track: 15
+Date: 2010
+Genre: Rap
+mtime: 1326832758
+song_end
+song_begin: 16 GHOST!.mp3
+Time: 289
+Artist: Kid Cudi
+Title: GHOST!
+Album: Man On The Moon II: The Legend
+Track: 16
+Date: 2010
+Genre: Rap
+mtime: 1326832762
+song_end
+song_begin: 17 Trapped In My Mind.mp3
+Time: 214
+Artist: Kid Cudi
+Title: Trapped In My Mind
+Album: Man On The Moon II: The Legend
+Track: 17
+Date: 2010
+Genre: Rap
+mtime: 1326832757
+song_end
+song_begin: 01 Scott Mescudi Vs. The World.mp3
+Time: 235
+Artist: Kid Cudi
+Title: Scott Mescudi Vs. The World (Feat. Cee-Lo Green)
+Album: Man On The Moon II: The Legend Of Mr. Rager
+Track: 1/17
+Date: 2010
+Genre: Rap
+Composer: m4tteo
+Disc: 1/1
+mtime: 1326832762
+song_end
+song_begin: 03 Don't Play This Song.mp3
+Time: 223
+Artist: Kid Cudi
+Title: Don't Play This Song (Feat. Mary J. Blige)
+Album: Man On The Moon II: The Legend Of Mr. Rager
+Track: 3/17
+Date: 2010
+Genre: Rap
+Composer: m4tteo
+Disc: 1/1
+mtime: 1326832758
+song_end
+song_begin: 08 Erase Me.mp3
+Time: 193
+Artist: Kid Cudi
+Title: Erase Me (Feat. Kanye West)
+Album: Man On The Moon II: The Legend Of Mr. Rager
+Track: 8/17
+Date: 2010
+Genre: Rap
+Composer: m4tteo
+Disc: 1/1
+mtime: 1326832764
+song_end
+song_begin: 11 MANIAC.mp3
+Time: 178
+Artist: Kid Cudi
+Title: MANIAC (Feat. Cage & St. Vincent)
+Album: Man On The Moon II: The Legend Of Mr. Rager
+Track: 11/17
+Date: 2010
+Genre: Rap
+Composer: m4tteo
+Disc: 1/1
+mtime: 1326832760
+song_end
+song_begin: 13 These Worries.mp3
+Time: 256
+Artist: Kid Cudi
+Title: These Worries (Feat. Mary J. Blige)
+Album: Man On The Moon II: The Legend Of Mr. Rager
+Track: 13/17
+Date: 2010
+Genre: Rap
+Composer: m4tteo
+Disc: 1/1
+mtime: 1326832758
+song_end
+song_begin: 14 The End.mp3
+Time: 261
+Artist: Kid Cudi
+Title: The End (Feat. GLC, Chip Tha Ripper & Nicole Wray)
+Album: Man On The Moon II: The Legend Of Mr. Rager
+Track: 14/17
+Date: 2010
+Genre: Rap
+Composer: m4tteo
+Disc: 1/1
+mtime: 1326832759
+song_end
+end: Kid Cudi/Man On The Moon II: The Legend Of Mr. Rager
+end: Kid Cudi
 directory: Kings of Leon
 mtime: 1288378731
 begin: Kings of Leon
@@ -42018,6 +42865,146 @@ mtime: 1166342461
 song_end
 end: Matisyahu/Shake Off the Dust
 end: Matisyahu
+directory: Menahan Street Band
+mtime: 1326398854
+begin: Menahan Street Band
+directory: Make The Road By Walking
+mtime: 1326398870
+begin: Menahan Street Band/Make The Road By Walking
+song_begin: 01 - Make The Road By Walking.mp3
+Time: 180
+Artist: Menahan Street Band
+AlbumArtist: Menahan Street Band
+Title: Make The Road By Walking
+Album: Make The Road By Walking
+Track: 1/11
+Date: 2008
+Genre: R&B
+Disc: 1/1
+mtime: 1326398855
+song_end
+song_begin: 02 - Tired Of Fighting.mp3
+Time: 212
+Artist: Menahan Street Band
+AlbumArtist: Menahan Street Band
+Title: Tired Of Fighting
+Album: Make The Road By Walking
+Track: 2/11
+Date: 2008
+Genre: R&B
+Disc: 1/1
+mtime: 1326398857
+song_end
+song_begin: 03 - Home Again!.mp3
+Time: 202
+Artist: Menahan Street Band
+AlbumArtist: Menahan Street Band
+Title: Home Again!
+Album: Make The Road By Walking
+Track: 3/11
+Date: 2008
+Genre: R&B
+Disc: 1/1
+mtime: 1326398859
+song_end
+song_begin: 04 - Montego Sunset.mp3
+Time: 199
+Artist: Menahan Street Band
+AlbumArtist: Menahan Street Band
+Title: Montego Sunset
+Album: Make The Road By Walking
+Track: 4/11
+Date: 2008
+Genre: R&B
+Disc: 1/1
+mtime: 1326398861
+song_end
+song_begin: 05 - Karina.mp3
+Time: 206
+Artist: Menahan Street Band
+AlbumArtist: Menahan Street Band
+Title: Karina
+Album: Make The Road By Walking
+Track: 5/11
+Date: 2008
+Genre: R&B
+Disc: 1/1
+mtime: 1326398862
+song_end
+song_begin: 06 - The Traitor.mp3
+Time: 162
+Artist: Menahan Street Band
+AlbumArtist: Menahan Street Band
+Title: The Traitor
+Album: Make The Road By Walking
+Track: 6/11
+Date: 2008
+Genre: R&B
+Disc: 1/1
+mtime: 1326398863
+song_end
+song_begin: 07 - The Contender.mp3
+Time: 229
+Artist: Menahan Street Band
+AlbumArtist: Menahan Street Band
+Title: The Contender
+Album: Make The Road By Walking
+Track: 7/11
+Date: 2008
+Genre: R&B
+Disc: 1/1
+mtime: 1326398865
+song_end
+song_begin: 08 - Birds.mp3
+Time: 183
+Artist: Menahan Street Band
+AlbumArtist: Menahan Street Band
+Title: Birds
+Album: Make The Road By Walking
+Track: 8/11
+Date: 2008
+Genre: R&B
+Disc: 1/1
+mtime: 1326398867
+song_end
+song_begin: 09 - Esma.mp3
+Time: 186
+Artist: Menahan Street Band
+AlbumArtist: Menahan Street Band
+Title: Esma
+Album: Make The Road By Walking
+Track: 9/11
+Date: 2008
+Genre: R&B
+Disc: 1/1
+mtime: 1326398868
+song_end
+song_begin: 10 - Going The Distance.mp3
+Time: 155
+Artist: Menahan Street Band
+AlbumArtist: Menahan Street Band
+Title: Going The Distance
+Album: Make The Road By Walking
+Track: 10/11
+Date: 2008
+Genre: R&B
+Disc: 1/1
+mtime: 1326398870
+song_end
+song_begin: 11 - Dust To Dust.mp3
+Time: 176
+Artist: Menahan Street Band
+AlbumArtist: Menahan Street Band
+Title: Dust To Dust
+Album: Make The Road By Walking
+Track: 11/11
+Date: 2008
+Genre: R&B
+Disc: 1/1
+mtime: 1326398871
+song_end
+end: Menahan Street Band/Make The Road By Walking
+end: Menahan Street Band
 directory: Method Man, Ghostface, And Raekwon
 mtime: 1288378731
 begin: Method Man, Ghostface, And Raekwon
@@ -66813,7 +67800,7 @@ song_end
 end: Soul Position/Things Go Better with RJ and Al
 end: Soul Position
 directory: Soundtracks
-mtime: 1311474137
+mtime: 1327205048
 begin: Soundtracks
 directory: Bande Originale Du Film Le Fabuleux Destin D'Amelie Poulain Full Album Mp3 160 By G Esiom
 mtime: 1243281572
@@ -67497,6 +68484,200 @@ Genre: Soundtrack
 mtime: 1139382524
 song_end
 end: Soundtracks/Dr. Strangelove - Music From Films Of Stanley Kubrick
+directory: Drive - Original Motion Picture Soundtrack (2011)
+mtime: 1327204687
+begin: Soundtracks/Drive - Original Motion Picture Soundtrack (2011)
+song_begin: 01. Kavinsky & Lovefoxxx - Nightcall.mp3
+Time: 260
+Artist: Soundtrack
+Title: Kavinsky & Lovefoxxx - Nightcall
+Album: Drive
+Track: 1/19
+Date: 2011
+Genre: Soundtrack
+mtime: 1327204904
+song_end
+song_begin: 02. Desire - Under Your Spell.mp3
+Time: 233
+Artist: Soundtrack
+Title: Desire - Under Your Spell
+Album: Drive
+Track: 2/19
+Date: 2011
+Genre: Soundtrack
+mtime: 1327204904
+song_end
+song_begin: 03. College - A Real Hero (feat. Electric Youth).mp3
+Time: 268
+Artist: Soundtrack
+Title: College - A Real Hero (feat. Electric Youth)
+Album: Drive
+Track: 3/19
+Date: 2011
+Genre: Soundtrack
+mtime: 1327204904
+song_end
+song_begin: 04. Riz Ortolani - Oh My Love (feat. Katyna Ranieri).mp3
+Time: 170
+Artist: Soundtrack
+Title: Riz Ortolani - Oh My Love (feat. Katyna Ranieri)
+Album: Drive
+Track: 4/19
+Date: 2011
+Genre: Soundtrack
+mtime: 1327204904
+song_end
+song_begin: 05. The Chromatics - Tick of the Clock.mp3
+Time: 288
+Artist: Soundtrack
+Title: The Chromatics - Tick of the Clock
+Album: Drive
+Track: 5/19
+Date: 2011
+Genre: Soundtrack
+mtime: 1327204904
+song_end
+song_begin: 06. Cliff Martinez - Rubber Head.mp3
+Time: 189
+Artist: Soundtrack
+Title: Cliff Martinez - Rubber Head
+Album: Drive
+Track: 6/19
+Date: 2011
+Genre: Soundtrack
+mtime: 1327204904
+song_end
+song_begin: 07. Cliff Martinez - I Drive.mp3
+Time: 124
+Artist: Soundtrack
+Title: Cliff Martinez - I Drive
+Album: Drive
+Track: 7/19
+Date: 2011
+Genre: Soundtrack
+mtime: 1327204904
+song_end
+song_begin: 08. Cliff Martinez - He Had a Good Time.mp3
+Time: 97
+Artist: Soundtrack
+Title: Cliff Martinez - He Had a Good Time
+Album: Drive
+Track: 8/19
+Date: 2011
+Genre: Soundtrack
+mtime: 1327204904
+song_end
+song_begin: 09. Cliff Martinez - They Broke His Pelvis.mp3
+Time: 118
+Artist: Soundtrack
+Title: Cliff Martinez - They Broke His Pelvis
+Album: Drive
+Track: 9/19
+Date: 2011
+Genre: Soundtrack
+mtime: 1327204904
+song_end
+song_begin: 10. Cliff Martinez - Kick Your Teeth.mp3
+Time: 160
+Artist: Soundtrack
+Title: Cliff Martinez - Kick Your Teeth
+Album: Drive
+Track: 10/19
+Date: 2011
+Genre: Soundtrack
+mtime: 1327204904
+song_end
+song_begin: 11. Cliff Martinez - Where's the Deluxe Version.mp3
+Time: 333
+Artist: Soundtrack
+Title: Cliff Martinez - Where's the Deluxe Version?
+Album: Drive
+Track: 11/19
+Date: 2011
+Genre: Soundtrack
+mtime: 1327204904
+song_end
+song_begin: 12. Cliff Martinez - See You in Four.mp3
+Time: 158
+Artist: Soundtrack
+Title: Cliff Martinez - See You in Four
+Album: Drive
+Track: 12/19
+Date: 2011
+Genre: Soundtrack
+mtime: 1327204904
+song_end
+song_begin: 13. Cliff Martinez - After The Chase.mp3
+Time: 326
+Artist: Soundtrack
+Title: Cliff Martinez - After The Chase
+Album: Drive
+Track: 13/19
+Date: 2011
+Genre: Soundtrack
+mtime: 1327204904
+song_end
+song_begin: 14. Cliff Martinez - Hammer.mp3
+Time: 284
+Artist: Soundtrack
+Title: Cliff Martinez - Hammer
+Album: Drive
+Track: 14/19
+Date: 2011
+Genre: Soundtrack
+mtime: 1327204904
+song_end
+song_begin: 15. Cliff Martinez - Wrong Floor.mp3
+Time: 91
+Artist: Soundtrack
+Title: Cliff Martinez - Wrong Floor
+Album: Drive
+Track: 15/19
+Date: 2011
+Genre: Soundtrack
+mtime: 1327204904
+song_end
+song_begin: 16. Cliff Martinez - Skull Crushing.mp3
+Time: 358
+Artist: Soundtrack
+Title: Cliff Martinez - Skull Crushing
+Album: Drive
+Track: 16/19
+Date: 2011
+Genre: Soundtrack
+mtime: 1327204904
+song_end
+song_begin: 17. Cliff Martinez - My Name On a Car.mp3
+Time: 139
+Artist: Soundtrack
+Title: Cliff Martinez - My Name On a Car
+Album: Drive
+Track: 17/19
+Date: 2011
+Genre: Soundtrack
+mtime: 1327204904
+song_end
+song_begin: 18. Cliff Martinez - On the Beach.mp3
+Time: 395
+Artist: Soundtrack
+Title: Cliff Martinez - On the Beach
+Album: Drive
+Track: 18/19
+Date: 2011
+Genre: Soundtrack
+mtime: 1327204904
+song_end
+song_begin: 19. Cliff Martinez - Bride of Deluxe.mp3
+Time: 237
+Artist: Soundtrack
+Title: Cliff Martinez - Bride of Deluxe
+Album: Drive
+Track: 19/19
+Date: 2011
+Genre: Soundtrack
+mtime: 1327204904
+song_end
+end: Soundtracks/Drive - Original Motion Picture Soundtrack (2011)
 directory: Garden State
 mtime: 1243281591
 begin: Soundtracks/Garden State
@@ -96640,3 +97821,4540 @@ mtime: 1195675391
 song_end
 end: Wolfmother/Wolfmother
 end: Wolfmother
+directory: Wu-Tang Clan
+mtime: 1326399150
+begin: Wu-Tang Clan
+directory: Enter the Wu-Tang(36 Chambers)
+mtime: 1326399071
+begin: Wu-Tang Clan/Enter the Wu-Tang(36 Chambers)
+song_begin: 08 C.R.E.A.M.mp3
+Time: 252
+Artist: Wu-Tang Clan
+Title: C.R.E.A.M.
+Album: Enter the Wu-Tang (36 Chamber
+Date: 1993
+Genre: Hip Hop
+mtime: 1326399064
+song_end
+song_begin: 01 Bring da Ruckus.mp3
+Time: 251
+Title: Bring da Ruckus
+Album: Enter the Wu-Tang (36 Chambers)
+Track: 1
+Date: 1993
+Genre: Rap & Hip Hop
+mtime: 1326399071
+song_end
+song_begin: 02 Shame on a Nigga.mp3
+Time: 177
+Artist: Wu-Tang Clan
+Title: Shame on a Nigga
+Album: Enter the Wu-Tang (36 Chambers)
+Track: 2
+Date: 1993
+Genre: Rap & Hip Hop
+mtime: 1326399065
+song_end
+song_begin: 03 Clan in da Front.mp3
+Time: 273
+Title: Clan in da Front
+Album: Enter the Wu-Tang (36 Chambers)
+Track: 3
+Date: 1993
+Genre: Rap & Hip Hop
+mtime: 1326399069
+song_end
+song_begin: 04 Wu-Tang- 7th Chamber.mp3
+Time: 367
+Artist: Wu-Tang Clan
+Title: Wu-Tang: 7th Chamber
+Album: Enter the Wu-Tang (36 Chambers)
+Track: 4
+Date: 1993
+Genre: Rap & Hip Hop
+Composer: Wu-Tang Clan
+mtime: 1326399070
+song_end
+song_begin: 05 Can It Be All So Simple-Intermission.mp3
+Time: 413
+Title: Can It Be All So Simple/Intermission
+Album: Enter the Wu-Tang (36 Chambers)
+Track: 5
+Date: 1993
+Genre: Rap & Hip Hop
+mtime: 1326399068
+song_end
+song_begin: 06 Da Mystery of Chessboxin'.mp3
+Time: 288
+Artist: Wu-Tang Clan
+Title: Da Mystery of Chessboxin'
+Album: Enter the Wu-Tang (36 Chambers)
+Track: 6
+Date: 1993
+Genre: Rap & Hip Hop
+Composer: Wu-Tang Clan
+mtime: 1326399066
+song_end
+song_begin: 07 Wu-Tang Clan Ain't Nuthing ta F' Wit.mp3
+Time: 216
+Title: Wu-Tang Clan Ain't Nuthing ta F' Wit
+Album: Enter the Wu-Tang (36 Chambers)
+Track: 7
+Date: 1993
+Genre: Rap & Hip Hop
+mtime: 1326399063
+song_end
+song_begin: 09 Method Man.mp3
+Time: 351
+Title: Method Man
+Album: Enter the Wu-Tang (36 Chambers)
+Track: 9
+Date: 1993
+Genre: Rap & Hip Hop
+mtime: 1326399070
+song_end
+song_begin: 10 Protect Ya Neck.mp3
+Time: 291
+Artist: Wu-Tang Clan
+Title: Protect Ya Neck
+Album: Enter the Wu-Tang (36 Chambers)
+Track: 10
+Date: 1993
+Genre: Rap & Hip Hop
+Composer: Wu-Tang Clan
+mtime: 1326399067
+song_end
+song_begin: 11 Tearz.mp3
+Time: 258
+Artist: Wu-Tang Clan
+Title: Tearz
+Album: Enter the Wu-Tang (36 Chambers)
+Track: 11
+Date: 1993
+Genre: Rap & Hip Hop
+Composer: Wu-Tang Clan
+mtime: 1326399068
+song_end
+song_begin: 12 Wu-Tang- 7th Chamber, Pt. 2.mp3
+Time: 370
+Artist: Wu-Tang Clan
+Title: Wu-Tang: 7th Chamber, Pt. 2
+Album: Enter the Wu-Tang (36 Chambers)
+Track: 12
+Date: 1993
+Genre: Rap & Hip Hop
+Composer: Wu-Tang Clan
+mtime: 1326399068
+song_end
+end: Wu-Tang Clan/Enter the Wu-Tang(36 Chambers)
+end: Wu-Tang Clan
+directory: Yesterdays New Quintet
+mtime: 1326334029
+begin: Yesterdays New Quintet
+directory: Stevie - Instrumental Tribute to Stevie Wonder
+mtime: 1326345471
+begin: Yesterdays New Quintet/Stevie - Instrumental Tribute to Stevie Wonder
+song_begin: 01 Prelude.mp3
+Time: 30
+Artist: Yesterdays New Quintet
+Title: Prelude
+Album: Stevie: Instrumental Tribute to Stevie Wonder
+Track: 1/11
+Date: 2003
+Genre: Classic Soul & R&B
+Composer: Stevie Wonder, Madlib
+Disc: 1/1
+mtime: 1326344649
+song_end
+song_begin: 02 Superstition.mp3
+Time: 187
+Artist: Yesterdays New Quintet
+Title: Superstition
+Album: Stevie: Instrumental Tribute to Stevie Wonder
+Track: 2/11
+Date: 2003
+Genre: Classic Soul & R&B
+Composer: Stevie Wonder, Madlib
+Disc: 1/1
+mtime: 1326345449
+song_end
+song_begin: 03 Visions.mp3
+Time: 225
+Artist: Yesterdays New Quintet
+Title: Visions
+Album: Stevie: Instrumental Tribute to Stevie Wonder
+Track: 3/11
+Date: 2003
+Genre: Classic Soul & R&B
+Composer: Stevie Wonder, Madlib
+Disc: 1/1
+mtime: 1326345451
+song_end
+song_begin: 04 Superwoman _ Where Were You Last Winter.mp3
+Time: 311
+Artist: Yesterdays New Quintet
+Title: Superwoman / Where Were You Last Winter
+Album: Stevie: Instrumental Tribute to Stevie Wonder
+Track: 4/11
+Date: 2003
+Genre: Classic Soul & R&B
+Composer: Stevie Wonder, Madlib
+Disc: 1/1
+mtime: 1326345461
+song_end
+song_begin: 05 Rocket Love Pt. 1.mp3
+Time: 187
+Artist: Yesterdays New Quintet
+Title: Rocket Love Pt. 1
+Album: Stevie: Instrumental Tribute to Stevie Wonder
+Track: 5/11
+Date: 2003
+Genre: Classic Soul & R&B
+Composer: Stevie Wonder, Madlib
+Disc: 1/1
+mtime: 1326345458
+song_end
+song_begin: 06 You've Got It Bad Girl.mp3
+Time: 224
+Artist: Yesterdays New Quintet
+Title: You've Got It Bad Girl
+Album: Stevie: Instrumental Tribute to Stevie Wonder
+Track: 6/11
+Date: 2003
+Genre: Classic Soul & R&B
+Composer: Stevie Wonder, Madlib
+Disc: 1/1
+mtime: 1326345467
+song_end
+song_begin: 07 Send One Your Love.mp3
+Time: 172
+Artist: Yesterdays New Quintet
+Title: Send One Your Love
+Album: Stevie: Instrumental Tribute to Stevie Wonder
+Track: 7/11
+Date: 2003
+Genre: Classic Soul & R&B
+Composer: Stevie Wonder, Madlib
+Disc: 1/1
+mtime: 1326345440
+song_end
+song_begin: 08 Too High.mp3
+Time: 157
+Artist: Yesterdays New Quintet
+Title: Too High
+Album: Stevie: Instrumental Tribute to Stevie Wonder
+Track: 8/11
+Date: 2003
+Genre: Classic Soul & R&B
+Composer: Stevie Wonder, Madlib
+Disc: 1/1
+mtime: 1326345471
+song_end
+song_begin: 09 I Am Singing _ Always.mp3
+Time: 287
+Artist: Yesterdays New Quintet
+Title: I Am Singing / Always
+Album: Stevie: Instrumental Tribute to Stevie Wonder
+Track: 9/11
+Date: 2003
+Genre: Classic Soul & R&B
+Composer: Stevie Wonder, Madlib
+Disc: 1/1
+mtime: 1326345436
+song_end
+song_begin: 10 Golden Lady.mp3
+Time: 226
+Artist: Yesterdays New Quintet
+Title: Golden Lady
+Album: Stevie: Instrumental Tribute to Stevie Wonder
+Track: 10/11
+Date: 2003
+Genre: Classic Soul & R&B
+Composer: Stevie Wonder, Madlib
+Disc: 1/1
+mtime: 1326345430
+song_end
+song_begin: 11 That Girl.mp3
+Time: 266
+Artist: Yesterdays New Quintet
+Title: That Girl
+Album: Stevie: Instrumental Tribute to Stevie Wonder
+Track: 11/11
+Date: 2003
+Genre: Classic Soul & R&B
+Composer: Stevie Wonder, Madlib
+Disc: 1/1
+mtime: 1326345465
+song_end
+end: Yesterdays New Quintet/Stevie - Instrumental Tribute to Stevie Wonder
+directory: angles without edges LP
+mtime: 1326334029
+begin: Yesterdays New Quintet/angles without edges LP
+song_begin: yesterday's new quintet - angles without edges - 01 - prelude.mp3
+Time: 119
+Artist: Yesterday's New Quintet
+Title: Prelude
+Album: Angles Without Edges
+Date: 2001
+Genre: Instrumental
+mtime: 1326331994
+song_end
+song_begin: yesterday's new quintet - angles without edges - 02 - julani.mp3
+Time: 186
+Artist: Yesterday's New Quintet
+Title: Julani
+Album: Angles Without Edges
+Date: 2001
+Genre: Instrumental
+mtime: 1326333100
+song_end
+song_begin: yesterday's new quintet - angles without edges - 03 - papa.mp3
+Time: 275
+Artist: Yesterday's New Quintet
+Title: Papa
+Album: Angles Without Edges
+Date: 2001
+Genre: Instrumental
+mtime: 1326334029
+song_end
+song_begin: yesterday's new quintet - angles without edges - 04 -  keeper of my soul.mp3
+Time: 259
+Artist: Yesterday's New Quintet
+Title: Keeper of My Soul
+Album: Angles Without Edges
+Date: 2001
+Genre: Instrumental
+mtime: 1326332937
+song_end
+song_begin: yesterday's new quintet - angles without edges - 05 - the one who knows.mp3
+Time: 224
+Artist: Yesterday's New Quintet
+Title: The One Who Knows
+Album: Angles Without Edges
+Date: 2001
+Genre: Instrumental
+mtime: 1326330682
+song_end
+song_begin: yesterday's new quintet - angles without edges - 06 - the birth of ynq.mp3
+Time: 174
+Artist: Yesterday's New Quintet
+Title: The Birth of YNQ
+Album: Angles Without Edges
+Date: 2001
+Genre: Instrumental
+mtime: 1326333760
+song_end
+song_begin: yesterday's new quintet - angles without edges - 07 - paladium.mp3
+Time: 335
+Artist: Yesterday's New Quintet
+Title: Paladium
+Album: Angles Without Edges
+Date: 2001
+Genre: Instrumental
+mtime: 1326331520
+song_end
+song_begin: yesterday's new quintet - angles without edges - 08 - lifes angles.mp3
+Time: 188
+Artist: Yesterday's New Quintet
+Title: Lifes Angles
+Album: Angles Without Edges
+Date: 2001
+Genre: Instrumental
+mtime: 1326333266
+song_end
+song_begin: yesterday's new quintet - angles without edges - 09 - thinking of you.mp3
+Time: 196
+Artist: Yesterday's New Quintet
+Title: Thinking of You
+Album: Angles Without Edges
+Date: 2001
+Genre: Instrumental
+mtime: 1326332122
+song_end
+song_begin: yesterday's new quintet - angles without edges - 10 - uno esta.mp3
+Time: 225
+Artist: Yesterday's New Quintet
+Title: Uno Esta
+Album: Angles Without Edges
+Date: 2001
+Genre: Instrumental
+mtime: 1326333388
+song_end
+song_begin: yesterday's new quintet - angles without edges - 11 - rugged tranquility.mp3
+Time: 247
+Artist: Yesterday's New Quintet
+Title: Rugged Tranquility
+Album: Angles Without Edges
+Date: 2001
+Genre: Instrumental
+mtime: 1326333945
+song_end
+song_begin: yesterday's new quintet - angles without edges - 12 - daylight.mp3
+Time: 235
+Artist: Yesterday's New Quintet
+Title: Daylight
+Album: Angles Without Edges
+Date: 2001
+Genre: Instrumental
+mtime: 1326331903
+song_end
+song_begin: yesterday's new quintet - angles without edges - 13 - hot water.mp3
+Time: 221
+Artist: Yesterday's New Quintet
+Title: Hot Water
+Album: Angles Without Edges
+Date: 2001
+Genre: Instrumental
+mtime: 1326331784
+song_end
+song_begin: yesterday's new quintet - angles without edges - 14 - mestizo eyes.mp3
+Time: 235
+Artist: Yesterday's New Quintet
+Title: Mestizo Eyes
+Album: Angles Without Edges
+Date: 2001
+Genre: Instrumental
+mtime: 1326331856
+song_end
+song_begin: yesterday's new quintet - angles without edges - 15 - sun godess.mp3
+Time: 238
+Artist: Yesterday's New Quintet
+Title: Sun Godess
+Album: Angles Without Edges
+Date: 2001
+Genre: Instrumental
+mtime: 1326333923
+song_end
+song_begin: yesterday's new quintet - angles without edges - 16 - kuhns tune.mp3
+Time: 152
+Artist: Yesterday's New Quintet
+Title: Kuhns Tune
+Album: Angles Without Edges
+Date: 2001
+Genre: Instrumental
+mtime: 1326330248
+song_end
+song_begin: yesterday's new quintet - angles without edges - 17 - dakotas song.mp3
+Time: 141
+Artist: Yesterday's New Quintet
+Title: Little Girl (Dakotas Song)
+Album: Angles Without Edges
+Date: 2001
+Genre: Instrumental
+mtime: 1326330160
+song_end
+song_begin: yesterday's new quintet - angles without edges - 18 - broken dreams.mp3
+Time: 336
+Artist: Yesterday's New Quintet
+Title: Broken Dreams
+Album: Angles Without Edges
+Date: 2001
+Genre: Instrumental
+mtime: 1326332152
+song_end
+song_begin: yesterday's new quintet - angles without edges - 19 - last day.mp3
+Time: 55
+Artist: Yesterday's New Quintet
+Title: Last Day
+Album: Angles Without Edges
+Date: 2001
+Genre: Instrumental
+mtime: 1326326732
+song_end
+end: Yesterdays New Quintet/angles without edges LP
+directory: bomb shelter EP
+mtime: 1326334029
+begin: Yesterdays New Quintet/bomb shelter EP
+song_begin: harlem river drive interlude.mp3
+Time: 31
+Artist: bomb shelter EP
+Title: harlem river drive interlude
+Track: 2012
+Genre: Other
+mtime: 1326326764
+song_end
+song_begin: mystic brew interlude.mp3
+Time: 45
+Artist: bomb shelter EP
+Title: mystic brew interlude
+Track: 2013
+Genre: Other
+mtime: 1326324545
+song_end
+song_begin: Pride & Vanity.mp3
+Time: 156
+Artist: Yesterday's New Quintet
+Title: Pride & Vanity
+Album: Bomb Shelter Ep
+Track: 1
+Genre: Jazz+Funk
+mtime: 1326331929
+song_end
+song_begin: knucklehead.mp3
+Time: 120
+Artist: bomb shelter EP
+Title: knucklehead
+Album: I Need Drugs (Instrumental LP)
+Track: 24
+Genre: Other
+mtime: 1326327738
+song_end
+end: Yesterdays New Quintet/bomb shelter EP
+directory: elle's theme ep
+mtime: 1326334029
+begin: Yesterdays New Quintet/elle's theme ep
+song_begin: 02_yesterdays new quintet - rerev.mp3
+Time: 180
+Artist: Yesterday's New Quintet
+Title: Rerev
+Album: Elle's Theme EP
+Track: 2
+Genre: Jazz+Funk
+mtime: 1326332132
+song_end
+song_begin: 01_yesterdays new quintet - elle's theme.mp3
+Time: 158
+Artist: Yesterday's New Quintet
+Title: Elle's Theme
+Album: Stones Throw 2001 Sampler
+Track: 10
+mtime: 1326332039
+song_end
+song_begin: 03_yesterdays new quintet - herbal scent.mp3
+Time: 247
+Artist: Yesterday's New Quintet
+Title: Herbal Scent
+Album: Yesterdays New Quintet EP
+Track: 3
+Genre: Jazz+Funk
+mtime: 1326332031
+song_end
+song_begin: 04_yesterdays new quintet - sunrays.mp3
+Time: 274
+Artist: Yesterday's New Quintet
+Title: Sunrays
+Album: Yesterdays New Quintet EP
+Track: 4
+Genre: Jazz+Funk
+mtime: 1326331647
+song_end
+end: Yesterdays New Quintet/elle's theme ep
+directory: meaning of love 7 inch
+mtime: 1326334029
+begin: Yesterdays New Quintet/meaning of love 7 inch
+song_begin: 01-yesterdays_new_quintet-the_meaning_of_love_(vocal)-cms.mp3
+Time: 169
+Artist: Yesterday's New Quintet
+Title: The Meaning of Love (Vocal)
+Album: The Meaning of Love VLS
+Date: 2002
+Genre: Jazz
+mtime: 1326333327
+song_end
+song_begin: 02-yesterdays_new_quintet-the_meaning_of_love_(instrumental)-cms.mp3
+Time: 167
+Artist: Yesterday's New Quintet
+Title: The Meaning of Love (Instrumen
+Album: The Meaning of Love VLS
+Date: 2002
+Genre: Jazz
+mtime: 1326332793
+song_end
+end: Yesterdays New Quintet/meaning of love 7 inch
+directory: solo projects
+mtime: 1326334029
+begin: Yesterdays New Quintet/solo projects
+directory: ahmad miller - Ahmad's First
+mtime: 1326334029
+begin: Yesterdays New Quintet/solo projects/ahmad miller - Ahmad's First
+song_begin: 01 arroyo.mp3
+Time: 237
+Artist: ahmad miller - Ahmad's First
+Title: 01 arroyo
+Track: 1
+Genre: Other
+mtime: 1326334015
+song_end
+song_begin: 03 traffic zone.mp3
+Time: 185
+Artist: ahmad miller - Ahmad's First
+Title: 03 traffic zone
+Track: 3
+Genre: Other
+mtime: 1326333420
+song_end
+song_begin: 05 windy c.mp3
+Time: 228
+Artist: ahmad miller - Ahmad's First
+Title: 05 windy c
+Track: 5
+Genre: Other
+mtime: 1326332379
+song_end
+song_begin: 02 little angel.mp3
+Time: 222
+Artist: ahmad miller - Ahmad's First
+Title: 02 little angel
+Album: I Need Drugs (Instrumental LP)
+Track: 2
+Genre: Other
+mtime: 1326333694
+song_end
+song_begin: 04 tradewindz.mp3
+Time: 277
+Artist: ahmad miller - Ahmad's First
+Title: 04 tradewindz
+Album: I Need Drugs (Instrumental LP)
+Track: 4
+Genre: Other
+mtime: 1326332636
+song_end
+song_begin: 06 now or later.mp3
+Time: 172
+Artist: ahmad miller - Ahmad's First
+Title: 06 now or later
+Album: I Need Drugs (Instrumental LP)
+Track: 6
+Genre: Other
+mtime: 1326332440
+song_end
+end: Yesterdays New Quintet/solo projects/ahmad miller - Ahmad's First
+directory: malik_flavors-ugly_beauty-ep
+mtime: 1326334029
+begin: Yesterdays New Quintet/solo projects/malik_flavors-ugly_beauty-ep
+song_begin: 01-malik_flavors-prelude-ftd.mp3
+Time: 58
+Artist: Malik Flavors
+Title: Prelude
+Album: Ugly_Beauty-EP
+Track: 1
+Date: 2004
+Genre: Beat
+mtime: 1326331894
+song_end
+song_begin: 02-malik_flavors-dayscape-ftd.mp3
+Time: 294
+Artist: Malik Flavors
+Title: Dayscape
+Album: Ugly_Beauty-EP
+Track: 2
+Date: 2004
+Genre: Beat
+mtime: 1326332747
+song_end
+song_begin: 03-malik_flavors-early_dawn-ftd.mp3
+Time: 227
+Artist: Malik Flavors
+Title: Early Dawn
+Album: Ugly_Beauty-EP
+Track: 3
+Date: 2004
+Genre: Beat
+mtime: 1326333658
+song_end
+song_begin: 04-malik_flavors-storm-ftd.mp3
+Time: 291
+Artist: Malik Flavors
+Title: Storm
+Album: Ugly_Beauty-EP
+Track: 4
+Date: 2004
+Genre: Beat
+mtime: 1326333013
+song_end
+song_begin: 05-malik_flavors-serenade_for_a_fast_lady-ftd.mp3
+Time: 229
+Artist: Malik Flavors
+Title: Serenade For A Fast Lady
+Album: Ugly_Beauty-EP
+Track: 5
+Date: 2004
+Genre: Beat
+mtime: 1326330488
+song_end
+song_begin: 06-malik_flavors-many_thoughts-ftd.mp3
+Time: 276
+Artist: Malik Flavors
+Title: Many Thoughts
+Album: Ugly_Beauty-EP
+Track: 6
+Date: 2004
+Genre: Beat
+mtime: 1326332679
+song_end
+song_begin: 07-malik_flavors-mind_expansion-ftd.mp3
+Time: 383
+Artist: Malik Flavors
+Title: Mind Expansion
+Album: Ugly_Beauty-EP
+Track: 7
+Date: 2004
+Genre: Beat
+mtime: 1326331200
+song_end
+end: Yesterdays New Quintet/solo projects/malik_flavors-ugly_beauty-ep
+directory: monk hughes and the outer realm - a tribute to brother weldon
+mtime: 1326334029
+begin: Yesterdays New Quintet/solo projects/monk hughes and the outer realm - a tribute to brother weldon
+song_begin: 01-yesterdays_new_quintet-prelude-(run_with_the_sun)-cms.mp3
+Time: 542
+Artist: Yesterdays New Quintet
+Title: Prelude-(Run with the Sun)
+Album: A Tribute to Brother Weldon-2L
+Date: 2004
+Genre: Jazz
+mtime: 1326333866
+song_end
+song_begin: 02-yesterdays_new_quintet-a_piece_for_brother_weldon-cms.mp3
+Time: 309
+Artist: Yesterdays New Quintet
+Title: A Piece for Brother Weldon
+Album: A Tribute to Brother Weldon-2L
+Date: 2004
+Genre: Jazz
+mtime: 1326332154
+song_end
+song_begin: 03-yesterdays_new_quintet-irvines_vine-(spirit_mans_lament)-cms.mp3
+Time: 255
+Artist: Yesterdays New Quintet
+Title: Irvines Vine-(Spirit Mans Lame
+Album: A Tribute to Brother Weldon-2L
+Date: 2004
+Genre: Jazz
+mtime: 1326332779
+song_end
+song_begin: 04-yesterdays_new_quintet-time-cms.mp3
+Time: 349
+Artist: Yesterdays New Quintet
+Title: Time
+Album: A Tribute to Brother Weldon-2L
+Date: 2004
+Genre: Jazz
+mtime: 1326332252
+song_end
+song_begin: 05-yesterdays_new_quintet-welldone-cms.mp3
+Time: 221
+Artist: Yesterdays New Quintet
+Title: Welldone
+Album: A Tribute to Brother Weldon-2L
+Date: 2004
+Genre: Jazz
+mtime: 1326330792
+song_end
+song_begin: 06-yesterdays_new_quintet-liberated-cms.mp3
+Time: 251
+Artist: Yesterdays New Quintet
+Title: Liberated
+Album: A Tribute to Brother Weldon-2L
+Date: 2004
+Genre: Jazz
+mtime: 1326333988
+song_end
+song_begin: 07-yesterdays_new_quintet-keys-cms.mp3
+Time: 361
+Artist: Yesterdays New Quintet
+Title: Keys
+Album: A Tribute to Brother Weldon-2L
+Date: 2004
+Genre: Jazz
+mtime: 1326332001
+song_end
+song_begin: 08-yesterdays_new_quintet-still_young_giften_and_broke-cms.mp3
+Time: 271
+Artist: Yesterdays New Quintet
+Title: Still Young Giften and Broke
+Album: A Tribute to Brother Weldon-2L
+Date: 2004
+Genre: Jazz
+mtime: 1326332055
+song_end
+song_begin: 09-yesterdays_new_quintet-nodlews_sea-cms.mp3
+Time: 282
+Artist: Yesterdays New Quintet
+Title: Nodlews Sea
+Album: A Tribute to Brother Weldon-2L
+Date: 2004
+Genre: Jazz
+mtime: 1326333029
+song_end
+song_begin: 10-yesterdays_new_quintet-day_of_spirit_man-cms.mp3
+Time: 311
+Artist: Yesterdays New Quintet
+Title: Day of Spirit Man
+Album: A Tribute to Brother Weldon-2L
+Date: 2004
+Genre: Jazz
+mtime: 1326332602
+song_end
+song_begin: 11-yesterdays_new_quintet-master_wels_tune-cms.mp3
+Time: 239
+Artist: Yesterdays New Quintet
+Title: Master Wels Tune
+Album: A Tribute to Brother Weldon-2L
+Date: 2004
+Genre: Jazz
+mtime: 1326333235
+song_end
+end: Yesterdays New Quintet/solo projects/monk hughes and the outer realm - a tribute to brother weldon
+directory: otis jackson jr. trio - jewelz
+mtime: 1326334029
+begin: Yesterdays New Quintet/solo projects/otis jackson jr. trio - jewelz
+song_begin: yesterday's new quintet (otis jackson jr. trio) - jewelz ep - 01 - bitches brew.mp3
+Time: 273
+Artist: Yesterday's New Quintet (Otis Jackson Jr. Trio)
+AlbumArtist: Otis Jackson Jr. Trio
+Title: Bitches Brew
+Album: Jewelz Ep
+Track: 1
+Date: 2007
+Genre: Jazz+Funk
+Composer: M. Davis
+mtime: 1326331772
+song_end
+song_begin: yesterday's new quintet (otis jackson jr. trio) - jewelz ep - 02 - free son.mp3
+Time: 286
+Artist: Yesterday's New Quintet (Otis Jackson Jr. Trio)
+AlbumArtist: Otis Jackson Jr. Trio
+Title: Free Son
+Album: Jewelz Ep
+Track: 02
+Date: 2007
+Genre: Jazz+funk
+mtime: 1326332270
+song_end
+song_begin: yesterday's new quintet (otis jackson jr. trio) - jewelz ep - 03 - porter house.mp3
+Time: 217
+Artist: Yesterday's New Quintet (Otis Jackson Jr. Trio)
+AlbumArtist: Otis Jackson Jr. Trio
+Title: Porter House
+Album: Jewelz Ep
+Track: 03
+Date: 2007
+Genre: Jazz+funk
+mtime: 1326332452
+song_end
+song_begin: yesterday's new quintet (otis jackson jr. trio) - jewelz ep - 04 - sport.mp3
+Time: 289
+Artist: Yesterday's New Quintet (Otis Jackson Jr. Trio)
+AlbumArtist: Otis Jackson Jr. Trio
+Title: Sport
+Album: Jewelz Ep
+Track: 04
+Date: 2007
+Genre: Jazz+funk
+mtime: 1326333188
+song_end
+song_begin: yesterday's new quintet (otis jackson jr. trio) - jewelz ep - 05 - hornets nest.mp3
+Time: 488
+Artist: Yesterday's New Quintet (Otis Jackson Jr. Trio)
+AlbumArtist: Otis Jackson Jr. Trio
+Title: Hornets Nest
+Album: Jewelz Ep
+Track: 05
+Date: 2007
+Genre: Jazz+funk
+mtime: 1326332170
+song_end
+song_begin: yesterday's new quintet (otis jackson jr. trio) - jewelz ep - 06 - elysian fields.mp3
+Time: 229
+Artist: Yesterday's New Quintet (Otis Jackson Jr. Trio)
+AlbumArtist: Otis Jackson Jr. Trio
+Title: Elysian Fields
+Album: Jewelz Ep
+Track: 06
+Date: 2007
+Genre: Jazz+funk
+mtime: 1326333567
+song_end
+end: Yesterdays New Quintet/solo projects/otis jackson jr. trio - jewelz
+directory: the joe mcduphrey experience - experience
+mtime: 1326334029
+begin: Yesterdays New Quintet/solo projects/the joe mcduphrey experience - experience
+song_begin: 03-joe  mcduphrey experience- -solar.mp3
+Time: 175
+Artist: the joe mcduphrey experience - experience
+Title: 03-joe  mcduphrey experience- -solar
+Track: 3
+Genre: Other
+mtime: 1326331950
+song_end
+song_begin: 01-joe_mcduphrey_experience-experience-cms.mp3
+Time: 150
+Artist: Joe Mcduphrey Experience
+Title: Experience
+Album: Experience EP
+Date: 2002
+Genre: Jazz
+mtime: 1326331007
+song_end
+song_begin: 02-joe_mcduphrey_experience-fifty_eight-cms.mp3
+Time: 57
+Artist: Joe Mcduphrey Experience
+Title: Fifty Eight
+Album: Experience EP
+Date: 2002
+Genre: Jazz
+mtime: 1326327246
+song_end
+song_begin: 04-joe_mcduphrey_experience-song_for_airto-cms.mp3
+Time: 269
+Artist: Joe Mcduphrey Experience
+Title: Song for Airto
+Album: Experience EP
+Date: 2002
+Genre: Jazz
+mtime: 1326332302
+song_end
+song_begin: 05-joe_mcduphrey_experience-parallel_worlds-cms.mp3
+Time: 209
+Artist: Joe Mcduphrey Experience
+Title: Parallel Worlds
+Album: Experience EP
+Date: 2002
+Genre: Jazz
+mtime: 1326332139
+song_end
+song_begin: 06-joe_mcduphrey_experience-tomorrow_yesterday-cms.mp3
+Time: 221
+Artist: Joe Mcduphrey Experience
+Title: Tomorrow Yesterday
+Album: Experience EP
+Date: 2002
+Genre: Jazz
+mtime: 1326333449
+song_end
+song_begin: 07-joe_mcduphrey_experience-flower_of_life-cms.mp3
+Time: 285
+Artist: Joe Mcduphrey Experience
+Title: Flower of Life
+Album: Experience EP
+Date: 2002
+Genre: Jazz
+mtime: 1326333488
+song_end
+end: Yesterdays New Quintet/solo projects/the joe mcduphrey experience - experience
+end: Yesterdays New Quintet/solo projects
+directory: sound directions
+mtime: 1326334029
+begin: Yesterdays New Quintet/sound directions
+directory: skyscrapers 7 inch
+mtime: 1326334029
+begin: Yesterdays New Quintet/sound directions/skyscrapers 7 inch
+song_begin: 01-yesterdays_new_quintet-skyscrapers-cms.mp3
+Time: 193
+Artist: skyscrapers 7 inch
+Title: 01-yesterdays_new_quintet-skyscrapers-cms
+Track: 1
+Genre: Other
+mtime: 1326333223
+song_end
+song_begin: 02-yesterdays_new_quintet-travelin_man-cms.mp3
+Time: 157
+Artist: skyscrapers 7 inch
+Title: 02-yesterdays_new_quintet-travelin_man-cms
+Album: I Need Drugs (Instrumental LP)
+Track: 2
+Genre: Other
+mtime: 1326333959
+song_end
+end: Yesterdays New Quintet/sound directions/skyscrapers 7 inch
+directory: the funky side of life
+mtime: 1326334029
+begin: Yesterdays New Quintet/sound directions/the funky side of life
+song_begin: 01-directions.mp3
+Time: 68
+Artist: the funky side of life
+Title: 01-directions
+Track: 1
+Genre: Other
+mtime: 1326323274
+song_end
+song_begin: 03-wanda_vidal.mp3
+Time: 136
+Artist: the funky side of life
+Title: 03-wanda_vidal
+Track: 3
+Genre: Other
+mtime: 1326329784
+song_end
+song_begin: 02-dice_game.mp3
+Time: 223
+Artist: the funky side of life
+Title: 02-dice_game
+Album: I Need Drugs (Instrumental LP)
+Track: 2
+Genre: Other
+mtime: 1326332523
+song_end
+song_begin: 04-yesterdays_new_quintet-fourty_days-c4.mp3
+Time: 307
+Artist: Yesterday's New Quintet
+Title: Fourty Days
+Album: Sound Directions: The Funky Side Of Life
+Track: 4
+Date: 2005
+Genre: Jazz
+mtime: 1326332175
+song_end
+song_begin: 05-yesterdays_new_quintet-play_car-c4.mp3
+Time: 196
+Artist: Yesterday's New Quintet
+Title: Play Car
+Album: Sound Directions: The Funky Side Of Life
+Track: 5
+Date: 2005
+Genre: Jazz
+mtime: 1326333977
+song_end
+song_begin: 06-yesterdays_new_quintet-a_divine_image-c4.mp3
+Time: 138
+Artist: Yesterday's New Quintet
+Title: A Divine Image
+Album: Sound Directions: The Funky Side Of Life
+Track: 6
+Date: 2005
+Genre: Jazz
+mtime: 1326332115
+song_end
+song_begin: 07-yesterdays_new_quintet-the_funky_side_of_life-c4.mp3
+Time: 180
+Artist: Yesterday's New Quintet
+Title: The Funky Side of Life
+Album: Sound Directions: The Funky Side Of Life
+Track: 7
+Date: 2005
+Genre: Jazz
+mtime: 1326331886
+song_end
+song_begin: 08-yesterdays_new_quintet-theme_for_ivory_black-c4.mp3
+Time: 212
+Artist: Yesterday's New Quintet
+Title: Theme For Ivory Black
+Album: Sound Directions: The Funky Side Of Life
+Track: 8
+Date: 2005
+Genre: Jazz
+mtime: 1326331827
+song_end
+song_begin: 09-yesterdays_new_quintet-the_horse-c4.mp3
+Time: 166
+Artist: Yesterday's New Quintet
+Title: The Horse
+Album: Sound Directions: The Funky Side Of Life
+Track: 9
+Date: 2005
+Genre: Jazz
+mtime: 1326332127
+song_end
+song_begin: 10-yesterdays_new_quintet-one_for_j.j._(johnson)-c4.mp3
+Time: 141
+Artist: Yesterday's New Quintet
+Title: One For J.J. (Johnson)
+Album: Sound Directions: The Funky Side Of Life
+Track: 10
+Date: 2005
+Genre: Jazz
+mtime: 1326331217
+song_end
+song_begin: 11-yesterdays_new_quintet-on_the_hill-c4.mp3
+Time: 198
+Artist: Yesterday's New Quintet
+Title: On The Hill
+Album: Sound Directions: The Funky Side Of Life
+Track: 11
+Date: 2005
+Genre: Jazz
+mtime: 1326333634
+song_end
+end: Yesterdays New Quintet/sound directions/the funky side of life
+directory: the horse 12 inch
+mtime: 1326334029
+begin: Yesterdays New Quintet/sound directions/the horse 12 inch
+song_begin: 01-sound_directions-the_horse.mp3
+Time: 170
+Artist: Sound Directions
+Title: The Horse
+Album: The Horse 12"
+Track: 1
+Date: 2005
+Genre: Hip-Hop
+Genre: Hip-Hop
+mtime: 1326331417
+song_end
+song_begin: 02-sound_directions-tribe.mp3
+Time: 305
+Artist: Sound Directions
+Title: tribe
+Album: the horse 12"
+Genre: Blues
+Genre: Blues
+mtime: 1326329169
+song_end
+end: Yesterdays New Quintet/sound directions/the horse 12 inch
+end: Yesterdays New Quintet/sound directions
+directory: stevie
+mtime: 1326334029
+begin: Yesterdays New Quintet/stevie
+song_begin: 01-yesterdays_new_quintet-prelude-cms.mp3
+Time: 30
+Artist: stevie
+Title: 01-yesterdays_new_quintet-prelude-cms
+Track: 1
+Genre: Other
+mtime: 1326324129
+song_end
+song_begin: 04-yesterdays_new_quintet-superwoman_(where_were_you_last_winter)-cms.mp3
+Time: 289
+Artist: stevie
+Title: 04-yesterdays_new_quintet-superwoman_(where_were_you_last_winter)-cms
+Track: 4
+Genre: Other
+mtime: 1326332538
+song_end
+song_begin: 02-yesterdays_new_quintet-superstition-cms.mp3
+Time: 184
+Artist: Yesterday's New Quintet
+AlbumArtist: Yesterday's New Quintet
+Title: Superstition
+Album: Stevie Vol. 1
+Track: 2
+Date: 2002
+Genre: Instrumental
+Composer: Stevie Wonder
+mtime: 1326329732
+song_end
+song_begin: 03-yesterdays_new_quintet-visions-cms.mp3
+Time: 222
+Artist: Yesterday's New Quintet
+Title: Visions
+Album: Stevie Vol. 1
+Track: 3/14
+Date: 2002
+Genre: Instrumental
+mtime: 1326332106
+song_end
+song_begin: 05-yesterdays_new_quintet-interlude_one-cms.mp3
+Time: 48
+Artist: Yesterday's New Quintet
+AlbumArtist: Yesterday's New Quintet
+Title: Interlude One
+Album: Stevie Vol. 1
+Track: 5
+Date: 2002
+Genre: Instrumental
+Composer: Stevie Wonder
+mtime: 1326326441
+song_end
+song_begin: 06-yesterdays_new_quintet-rocket_love_pt._1-cms.mp3
+Time: 185
+Artist: Yesterday's New Quintet
+AlbumArtist: Yesterday's New Quintet
+Title: Rocket Love Pt. 1
+Album: Stevie Vol. 1
+Track: 6
+Date: 2002
+Genre: Instrumental
+Composer: Stevie Wonder
+mtime: 1326332698
+song_end
+song_begin: 07-yesterdays_new_quintet-youve_got_it_bad_girl-cms.mp3
+Time: 179
+Artist: Yesterday's New Quintet
+AlbumArtist: Yesterday's New Quintet
+Title: You've Got it Bad Girl
+Album: Stevie Vol. 1
+Track: 7
+Date: 2002
+Genre: Instrumental
+Composer: Stevie Wonder
+mtime: 1326333927
+song_end
+song_begin: 08-yesterdays_new_quintet-interlude_two-cms.mp3
+Time: 19
+Artist: Yesterday's New Quintet
+AlbumArtist: Yesterday's New Quintet
+Title: Interlude Two
+Album: Stevie Vol. 1
+Track: 8
+Date: 2002
+Genre: Instrumental
+Composer: Stevie Wonder
+mtime: 1326324841
+song_end
+song_begin: 09-yesterdays_new_quintet-send_one_your_love-cms.mp3
+Time: 173
+Artist: Yesterday's New Quintet
+Title: Send One Your Love
+Album: Stevie Vol. 1
+Track: 9
+Date: 2002
+Genre: Instrumental
+mtime: 1326333080
+song_end
+song_begin: 10-yesterdays_new_quintet-too_high-cms.mp3
+Time: 156
+Artist: Yesterday's New Quintet
+Title: Too High
+Album: Stevie Vol. 1
+Track: 10
+Date: 2002
+Genre: Instrumental
+mtime: 1326332180
+song_end
+song_begin: 11-yesterdays_new_quintet-i_am_singing-cms.mp3
+Time: 197
+Artist: Yesterday's New Quintet
+Title: I Am Singing
+Album: Stevie Vol. 1
+Track: 11
+Date: 2002
+Genre: Instrumental
+mtime: 1326332917
+song_end
+song_begin: 12-yesterdays_new_quintet-interlude_three-cms.mp3
+Time: 90
+Artist: Yesterday's New Quintet
+Title: Interlude Three
+Album: Stevie Vol. 1
+Track: 12
+Date: 2002
+Genre: Instrumental
+mtime: 1326327659
+song_end
+song_begin: 13-yesterdays_new_quintet-golden_lady-cms.mp3
+Time: 224
+Artist: Yesterday's New Quintet
+Title: Golden Lady
+Album: Stevie Vol. 1
+Track: 13
+Date: 2002
+Genre: Instrumental
+mtime: 1326330689
+song_end
+song_begin: 14. yesterdays new quintet - creepin' pt. 1 and 2.mp3
+Time: 360
+Artist: Yesterday's New Quintet
+Title: Creepin' Pt. 1 and 2
+Album: Stevie Vol. 1
+Track: 14
+Date: 2002
+Genre: Instrumental
+mtime: 1326332998
+song_end
+end: Yesterdays New Quintet/stevie
+directory: uno esta 12 inch
+mtime: 1326334029
+begin: Yesterdays New Quintet/uno esta 12 inch
+song_begin: yesterday's new quintet - angles without edges - 03 - papa.mp3
+Time: 275
+Artist: Yesterday's New Quintet
+Title: Papa
+Album: Angles Without Edges
+Date: 2001
+Genre: Instrumental
+mtime: 1326333297
+song_end
+song_begin: yesterday's new quintet - angles without edges - 08 - lifes angles.mp3
+Time: 188
+Artist: Yesterday's New Quintet
+Title: Lifes Angles
+Album: Angles Without Edges
+Date: 2001
+Genre: Instrumental
+mtime: 1326332046
+song_end
+song_begin: yesterday's new quintet - angles without edges - 10 - uno esta.mp3
+Time: 225
+Artist: Yesterday's New Quintet
+Title: Uno Esta
+Album: Angles Without Edges
+Date: 2001
+Genre: Instrumental
+mtime: 1326333413
+song_end
+song_begin: 05 - Funshine.mp3
+Time: 250
+Artist: yesterdays new quintet
+AlbumArtist: Yesterday's New Quintet
+Title: funshine
+Album: ep's
+Track: 5
+Date: 2004
+Genre: R&B
+mtime: 1326330410
+song_end
+song_begin: 06 - The Science.mp3
+Time: 96
+Artist: yesterdays new quintet
+AlbumArtist: Yesterday's New Quintet
+Title: the science
+Album: ep's
+Track: 6
+Date: 2004
+Genre: R&B
+mtime: 1326325527
+song_end
+end: Yesterdays New Quintet/uno esta 12 inch
+directory: yesterdays universe
+mtime: 1326334029
+begin: Yesterdays New Quintet/yesterdays universe
+song_begin: 01-otis_jackson_jr._trio-bitches_brew-ftd.mp3
+Time: 278
+Artist: Otis Jackson Jr. Trio
+Title: Bitches Brew
+Album: Yesterdays Universe
+Track: 1
+Date: 2007
+Genre: Jazz
+mtime: 1326332398
+song_end
+song_begin: 02-the_jahari_massamba_unit_ft._karriem_riggins_trio-umoja-ftd.mp3
+Time: 340
+Artist: The Jahari Massamba Unit Ft. Karriem Riggins Trio
+Title: Umoja
+Album: Yesterdays Universe
+Track: 2
+Date: 2007
+Genre: Jazz
+mtime: 1326333363
+song_end
+song_begin: 03-young_jazz_rebels-slave_riot-ftd.mp3
+Time: 133
+Artist: Young Jazz Rebels
+Title: Slave Riot
+Album: Yesterdays Universe
+Track: 3
+Date: 2007
+Genre: Jazz
+mtime: 1326329334
+song_end
+song_begin: 04-the_last_electro-acoustic_space_jazz_and_percussion_ensemble-one_for_the_monica_lingas_band-ftd.mp3
+Time: 336
+Artist: The Last Electro-Acoustic Space Jazz & Percussion Ensemble
+Title: One For The Monica Lingas Band
+Album: Yesterdays Universe
+Track: 4
+Date: 2007
+Genre: Jazz
+mtime: 1326332655
+song_end
+song_begin: 05-kamala_walker_and_the_soul_tribe-street_talkin-ftd.mp3
+Time: 209
+Artist: Kamala Walker and The Soul Tribe
+Title: Street Talkin'
+Album: Yesterdays Universe
+Track: 5
+Date: 2007
+Genre: Jazz
+mtime: 1326332417
+song_end
+song_begin: 06-the_jazzistics-marcus_martin_and_malcolm-ftd.mp3
+Time: 205
+Artist: The Jazzistics
+Title: Marcus, Martin & Malcolm
+Album: Yesterdays Universe
+Track: 6
+Date: 2007
+Genre: Jazz
+mtime: 1326329156
+song_end
+song_begin: 07-suntouch-two_for_strata_east-ftd.mp3
+Time: 42
+Artist: Suntouch
+Title: Two For Strata East
+Album: Yesterdays Universe
+Track: 7
+Date: 2007
+Genre: Jazz
+mtime: 1326325668
+song_end
+song_begin: 08-sound_directions-shes_gonna_stay-ftd.mp3
+Time: 170
+Artist: Sound Directions
+Title: She's Gonna Stay
+Album: Yesterdays Universe
+Track: 8
+Date: 2007
+Genre: Jazz
+mtime: 1326330294
+song_end
+song_begin: 09-the_last_electro-acoustic_space_jazz_and_percussion_ensemble-cold_nights_and_rainy_days-ftd.mp3
+Time: 379
+Artist: The Last Electro-Acoustic Space Jazz & Percussion Ensemble
+Title: Cold Nights and Rainy Days
+Album: Yesterdays Universe
+Track: 9
+Date: 2007
+Genre: Jazz
+mtime: 1326333890
+song_end
+song_begin: 10-otis_jackson_jr._trio-free_son-ftd.mp3
+Time: 286
+Artist: Otis Jackson Jr. Trio
+Title: Free Son
+Album: Yesterdays Universe
+Track: 10
+Date: 2007
+Genre: Jazz
+mtime: 1326333698
+song_end
+song_begin: 11-jackson_conti-barumba-ftd.mp3
+Time: 228
+Artist: Jackson Conti
+Title: Barumba
+Album: Yesterdays Universe
+Track: 11
+Date: 2007
+Genre: Jazz
+mtime: 1326333575
+song_end
+song_begin: 12-ahmad_miller-sunny_c-ftd.mp3
+Time: 195
+Artist: Ahmad Miller
+Title: Sunny C
+Album: Yesterdays Universe
+Track: 12
+Date: 2007
+Genre: Jazz
+mtime: 1326332831
+song_end
+song_begin: 13-the_eddie_prince_fusion_band-mtumes_song-ftd.mp3
+Time: 270
+Artist: The Eddie Prince Fusion Band
+Title: Mtume's Song
+Album: Yesterdays Universe
+Track: 13
+Date: 2007
+Genre: Jazz
+mtime: 1326333514
+song_end
+song_begin: 14-yesterdays_universe_all_stars-vibes_from_the_tribes_suite-ftd.mp3
+Time: 714
+Artist: Yesterday's Universe All Stars
+Title: Vibes From The Tribes Suite
+Album: Yesterdays Universe
+Track: 14
+Date: 2007
+Genre: Jazz
+mtime: 1326331934
+song_end
+song_begin: 15-jackson_conti-upa_neguinho-ftd.mp3
+Time: 219
+Artist: Jackson Conti
+Title: Upa Neguinho
+Album: Yesterdays Universe
+Track: 15
+Date: 2007
+Genre: Jazz
+mtime: 1326333844
+song_end
+playlist_begin: 00-yesterdays_new_quintet-yesterdays_universe-advance-2007-ftd.m3u
+mtime: 1326320402
+playlist_end
+end: Yesterdays New Quintet/yesterdays universe
+end: Yesterdays New Quintet
+directory: Zoot Sims
+mtime: 1322785547
+begin: Zoot Sims
+directory: Zoot Sims - Americans Swinging In Paris-1956
+mtime: 1322785547
+begin: Zoot Sims/Zoot Sims - Americans Swinging In Paris-1956
+song_begin: Zoot Sims - Americans Swinging in Paris - 01 - Captain Jetter.mp3
+Time: 304
+Artist: Zoot Sims
+Title: Captain Jetter
+Album: Americans Swinging in Paris
+Track: 1
+Date: 1956
+Genre: Jazz
+Genre: Jazz
+mtime: 1322784304
+song_end
+song_begin: Zoot Sims - Americans Swinging in Paris - 02 - Nuzzolese Blues.mp3
+Time: 444
+Artist: Zoot Sims
+Title: Nuzzolese Blues
+Album: Americans Swinging in Paris
+Track: 2
+Date: 1956
+Genre: Jazz
+Genre: Jazz
+mtime: 1322785394
+song_end
+song_begin: Zoot Sims - Americans Swinging in Paris - 03 - Everything I Love.mp3
+Time: 261
+Artist: Zoot Sims
+Title: Everything I Love
+Album: Americans Swinging in Paris
+Track: 3
+Date: 1956
+Genre: Jazz
+Genre: Jazz
+mtime: 1322781114
+song_end
+song_begin: Zoot Sims - Americans Swinging in Paris - 04 - On the Alamo.mp3
+Time: 337
+Artist: Zoot Sims
+Title: On the Alamo
+Album: Americans Swinging in Paris
+Track: 4
+Date: 1956
+Genre: Jazz
+Genre: Jazz
+mtime: 1322785368
+song_end
+song_begin: Zoot Sims - Americans Swinging in Paris - 05 - Evening in Paris.mp3
+Time: 202
+Artist: Zoot Sims
+Title: Evening in Paris
+Album: Americans Swinging in Paris
+Track: 5
+Date: 1956
+Genre: Jazz
+Genre: Jazz
+mtime: 1322782236
+song_end
+song_begin: Zoot Sims - Americans Swinging in Paris - 06 - My Old Flame.mp3
+Time: 206
+Artist: Zoot Sims
+Title: My Old Flame
+Album: Americans Swinging in Paris
+Track: 6
+Date: 1956
+Genre: Jazz
+Genre: Jazz
+mtime: 1322784536
+song_end
+song_begin: Zoot Sims - Americans Swinging in Paris - 07 - Little Jon Special.mp3
+Time: 297
+Artist: Zoot Sims
+Title: Little Jon Special
+Album: Americans Swinging in Paris
+Track: 7
+Date: 1956
+Genre: Jazz
+Genre: Jazz
+mtime: 1322783446
+song_end
+end: Zoot Sims/Zoot Sims - Americans Swinging In Paris-1956
+directory: Zoot Sims - At The Half Note-1965
+mtime: 1322785547
+begin: Zoot Sims/Zoot Sims - At The Half Note-1965
+song_begin: Zoot Sims - Jazz Alive A Night at the Half Note - 01 - Lover, Come Back to Me.mp3
+Time: 548
+Artist: Zoot Sims
+AlbumArtist: Zoot Sims
+Title: Lover, Come Back to Me
+Album: Jazz Alive: A Night at the Half Note
+Track: 1
+Date: 1959
+Genre: Jazz
+Composer: Oscar Hammerstein II/Sigmund Romberg
+mtime: 1322784457
+song_end
+song_begin: Zoot Sims - Jazz Alive A Night at the Half Note - 02 - It Had to Be You.mp3
+Time: 615
+Artist: Zoot Sims
+AlbumArtist: Zoot Sims
+Title: It Had to Be You
+Album: Jazz Alive: A Night at the Half Note
+Track: 2
+Date: 1959
+Genre: Jazz
+Composer: Gus Kahn/Isham Jones
+mtime: 1322785510
+song_end
+song_begin: Zoot Sims - Jazz Alive A Night at the Half Note - 03 - Wee Dot.mp3
+Time: 539
+Artist: Zoot Sims
+AlbumArtist: Zoot Sims
+Title: Wee Dot
+Album: Jazz Alive: A Night at the Half Note
+Track: 3
+Date: 1959
+Genre: Jazz
+Composer: J.J. Johnson/Leo Parker
+mtime: 1322785114
+song_end
+song_begin: Zoot Sims - Jazz Alive A Night at the Half Note - 04 - After You've Gone.mp3
+Time: 687
+Artist: Zoot Sims
+AlbumArtist: Zoot Sims
+Title: After You've Gone
+Album: Jazz Alive: A Night at the Half Note
+Track: 4
+Date: 1959
+Genre: Jazz
+Composer: Henry Creamer/Turner Layton
+mtime: 1322784948
+song_end
+end: Zoot Sims/Zoot Sims - At The Half Note-1965
+directory: Zoot Sims - Basie & Zoot-1975
+mtime: 1322785547
+begin: Zoot Sims/Zoot Sims - Basie & Zoot-1975
+song_begin: 01 - I Never Knew.mp3
+Time: 283
+Artist: Zoot Sims
+Title: I Never Knew
+Album: Basie & Zoot
+Track: 1
+Date: 1975
+Genre: Jazz
+mtime: 1322785486
+song_end
+song_begin: 02 - Paper Moon.mp3
+Time: 337
+Artist: Zoot Sims
+Title: Paper Moon
+Album: Basie & Zoot
+Track: 2
+Date: 1975
+Genre: Jazz
+mtime: 1322785346
+song_end
+song_begin: 03 - Blues For Nat Cole.mp3
+Time: 396
+Artist: Zoot Sims
+Title: Blues For Nat Cole
+Album: Basie & Zoot
+Track: 3
+Date: 1975
+Genre: Jazz
+mtime: 1322784275
+song_end
+song_begin: 04 - Captain Bligh.mp3
+Time: 400
+Artist: Zoot Sims
+Title: Captain Bligh
+Album: Basie & Zoot
+Track: 4
+Date: 1975
+Genre: Jazz
+mtime: 1322783067
+song_end
+song_begin: 05 - Honeysuckle Rose.mp3
+Time: 387
+Artist: Zoot Sims
+Title: Honeysuckle Rose
+Album: Basie & Zoot
+Track: 5
+Date: 1975
+Genre: Jazz
+mtime: 1322784599
+song_end
+song_begin: 06 - Hardav.mp3
+Time: 286
+Artist: Zoot Sims
+Title: Hardav
+Album: Basie & Zoot
+Track: 6
+Date: 1975
+Genre: Jazz
+mtime: 1322782709
+song_end
+song_begin: 07 - Mean to Me.mp3
+Time: 394
+Artist: Zoot Sims
+Title: Mean to Me
+Album: Basie & Zoot
+Track: 7
+Date: 1975
+Genre: Jazz
+mtime: 1322783496
+song_end
+song_begin: 08 - I Surrender Dear.mp3
+Time: 366
+Artist: Zoot Sims
+Title: I Surrender Dear
+Album: Basie & Zoot
+Track: 8
+Date: 1975
+Genre: Jazz
+mtime: 1322785463
+song_end
+end: Zoot Sims/Zoot Sims - Basie & Zoot-1975
+directory: Zoot Sims - Bohemia After Dark-1956
+mtime: 1322785547
+begin: Zoot Sims/Zoot Sims - Bohemia After Dark-1956
+song_begin: Zoot Sims - Bohemia After Dark - 01 - 9.20 Special.mp3
+Time: 294
+Artist: Zoot Sims
+Title: 9.20 Special
+Album: Bohemia After Dark
+Track: 1
+Date: 56-5
+Genre: Jazz
+mtime: 1322784332
+song_end
+song_begin: Zoot Sims - Bohemia After Dark - 02 - The Man I Love.mp3
+Time: 314
+Artist: Zoot Sims
+Title: The Man I Love
+Album: Bohemia After Dark
+Track: 2
+Date: 56-5
+Genre: Jazz
+mtime: 1322783950
+song_end
+song_begin: Zoot Sims - Bohemia After Dark - 03 - 55th And State.mp3
+Time: 284
+Artist: Zoot Sims
+Title: 55th And State
+Album: Bohemia After Dark
+Track: 3
+Date: 56-5
+Genre: Jazz
+mtime: 1322785502
+song_end
+song_begin: Zoot Sims - Bohemia After Dark - 04 - The Blue Room.mp3
+Time: 309
+Artist: Zoot Sims
+Title: The Blue Room
+Album: Bohemia After Dark
+Track: 4
+Date: 56-5
+Genre: Jazz
+mtime: 1322784007
+song_end
+song_begin: Zoot Sims - Bohemia After Dark - 05 - Gus's Blues.mp3
+Time: 258
+Artist: Zoot Sims
+Title: Gus's Blues
+Album: Bohemia After Dark
+Track: 5
+Date: 56-5
+Genre: Jazz
+mtime: 1322783486
+song_end
+song_begin: Zoot Sims - Bohemia After Dark - 06 - That Old Feeling.mp3
+Time: 333
+Artist: Zoot Sims
+Title: That Old Feeling
+Album: Bohemia After Dark
+Track: 6
+Date: 56-5
+Genre: Jazz
+mtime: 1322785041
+song_end
+song_begin: Zoot Sims - Bohemia After Dark - 07 - Bohemia After Dark.mp3
+Time: 215
+Artist: Zoot Sims
+Title: Bohemia After Dark
+Album: Bohemia After Dark
+Track: 7
+Date: 56-5
+Genre: Jazz
+mtime: 1322785527
+song_end
+song_begin: Zoot Sims - Bohemia After Dark - 08 - Woody 'N You.mp3
+Time: 321
+Artist: Zoot Sims
+Title: Woody 'N You
+Album: Bohemia After Dark
+Track: 8
+Date: 56-5
+Genre: Jazz
+mtime: 1322785093
+song_end
+song_begin: Zoot Sims - Bohemia After Dark - 09 - A Don't Stand A Ghost Of A Change With You.mp3
+Time: 405
+Artist: Zoot Sims
+Title: A Don't Stand A Ghost Of A Cha
+Album: Bohemia After Dark
+Track: 9
+Date: 56-5
+mtime: 1322780503
+song_end
+song_begin: Zoot Sims - Bohemia After Dark - 10 - September In The Rain.mp3
+Time: 314
+Artist: Zoot Sims
+Title: September In The Rain
+Album: Bohemia After Dark
+Track: 10
+Date: 56-5
+mtime: 1322784404
+song_end
+song_begin: Zoot Sims - Bohemia After Dark - 11 - The Nearness Of You.mp3
+Time: 212
+Artist: Zoot Sims
+Title: The Nearness Of You
+Album: Bohemia After Dark
+Track: 11
+Date: 56-5
+mtime: 1322785400
+song_end
+song_begin: Zoot Sims - Bohemia After Dark - 12 - Skylark.mp3
+Time: 245
+Artist: Zoot Sims
+Title: Skylark
+Album: Bohemia After Dark
+Track: 12
+Genre: Jazz
+Genre: Jazz
+mtime: 1322784162
+song_end
+song_begin: Zoot Sims - Bohemia After Dark - 13 - Two Sleepy People.mp3
+Time: 254
+Artist: Zoot Sims
+Title: Two Sleepy People
+Album: Bohemia After Dark
+Track: 13
+Date: 56-5
+mtime: 1322778572
+song_end
+end: Zoot Sims/Zoot Sims - Bohemia After Dark-1956
+directory: Zoot Sims - Choice-1959
+mtime: 1322785547
+begin: Zoot Sims/Zoot Sims - Choice-1959
+song_begin: Zoot Sims - Choice - 01 - I'll Remember April.mp3
+Time: 261
+Artist: Zoot Sims
+AlbumArtist: Zoot Sims
+Title: I'll Remember April
+Album: Choice
+Track: 1
+Date: 1959
+Genre: Jazz
+Composer: Don Raye/Gene DePaul/Patricia Johnston
+mtime: 1322783442
+song_end
+song_begin: Zoot Sims - Choice - 02 - Flamingo.mp3
+Time: 149
+Artist: Zoot Sims
+AlbumArtist: Zoot Sims
+Title: Flamingo
+Album: Choice
+Track: 2
+Date: 1959
+Genre: Jazz
+Composer: Edmund Anderson/Ted Grouya
+mtime: 1322785233
+song_end
+song_begin: Zoot Sims - Choice - 03 - There Will Never Be Another You.mp3
+Time: 302
+Artist: Zoot Sims
+AlbumArtist: Zoot Sims
+Title: There Will Never Be Another You
+Album: Choice
+Track: 3
+Date: 1959
+Genre: Jazz
+Composer: Harry Warren/Irving Gordon
+mtime: 1322785470
+song_end
+song_begin: Zoot Sims - Choice - 04 - Red Door.mp3
+Time: 444
+Artist: Zoot Sims
+AlbumArtist: Zoot Sims
+Title: Red Door
+Album: Choice
+Track: 4
+Date: 1959
+Genre: Jazz
+Composer: Gerry Mulligan/Zoot Sims
+mtime: 1322784734
+song_end
+song_begin: Zoot Sims - Choice - 05 - You're Driving Me Crazy.mp3
+Time: 292
+Artist: Zoot Sims
+AlbumArtist: Zoot Sims
+Title: You're Driving Me Crazy
+Album: Choice
+Track: 5
+Date: 1959
+Genre: Jazz
+Composer: Walter Donaldson
+mtime: 1322784871
+song_end
+song_begin: Zoot Sims - Choice - 06 - Brushes.mp3
+Time: 343
+Artist: Zoot Sims
+AlbumArtist: Zoot Sims
+Title: Brushes
+Album: Choice
+Track: 6
+Date: 1959
+Genre: Jazz
+Composer: Russ Freeman/Sam M. Lewis
+mtime: 1322784960
+song_end
+song_begin: Zoot Sims - Choice - 07 - Choice Blues.mp3
+Time: 266
+Artist: Zoot Sims
+AlbumArtist: Zoot Sims
+Title: Choice Blues
+Album: Choice
+Track: 7
+Date: 1959
+Genre: Jazz
+Composer: Russ Freeman
+mtime: 1322784169
+song_end
+end: Zoot Sims/Zoot Sims - Choice-1959
+directory: Zoot Sims - Down Home-1960
+mtime: 1322785547
+begin: Zoot Sims/Zoot Sims - Down Home-1960
+song_begin: Zoot Sims Quartet - Down Home - 01 - Jive at Five.mp3
+Time: 312
+Artist: Zoot Sims Quartet
+Title: Jive at Five
+Album: Down Home
+Track: 1
+Genre: Jazz
+mtime: 1322785427
+song_end
+song_begin: Zoot Sims Quartet - Down Home - 02 - Doggin' Around.mp3
+Time: 272
+Artist: Zoot Sims Quartet
+Title: Doggin' Around
+Album: Down Home
+Track: 2
+Genre: Jazz
+mtime: 1322784909
+song_end
+song_begin: Zoot Sims Quartet - Down Home - 03 - Avalon.mp3
+Time: 263
+Artist: Zoot Sims Quartet
+Title: Avalon
+Album: Down Home
+Track: 3
+Genre: Jazz
+mtime: 1322782108
+song_end
+song_begin: Zoot Sims Quartet - Down Home - 04 - I Cried For You.mp3
+Time: 404
+Artist: Zoot Sims Quartet
+Title: I Cried For You
+Album: Down Home
+Track: 4
+Genre: Jazz
+mtime: 1322784354
+song_end
+song_begin: Zoot Sims Quartet - Down Home - 05 - Bill Bailey.mp3
+Time: 310
+Artist: Zoot Sims Quartet
+Title: Bill Bailey
+Album: Down Home
+Track: 5
+Genre: Jazz
+mtime: 1322785120
+song_end
+song_begin: Zoot Sims Quartet - Down Home - 06 - Goodnight Sweetheart.mp3
+Time: 255
+Artist: Zoot Sims Quartet
+Title: Goodnight Sweetheart
+Album: Down Home
+Track: 6
+Genre: Jazz
+mtime: 1322780883
+song_end
+song_begin: Zoot Sims Quartet - Down Home - 07 - There'll Be Some Changes Made.mp3
+Time: 316
+Artist: Zoot Sims Quartet
+Title: There'll Be Some Changes Made
+Album: Down Home
+Track: 7
+Genre: Jazz
+mtime: 1322784361
+song_end
+song_begin: Zoot Sims Quartet - Down Home - 08 - I've Heard That Blues Before.mp3
+Time: 324
+Artist: Zoot Sims Quartet
+Title: I've Heard That Blues Before
+Album: Down Home
+Track: 8
+Genre: Jazz
+mtime: 1322785008
+song_end
+end: Zoot Sims/Zoot Sims - Down Home-1960
+directory: Zoot Sims - East Coast Sounds-1956
+mtime: 1322785547
+begin: Zoot Sims/Zoot Sims - East Coast Sounds-1956
+song_begin: Zoot Sims, Al Cohn And Tony Scott - East Coast Sounds - 01 - Treat Me Rough.mp3
+Time: 74
+Artist: Zoot Sims, Al Cohn And Tony Scott
+Title: Treat Me Rough
+Album: East Coast Sounds
+Track: 1
+Genre: Jazz
+Genre: Jazz
+mtime: 1322784123
+song_end
+song_begin: Zoot Sims, Al Cohn And Tony Scott - East Coast Sounds - 02 - Looking At You.mp3
+Time: 118
+Artist: Zoot Sims, Al Cohn And Tony Scott
+Title: Looking At You
+Album: East Coast Sounds
+Track: 2
+Genre: Jazz
+Genre: Jazz
+mtime: 1322784510
+song_end
+song_begin: Zoot Sims, Al Cohn And Tony Scott - East Coast Sounds - 03 - Love Me Tomorrow (But Leave Me Alone Today).mp3
+Time: 147
+Artist: Zoot Sims, Al Cohn And Tony Scott
+Title: Love Me Tomorrow (But Leave Me Alone Today)
+Album: East Coast Sounds
+Track: 3
+Genre: Jazz
+Genre: Jazz
+mtime: 1322784465
+song_end
+song_begin: Zoot Sims, Al Cohn And Tony Scott - East Coast Sounds - 04 - Trigger Happy.mp3
+Time: 77
+Artist: Zoot Sims, Al Cohn And Tony Scott
+Title: Trigger Happy
+Album: East Coast Sounds
+Track: 4
+Genre: Jazz
+Genre: Jazz
+mtime: 1322784745
+song_end
+song_begin: Zoot Sims, Al Cohn And Tony Scott - East Coast Sounds - 05 - Tranquilizer.mp3
+Time: 116
+Artist: Zoot Sims, Al Cohn And Tony Scott
+Title: Tranquilizer
+Album: East Coast Sounds
+Track: 5
+Genre: Jazz
+Genre: Jazz
+mtime: 1322783471
+song_end
+song_begin: Zoot Sims, Al Cohn And Tony Scott - East Coast Sounds - 06 - I Like The Likes Of You.mp3
+Time: 112
+Artist: Zoot Sims, Al Cohn And Tony Scott
+Title: I Like The Likes Of You
+Album: East Coast Sounds
+Track: 6
+Genre: Jazz
+Genre: Jazz
+mtime: 1322779321
+song_end
+song_begin: Zoot Sims, Al Cohn And Tony Scott - East Coast Sounds - 07 - I Wish I Were In Love Again.mp3
+Time: 109
+Artist: Zoot Sims, Al Cohn And Tony Scott
+Title: I Wish I Were In Love Again
+Album: East Coast Sounds
+Track: 7
+Genre: Jazz
+Genre: Jazz
+mtime: 1322781011
+song_end
+song_begin: Zoot Sims, Al Cohn And Tony Scott - East Coast Sounds - 08 - I Don't Want To Be Alone Again.mp3
+Time: 84
+Artist: Zoot Sims, Al Cohn And Tony Scott
+Title: I Don't Want To Be Alone Again
+Album: East Coast Sounds
+Track: 8
+Genre: Jazz
+Genre: Jazz
+mtime: 1322783770
+song_end
+song_begin: Zoot Sims, Al Cohn And Tony Scott - East Coast Sounds - 09 - Trigger Fantasy.mp3
+Time: 144
+Artist: Zoot Sims, Al Cohn And Tony Scott
+Title: Trigger Fantasy
+Album: East Coast Sounds
+Track: 9
+Genre: Jazz
+Genre: Jazz
+mtime: 1322784966
+song_end
+song_begin: Zoot Sims, Al Cohn And Tony Scott - East Coast Sounds - 10 - Where's That Rainbow.mp3
+Time: 110
+Artist: Zoot Sims, Al Cohn And Tony Scott
+Title: Where's That Rainbow?
+Album: East Coast Sounds
+Track: 10
+Genre: Jazz
+Genre: Jazz
+mtime: 1322784110
+song_end
+end: Zoot Sims/Zoot Sims - East Coast Sounds-1956
+directory: Zoot Sims - Either Way-1961
+mtime: 1322785547
+begin: Zoot Sims/Zoot Sims - Either Way-1961
+song_begin: Zoot Sims - Either Way - 01 - P-Town.mp3
+Time: 318
+Artist: Zoot Sims
+Title: P-Town
+Album: Either Way
+Track: 1
+Date: 1961
+Genre: Jazz
+mtime: 1322783475
+song_end
+song_begin: Zoot Sims - Either Way - 02 - I Like It Like That.mp3
+Time: 152
+Artist: Zoot Sims
+Title: I Like It Like That
+Album: Either Way
+Track: 2
+Date: 1961
+Genre: Jazz
+mtime: 1322784950
+song_end
+song_begin: Zoot Sims - Either Way - 03 - Sweet Lorraine.mp3
+Time: 206
+Artist: Zoot Sims
+Title: Sweet Lorraine
+Album: Either Way
+Track: 3
+Date: 1961
+Genre: Jazz
+mtime: 1322784059
+song_end
+song_begin: Zoot Sims - Either Way - 04 - Autumn Leaves.mp3
+Time: 292
+Artist: Zoot Sims
+Title: Autumn Leaves
+Album: Either Way
+Track: 4
+Date: 1961
+Genre: Jazz
+mtime: 1322785148
+song_end
+song_begin: Zoot Sims - Either Way - 05 - The Thing.mp3
+Time: 301
+Artist: Zoot Sims
+Title: The Thing
+Album: Either Way
+Track: 5
+Date: 1961
+Genre: Jazz
+mtime: 1322785480
+song_end
+song_begin: Zoot Sims - Either Way - 06 - I'm Tellin' Ya.mp3
+Time: 294
+Artist: Zoot Sims
+Title: I'm Tellin' Ya
+Album: Either Way
+Track: 6
+Date: 1961
+Genre: Jazz
+mtime: 1322784194
+song_end
+song_begin: Zoot Sims - Either Way - 07 - Nagasaki.mp3
+Time: 156
+Artist: Zoot Sims
+Title: Nagasaki
+Album: Either Way
+Track: 7
+Date: 1961
+Genre: Jazz
+mtime: 1322784558
+song_end
+song_begin: Zoot Sims - Either Way - 08 - Morning Fun.mp3
+Time: 375
+Artist: Zoot Sims
+Title: Morning Fun
+Album: Either Way
+Track: 8
+Date: 1961
+Genre: Jazz
+mtime: 1322782430
+song_end
+end: Zoot Sims/Zoot Sims - Either Way-1961
+directory: Zoot Sims - Flower Walts-1978
+mtime: 1322785547
+begin: Zoot Sims/Zoot Sims - Flower Walts-1978
+song_begin: Zoot Sims - Flower Walts - 01 - Flower Walts.mp3
+Time: 487
+Artist: Zoot Sims
+Title: Flower Walts
+Album: Flower Walts
+Track: 01
+Date: 1978
+Genre: Jazz
+mtime: 1322785249
+song_end
+song_begin: Zoot Sims - Flower Walts - 02 - Groovin' High.mp3
+Time: 578
+Artist: Zoot Sims
+Title: Groovin' High
+Album: Flower Walts
+Track: 02
+Date: 1978
+Genre: Jazz
+mtime: 1322785258
+song_end
+song_begin: Zoot Sims - Flower Walts - 03 - Come Rain Or Come Shine.mp3
+Time: 286
+Artist: Zoot Sims
+Title: Come Rain Or Come Shine
+Album: Flower Walts
+Track: 03
+Date: 1978
+Genre: Jazz
+mtime: 1322784572
+song_end
+song_begin: Zoot Sims - Flower Walts - 04 - Fled.mp3
+Time: 465
+Artist: Zoot Sims
+Title: Fled
+Album: Flower Walts
+Track: 04
+Date: 1978
+Genre: Jazz
+mtime: 1322785050
+song_end
+song_begin: Zoot Sims - Flower Walts - 05 - I Wonder Where Our Has Gone.mp3
+Time: 438
+Artist: Zoot Sims
+Title: I Wonder Where Our Has Gone
+Album: Flower Walts
+Track: 05
+Date: 1978
+Genre: Jazz
+mtime: 1322784635
+song_end
+song_begin: Zoot Sims - Flower Walts - 06 - In A Mellow Tone.mp3
+Time: 313
+Artist: Zoot Sims
+Title: In A Mellow Tone
+Album: Flower Walts
+Track: 06
+Date: 1978
+Genre: Jazz
+mtime: 1322785285
+song_end
+song_begin: Zoot Sims - Flower Walts - 07 - I Got It Bad.mp3
+Time: 134
+Artist: Zoot Sims
+Title: I Got It Bad
+Album: Flower Walts
+Track: 07
+Date: 1978
+Genre: Jazz
+mtime: 1322784869
+song_end
+song_begin: Zoot Sims - Flower Walts - 08 - Caravan.mp3
+Time: 385
+Artist: Zoot Sims
+Title: Caravan
+Album: Flower Walts
+Track: 08
+Date: 1978
+Genre: Jazz
+mtime: 1322785545
+song_end
+end: Zoot Sims/Zoot Sims - Flower Walts-1978
+directory: Zoot Sims - For Lady Day-1978
+mtime: 1322785547
+begin: Zoot Sims/Zoot Sims - For Lady Day-1978
+song_begin: Zoot Sims - For Lady Day - 01 - Easy Living.mp3
+Time: 222
+Artist: Zoot Sims
+AlbumArtist: Zoot Sims
+Title: Easy Living
+Album: For Lady Day
+Track: 01
+Date: 1978
+Genre: Jazz
+Composer: Leo Robin/Ralph Rainger
+mtime: 1322785433
+song_end
+song_begin: Zoot Sims - For Lady Day - 02 - That Old Devil Called Love.mp3
+Time: 301
+Artist: Zoot Sims
+AlbumArtist: Zoot Sims
+Title: That Old Devil Called Love
+Album: For Lady Day
+Track: 02
+Date: 1978
+Genre: Jazz
+Composer: Allan Roberts/Doris Fisher
+mtime: 1322784974
+song_end
+song_begin: Zoot Sims - For Lady Day - 03 - Some Other Spring.mp3
+Time: 298
+Artist: Zoot Sims
+AlbumArtist: Zoot Sims
+Title: Some Other Spring
+Album: For Lady Day
+Track: 03
+Date: 1978
+Genre: Jazz
+Composer: Arthur Herzog Jr.
+mtime: 1322785516
+song_end
+song_begin: Zoot Sims - For Lady Day - 04 - I Cover the Waterfront.mp3
+Time: 267
+Artist: Zoot Sims
+AlbumArtist: Zoot Sims
+Title: I Cover the Waterfront
+Album: For Lady Day
+Track: 04
+Date: 1978
+Genre: Jazz
+Composer: Edward Heyman/Johnny Green
+mtime: 1322785315
+song_end
+song_begin: Zoot Sims - For Lady Day - 05 - You Go to My Head.mp3
+Time: 350
+Artist: Zoot Sims
+AlbumArtist: Zoot Sims
+Title: You Go to My Head
+Album: For Lady Day
+Track: 05
+Date: 1978
+Genre: Jazz
+Composer: Haven Gillespie/J. Fred Coots
+mtime: 1322784988
+song_end
+song_begin: Zoot Sims - For Lady Day - 06 - I Cried for You.mp3
+Time: 272
+Artist: Zoot Sims
+AlbumArtist: Zoot Sims
+Title: I Cried for You
+Album: For Lady Day
+Track: 06
+Date: 1978
+Genre: Jazz
+Composer: Abe Lyman/Arthur Freed/Gus Arnheim
+mtime: 1322785237
+song_end
+song_begin: Zoot Sims - For Lady Day - 07 - Body and Soul.mp3
+Time: 342
+Artist: Zoot Sims
+AlbumArtist: Zoot Sims
+Title: Body and Soul
+Album: For Lady Day
+Track: 07
+Date: 1978
+Genre: Jazz
+Composer: Edward Heyman/Frank Eyton/Johnny Green/Robert Sour
+mtime: 1322784999
+song_end
+song_begin: Zoot Sims - For Lady Day - 08 - Trav'lin' Light.mp3
+Time: 288
+Artist: Zoot Sims
+AlbumArtist: Zoot Sims
+Title: Trav'lin' Light
+Album: For Lady Day
+Track: 08
+Date: 1978
+Genre: Jazz
+Composer: Jimmy Mundy/Johnny Mercer/Trummy Young
+mtime: 1322785534
+song_end
+song_begin: Zoot Sims - For Lady Day - 09 - You're My Thrill.mp3
+Time: 225
+Artist: Zoot Sims
+AlbumArtist: Zoot Sims
+Title: You're My Thrill
+Album: For Lady Day
+Track: 09
+Date: 1978
+Genre: Jazz
+Composer: Claire/Jay Gorney/Sidney Clare
+mtime: 1322784687
+song_end
+song_begin: Zoot Sims - For Lady Day - 10 - No More.mp3
+Time: 184
+Artist: Zoot Sims
+AlbumArtist: Zoot Sims
+Title: No More
+Album: For Lady Day
+Track: 10
+Date: 1978
+Genre: Jazz
+Composer: Bob Russell/Tutti Camarata
+mtime: 1322784672
+song_end
+song_begin: Zoot Sims - For Lady Day - 11 - My Man.mp3
+Time: 319
+Artist: Zoot Sims
+AlbumArtist: Zoot Sims
+Title: My Man
+Album: For Lady Day
+Track: 11
+Date: 1978
+Genre: Jazz
+Composer: Albert Willemetz/Channing Pollack/Jacques Charles/Maurice Yvain
+mtime: 1322783800
+song_end
+end: Zoot Sims/Zoot Sims - For Lady Day-1978
+directory: Zoot Sims - Hawthorne nights-1977
+mtime: 1322785547
+begin: Zoot Sims/Zoot Sims - Hawthorne nights-1977
+song_begin: Zoot Sims - Hawthorne Nights - 01 - Hawthorne Nights.mp3
+Time: 274
+Artist: Zoot Sims
+Title: Hawthorne Nights
+Album: Hawthorne Nights
+Track: 1
+Date: 1977
+Genre: Jazz
+mtime: 1322783623
+song_end
+song_begin: Zoot Sims - Hawthorne Nights - 02 - Main Stem.mp3
+Time: 295
+Artist: Zoot Sims
+Title: Main Stem
+Album: Hawthorne Nights
+Track: 2
+Date: 1977
+Genre: Jazz
+mtime: 1322785087
+song_end
+song_begin: Zoot Sims - Hawthorne Nights - 03 - More Than You Know.mp3
+Time: 351
+Artist: Zoot Sims
+Title: More Than You Know
+Album: Hawthorne Nights
+Track: 3
+Date: 1977
+Genre: Jazz
+mtime: 1322783548
+song_end
+song_begin: Zoot Sims - Hawthorne Nights - 04 - Only a Rose.mp3
+Time: 299
+Artist: Zoot Sims
+Title: Only a Rose
+Album: Hawthorne Nights
+Track: 4
+Date: 1977
+Genre: Jazz
+mtime: 1322782764
+song_end
+song_begin: Zoot Sims - Hawthorne Nights - 05 - The Girl From Ipanema.mp3
+Time: 241
+Artist: Zoot Sims
+Title: The Girl From Ipanema
+Album: Hawthorne Nights
+Track: 5
+Date: 1977
+Genre: Jazz
+mtime: 1322782810
+song_end
+song_begin: Zoot Sims - Hawthorne Nights - 06 - I Got it Bad.mp3
+Time: 369
+Artist: Zoot Sims
+Title: I Got it Bad
+Album: Hawthorne Nights
+Track: 6
+Date: 1977
+Genre: Jazz
+mtime: 1322781478
+song_end
+song_begin: Zoot Sims - Hawthorne Nights - 07 - Fillings.mp3
+Time: 317
+Artist: Zoot Sims
+Title: Fillings
+Album: Hawthorne Nights
+Track: 7
+Date: 1977
+Genre: Jazz
+mtime: 1322784805
+song_end
+song_begin: Zoot Sims - Hawthorne Nights - 08 - Dark Clouds.mp3
+Time: 257
+Artist: Zoot Sims
+Title: Dark Clouds
+Album: Hawthorne Nights
+Track: 8
+Date: 1977
+Genre: Jazz
+mtime: 1322782658
+song_end
+end: Zoot Sims/Zoot Sims - Hawthorne nights-1977
+directory: Zoot Sims - In Copenhagen-1995
+mtime: 1322785547
+begin: Zoot Sims/Zoot Sims - In Copenhagen-1995
+song_begin: 01 - Sims, Zoot - Zoot Sims In Copenhagen - Too Close For Comfort.mp3
+Time: 584
+Artist: Sims, Zoot
+Title: Too Close for Comfort
+Album: Zoot Sims in Copenhagen
+Track: 01
+Date: 1995
+Genre: Jazz
+mtime: 1322785419
+song_end
+song_begin: 02 - Sims, Zoot - Zoot Sims In Copenhagen - (I Wonder) Where Our Love Has Gone.mp3
+Time: 449
+Artist: Sims, Zoot
+Title: (I Wonder) Where Our Love Has Gone
+Album: Zoot Sims in Copenhagen
+Track: 02/09
+Date: 1995
+Genre: Jazz
+mtime: 1322784037
+song_end
+song_begin: 03 - Sims, Zoot - Zoot Sims In Copenhagen - In A Mellow Tone.mp3
+Time: 591
+Artist: Sims, Zoot
+Title: In a Mellow Tone
+Album: Zoot Sims in Copenhagen
+Track: 03/09
+Date: 1995
+Genre: Jazz
+mtime: 1322785360
+song_end
+song_begin: 04 - Sims, Zoot - Zoot Sims In Copenhagen - I Got It Bad (And That Ain't Good).mp3
+Time: 460
+Artist: Sims, Zoot
+Title: I Got It Bad (And That Ain't Good)
+Album: Zoot Sims in Copenhagen
+Track: 04/09
+Date: 1995
+Genre: Jazz
+mtime: 1322784809
+song_end
+song_begin: 05 - Sims, Zoot - Zoot Sims In Copenhagen - Caravan.mp3
+Time: 528
+Artist: Sims, Zoot
+Title: Caravan
+Album: Zoot Sims in Copenhagen
+Track: 05/09
+Date: 1995
+Genre: Jazz
+mtime: 1322785269
+song_end
+song_begin: 06 - Sims, Zoot - Zoot Sims In Copenhagen - Softly, As In A Morning Sunrise.mp3
+Time: 494
+Artist: Sims, Zoot
+Title: Softly, As in a Morning Sunrise
+Album: Zoot Sims in Copenhagen
+Track: 06/09
+Date: 1995
+Genre: Jazz
+mtime: 1322785196
+song_end
+song_begin: 07 - Sims, Zoot - Zoot Sims In Copenhagen - All The Things You Are.mp3
+Time: 424
+Artist: Sims, Zoot
+Title: All the Things You Are
+Album: Zoot Sims in Copenhagen
+Track: 07/09
+Date: 1995
+Genre: Jazz
+mtime: 1322785547
+song_end
+song_begin: 08 - Sims, Zoot - Zoot Sims In Copenhagen - I'll Remember April.mp3
+Time: 556
+Artist: Sims, Zoot
+Title: I'll Remember April
+Album: Zoot Sims in Copenhagen
+Track: 08/09
+Date: 1995
+Genre: Jazz
+mtime: 1322785304
+song_end
+song_begin: 09 - Sims, Zoot - Zoot Sims In Copenhagen - Morning Fun.mp3
+Time: 297
+Artist: Sims, Zoot
+Title: Morning Fun
+Album: Zoot Sims in Copenhagen
+Track: 09/09
+Date: 1995
+Genre: Jazz
+mtime: 1322784916
+song_end
+end: Zoot Sims/Zoot Sims - In Copenhagen-1995
+directory: Zoot Sims - In Paris-Quartet & Sextet-1962
+mtime: 1322785547
+begin: Zoot Sims/Zoot Sims - In Paris-Quartet & Sextet-1962
+song_begin: Zoot Sims - In Paris - 01 - Night And Day.mp3
+Time: 180
+Artist: Zoot Sims
+Title: Night And Day
+Album: In Paris
+Track: 1
+Date: 1962
+Genre: Jazz
+mtime: 1322785425
+song_end
+song_begin: Zoot Sims - In Paris - 02 - Night And Day (Take 2).mp3
+Time: 178
+Artist: Zoot Sims
+Title: Night And Day (Take 2)
+Album: In Paris
+Track: 2
+Date: 1962
+Genre: Jazz
+mtime: 1322776510
+song_end
+song_begin: Zoot Sims - In Paris - 03 - Night And Day.mp3
+Time: 179
+Artist: Zoot Sims
+Title: Night And Day
+Album: In Paris
+Track: 3
+Date: 1962
+Genre: Jazz
+mtime: 1322782710
+song_end
+song_begin: Zoot Sims - In Paris - 04 - Slingin' Hash.mp3
+Time: 200
+Artist: Zoot Sims
+Title: Slingin' Hash
+Album: In Paris
+Track: 4
+Date: 1962
+Genre: Jazz
+mtime: 1322785544
+song_end
+song_begin: Zoot Sims - In Paris - 05 - Slingin' Hash.mp3
+Time: 211
+Artist: Zoot Sims
+Title: Slingin' Hash
+Album: In Paris
+Track: 5
+Date: 1962
+Genre: Jazz
+mtime: 1322784380
+song_end
+song_begin: Zoot Sims - In Paris - 06 - Tenorly.mp3
+Time: 168
+Artist: Zoot Sims
+Title: Tenorly
+Album: In Paris
+Track: 6
+Date: 1962
+Genre: Jazz
+mtime: 1322778996
+song_end
+song_begin: Zoot Sims - In Paris - 07 - Tenorly.mp3
+Time: 171
+Artist: Zoot Sims
+Title: Tenorly
+Album: In Paris
+Track: 7
+Date: 1962
+Genre: Jazz
+mtime: 1322784000
+song_end
+song_begin: Zoot Sims - In Paris - 08 - Tenorly.mp3
+Time: 168
+Artist: Zoot Sims
+Title: Tenorly
+Album: In Paris
+Track: 8
+Date: 1962
+Genre: Jazz
+mtime: 1322784437
+song_end
+song_begin: Zoot Sims - In Paris - 09 - Zoot And Zoot.mp3
+Time: 202
+Artist: Zoot Sims
+Title: Zoot And Zoot
+Album: In Paris
+Track: 9
+Date: 1962
+Genre: Jazz
+mtime: 1322778964
+song_end
+song_begin: Zoot Sims - In Paris - 10 - I Understand.mp3
+Time: 221
+Artist: Zoot Sims
+Title: I Understand
+Album: In Paris
+Track: 10
+Date: 1962
+Genre: Jazz
+mtime: 1322783505
+song_end
+song_begin: Zoot Sims - In Paris - 11 - I Understand.mp3
+Time: 214
+Artist: Zoot Sims
+Title: I Understand
+Album: In Paris
+Track: 11
+Date: 1962
+Genre: Jazz
+mtime: 1322780990
+song_end
+song_begin: Zoot Sims - In Paris - 12 - Don't Worry About Me.mp3
+Time: 189
+Artist: Zoot Sims
+Title: Don't Worry About Me
+Album: In Paris
+Track: 12
+Date: 1962
+Genre: Jazz
+mtime: 1322782755
+song_end
+song_begin: Zoot Sims - In Paris - 13 - Crystal.mp3
+Time: 194
+Artist: Zoot Sims
+Title: Crystal
+Album: In Paris
+Track: 13
+Date: 1962
+Genre: Jazz
+mtime: 1322777405
+song_end
+song_begin: Zoot Sims - In Paris - 14 - Toot's Suite.mp3
+Time: 353
+Artist: Zoot Sims
+Title: Toot's Suite
+Album: In Paris
+Track: 14
+Date: 1962
+Genre: Jazz
+mtime: 1322781837
+song_end
+song_begin: Zoot Sims - In Paris - 15 - the Late Tiny Kahn.mp3
+Time: 268
+Artist: Zoot Sims
+Title: the Late Tiny Kahn
+Album: In Paris
+Track: 15
+Date: 1962
+Genre: Jazz
+mtime: 1322782620
+song_end
+song_begin: Zoot Sims - In Paris - 16 - Call it Anything.mp3
+Time: 199
+Artist: Zoot Sims
+Title: Call it Anything
+Album: In Paris
+Track: 16
+Date: 1962
+Genre: Jazz
+mtime: 1322782871
+song_end
+song_begin: Zoot Sims - In Paris - 17 - Zoot's Suite.mp3
+Time: 252
+Artist: Zoot Sims
+Title: Zoot's Suite
+Album: In Paris
+Track: 17
+Date: 1962
+Genre: Jazz
+mtime: 1322785215
+song_end
+song_begin: Zoot Sims - In Paris - 18 - Once in a While.mp3
+Time: 213
+Artist: Zoot Sims
+Title: Once in a While
+Album: In Paris
+Track: 18
+Date: 1962
+Genre: Jazz
+mtime: 1322783794
+song_end
+song_begin: Zoot Sims - In Paris - 19 - Great Drums.mp3
+Time: 163
+Artist: Zoot Sims
+Title: Great Drums
+Album: In Paris
+Track: 19
+Date: 1962
+Genre: Jazz
+mtime: 1322785201
+song_end
+end: Zoot Sims/Zoot Sims - In Paris-Quartet & Sextet-1962
+directory: Zoot Sims - In a Sentimental Mood-1986
+mtime: 1322785547
+begin: Zoot Sims/Zoot Sims - In a Sentimental Mood-1986
+song_begin: Zoot Sims - In a Sentimental Mood - 01 - Gone With The Wind.mp3
+Time: 621
+Artist: Zoot Sims
+Title: Gone With The Wind
+Album: In a Sentimental Mood
+Track: 1
+Date: 1986
+Genre: Jazz
+mtime: 1322783581
+song_end
+song_begin: Zoot Sims - In a Sentimental Mood - 02 - Tis Autumn.mp3
+Time: 360
+Artist: Zoot Sims
+Title: Tis Autumn
+Album: In a Sentimental Mood
+Track: 2
+Date: 1986
+Genre: Jazz
+mtime: 1322785495
+song_end
+song_begin: Zoot Sims - In a Sentimental Mood - 03 - Sweet Lorraine.mp3
+Time: 468
+Artist: Zoot Sims
+Title: Sweet Lorraine
+Album: In a Sentimental Mood
+Track: 3
+Date: 1986
+Genre: Jazz
+mtime: 1322785386
+song_end
+song_begin: Zoot Sims - In a Sentimental Mood - 04 - Castle Blues.mp3
+Time: 476
+Artist: Zoot Sims
+Title: Castle Blues
+Album: In a Sentimental Mood
+Track: 4
+Date: 1986
+Genre: Jazz
+mtime: 1322784767
+song_end
+song_begin: Zoot Sims - In a Sentimental Mood - 05 - In A Sentimental Mood.mp3
+Time: 273
+Artist: Zoot Sims
+Title: In A Sentimental Mood
+Album: In a Sentimental Mood
+Track: 5
+Date: 1986
+Genre: Jazz
+mtime: 1322785339
+song_end
+song_begin: Zoot Sims - In a Sentimental Mood - 06 - Autum Leaves (Les Feuilles Mortes).mp3
+Time: 443
+Artist: Zoot Sims
+Title: Autum Leaves (Les Feuilles Mortes)
+Album: In a Sentimental Mood
+Track: 6
+Date: 1986
+Genre: Jazz
+mtime: 1322784837
+song_end
+end: Zoot Sims/Zoot Sims - In a Sentimental Mood-1986
+directory: Zoot Sims - Innocent Years-1982
+mtime: 1322785547
+begin: Zoot Sims/Zoot Sims - Innocent Years-1982
+song_begin: Zoot Sims - Innocent Years - 01 - I Hear a Rhapsody.mp3
+Time: 333
+Artist: Zoot Sims
+Title: I Hear a Rhapsody
+Album: Innocent Years
+Track: 1
+Date: 1982
+Genre: Jazz
+mtime: 1322782691
+song_end
+song_begin: Zoot Sims - Innocent Years - 02 - Pomme au Four.mp3
+Time: 379
+Artist: Zoot Sims
+Title: Pomme au Four
+Album: Innocent Years
+Track: 2
+Date: 1982
+Genre: Jazz
+mtime: 1322784995
+song_end
+song_begin: Zoot Sims - Innocent Years - 03 - Over the Rainbow.mp3
+Time: 655
+Artist: Zoot Sims
+Title: Over the Rainbow
+Album: Innocent Years
+Track: 3
+Date: 1982
+Genre: Jazz
+mtime: 1322784940
+song_end
+song_begin: Zoot Sims - Innocent Years - 04 - The Very Thought of You.mp3
+Time: 398
+Artist: Zoot Sims
+Title: The Very Thought of You
+Album: Innocent Years
+Track: 4
+Date: 1982
+Genre: Jazz
+mtime: 1322785172
+song_end
+song_begin: Zoot Sims - Innocent Years - 05 - If You Were Mine.mp3
+Time: 380
+Artist: Zoot Sims
+Title: If You Were Mine
+Album: Innocent Years
+Track: 5
+Date: 1982
+Genre: Jazz
+mtime: 1322785245
+song_end
+song_begin: Zoot Sims - Innocent Years - 06 - Indian Summer.mp3
+Time: 365
+Artist: Zoot Sims
+Title: Indian Summer
+Album: Innocent Years
+Track: 6
+Date: 1982
+Genre: Jazz
+mtime: 1322785189
+song_end
+end: Zoot Sims/Zoot Sims - Innocent Years-1982
+directory: Zoot Sims - Just Friends - w Harry Edison-1978
+mtime: 1322785547
+begin: Zoot Sims/Zoot Sims - Just Friends - w Harry Edison-1978
+song_begin: Zoot Sims - Just Friends - 01 - Nature Boy.mp3
+Time: 341
+Artist: Zoot Sims
+Title: Nature Boy
+Album: Just Friends
+Track: 1
+Date: 1978
+mtime: 1322784884
+song_end
+song_begin: Zoot Sims - Just Friends - 02 - How Deep Is The Ocean.mp3
+Time: 419
+Artist: Zoot Sims
+Title: How Deep Is The Ocean
+Album: Just Friends
+Track: 2
+Date: 1978
+mtime: 1322785417
+song_end
+song_begin: Zoot Sims - Just Friends - 03 - My Heart Belongs To Daddy.mp3
+Time: 304
+Artist: Zoot Sims
+Title: My Heart Belongs To Daddy
+Album: Just Friends
+Track: 3
+Date: 1978
+mtime: 1322782244
+song_end
+song_begin: Zoot Sims - Just Friends - 04 - I Understand.mp3
+Time: 197
+Artist: Zoot Sims
+Title: I Understand
+Album: Just Friends
+Track: 4
+Date: 1978
+mtime: 1322785278
+song_end
+song_begin: Zoot Sims - Just Friends - 05 - Just Friends.mp3
+Time: 319
+Artist: Zoot Sims
+Title: Just Friends
+Album: Just Friends
+Track: 5
+Date: 1978
+mtime: 1322784520
+song_end
+song_begin: Zoot Sims - Just Friends - 06 - Blue Skies.mp3
+Time: 383
+Artist: Zoot Sims
+Title: Blue Skies
+Album: Just Friends
+Track: 6
+Date: 1978
+mtime: 1322785328
+song_end
+song_begin: Zoot Sims - Just Friends - 07 - Until Tonight (Mauve).mp3
+Time: 292
+Artist: Zoot Sims
+Title: Until Tonight (Mauve)
+Album: Just Friends
+Track: 7
+Date: 1978
+mtime: 1322783733
+song_end
+song_begin: Zoot Sims - Just Friends - 08 - A Little Tutu.mp3
+Time: 223
+Artist: Zoot Sims
+Title: A Little Tutu
+Album: Just Friends
+Track: 8
+Date: 1978
+mtime: 1322781703
+song_end
+end: Zoot Sims/Zoot Sims - Just Friends - w Harry Edison-1978
+directory: Zoot Sims and Al Cohn - Al And Zoot-1957
+mtime: 1322785547
+begin: Zoot Sims/Zoot Sims and Al Cohn - Al And Zoot-1957
+song_begin: Al Cohn & Zoot Sims - 01 - It's A Wonderful World.mp3
+Time: 394
+Artist: Al Cohn Quintet
+AlbumArtist: Al Cohn Quintet
+Title: It's a wonderful world
+Album: Al and Zoot
+Track: 01
+Date: 1957
+Genre: Jazz
+mtime: 1322785489
+song_end
+song_begin: Al Cohn & Zoot Sims - 02 - Brandy And Beer.mp3
+Time: 231
+Artist: Al Cohn Quintet
+AlbumArtist: Al Cohn Quintet
+Title: Brandy and beer
+Album: Al and Zoot
+Track: 02
+Date: 1957
+Genre: Jazz
+mtime: 1322785474
+song_end
+song_begin: Al Cohn & Zoot Sims - 03 - Two Funky People.mp3
+Time: 272
+Artist: Al Cohn Quintet
+AlbumArtist: Al Cohn Quintet
+Title: Two funky people
+Album: Al and Zoot
+Track: 03
+Date: 1957
+Genre: Jazz
+mtime: 1322784103
+song_end
+song_begin: Al Cohn & Zoot Sims - 04 - Chasing The Blues.mp3
+Time: 374
+Artist: Al Cohn Quintet
+AlbumArtist: Al Cohn Quintet
+Title: Chasin the blues
+Album: Al and Zoot
+Track: 04
+Date: 1957
+Genre: Jazz
+mtime: 1322784505
+song_end
+song_begin: Al Cohn & Zoot Sims - 05 - Halley's Comet.mp3
+Time: 251
+Artist: Al Cohn Quintet
+AlbumArtist: Al Cohn Quintet
+Title: Halley's comet
+Album: Al and Zoot
+Track: 05
+Date: 1957
+Genre: Jazz
+mtime: 1322785060
+song_end
+song_begin: Al Cohn & Zoot Sims - 06 - You're A Lucky Guy.mp3
+Time: 221
+Artist: Al Cohn Quintet
+AlbumArtist: Al Cohn Quintet
+Title: You're a lucky girl
+Album: Al and Zoot
+Track: 06
+Date: 1957
+Genre: Jazz
+mtime: 1322784612
+song_end
+song_begin: Al Cohn & Zoot Sims - 07 - The Wailing Boat.mp3
+Time: 379
+Artist: Al Cohn Quintet
+AlbumArtist: Al Cohn Quintet
+Title: The wailing boat
+Album: Al and Zoot
+Track: 07
+Date: 1957
+Genre: Jazz
+mtime: 1322785414
+song_end
+song_begin: Al Cohn & Zoot Sims - 08 - Just You, Just Me.mp3
+Time: 335
+Artist: Al Cohn Quintet
+AlbumArtist: Al Cohn Quintet
+Title: Just you, just me
+Album: Al and Zoot
+Track: 08
+Date: 1957
+Genre: Jazz
+mtime: 1322785544
+song_end
+song_begin: Al Cohn & Zoot Sims - 09 - Gone With The Wind.mp3
+Time: 377
+Artist: Al Cohn Quintet
+AlbumArtist: Al Cohn Quintet
+Title: Gone with the wind
+Album: Al and Zoot
+Track: 09
+Date: 1957
+Genre: Jazz
+mtime: 1322785374
+song_end
+end: Zoot Sims/Zoot Sims and Al Cohn - Al And Zoot-1957
+end: Zoot Sims
+directory: iTunes
+mtime: 1337214887
+begin: iTunes
+directory: iTunes Media
+mtime: 1330035584
+begin: iTunes/iTunes Media
+directory: Music
+mtime: 1337214826
+begin: iTunes/iTunes Media/Music
+directory: Foster The People
+mtime: 1326749140
+begin: iTunes/iTunes Media/Music/Foster The People
+directory: Torches
+mtime: 1326749140
+begin: iTunes/iTunes Media/Music/Foster The People/Torches
+song_begin: 02 Pumped Up Kicks.m4a
+Time: 241
+Title: Pumped Up Kicks
+Artist: Foster The People
+AlbumArtist: Foster The People
+Album: Torches
+Genre: Alternative
+Track: 2
+Disc: 1
+Date: 2011
+mtime: 1326749080
+song_end
+end: iTunes/iTunes Media/Music/Foster The People/Torches
+end: iTunes/iTunes Media/Music/Foster The People
+directory: Gotye
+mtime: 1337214826
+begin: iTunes/iTunes Media/Music/Gotye
+directory: Making Mirrors
+mtime: 1337214877
+begin: iTunes/iTunes Media/Music/Gotye/Making Mirrors
+song_begin: 01 Making Mirrors.mp3
+Time: 61
+Artist: Gotye
+AlbumArtist: Gotye
+Title: Making Mirrors
+Album: Making Mirrors
+Track: 1/12
+Date: 2012
+Genre: Alternative Rock
+Composer: Wally De Backer
+Disc: 1/1
+mtime: 1337214877
+song_end
+song_begin: 02 Easy Way Out.mp3
+Time: 118
+Artist: Gotye
+AlbumArtist: Gotye
+Title: Easy Way Out
+Album: Making Mirrors
+Track: 2/12
+Date: 2012
+Genre: Alternative Rock
+Composer: Wally De Backer
+Disc: 1/1
+mtime: 1337214875
+song_end
+song_begin: 03 Somebody That I Used To Know.mp3
+Time: 245
+Artist: Gotye
+AlbumArtist: Gotye
+Title: Somebody That I Used To Know
+Album: Making Mirrors
+Track: 3/12
+Date: 2012
+Genre: Alternative Rock
+Composer: Wally De Backer
+Disc: 1/1
+mtime: 1337214873
+song_end
+song_begin: 04 Eyes Wide Open.mp3
+Time: 191
+Artist: Gotye
+AlbumArtist: Gotye
+Title: Eyes Wide Open
+Album: Making Mirrors
+Track: 4/12
+Date: 2012
+Genre: Alternative Rock
+Composer: Wally De Backer
+Disc: 1/1
+mtime: 1337214867
+song_end
+song_begin: 05 Smoke And Mirrors.mp3
+Time: 313
+Artist: Gotye
+AlbumArtist: Gotye
+Title: Smoke And Mirrors
+Album: Making Mirrors
+Track: 5/12
+Date: 2012
+Genre: Alternative Rock
+Composer: Wally De Backer
+Disc: 1/1
+mtime: 1337214863
+song_end
+song_begin: 06 I Feel Better.mp3
+Time: 199
+Artist: Gotye
+AlbumArtist: Gotye
+Title: I Feel Better
+Album: Making Mirrors
+Track: 6/12
+Date: 2012
+Genre: Alternative Rock
+Composer: Wally De Backer
+Disc: 1/1
+mtime: 1337214856
+song_end
+song_begin: 07 In Your Light.mp3
+Time: 279
+Artist: Gotye
+AlbumArtist: Gotye
+Title: In Your Light
+Album: Making Mirrors
+Track: 7/12
+Date: 2012
+Genre: Alternative Rock
+Composer: Wally De Backer
+Disc: 1/1
+mtime: 1337214852
+song_end
+song_begin: 08 State Of The Art.mp3
+Time: 322
+Artist: Gotye
+AlbumArtist: Gotye
+Title: State Of The Art
+Album: Making Mirrors
+Track: 8/12
+Date: 2012
+Genre: Alternative Rock
+Composer: Wally De Backer
+Disc: 1/1
+mtime: 1337214845
+song_end
+song_begin: 09 Don_t Worry, We_ll Be Watching You.mp3
+Time: 199
+Artist: Gotye
+AlbumArtist: Gotye
+Title: Don’t Worry, We’ll Be Watching You
+Album: Making Mirrors
+Track: 9/12
+Date: 2012
+Genre: Alternative Rock
+Composer: Wally De Backer
+Disc: 1/1
+mtime: 1337214839
+song_end
+song_begin: 10 Giving Me A Chance.mp3
+Time: 187
+Artist: Gotye
+AlbumArtist: Gotye
+Title: Giving Me A Chance
+Album: Making Mirrors
+Track: 10/12
+Date: 2012
+Genre: Alternative Rock
+Composer: Wally De Backer
+Disc: 1/1
+mtime: 1337214835
+song_end
+song_begin: 11 Save Me.mp3
+Time: 231
+Artist: Gotye
+AlbumArtist: Gotye
+Title: Save Me
+Album: Making Mirrors
+Track: 11/12
+Date: 2012
+Genre: Alternative Rock
+Composer: Wally De Backer
+Disc: 1/1
+mtime: 1337214830
+song_end
+song_begin: 12 Bronte.mp3
+Time: 199
+Artist: Gotye
+AlbumArtist: Gotye
+Title: Bronte
+Album: Making Mirrors
+Track: 12/12
+Date: 2012
+Genre: Alternative Rock
+Composer: Wally De Backer
+Disc: 1/1
+mtime: 1337214824
+song_end
+end: iTunes/iTunes Media/Music/Gotye/Making Mirrors
+end: iTunes/iTunes Media/Music/Gotye
+directory: L'Oreille
+mtime: 1325878670
+begin: iTunes/iTunes Media/Music/L'Oreille
+directory: Unknown Album
+mtime: 1325878670
+begin: iTunes/iTunes Media/Music/L'Oreille/Unknown Album
+song_begin: Canadiens de Montreal - Le 'Goal Song'.mp3
+Time: 132
+Artist: L'Oreille
+Title: Canadiens de Montreal - Le 'Goal Song'
+Date: 2010
+mtime: 1325878584
+song_end
+end: iTunes/iTunes Media/Music/L'Oreille/Unknown Album
+end: iTunes/iTunes Media/Music/L'Oreille
+directory: Lana Del Rey
+mtime: 1326749420
+begin: iTunes/iTunes Media/Music/Lana Del Rey
+directory: Born To Die
+mtime: 1326749420
+begin: iTunes/iTunes Media/Music/Lana Del Rey/Born To Die
+song_begin: Video Games.mp3
+Time: 306
+Artist: Lana Del Rey
+AlbumArtist: Lana Del Rey
+Title: Video Games
+Album: Born To Die
+Date: 2012
+mtime: 1326749409
+song_end
+end: iTunes/iTunes Media/Music/Lana Del Rey/Born To Die
+end: iTunes/iTunes Media/Music/Lana Del Rey
+directory: Unknown Artist
+mtime: 1325269115
+begin: iTunes/iTunes Media/Music/Unknown Artist
+directory: Unknown Album
+mtime: 1325269171
+begin: iTunes/iTunes Media/Music/Unknown Artist/Unknown Album
+song_begin: Audio Recording 2.m4a
+Time: 14
+mtime: 1325269074
+song_end
+song_begin: Audio Recording 2.mp3
+Time: 14
+Title: Audio Recording 2
+mtime: 1325269171
+song_end
+end: iTunes/iTunes Media/Music/Unknown Artist/Unknown Album
+end: iTunes/iTunes Media/Music/Unknown Artist
+end: iTunes/iTunes Media/Music
+directory: Podcasts
+mtime: 1334178065
+begin: iTunes/iTunes Media/Podcasts
+directory: BeerSmith Home Brewing
+mtime: 1334178065
+begin: iTunes/iTunes Media/Podcasts/BeerSmith Home Brewing
+song_begin: Beer Brewing Equipment with John Blichmann – BeerSmith Podcast 28.mp3
+Time: 1784
+Artist: Brad Smith and Friends
+Title: Beer Brewing Equipment with John Blichmann – BeerSmith Podcast 28
+Album: BeerSmith Home Brewing
+Date: 2011
+Genre: Podcast
+mtime: 1326842572
+song_end
+song_begin: Beer Brewing Myths – Holiday Episode – BeerSmith Podcast 29.mp3
+Time: 3999
+Artist: Brad Smith and Friends
+Title: Beer Brewing Myths – Holiday Episode – BeerSmith Podcast 29
+Album: BeerSmith Home Brewing
+Date: 2011
+Genre: Podcast
+mtime: 1326842578
+song_end
+song_begin: Brett and Sour Beer Brewing – BeerSmith Podcast #17.mp3
+Time: 2684
+Artist: Brad Smith and Friends
+Title: Brett and Sour Beer Brewing – BeerSmith Podcast #17
+Album: BeerSmith Home Brewing
+Date: 2011
+Genre: Podcast
+mtime: 1334178060
+song_end
+song_begin: Brewing High Gravity Beers with John Palmer – BeerSmith Podcast 33.mp3
+Time: 2448
+Artist: Brad Smith and Friends
+Title: Brewing High Gravity Beers with John Palmer – BeerSmith Podcast 33
+Album: BeerSmith Home Brewing
+Date: 2012
+Genre: Podcast
+mtime: 1334178065
+song_end
+song_begin: Developing Hop Varieties – BeerSmith Podcast 32.mp3
+Time: 2701
+Artist: Brad Smith and Friends
+Title: Developing Hop Varieties – BeerSmith Podcast 32
+Album: BeerSmith Home Brewing
+Date: 2012
+Genre: Podcast
+mtime: 1330035589
+song_end
+song_begin: Diacetyl in Beer with Charlie Bamforth – BeerSmith Podcast 31.mp3
+Time: 2002
+Artist: Brad Smith and Friends
+Title: Diacetyl in Beer with Charlie Bamforth – BeerSmith Podcast 31
+Album: BeerSmith Home Brewing
+Date: 2012
+Genre: Podcast
+mtime: 1328109719
+song_end
+song_begin: Heretic Brewing with Jamil Zainasheff – BeerSmith Podcast 25.mp3
+Time: 2091
+Artist: Brad Smith and Friends
+Title: Heretic Brewing with Jamil Zainasheff – BeerSmith Podcast 25
+Album: BeerSmith Home Brewing
+Date: 2011
+Genre: Hobbies
+mtime: 1321045418
+song_end
+song_begin: Justin Crossley from The Brewing Network – BeerSmith Podcast 34.mp3
+Time: 1972
+Artist: Brad Smith and Friends
+Title: Justin Crossley from The Brewing Network – BeerSmith Podcast 34
+Album: BeerSmith Home Brewing
+Date: 2012
+Genre: Podcast
+mtime: 1334178062
+song_end
+song_begin: Porter Beer Recipes with Gordon Strong – BeerSmith Podcast 26.mp3
+Time: 2185
+Artist: Brad Smith and Friends
+Title: Porter Beer Recipes with Gordon Strong – BeerSmith Podcast 26
+Album: BeerSmith Home Brewing
+Date: 2011
+Genre: Hobbies
+mtime: 1321045414
+song_end
+end: iTunes/iTunes Media/Podcasts/BeerSmith Home Brewing
+end: iTunes/iTunes Media/Podcasts
+end: iTunes/iTunes Media
+end: iTunes
+directory: yesterdays new quintet
+mtime: 1327077401
+begin: yesterdays new quintet
+directory: angles without edges LP
+mtime: 1326334029
+begin: yesterdays new quintet/angles without edges LP
+song_begin: yesterday's new quintet - angles without edges - 01 - prelude.mp3
+Time: 119
+Artist: Yesterday's New Quintet
+Title: Prelude
+Album: Angles Without Edges
+Date: 2001
+Genre: Instrumental
+mtime: 1326331994
+song_end
+song_begin: yesterday's new quintet - angles without edges - 02 - julani.mp3
+Time: 186
+Artist: Yesterday's New Quintet
+Title: Julani
+Album: Angles Without Edges
+Date: 2001
+Genre: Instrumental
+mtime: 1326333100
+song_end
+song_begin: yesterday's new quintet - angles without edges - 03 - papa.mp3
+Time: 275
+Artist: Yesterday's New Quintet
+Title: Papa
+Album: Angles Without Edges
+Date: 2001
+Genre: Instrumental
+mtime: 1326334029
+song_end
+song_begin: yesterday's new quintet - angles without edges - 04 -  keeper of my soul.mp3
+Time: 259
+Artist: Yesterday's New Quintet
+Title: Keeper of My Soul
+Album: Angles Without Edges
+Date: 2001
+Genre: Instrumental
+mtime: 1326332937
+song_end
+song_begin: yesterday's new quintet - angles without edges - 05 - the one who knows.mp3
+Time: 224
+Artist: Yesterday's New Quintet
+Title: The One Who Knows
+Album: Angles Without Edges
+Date: 2001
+Genre: Instrumental
+mtime: 1326330682
+song_end
+song_begin: yesterday's new quintet - angles without edges - 06 - the birth of ynq.mp3
+Time: 174
+Artist: Yesterday's New Quintet
+Title: The Birth of YNQ
+Album: Angles Without Edges
+Date: 2001
+Genre: Instrumental
+mtime: 1326333760
+song_end
+song_begin: yesterday's new quintet - angles without edges - 07 - paladium.mp3
+Time: 335
+Artist: Yesterday's New Quintet
+Title: Paladium
+Album: Angles Without Edges
+Date: 2001
+Genre: Instrumental
+mtime: 1326331520
+song_end
+song_begin: yesterday's new quintet - angles without edges - 08 - lifes angles.mp3
+Time: 188
+Artist: Yesterday's New Quintet
+Title: Lifes Angles
+Album: Angles Without Edges
+Date: 2001
+Genre: Instrumental
+mtime: 1326333266
+song_end
+song_begin: yesterday's new quintet - angles without edges - 09 - thinking of you.mp3
+Time: 196
+Artist: Yesterday's New Quintet
+Title: Thinking of You
+Album: Angles Without Edges
+Date: 2001
+Genre: Instrumental
+mtime: 1326332122
+song_end
+song_begin: yesterday's new quintet - angles without edges - 10 - uno esta.mp3
+Time: 225
+Artist: Yesterday's New Quintet
+Title: Uno Esta
+Album: Angles Without Edges
+Date: 2001
+Genre: Instrumental
+mtime: 1326333388
+song_end
+song_begin: yesterday's new quintet - angles without edges - 11 - rugged tranquility.mp3
+Time: 247
+Artist: Yesterday's New Quintet
+Title: Rugged Tranquility
+Album: Angles Without Edges
+Date: 2001
+Genre: Instrumental
+mtime: 1326333945
+song_end
+song_begin: yesterday's new quintet - angles without edges - 12 - daylight.mp3
+Time: 235
+Artist: Yesterday's New Quintet
+Title: Daylight
+Album: Angles Without Edges
+Date: 2001
+Genre: Instrumental
+mtime: 1326331903
+song_end
+song_begin: yesterday's new quintet - angles without edges - 13 - hot water.mp3
+Time: 221
+Artist: Yesterday's New Quintet
+Title: Hot Water
+Album: Angles Without Edges
+Date: 2001
+Genre: Instrumental
+mtime: 1326331784
+song_end
+song_begin: yesterday's new quintet - angles without edges - 14 - mestizo eyes.mp3
+Time: 235
+Artist: Yesterday's New Quintet
+Title: Mestizo Eyes
+Album: Angles Without Edges
+Date: 2001
+Genre: Instrumental
+mtime: 1326331856
+song_end
+song_begin: yesterday's new quintet - angles without edges - 15 - sun godess.mp3
+Time: 238
+Artist: Yesterday's New Quintet
+Title: Sun Godess
+Album: Angles Without Edges
+Date: 2001
+Genre: Instrumental
+mtime: 1326333923
+song_end
+song_begin: yesterday's new quintet - angles without edges - 16 - kuhns tune.mp3
+Time: 152
+Artist: Yesterday's New Quintet
+Title: Kuhns Tune
+Album: Angles Without Edges
+Date: 2001
+Genre: Instrumental
+mtime: 1326330248
+song_end
+song_begin: yesterday's new quintet - angles without edges - 17 - dakotas song.mp3
+Time: 141
+Artist: Yesterday's New Quintet
+Title: Little Girl (Dakotas Song)
+Album: Angles Without Edges
+Date: 2001
+Genre: Instrumental
+mtime: 1326330160
+song_end
+song_begin: yesterday's new quintet - angles without edges - 18 - broken dreams.mp3
+Time: 336
+Artist: Yesterday's New Quintet
+Title: Broken Dreams
+Album: Angles Without Edges
+Date: 2001
+Genre: Instrumental
+mtime: 1326332152
+song_end
+song_begin: yesterday's new quintet - angles without edges - 19 - last day.mp3
+Time: 55
+Artist: Yesterday's New Quintet
+Title: Last Day
+Album: Angles Without Edges
+Date: 2001
+Genre: Instrumental
+mtime: 1326326732
+song_end
+end: yesterdays new quintet/angles without edges LP
+directory: bomb shelter EP
+mtime: 1326334029
+begin: yesterdays new quintet/bomb shelter EP
+song_begin: harlem river drive interlude.mp3
+Time: 31
+Artist: bomb shelter EP
+Title: harlem river drive interlude
+Track: 2012
+Genre: Other
+mtime: 1326326764
+song_end
+song_begin: mystic brew interlude.mp3
+Time: 45
+Artist: bomb shelter EP
+Title: mystic brew interlude
+Track: 2013
+Genre: Other
+mtime: 1326324545
+song_end
+song_begin: Pride & Vanity.mp3
+Time: 156
+Artist: Yesterday's New Quintet
+Title: Pride & Vanity
+Album: Bomb Shelter Ep
+Track: 1
+Genre: Jazz+Funk
+mtime: 1326331929
+song_end
+song_begin: knucklehead.mp3
+Time: 120
+Artist: bomb shelter EP
+Title: knucklehead
+Album: I Need Drugs (Instrumental LP)
+Track: 24
+Genre: Other
+mtime: 1326327738
+song_end
+end: yesterdays new quintet/bomb shelter EP
+directory: elle's theme ep
+mtime: 1326334029
+begin: yesterdays new quintet/elle's theme ep
+song_begin: 02_yesterdays new quintet - rerev.mp3
+Time: 180
+Artist: Yesterday's New Quintet
+Title: Rerev
+Album: Elle's Theme EP
+Track: 2
+Genre: Jazz+Funk
+mtime: 1326332132
+song_end
+song_begin: 01_yesterdays new quintet - elle's theme.mp3
+Time: 158
+Artist: Yesterday's New Quintet
+Title: Elle's Theme
+Album: Stones Throw 2001 Sampler
+Track: 10
+mtime: 1326332039
+song_end
+song_begin: 03_yesterdays new quintet - herbal scent.mp3
+Time: 247
+Artist: Yesterday's New Quintet
+Title: Herbal Scent
+Album: Yesterdays New Quintet EP
+Track: 3
+Genre: Jazz+Funk
+mtime: 1326332031
+song_end
+song_begin: 04_yesterdays new quintet - sunrays.mp3
+Time: 274
+Artist: Yesterday's New Quintet
+Title: Sunrays
+Album: Yesterdays New Quintet EP
+Track: 4
+Genre: Jazz+Funk
+mtime: 1326331647
+song_end
+end: yesterdays new quintet/elle's theme ep
+directory: meaning of love 7 inch
+mtime: 1326334029
+begin: yesterdays new quintet/meaning of love 7 inch
+song_begin: 01-yesterdays_new_quintet-the_meaning_of_love_(vocal)-cms.mp3
+Time: 169
+Artist: Yesterday's New Quintet
+Title: The Meaning of Love (Vocal)
+Album: The Meaning of Love VLS
+Date: 2002
+Genre: Jazz
+mtime: 1326333327
+song_end
+song_begin: 02-yesterdays_new_quintet-the_meaning_of_love_(instrumental)-cms.mp3
+Time: 167
+Artist: Yesterday's New Quintet
+Title: The Meaning of Love (Instrumen
+Album: The Meaning of Love VLS
+Date: 2002
+Genre: Jazz
+mtime: 1326332793
+song_end
+end: yesterdays new quintet/meaning of love 7 inch
+directory: solo projects
+mtime: 1326334029
+begin: yesterdays new quintet/solo projects
+directory: ahmad miller - Ahmad's First
+mtime: 1326334029
+begin: yesterdays new quintet/solo projects/ahmad miller - Ahmad's First
+song_begin: 01 arroyo.mp3
+Time: 237
+Artist: ahmad miller - Ahmad's First
+Title: 01 arroyo
+Track: 1
+Genre: Other
+mtime: 1326334015
+song_end
+song_begin: 03 traffic zone.mp3
+Time: 185
+Artist: ahmad miller - Ahmad's First
+Title: 03 traffic zone
+Track: 3
+Genre: Other
+mtime: 1326333420
+song_end
+song_begin: 05 windy c.mp3
+Time: 228
+Artist: ahmad miller - Ahmad's First
+Title: 05 windy c
+Track: 5
+Genre: Other
+mtime: 1326332379
+song_end
+song_begin: 02 little angel.mp3
+Time: 222
+Artist: ahmad miller - Ahmad's First
+Title: 02 little angel
+Album: I Need Drugs (Instrumental LP)
+Track: 2
+Genre: Other
+mtime: 1326333694
+song_end
+song_begin: 04 tradewindz.mp3
+Time: 277
+Artist: ahmad miller - Ahmad's First
+Title: 04 tradewindz
+Album: I Need Drugs (Instrumental LP)
+Track: 4
+Genre: Other
+mtime: 1326332636
+song_end
+song_begin: 06 now or later.mp3
+Time: 172
+Artist: ahmad miller - Ahmad's First
+Title: 06 now or later
+Album: I Need Drugs (Instrumental LP)
+Track: 6
+Genre: Other
+mtime: 1326332440
+song_end
+end: yesterdays new quintet/solo projects/ahmad miller - Ahmad's First
+directory: malik_flavors-ugly_beauty-ep
+mtime: 1326334029
+begin: yesterdays new quintet/solo projects/malik_flavors-ugly_beauty-ep
+song_begin: 01-malik_flavors-prelude-ftd.mp3
+Time: 58
+Artist: Malik Flavors
+Title: Prelude
+Album: Ugly_Beauty-EP
+Track: 1
+Date: 2004
+Genre: Beat
+mtime: 1326331894
+song_end
+song_begin: 02-malik_flavors-dayscape-ftd.mp3
+Time: 294
+Artist: Malik Flavors
+Title: Dayscape
+Album: Ugly_Beauty-EP
+Track: 2
+Date: 2004
+Genre: Beat
+mtime: 1326332747
+song_end
+song_begin: 03-malik_flavors-early_dawn-ftd.mp3
+Time: 227
+Artist: Malik Flavors
+Title: Early Dawn
+Album: Ugly_Beauty-EP
+Track: 3
+Date: 2004
+Genre: Beat
+mtime: 1326333658
+song_end
+song_begin: 04-malik_flavors-storm-ftd.mp3
+Time: 291
+Artist: Malik Flavors
+Title: Storm
+Album: Ugly_Beauty-EP
+Track: 4
+Date: 2004
+Genre: Beat
+mtime: 1326333013
+song_end
+song_begin: 05-malik_flavors-serenade_for_a_fast_lady-ftd.mp3
+Time: 229
+Artist: Malik Flavors
+Title: Serenade For A Fast Lady
+Album: Ugly_Beauty-EP
+Track: 5
+Date: 2004
+Genre: Beat
+mtime: 1326330488
+song_end
+song_begin: 06-malik_flavors-many_thoughts-ftd.mp3
+Time: 276
+Artist: Malik Flavors
+Title: Many Thoughts
+Album: Ugly_Beauty-EP
+Track: 6
+Date: 2004
+Genre: Beat
+mtime: 1326332679
+song_end
+song_begin: 07-malik_flavors-mind_expansion-ftd.mp3
+Time: 383
+Artist: Malik Flavors
+Title: Mind Expansion
+Album: Ugly_Beauty-EP
+Track: 7
+Date: 2004
+Genre: Beat
+mtime: 1326331200
+song_end
+end: yesterdays new quintet/solo projects/malik_flavors-ugly_beauty-ep
+directory: monk hughes and the outer realm - a tribute to brother weldon
+mtime: 1326334029
+begin: yesterdays new quintet/solo projects/monk hughes and the outer realm - a tribute to brother weldon
+song_begin: 01-yesterdays_new_quintet-prelude-(run_with_the_sun)-cms.mp3
+Time: 542
+Artist: Yesterdays New Quintet
+Title: Prelude-(Run with the Sun)
+Album: A Tribute to Brother Weldon-2L
+Date: 2004
+Genre: Jazz
+mtime: 1326333866
+song_end
+song_begin: 02-yesterdays_new_quintet-a_piece_for_brother_weldon-cms.mp3
+Time: 309
+Artist: Yesterdays New Quintet
+Title: A Piece for Brother Weldon
+Album: A Tribute to Brother Weldon-2L
+Date: 2004
+Genre: Jazz
+mtime: 1326332154
+song_end
+song_begin: 03-yesterdays_new_quintet-irvines_vine-(spirit_mans_lament)-cms.mp3
+Time: 255
+Artist: Yesterdays New Quintet
+Title: Irvines Vine-(Spirit Mans Lame
+Album: A Tribute to Brother Weldon-2L
+Date: 2004
+Genre: Jazz
+mtime: 1326332779
+song_end
+song_begin: 04-yesterdays_new_quintet-time-cms.mp3
+Time: 349
+Artist: Yesterdays New Quintet
+Title: Time
+Album: A Tribute to Brother Weldon-2L
+Date: 2004
+Genre: Jazz
+mtime: 1326332252
+song_end
+song_begin: 05-yesterdays_new_quintet-welldone-cms.mp3
+Time: 221
+Artist: Yesterdays New Quintet
+Title: Welldone
+Album: A Tribute to Brother Weldon-2L
+Date: 2004
+Genre: Jazz
+mtime: 1326330792
+song_end
+song_begin: 06-yesterdays_new_quintet-liberated-cms.mp3
+Time: 251
+Artist: Yesterdays New Quintet
+Title: Liberated
+Album: A Tribute to Brother Weldon-2L
+Date: 2004
+Genre: Jazz
+mtime: 1326333988
+song_end
+song_begin: 07-yesterdays_new_quintet-keys-cms.mp3
+Time: 361
+Artist: Yesterdays New Quintet
+Title: Keys
+Album: A Tribute to Brother Weldon-2L
+Date: 2004
+Genre: Jazz
+mtime: 1326332001
+song_end
+song_begin: 08-yesterdays_new_quintet-still_young_giften_and_broke-cms.mp3
+Time: 271
+Artist: Yesterdays New Quintet
+Title: Still Young Giften and Broke
+Album: A Tribute to Brother Weldon-2L
+Date: 2004
+Genre: Jazz
+mtime: 1326332055
+song_end
+song_begin: 09-yesterdays_new_quintet-nodlews_sea-cms.mp3
+Time: 282
+Artist: Yesterdays New Quintet
+Title: Nodlews Sea
+Album: A Tribute to Brother Weldon-2L
+Date: 2004
+Genre: Jazz
+mtime: 1326333029
+song_end
+song_begin: 10-yesterdays_new_quintet-day_of_spirit_man-cms.mp3
+Time: 311
+Artist: Yesterdays New Quintet
+Title: Day of Spirit Man
+Album: A Tribute to Brother Weldon-2L
+Date: 2004
+Genre: Jazz
+mtime: 1326332602
+song_end
+song_begin: 11-yesterdays_new_quintet-master_wels_tune-cms.mp3
+Time: 239
+Artist: Yesterdays New Quintet
+Title: Master Wels Tune
+Album: A Tribute to Brother Weldon-2L
+Date: 2004
+Genre: Jazz
+mtime: 1326333235
+song_end
+end: yesterdays new quintet/solo projects/monk hughes and the outer realm - a tribute to brother weldon
+directory: otis jackson jr. trio - jewelz
+mtime: 1326334029
+begin: yesterdays new quintet/solo projects/otis jackson jr. trio - jewelz
+song_begin: yesterday's new quintet (otis jackson jr. trio) - jewelz ep - 01 - bitches brew.mp3
+Time: 273
+Artist: Yesterday's New Quintet (Otis Jackson Jr. Trio)
+AlbumArtist: Otis Jackson Jr. Trio
+Title: Bitches Brew
+Album: Jewelz Ep
+Track: 1
+Date: 2007
+Genre: Jazz+Funk
+Composer: M. Davis
+mtime: 1326331772
+song_end
+song_begin: yesterday's new quintet (otis jackson jr. trio) - jewelz ep - 02 - free son.mp3
+Time: 286
+Artist: Yesterday's New Quintet (Otis Jackson Jr. Trio)
+AlbumArtist: Otis Jackson Jr. Trio
+Title: Free Son
+Album: Jewelz Ep
+Track: 02
+Date: 2007
+Genre: Jazz+funk
+mtime: 1326332270
+song_end
+song_begin: yesterday's new quintet (otis jackson jr. trio) - jewelz ep - 03 - porter house.mp3
+Time: 217
+Artist: Yesterday's New Quintet (Otis Jackson Jr. Trio)
+AlbumArtist: Otis Jackson Jr. Trio
+Title: Porter House
+Album: Jewelz Ep
+Track: 03
+Date: 2007
+Genre: Jazz+funk
+mtime: 1326332452
+song_end
+song_begin: yesterday's new quintet (otis jackson jr. trio) - jewelz ep - 04 - sport.mp3
+Time: 289
+Artist: Yesterday's New Quintet (Otis Jackson Jr. Trio)
+AlbumArtist: Otis Jackson Jr. Trio
+Title: Sport
+Album: Jewelz Ep
+Track: 04
+Date: 2007
+Genre: Jazz+funk
+mtime: 1326333188
+song_end
+song_begin: yesterday's new quintet (otis jackson jr. trio) - jewelz ep - 05 - hornets nest.mp3
+Time: 488
+Artist: Yesterday's New Quintet (Otis Jackson Jr. Trio)
+AlbumArtist: Otis Jackson Jr. Trio
+Title: Hornets Nest
+Album: Jewelz Ep
+Track: 05
+Date: 2007
+Genre: Jazz+funk
+mtime: 1326332170
+song_end
+song_begin: yesterday's new quintet (otis jackson jr. trio) - jewelz ep - 06 - elysian fields.mp3
+Time: 229
+Artist: Yesterday's New Quintet (Otis Jackson Jr. Trio)
+AlbumArtist: Otis Jackson Jr. Trio
+Title: Elysian Fields
+Album: Jewelz Ep
+Track: 06
+Date: 2007
+Genre: Jazz+funk
+mtime: 1326333567
+song_end
+end: yesterdays new quintet/solo projects/otis jackson jr. trio - jewelz
+directory: the joe mcduphrey experience - experience
+mtime: 1326334029
+begin: yesterdays new quintet/solo projects/the joe mcduphrey experience - experience
+song_begin: 03-joe  mcduphrey experience- -solar.mp3
+Time: 175
+Artist: the joe mcduphrey experience - experience
+Title: 03-joe  mcduphrey experience- -solar
+Track: 3
+Genre: Other
+mtime: 1326331950
+song_end
+song_begin: 01-joe_mcduphrey_experience-experience-cms.mp3
+Time: 150
+Artist: Joe Mcduphrey Experience
+Title: Experience
+Album: Experience EP
+Date: 2002
+Genre: Jazz
+mtime: 1326331007
+song_end
+song_begin: 02-joe_mcduphrey_experience-fifty_eight-cms.mp3
+Time: 57
+Artist: Joe Mcduphrey Experience
+Title: Fifty Eight
+Album: Experience EP
+Date: 2002
+Genre: Jazz
+mtime: 1326327246
+song_end
+song_begin: 04-joe_mcduphrey_experience-song_for_airto-cms.mp3
+Time: 269
+Artist: Joe Mcduphrey Experience
+Title: Song for Airto
+Album: Experience EP
+Date: 2002
+Genre: Jazz
+mtime: 1326332302
+song_end
+song_begin: 05-joe_mcduphrey_experience-parallel_worlds-cms.mp3
+Time: 209
+Artist: Joe Mcduphrey Experience
+Title: Parallel Worlds
+Album: Experience EP
+Date: 2002
+Genre: Jazz
+mtime: 1326332139
+song_end
+song_begin: 06-joe_mcduphrey_experience-tomorrow_yesterday-cms.mp3
+Time: 221
+Artist: Joe Mcduphrey Experience
+Title: Tomorrow Yesterday
+Album: Experience EP
+Date: 2002
+Genre: Jazz
+mtime: 1326333449
+song_end
+song_begin: 07-joe_mcduphrey_experience-flower_of_life-cms.mp3
+Time: 285
+Artist: Joe Mcduphrey Experience
+Title: Flower of Life
+Album: Experience EP
+Date: 2002
+Genre: Jazz
+mtime: 1326333488
+song_end
+end: yesterdays new quintet/solo projects/the joe mcduphrey experience - experience
+end: yesterdays new quintet/solo projects
+directory: sound directions
+mtime: 1326334029
+begin: yesterdays new quintet/sound directions
+directory: skyscrapers 7 inch
+mtime: 1326334029
+begin: yesterdays new quintet/sound directions/skyscrapers 7 inch
+song_begin: 01-yesterdays_new_quintet-skyscrapers-cms.mp3
+Time: 193
+Artist: skyscrapers 7 inch
+Title: 01-yesterdays_new_quintet-skyscrapers-cms
+Track: 1
+Genre: Other
+mtime: 1326333223
+song_end
+song_begin: 02-yesterdays_new_quintet-travelin_man-cms.mp3
+Time: 157
+Artist: skyscrapers 7 inch
+Title: 02-yesterdays_new_quintet-travelin_man-cms
+Album: I Need Drugs (Instrumental LP)
+Track: 2
+Genre: Other
+mtime: 1326333959
+song_end
+end: yesterdays new quintet/sound directions/skyscrapers 7 inch
+directory: the funky side of life
+mtime: 1326334029
+begin: yesterdays new quintet/sound directions/the funky side of life
+song_begin: 01-directions.mp3
+Time: 68
+Artist: the funky side of life
+Title: 01-directions
+Track: 1
+Genre: Other
+mtime: 1326323274
+song_end
+song_begin: 03-wanda_vidal.mp3
+Time: 136
+Artist: the funky side of life
+Title: 03-wanda_vidal
+Track: 3
+Genre: Other
+mtime: 1326329784
+song_end
+song_begin: 02-dice_game.mp3
+Time: 223
+Artist: the funky side of life
+Title: 02-dice_game
+Album: I Need Drugs (Instrumental LP)
+Track: 2
+Genre: Other
+mtime: 1326332523
+song_end
+song_begin: 04-yesterdays_new_quintet-fourty_days-c4.mp3
+Time: 307
+Artist: Yesterday's New Quintet
+Title: Fourty Days
+Album: Sound Directions: The Funky Side Of Life
+Track: 4
+Date: 2005
+Genre: Jazz
+mtime: 1326332175
+song_end
+song_begin: 05-yesterdays_new_quintet-play_car-c4.mp3
+Time: 196
+Artist: Yesterday's New Quintet
+Title: Play Car
+Album: Sound Directions: The Funky Side Of Life
+Track: 5
+Date: 2005
+Genre: Jazz
+mtime: 1326333977
+song_end
+song_begin: 06-yesterdays_new_quintet-a_divine_image-c4.mp3
+Time: 138
+Artist: Yesterday's New Quintet
+Title: A Divine Image
+Album: Sound Directions: The Funky Side Of Life
+Track: 6
+Date: 2005
+Genre: Jazz
+mtime: 1326332115
+song_end
+song_begin: 07-yesterdays_new_quintet-the_funky_side_of_life-c4.mp3
+Time: 180
+Artist: Yesterday's New Quintet
+Title: The Funky Side of Life
+Album: Sound Directions: The Funky Side Of Life
+Track: 7
+Date: 2005
+Genre: Jazz
+mtime: 1326331886
+song_end
+song_begin: 08-yesterdays_new_quintet-theme_for_ivory_black-c4.mp3
+Time: 212
+Artist: Yesterday's New Quintet
+Title: Theme For Ivory Black
+Album: Sound Directions: The Funky Side Of Life
+Track: 8
+Date: 2005
+Genre: Jazz
+mtime: 1326331827
+song_end
+song_begin: 09-yesterdays_new_quintet-the_horse-c4.mp3
+Time: 166
+Artist: Yesterday's New Quintet
+Title: The Horse
+Album: Sound Directions: The Funky Side Of Life
+Track: 9
+Date: 2005
+Genre: Jazz
+mtime: 1326332127
+song_end
+song_begin: 10-yesterdays_new_quintet-one_for_j.j._(johnson)-c4.mp3
+Time: 141
+Artist: Yesterday's New Quintet
+Title: One For J.J. (Johnson)
+Album: Sound Directions: The Funky Side Of Life
+Track: 10
+Date: 2005
+Genre: Jazz
+mtime: 1326331217
+song_end
+song_begin: 11-yesterdays_new_quintet-on_the_hill-c4.mp3
+Time: 198
+Artist: Yesterday's New Quintet
+Title: On The Hill
+Album: Sound Directions: The Funky Side Of Life
+Track: 11
+Date: 2005
+Genre: Jazz
+mtime: 1326333634
+song_end
+end: yesterdays new quintet/sound directions/the funky side of life
+directory: the horse 12 inch
+mtime: 1326334029
+begin: yesterdays new quintet/sound directions/the horse 12 inch
+song_begin: 01-sound_directions-the_horse.mp3
+Time: 170
+Artist: Sound Directions
+Title: The Horse
+Album: The Horse 12"
+Track: 1
+Date: 2005
+Genre: Hip-Hop
+Genre: Hip-Hop
+mtime: 1326331417
+song_end
+song_begin: 02-sound_directions-tribe.mp3
+Time: 305
+Artist: Sound Directions
+Title: tribe
+Album: the horse 12"
+Genre: Blues
+Genre: Blues
+mtime: 1326329169
+song_end
+end: yesterdays new quintet/sound directions/the horse 12 inch
+end: yesterdays new quintet/sound directions
+directory: stevie
+mtime: 1326334029
+begin: yesterdays new quintet/stevie
+song_begin: 01-yesterdays_new_quintet-prelude-cms.mp3
+Time: 30
+Artist: stevie
+Title: 01-yesterdays_new_quintet-prelude-cms
+Track: 1
+Genre: Other
+mtime: 1326324129
+song_end
+song_begin: 04-yesterdays_new_quintet-superwoman_(where_were_you_last_winter)-cms.mp3
+Time: 289
+Artist: stevie
+Title: 04-yesterdays_new_quintet-superwoman_(where_were_you_last_winter)-cms
+Track: 4
+Genre: Other
+mtime: 1326332538
+song_end
+song_begin: 02-yesterdays_new_quintet-superstition-cms.mp3
+Time: 184
+Artist: Yesterday's New Quintet
+AlbumArtist: Yesterday's New Quintet
+Title: Superstition
+Album: Stevie Vol. 1
+Track: 2
+Date: 2002
+Genre: Instrumental
+Composer: Stevie Wonder
+mtime: 1326329732
+song_end
+song_begin: 03-yesterdays_new_quintet-visions-cms.mp3
+Time: 222
+Artist: Yesterday's New Quintet
+Title: Visions
+Album: Stevie Vol. 1
+Track: 3/14
+Date: 2002
+Genre: Instrumental
+mtime: 1326332106
+song_end
+song_begin: 05-yesterdays_new_quintet-interlude_one-cms.mp3
+Time: 48
+Artist: Yesterday's New Quintet
+AlbumArtist: Yesterday's New Quintet
+Title: Interlude One
+Album: Stevie Vol. 1
+Track: 5
+Date: 2002
+Genre: Instrumental
+Composer: Stevie Wonder
+mtime: 1326326441
+song_end
+song_begin: 06-yesterdays_new_quintet-rocket_love_pt._1-cms.mp3
+Time: 185
+Artist: Yesterday's New Quintet
+AlbumArtist: Yesterday's New Quintet
+Title: Rocket Love Pt. 1
+Album: Stevie Vol. 1
+Track: 6
+Date: 2002
+Genre: Instrumental
+Composer: Stevie Wonder
+mtime: 1326332698
+song_end
+song_begin: 07-yesterdays_new_quintet-youve_got_it_bad_girl-cms.mp3
+Time: 179
+Artist: Yesterday's New Quintet
+AlbumArtist: Yesterday's New Quintet
+Title: You've Got it Bad Girl
+Album: Stevie Vol. 1
+Track: 7
+Date: 2002
+Genre: Instrumental
+Composer: Stevie Wonder
+mtime: 1326333927
+song_end
+song_begin: 08-yesterdays_new_quintet-interlude_two-cms.mp3
+Time: 19
+Artist: Yesterday's New Quintet
+AlbumArtist: Yesterday's New Quintet
+Title: Interlude Two
+Album: Stevie Vol. 1
+Track: 8
+Date: 2002
+Genre: Instrumental
+Composer: Stevie Wonder
+mtime: 1326324841
+song_end
+song_begin: 09-yesterdays_new_quintet-send_one_your_love-cms.mp3
+Time: 173
+Artist: Yesterday's New Quintet
+Title: Send One Your Love
+Album: Stevie Vol. 1
+Track: 9
+Date: 2002
+Genre: Instrumental
+mtime: 1326333080
+song_end
+song_begin: 10-yesterdays_new_quintet-too_high-cms.mp3
+Time: 156
+Artist: Yesterday's New Quintet
+Title: Too High
+Album: Stevie Vol. 1
+Track: 10
+Date: 2002
+Genre: Instrumental
+mtime: 1326332180
+song_end
+song_begin: 11-yesterdays_new_quintet-i_am_singing-cms.mp3
+Time: 197
+Artist: Yesterday's New Quintet
+Title: I Am Singing
+Album: Stevie Vol. 1
+Track: 11
+Date: 2002
+Genre: Instrumental
+mtime: 1326332917
+song_end
+song_begin: 12-yesterdays_new_quintet-interlude_three-cms.mp3
+Time: 90
+Artist: Yesterday's New Quintet
+Title: Interlude Three
+Album: Stevie Vol. 1
+Track: 12
+Date: 2002
+Genre: Instrumental
+mtime: 1326327659
+song_end
+song_begin: 13-yesterdays_new_quintet-golden_lady-cms.mp3
+Time: 224
+Artist: Yesterday's New Quintet
+Title: Golden Lady
+Album: Stevie Vol. 1
+Track: 13
+Date: 2002
+Genre: Instrumental
+mtime: 1326330689
+song_end
+song_begin: 14. yesterdays new quintet - creepin' pt. 1 and 2.mp3
+Time: 360
+Artist: Yesterday's New Quintet
+Title: Creepin' Pt. 1 and 2
+Album: Stevie Vol. 1
+Track: 14
+Date: 2002
+Genre: Instrumental
+mtime: 1326332998
+song_end
+end: yesterdays new quintet/stevie
+directory: uno esta 12 inch
+mtime: 1326334029
+begin: yesterdays new quintet/uno esta 12 inch
+song_begin: yesterday's new quintet - angles without edges - 03 - papa.mp3
+Time: 275
+Artist: Yesterday's New Quintet
+Title: Papa
+Album: Angles Without Edges
+Date: 2001
+Genre: Instrumental
+mtime: 1326333297
+song_end
+song_begin: yesterday's new quintet - angles without edges - 08 - lifes angles.mp3
+Time: 188
+Artist: Yesterday's New Quintet
+Title: Lifes Angles
+Album: Angles Without Edges
+Date: 2001
+Genre: Instrumental
+mtime: 1326332046
+song_end
+song_begin: yesterday's new quintet - angles without edges - 10 - uno esta.mp3
+Time: 225
+Artist: Yesterday's New Quintet
+Title: Uno Esta
+Album: Angles Without Edges
+Date: 2001
+Genre: Instrumental
+mtime: 1326333413
+song_end
+song_begin: 05 - Funshine.mp3
+Time: 250
+Artist: yesterdays new quintet
+AlbumArtist: Yesterday's New Quintet
+Title: funshine
+Album: ep's
+Track: 5
+Date: 2004
+Genre: R&B
+mtime: 1326330410
+song_end
+song_begin: 06 - The Science.mp3
+Time: 96
+Artist: yesterdays new quintet
+AlbumArtist: Yesterday's New Quintet
+Title: the science
+Album: ep's
+Track: 6
+Date: 2004
+Genre: R&B
+mtime: 1326325527
+song_end
+end: yesterdays new quintet/uno esta 12 inch
+directory: yesterdays universe
+mtime: 1326334029
+begin: yesterdays new quintet/yesterdays universe
+song_begin: 01-otis_jackson_jr._trio-bitches_brew-ftd.mp3
+Time: 278
+Artist: Otis Jackson Jr. Trio
+Title: Bitches Brew
+Album: Yesterdays Universe
+Track: 1
+Date: 2007
+Genre: Jazz
+mtime: 1326332398
+song_end
+song_begin: 02-the_jahari_massamba_unit_ft._karriem_riggins_trio-umoja-ftd.mp3
+Time: 340
+Artist: The Jahari Massamba Unit Ft. Karriem Riggins Trio
+Title: Umoja
+Album: Yesterdays Universe
+Track: 2
+Date: 2007
+Genre: Jazz
+mtime: 1326333363
+song_end
+song_begin: 03-young_jazz_rebels-slave_riot-ftd.mp3
+Time: 133
+Artist: Young Jazz Rebels
+Title: Slave Riot
+Album: Yesterdays Universe
+Track: 3
+Date: 2007
+Genre: Jazz
+mtime: 1326329334
+song_end
+song_begin: 04-the_last_electro-acoustic_space_jazz_and_percussion_ensemble-one_for_the_monica_lingas_band-ftd.mp3
+Time: 336
+Artist: The Last Electro-Acoustic Space Jazz & Percussion Ensemble
+Title: One For The Monica Lingas Band
+Album: Yesterdays Universe
+Track: 4
+Date: 2007
+Genre: Jazz
+mtime: 1326332655
+song_end
+song_begin: 05-kamala_walker_and_the_soul_tribe-street_talkin-ftd.mp3
+Time: 209
+Artist: Kamala Walker and The Soul Tribe
+Title: Street Talkin'
+Album: Yesterdays Universe
+Track: 5
+Date: 2007
+Genre: Jazz
+mtime: 1326332417
+song_end
+song_begin: 06-the_jazzistics-marcus_martin_and_malcolm-ftd.mp3
+Time: 205
+Artist: The Jazzistics
+Title: Marcus, Martin & Malcolm
+Album: Yesterdays Universe
+Track: 6
+Date: 2007
+Genre: Jazz
+mtime: 1326329156
+song_end
+song_begin: 07-suntouch-two_for_strata_east-ftd.mp3
+Time: 42
+Artist: Suntouch
+Title: Two For Strata East
+Album: Yesterdays Universe
+Track: 7
+Date: 2007
+Genre: Jazz
+mtime: 1326325668
+song_end
+song_begin: 08-sound_directions-shes_gonna_stay-ftd.mp3
+Time: 170
+Artist: Sound Directions
+Title: She's Gonna Stay
+Album: Yesterdays Universe
+Track: 8
+Date: 2007
+Genre: Jazz
+mtime: 1326330294
+song_end
+song_begin: 09-the_last_electro-acoustic_space_jazz_and_percussion_ensemble-cold_nights_and_rainy_days-ftd.mp3
+Time: 379
+Artist: The Last Electro-Acoustic Space Jazz & Percussion Ensemble
+Title: Cold Nights and Rainy Days
+Album: Yesterdays Universe
+Track: 9
+Date: 2007
+Genre: Jazz
+mtime: 1326333890
+song_end
+song_begin: 10-otis_jackson_jr._trio-free_son-ftd.mp3
+Time: 286
+Artist: Otis Jackson Jr. Trio
+Title: Free Son
+Album: Yesterdays Universe
+Track: 10
+Date: 2007
+Genre: Jazz
+mtime: 1326333698
+song_end
+song_begin: 11-jackson_conti-barumba-ftd.mp3
+Time: 228
+Artist: Jackson Conti
+Title: Barumba
+Album: Yesterdays Universe
+Track: 11
+Date: 2007
+Genre: Jazz
+mtime: 1326333575
+song_end
+song_begin: 12-ahmad_miller-sunny_c-ftd.mp3
+Time: 195
+Artist: Ahmad Miller
+Title: Sunny C
+Album: Yesterdays Universe
+Track: 12
+Date: 2007
+Genre: Jazz
+mtime: 1326332831
+song_end
+song_begin: 13-the_eddie_prince_fusion_band-mtumes_song-ftd.mp3
+Time: 270
+Artist: The Eddie Prince Fusion Band
+Title: Mtume's Song
+Album: Yesterdays Universe
+Track: 13
+Date: 2007
+Genre: Jazz
+mtime: 1326333514
+song_end
+song_begin: 14-yesterdays_universe_all_stars-vibes_from_the_tribes_suite-ftd.mp3
+Time: 714
+Artist: Yesterday's Universe All Stars
+Title: Vibes From The Tribes Suite
+Album: Yesterdays Universe
+Track: 14
+Date: 2007
+Genre: Jazz
+mtime: 1326331934
+song_end
+song_begin: 15-jackson_conti-upa_neguinho-ftd.mp3
+Time: 219
+Artist: Jackson Conti
+Title: Upa Neguinho
+Album: Yesterdays Universe
+Track: 15
+Date: 2007
+Genre: Jazz
+mtime: 1326333844
+song_end
+playlist_begin: 00-yesterdays_new_quintet-yesterdays_universe-advance-2007-ftd.m3u
+mtime: 1326320402
+playlist_end
+end: yesterdays new quintet/yesterdays universe
+end: yesterdays new quintet
