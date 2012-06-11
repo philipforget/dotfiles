@@ -1,11 +1,13 @@
+call pathogen#infect()
+
 " Disable compatibility with vi
 set nocompatible
 
 " Turn on syntax highlighting
 syntax on
 
-set background=light
-colorscheme peachpuff
+" Indent Rules
+filetype plugin indent on
 
 " Automatically reload file when changed outside of buffer
 set autoread
@@ -16,15 +18,14 @@ set hidden
 " Use the already open buffer if it exists
 set switchbuf=useopen,usetab 
 
-"Filetype detection
+" Filetype detection
 autocmd BufNewFile, BufRead *.as set filetype=actionscript
 autocmd BufNewFile, BufRead *.hx set filetype=haxe
 autocmd BufNewFile, BufRead *.json set filetype=json
 autocmd BufNewFile, BufRead *.ino setlocal filetype=arduino
 autocmd BufNewFile, BufRead *.ncx set filetype=xml
 autocmd BufNewFile, BufRead *.opf set filetype=xml
-
-au BufRead,BufNewFile *.jar,*.war,*.ear,*.sar,*.rar,*.epub set filetype=zip
+autocmd BufRead,BufNewFile *.jar,*.war,*.ear,*.sar,*.rar,*.epub set filetype=zip
 
 " Visual bell and no beep
 set vb
@@ -62,8 +63,9 @@ nmap <silent> <Up> gk
 nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
 
-" Make Y yank til the end of the line like other capital letters
+" Make Y and D yank til the end of the line like other capital letters
 map Y y$
+map D d$
 
 " Hide the toolbar
 set go-=T
@@ -73,9 +75,6 @@ set laststatus=2
 
 " Keep some space between the current line and the window frame
 set scrolloff=4
-
-" Indent Rules
-filetype plugin indent on
 
 " 4 spaces, expand tab
 set sw=4 sts=4 ts=4 expandtab
@@ -119,8 +118,6 @@ let mapleader = ","
 " Clear the search highlight with <leader>n
 nmap <silent> <leader>n :noh<CR>
 
-nmap <leader>c :cnext<CR>
-
 " Paste mode toggle
 nmap <silent> <leader>p :set paste!<CR>
 " Softwarp text
@@ -146,6 +143,7 @@ set listchars=tab:>.,trail:.,extends:#,nbsp:.
 set splitright
 set splitbelow
 
+" Python specific, override where necessary
 set foldmethod=indent
 
 " Resize windows when loading sessions
@@ -178,6 +176,7 @@ set shortmess=atI
 
 " Automatically reload vimrc when save
 autocmd! BufWritePost .vimrc source %
+autocmd! BufWritePost .gvimrc source %
 
 " Remember cursor position on files
 autocmd BufReadPost * normal `"
@@ -204,6 +203,3 @@ function! <SID>SynStack()
   endif
   echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunc
-
-" jslint fix
-let $JS_CMD='node'
