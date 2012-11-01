@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
-from optparse import OptionParser
 import sys, os, shutil
+from optparse import OptionParser
 
 DOTFILES_DIR = os.path.dirname(__file__)
 OUTPUT_DIR   = os.path.expanduser("~")

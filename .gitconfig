@@ -9,3 +9,5 @@
 [user]
 	name = Philip Forget
 	email = philipforget@gmail.com
+[push]
+	default = current

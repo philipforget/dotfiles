@@ -46,7 +46,7 @@ set noswapfile
 
 " Turn on mouse
 set mouse=a
-set ttymouse=xterm
+set ttymouse=xterm2
 
 " wrapping options
 set nowrap
@@ -86,7 +86,7 @@ vnoremap <space> zf
 " See lines numbers, ruler, and current line
 set number
 set ruler
-setlocal cursorline
+set cursorline
 
 " Insert Mode Map jj to esc
 imap jj <ESC>
@@ -212,3 +212,41 @@ au Syntax * RainbowParenthesesLoadBraces
 
 " Compile coffeescript files on write
 au BufWritePost *.coffee silent CoffeeMake! -b | cwindow | redraw
+
+" I can't let go of the shift key fast enough :(
+cnoreabbrev Q q
+cnoreabbrev Qa qa
+cnoreabbrev Qal qa
+cnoreabbrev Qall qa
+cnoreabbrev W w
+cnoreabbrev Wa wa
+cnoreabbrev Wal wa
+cnoreabbrev Wall wa
+cnoreabbrev Set set
+
+" Motion for "next/last object". For example, "din(" would go to the next "()" pair
+" and delete its contents. Courtesy of https://gist.github.com/1171642
+
+onoremap an :<c-u>call <SID>NextTextObject('a', 'f')<cr>
+xnoremap an :<c-u>call <SID>NextTextObject('a', 'f')<cr>
+onoremap in :<c-u>call <SID>NextTextObject('i', 'f')<cr>
+xnoremap in :<c-u>call <SID>NextTextObject('i', 'f')<cr>
+
+onoremap al :<c-u>call <SID>NextTextObject('a', 'F')<cr>
+xnoremap al :<c-u>call <SID>NextTextObject('a', 'F')<cr>
+onoremap il :<c-u>call <SID>NextTextObject('i', 'F')<cr>
+xnoremap il :<c-u>call <SID>NextTextObject('i', 'F')<cr>
+
+function! s:NextTextObject(motion, dir)
+  let c = nr2char(getchar())
+
+  if c ==# "b"
+      let c = "("
+  elseif c ==# "B"
+      let c = "{"
+  elseif c ==# "d"
+      let c = "["
+  endif
+
+  exe "normal! ".a:dir.c."v".a:motion.c
+endfunction

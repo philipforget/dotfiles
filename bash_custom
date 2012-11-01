@@ -1,0 +1,62 @@
+# vim:ft=sh
+
+BLUE="\[\033[01;34m\]"
+WHITE="\[\033[01;00m\]"
+MAGENTA="\[\033[01;35m\]"
+PINK="\[\033[01;31m\]"
+GREEN="\[\033[01;32m\]"
+
+PS1=""
+# Blue: User
+PS1=$PS1"$BLUE\u"
+# White: @
+PS1=$PS1"$WHITE@"
+# Blue: Hostname
+PS1=$PS1"$GREEN\h"
+PS1=$PS1"$WHITE:"
+PS1=$PS1"$MAGENTA\w " #pwd
+PS1=$PS1"$PINK\$(vcprompt)"
+# White: newline, prompt
+PS1=$PS1"$WHITE\n# "
+
+
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+export PATH=$PATH:~/workspace/bin
+export PATH=~/bin:$PATH
+
+export HISTSIZE=20000
+# Ignore duplicates and commands with leading whitespace
+export HISTCONTROL=ignoreboth
+
+export VCPROMPT_FORMAT='%s:%b%m%u'
+
+export EDITOR=vim
+
+# ipython needs these two
+export PAGER=less
+export less=-r
+
+if [ -f ~/.aliases ]; then
+    . ~/.aliases
+fi
+
+# Platform dependant stuff
+unamestr=$(uname)
+if [[ $unamestr == 'Linux' ]];
+then
+    . ~/.bash_linux
+elif [[ $unamestr == 'Darwin' ]];
+then
+    . ~/.bash_mac
+fi
+
+
+# Don't write .pyc files, be sure to use the --distribute flag when making
+# virtualenvs if this is on.
+export PYTHONDONTWRITEBYTECODE=1
+
+export WORKON_HOME=~/.virtualenvs
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
+if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
+    . /usr/local/bin/virtualenvwrapper.sh
+fi

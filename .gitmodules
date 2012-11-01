@@ -1,48 +1,48 @@
-[submodule ".vim/bundle/nerdtree"]
-	path = .vim/bundle/nerdtree
+[submodule "vim/bundle/nerdtree"]
+	path = vim/bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
-[submodule ".vim/bundle/json"]
-	path = .vim/bundle/json
+[submodule "vim/bundle/json"]
+	path = vim/bundle/json
 	url = https://github.com/leshill/vim-json.git
-[submodule ".vim/bundle/repeat"]
-	path = .vim/bundle/repeat
+[submodule "vim/bundle/repeat"]
+	path = vim/bundle/repeat
 	url = https://github.com/tpope/vim-repeat.git
-[submodule ".vim/bundle/speeddating"]
-	path = .vim/bundle/speeddating
+[submodule "vim/bundle/speeddating"]
+	path = vim/bundle/speeddating
 	url = https://github.com/tpope/vim-speeddating.git
-[submodule ".vim/bundle/surround"]
-	path = .vim/bundle/surround
+[submodule "vim/bundle/surround"]
+	path = vim/bundle/surround
 	url = git://github.com/tpope/vim-surround.git
-[submodule ".vim/bundle/tabular"]
-	path = .vim/bundle/tabular
+[submodule "vim/bundle/tabular"]
+	path = vim/bundle/tabular
 	url = https://github.com/godlygeek/tabular.git
-[submodule ".vim/bundle/snipmate"]
-	path = .vim/bundle/snipmate
+[submodule "vim/bundle/snipmate"]
+	path = vim/bundle/snipmate
 	url = git://github.com/msanders/snipmate.vim.git
-[submodule ".vim/bundle/vim-coffee-script"]
-	path = .vim/bundle/vim-coffee-script
+[submodule "vim/bundle/vim-coffee-script"]
+	path = vim/bundle/vim-coffee-script
 	url = https://github.com/kchmck/vim-coffee-script.git
-[submodule ".vim/bundle/nerdcommenter"]
-	path = .vim/bundle/nerdcommenter
+[submodule "vim/bundle/nerdcommenter"]
+	path = vim/bundle/nerdcommenter
 	url = https://github.com/scrooloose/nerdcommenter.git
-[submodule ".vim/bundle/javascript"]
-	path = .vim/bundle/javascript
+[submodule "vim/bundle/javascript"]
+	path = vim/bundle/javascript
 	url = https://github.com/pangloss/vim-javascript.git
-[submodule ".vim/bundle/jslint"]
-	path = .vim/bundle/jslint
+[submodule "vim/bundle/jslint"]
+	path = vim/bundle/jslint
 	url = https://github.com/hallettj/jslint.vim.git
-[submodule ".vim/bundle/python.vim"]
-	path = .vim/bundle/python.vim
+[submodule "vim/bundle/python.vim"]
+	path = vim/bundle/python.vim
 	url = https://github.com/vim-scripts/python.vim--Vasiliev.git
-[submodule ".vim/bundle/fugitive"]
-	path = .vim/bundle/fugitive
+[submodule "vim/bundle/fugitive"]
+	path = vim/bundle/fugitive
 	url = http://github.com/tpope/vim-fugitive.git
-[submodule ".vim/bundle/rainbow_parenthesis"]
-	path = .vim/bundle/rainbow_parenthesis
+[submodule "vim/bundle/rainbow_parenthesis"]
+	path = vim/bundle/rainbow_parenthesis
 	url = https://github.com/philipforget/rainbow_parentheses.vim.git
-[submodule ".vim/bundle/commentary"]
-	path = .vim/bundle/commentary
+[submodule "vim/bundle/commentary"]
+	path = vim/bundle/commentary
 	url = git://github.com/tpope/vim-commentary.git
-[submodule ".vim/bundle/syntastic"]
-	path = .vim/bundle/syntastic
+[submodule "vim/bundle/syntastic"]
+	path = vim/bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
