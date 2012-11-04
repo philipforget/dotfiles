@@ -1,69 +1,70 @@
 #!/usr/bin/env python
 
-import sys, os, shutil
+import os
+import shutil
+import sys
+
 from optparse import OptionParser
 
 DOTFILES_DIR = os.path.dirname(__file__)
-OUTPUT_DIR   = os.path.expanduser("~")
-IGNORE =  {
-    "filenames": [
-        # Ignore this script and readme
-        sys.argv[0].split("/")[-1],
-        "README.md",
-        ".bashrc",
-        ".bash_profile",
-    ],
-    "extensions": [
-        "swp",
-        "git"
-    ]
+OUTPUT_DIR = os.path.expanduser("~")
+# A mapping of where to symlink our dotfiles
+SYMLINKS = {
+    'aliases': '.aliases',
+    'bash_custom': '.bash_custom',
+    'hgrc': '.hgrc',
+    'mpd': '.mpd',
+    'vim': '.vim',
+    'vimrc': '.vimrc',
 }
 
-def main():
-    global options
 
+def dotfile():
     parser = OptionParser(usage="usage: %prog [-v]")
     parser.add_option("-o", action="store_true",
             dest="overwrite", default=False,
             help="overwrite existing files and symlinks")
     parser.add_option("-v", action="store_true",
-            dest="verbose", default=False,
+            dest="verbose", default=True,
+            help="display verbose output")
+
+    parser.add_option("-v", action="store_true",
+            dest="verbose", default=True,
             help="display verbose output")
 
     (options, args) = parser.parse_args()
+
+    def cprint(string_to_print):
+        if options.verbose:
+            print(string_to_print)
     
     os.chdir(DOTFILES_DIR)
-    # For every file in this directory
-    for file in os.listdir("."):
-        # If the file is not explictely ignored by name or extension
-        if (file.split(".")[-1] not in IGNORE["extensions"]
-            and file not in IGNORE["filenames"]):
-            _conditional_print("creating symlink for %s at %s" % (
-                file, os.path.join(OUTPUT_DIR, file)))
-            # If the file is already there
-            if os.path.lexists(os.path.join(OUTPUT_DIR, file)):
-                # Leave the encountered symlink
-                if not options.overwrite:
-                    _conditional_print("- %s already exists, use -o to overwrite" % (os.path.join(OUTPUT_DIR, file)))
-                # Delete the current symlink and create a new one
-                else:
-                    _conditional_print("- %s already exists, overwriting" % (os.path.join(OUTPUT_DIR, file)))
-                    try:
-                        os.remove(os.path.join(OUTPUT_DIR, file))
-                    # Dealing with a folder
-                    except OSError:
-                        shutil.rmtree(os.path.join(OUTPUT_DIR, file))
-                    os.symlink(os.path.abspath(file), os.path.join(OUTPUT_DIR, file))
 
-            # Create the symlink
+    for filename, symlink_location in SYMLINKS.items():
+        output = os.path.join(OUTPUT_DIR, symlink_location)
+
+        # If the file is already there
+        if os.path.lexists(output):
+            # Leave the encountered symlink
+            if not options.overwrite:
+                cprint("- %s already exists, use -o to overwrite" % (
+                    output))
+                continue
+
+            # Delete the current symlink and create a new one
             else:
-                os.symlink(os.path.abspath(file), os.path.join(OUTPUT_DIR, file))
+                cprint("- %s already exists, overwriting" % (
+                    output))
+                try:
+                    os.remove(output)
+                except OSError:
+                    # Dealing with a folder
+                    shutil.rmtree(output)
 
-
-def _conditional_print(string_to_print):
-    if options.verbose:
-        print(string_to_print)
+        cprint("creating symlink for %s at %s" % (filename, output))
+        # Create the symlink
+        os.symlink(os.path.abspath(os.path.join('.', filename)), output)
 
 
 if __name__ == '__main__':
-    main()
+    dotfile()
