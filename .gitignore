@@ -1,10 +1,8 @@
-.bash_profile
-.bashrc
-.vim/.netrwhist
 *.swp
 *.pyc
 *.tmp
 
-.mpd/mpd.log
-.mpd/mpd.pid
-.mpd/mpdstate
+mpd/mpd.log
+mpd/mpd.db
+mpd/mpd.pid
+mpd/mpdstate
