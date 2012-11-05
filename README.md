@@ -6,6 +6,9 @@ A (growing) collection of my config files.
 # Clone the repo
 cd ~ && git clone https://github.com/philipforget/dotfiles.git
 
+# Pull down all the submodules
+git submodule init && git submodule update
+
 # Install all the symlinks, run ./dotfiles.py --help for assistance
 cd dotfiles && ./dotfiles.py
 ```
