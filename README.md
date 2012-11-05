@@ -1,5 +1,14 @@
 # Dotfiles
-A (growing) collection of my config files.  Clone the directory to ~/dotfiles (or wherever you want) and run the dotfiles.py found inside. This will create the requisite symlinks into your home folder. You can change the folder into which the symlinks are placed by editing the header of the script.  
+A (growing) collection of my config files.
+
+## Installation
+```bash
+# Clone the repo
+cd ~ && git clone https://github.com/philipforget/dotfiles.git
+
+# Install all the symlinks, run ./dotfiles.py --help for assistance
+cd dotfiles && ./dotfiles.py
+```
 
 ## dotfiles.py usage
 
