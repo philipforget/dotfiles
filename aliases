@@ -4,7 +4,7 @@ alias g=git
 alias py=python
 alias d=django-admin.py
 
-alias n=ncmpcpp
+alias n=vimpc
 alias nn='ncmpcpp next'
 alias np='ncmpcpp prev'
 alias nr='ncmpcpp next && ncmpcpp prev' # Replay
