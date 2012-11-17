@@ -28,10 +28,6 @@ def dotfile():
             dest="verbose", default=True,
             help="display verbose output")
 
-    parser.add_option("-v", action="store_true",
-            dest="verbose", default=True,
-            help="display verbose output")
-
     (options, args) = parser.parse_args()
 
     def cprint(string_to_print):
