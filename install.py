@@ -15,6 +15,7 @@ SYMLINKS = {
     'mpd': '.mpd',
     'vim': '.vim',
     'vimrc': '.vimrc',
+    'tmux.conf': '.tmux.conf',
 }
 
 
