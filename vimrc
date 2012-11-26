@@ -19,12 +19,12 @@ set hidden
 set switchbuf=useopen,usetab 
 
 " Filetype detection
-autocmd BufNewFile, BufRead *.as set filetype=actionscript
-autocmd BufNewFile, BufRead *.hx set filetype=haxe
-autocmd BufNewFile, BufRead *.json set filetype=json
-autocmd BufNewFile, BufRead *.ino setlocal filetype=arduino
-autocmd BufNewFile, BufRead *.ncx set filetype=xml
-autocmd BufNewFile, BufRead *.opf set filetype=xml
+autocmd BufRead,BufNewFile *.as set filetype=actionscript
+autocmd BufRead,BufNewFile *.hx set filetype=haxe
+autocmd BufRead,BufNewFile *.json set filetype=json
+autocmd BufRead,BufNewFile *.ino set filetype=arduino
+autocmd BufRead,BufNewFile *.ncx set filetype=xml
+autocmd BufRead,BufNewFile *.opf set filetype=xml
 autocmd BufRead,BufNewFile *.jar,*.war,*.ear,*.sar,*.rar,*.epub set filetype=zip
 
 " Visual bell and no beep
@@ -76,7 +76,7 @@ set laststatus=2
 " Keep some space between the current line and the window frame
 set scrolloff=4
 
-" 4 spaces, expand tab
+" 4 spaces, expand tab by default
 set sw=4 sts=4 ts=4 expandtab
 
 " Enable folding with the spacebar

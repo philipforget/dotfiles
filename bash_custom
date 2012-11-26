@@ -36,8 +36,17 @@ export EDITOR=vim
 export PAGER=less
 export less=-r
 
+# arduino-mk stuff
+export ARDUINO_DIR=/usr/share/arduino
+export ARDMK_DIR=/usr/local
+export AVR_TOOLS_DIR=/usr
+
 if [ -f ~/.aliases ]; then
     . ~/.aliases
+fi
+
+if [ -f ~/.linux_aliases ]; then
+    . ~/.linux_aliases
 fi
 
 # Platform dependant stuff
