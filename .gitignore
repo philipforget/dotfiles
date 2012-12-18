@@ -1,6 +1,7 @@
 *.swp
 *.pyc
 *.tmp
+*.log
 
 mpd/mpd.db
 mpd/mpd.log

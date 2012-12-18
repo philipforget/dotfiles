@@ -69,3 +69,7 @@ export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
 if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
     . /usr/local/bin/virtualenvwrapper.sh
 fi
+
+if [ -f ~/workspace/django/extras/django_bash_completion ]; then
+    . ~/workspace/django/extras/django_bash_completion
+fi
