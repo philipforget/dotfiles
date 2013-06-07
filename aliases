@@ -4,7 +4,7 @@ alias g=git
 alias py=python
 alias d=django-admin.py
 
-alias n=vimpc
+alias n=ncmpcpp
 alias nn='ncmpcpp next'
 alias np='ncmpcpp prev'
 alias nr='ncmpcpp next && ncmpcpp prev' # Replay
@@ -19,3 +19,6 @@ alias mkv='mkvirtualenv --distribute'
 alias ctor='scp ~/Downloads/*.torrent cleveland.home:~/torrents/watch && rm ~/Downloads/*.torrent'
 # Pipe to this to pretty-print json
 alias ppj='python -m json.tool'
+
+alias credd='openssl aes-256-cbc -d -a -in creds -out creds.txt'
+alias crede='openssl aes-256-cbc -a -salt -in creds.txt -out creds'

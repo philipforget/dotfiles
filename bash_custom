@@ -63,13 +63,18 @@ fi
 # Don't write .pyc files, be sure to use the --distribute flag when making
 # virtualenvs if this is on.
 export PYTHONDONTWRITEBYTECODE=1
-
 export WORKON_HOME=~/.virtualenvs
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
 if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
     . /usr/local/bin/virtualenvwrapper.sh
 fi
 
-if [ -f ~/workspace/django/extras/django_bash_completion ]; then
-    . ~/workspace/django/extras/django_bash_completion
+# If I have django checked out, source its bash_completion
+if [ -f ~/workspace/django-1.4/extras/django_bash_completion ]; then
+    . ~/workspace/django-1.4/extras/django_bash_completion
+fi
+
+# Stuff not checked into the public repo
+if [ -f ~/me/bash_secret ]; then
+    . ~/me/bash_secret
 fi

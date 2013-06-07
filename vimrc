@@ -18,6 +18,9 @@ set hidden
 " Use the already open buffer if it exists
 set switchbuf=useopen,usetab 
 
+" For -x use, use something good
+set cryptmethod=blowfish
+
 " Filetype detection
 autocmd BufRead,BufNewFile *.as set filetype=actionscript
 autocmd BufRead,BufNewFile *.hx set filetype=haxe
@@ -124,6 +127,9 @@ nmap <silent> <leader>p :set paste!<CR>
 nmap <silent> <leader>w :set wrap! linebreak! textwidth=0<CR>
 " Toggle NERDTree
 map <leader>t :NERDTreeToggle<CR>
+
+" Toggle NERDTree
+vmap <leader>s :sort<CR>
 
 " Opens an edit command with the path of the currently edited file filled in
 " Normal mode: <Leader>e
@@ -239,3 +245,6 @@ endfunction
 
 nnoremap ci( :call New_cib()<CR>
 nnoremap cib :call New_cib()<CR>
+
+" Syntastic
+let g:syntastic_python_checkers=['pylint']
