@@ -9,6 +9,8 @@ syntax on
 " Indent Rules
 filetype plugin indent on
 
+set smartindent
+
 " Automatically reload file when changed outside of buffer
 set autoread
 
@@ -151,6 +153,7 @@ set splitbelow
 
 " Python specific, override where necessary
 set foldmethod=indent
+set foldlevel=1000
 
 " Resize windows when loading sessions
 set sessionoptions+=resize

@@ -19,6 +19,7 @@ PS1=$PS1"$PINK\$(vcprompt)"
 # White: newline, prompt
 PS1=$PS1"$WHITE\n# "
 
+export DISABLE_AUTO_TITLE=true
 
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 export PATH=$PATH:~/workspace/bin
@@ -35,11 +36,6 @@ export EDITOR=vim
 # ipython needs these two
 export PAGER=less
 export less=-r
-
-# arduino-mk stuff
-export ARDUINO_DIR=/usr/share/arduino
-export ARDMK_DIR=/usr/local
-export AVR_TOOLS_DIR=/usr
 
 if [ -f ~/.aliases ]; then
     . ~/.aliases
