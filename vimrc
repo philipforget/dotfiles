@@ -251,3 +251,6 @@ nnoremap cib :call New_cib()<CR>
 
 " Syntastic
 let g:syntastic_python_checkers=['pylint']
+
+" json-vim
+let g:vim_json_syntax_conceal = 0

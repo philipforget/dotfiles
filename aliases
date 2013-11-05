@@ -23,4 +23,4 @@ alias ppj='python -m json.tool'
 alias credd='openssl aes-256-cbc -d -a -in creds -out creds.txt'
 alias crede='openssl aes-256-cbc -a -salt -in creds.txt -out creds'
 
-alias r='ssh -F ~/.ssh/ec2-config'
+alias pss='openssl aes-256-cbc -d -a -in ~/me/creds | grep -A 4 $1'
