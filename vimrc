@@ -195,6 +195,10 @@ inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
 
+" In vim, C-c closes insert mode but doesnt trigger the events that ESC does
+" but ESC is so farrrrrrrrrrrrrrrrrrrr away
+inoremap <C-c> <ESC>
+
 " I'm not quick enough when releasing shift
 command! W w
 
