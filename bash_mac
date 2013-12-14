@@ -1,0 +1,4 @@
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
+if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
+    . /usr/local/bin/virtualenvwrapper.sh
+fi

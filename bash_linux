@@ -1,0 +1,6 @@
+alias pacman='sudo pacman'
+
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python2
+if [ -f /usr/bin/virtualenvwrapper.sh ]; then
+    . /usr/bin/virtualenvwrapper.sh
+fi
