@@ -14,3 +14,6 @@ if [ -f ~/.aliases_mac ]; then
 fi
 
 export DOCKER_HOST=localhost
+
+# homebrew installed vcprompt is from https://bitbucket.org/gward/vcprompt
+export VCPROMPT_FORMAT="%b%u%m"
