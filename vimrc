@@ -11,6 +11,8 @@ filetype plugin indent on
 
 set smartindent
 
+colorscheme solarized
+
 " Automatically reload file when changed outside of buffer
 set autoread
 
@@ -63,6 +65,9 @@ imap <silent> <Down> <C-o>gj
 imap <silent> <Up> <C-o>gk
 nmap <silent> <Down> gj
 nmap <silent> <Up> gk
+
+" I have yet to find a use for Ex mode
+nnoremap Q <Nop>
 
 " Scroll 3 lines at a time with C-y and C-x
 nnoremap <C-e> 3<C-e>
@@ -196,7 +201,7 @@ nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
 
 " In vim, C-c closes insert mode but doesnt trigger the events that ESC does
-" but ESC is so farrrrrrrrrrrrrrrrrrrr away
+" but ESC is so farrrrrrrrrrrrrrrrrrrr away. So important
 inoremap <C-c> <ESC>
 
 " I'm not quick enough when releasing shift
@@ -236,25 +241,6 @@ cnoreabbrev Wa wa
 cnoreabbrev Wal wa
 cnoreabbrev Wall wa
 cnoreabbrev Set set
-
-" Make ci( work like ci" eg jump to the next bracket and do the action there
-function New_cib()
-    if search("(","bn") == line(".")
-        sil exe "normal! f)ci("
-        sil exe "normal! l"
-        startinsert
-    else
-        sil exe "normal! f(ci("
-        sil exe "normal! l"
-        startinsert
-    endif
-endfunction
-
-nnoremap ci( :call New_cib()<CR>
-nnoremap cib :call New_cib()<CR>
-
-" Syntastic
-let g:syntastic_python_checkers=['pylint']
 
 " json-vim
 let g:vim_json_syntax_conceal = 0

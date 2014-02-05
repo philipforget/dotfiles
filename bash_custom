@@ -1,11 +1,11 @@
 # vim:ft=sh
-
 BLUE="\[\033[01;34m\]"
 WHITE="\[\033[01;00m\]"
 MAGENTA="\[\033[01;35m\]"
 PINK="\[\033[01;31m\]"
 GREEN="\[\033[01;32m\]"
 
+# Set the nice PS1
 PS1=""
 # Blue: User
 PS1=$PS1"$BLUE\u"
@@ -14,36 +14,26 @@ PS1=$PS1"$WHITE@"
 # Blue: Hostname
 PS1=$PS1"$GREEN\h"
 PS1=$PS1"$WHITE:"
-PS1=$PS1"$MAGENTA\w " #pwd
-PS1=$PS1"$PINK\$(vcprompt)"
+PS1=$PS1"$MAGENTA\w "
+# Only include vcprompt if it's installed
+if hash vcprompt 2>/dev/null; then
+    PS1=$PS1"$PINK\$(vcprompt)"
+fi
 # White: newline, prompt
 PS1=$PS1"$WHITE\n# "
 
-export DISABLE_AUTO_TITLE=true
+export PATH="~/bin:/usr/local/bin:/usr/local/sbin:$PATH"
 
-export PATH=/usr/local/bin:/usr/local/sbin:$PATH
-export PATH=$PATH:~/workspace/bin
-export PATH=~/bin:$PATH
-
+# I love history
 export HISTSIZE=20000
 # Ignore duplicates and commands with leading whitespace
 export HISTCONTROL=ignoreboth
-
-#export VCPROMPT_FORMAT='%s:%b%m%u'
 
 export EDITOR=vim
 
 # ipython needs these two
 export PAGER=less
 export less=-r
-
-if [ -f ~/.aliases ]; then
-    . ~/.aliases
-fi
-
-if [ -f ~/.linux_aliases ]; then
-    . ~/.linux_aliases
-fi
 
 # Platform dependant stuff
 unamestr=$(uname)
@@ -55,18 +45,12 @@ then
     . ~/.bash_mac
 fi
 
-
 # Don't write .pyc files, be sure to use the --distribute flag when making
 # virtualenvs if this is on.
 export PYTHONDONTWRITEBYTECODE=1
 export WORKON_HOME=~/.virtualenvs
 
-# If I have django checked out, source its bash_completion
-if [ -f ~/workspace/django-1.4/extras/django_bash_completion ]; then
-    . ~/workspace/django-1.4/extras/django_bash_completion
-fi
-
 # Stuff not checked into the public repo
-if [ -f ~/me/bash_secret ]; then
-    . ~/me/bash_secret
+if [ -f ~/.bash_secret ]; then
+    . ~/.bash_secret
 fi

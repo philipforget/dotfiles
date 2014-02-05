@@ -1,4 +1,5 @@
 # vim:ft=sh
+# Aliases for all platforms
 
 alias n=ncmpcpp
 alias nn='ncmpcpp next'
@@ -21,12 +22,16 @@ alias epubcheck='java -jar ~/bin/epubcheck/epubcheck-3.0b5.jar'
 # Tmux normally tries to run without 256 color mode.
 alias tmux='tmux -2'
 
+alias ctor='scp ~/Downloads/*.torrent cleveland.home:~/torrents/watch && rm ~/Downloads/*.torrent'
+
 # Pipe to this to pretty-print json
 alias ppj='python -m json.tool'
-
 
 # Creds stuff
 alias credd='openssl aes-256-cbc -d -a -in creds -out creds.txt'
 alias crede='openssl aes-256-cbc -a -salt -in creds.txt -out creds'
 
 alias pss='openssl aes-256-cbc -d -a -in $(if [ -f creds ]; then echo creds; else echo ~/me/creds; fi) | grep -A 4 $1'
+
+# Concat all ssh configs into one master config
+alias sshconfig='> ~/.ssh/config && for f in ~/.ssh/config_*; do echo "# generated from $f" >> ~/.ssh/config && grep -hv ^# $f >> ~/.ssh/config; done'
