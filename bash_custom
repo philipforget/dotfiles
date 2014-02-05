@@ -67,6 +67,6 @@ if [ -f ~/workspace/django-1.4/extras/django_bash_completion ]; then
 fi
 
 # Stuff not checked into the public repo
-if [ -f ~/me/bash_secret ]; then
-    . ~/me/bash_secret
+if [ -f ~/.bash_secret ]; then
+    . ~/.bash_secret
 fi

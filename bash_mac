@@ -1,4 +1,10 @@
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+    . $(brew --prefix)/etc/bash_completion;
+fi
+
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
 if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
     . /usr/local/bin/virtualenvwrapper.sh
 fi
+
+export DOCKER_HOST=localhost
