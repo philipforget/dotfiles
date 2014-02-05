@@ -1,9 +1,5 @@
 # vim:ft=sh
 
-alias g=git
-alias py=python
-alias d=django-admin.py
-
 alias n=ncmpcpp
 alias nn='ncmpcpp next'
 alias np='ncmpcpp prev'
@@ -11,6 +7,7 @@ alias nr='ncmpcpp next && ncmpcpp prev' # Replay
 alias nt='ncmpcpp toggle'
 alias nnp='ncmpcpp --now-playing'
 
+# ncmpcpp on chevalier
 alias cn='ncmpcpp -h chevalier'
 alias cnn='ncmpcpp -h chevalier next'
 alias cnp='ncmpcpp -h chevalier prev'
@@ -20,61 +17,16 @@ alias cnnp='ncmpcpp -h chevalier --now-playing'
 
 # For checking epub integrity
 alias epubcheck='java -jar ~/bin/epubcheck/epubcheck-3.0b5.jar'
+
 # Tmux normally tries to run without 256 color mode.
 alias tmux='tmux -2'
-alias mkv='mkvirtualenv --distribute'
-alias ctor='scp ~/Downloads/*.torrent cleveland.home:~/torrents/watch && rm ~/Downloads/*.torrent'
+
 # Pipe to this to pretty-print json
 alias ppj='python -m json.tool'
 
+
+# Creds stuff
 alias credd='openssl aes-256-cbc -d -a -in creds -out creds.txt'
 alias crede='openssl aes-256-cbc -a -salt -in creds.txt -out creds'
 
 alias pss='openssl aes-256-cbc -d -a -in $(if [ -f creds ]; then echo creds; else echo ~/me/creds; fi) | grep -A 4 $1'
-
-alias pbcopy="xclip -se c"
-alias pbpaste="xclip -o"
-
-# A shortcut function that simplifies usage of xclip.
-# - Accepts input from either stdin (pipe), or params.
-# ------------------------------------------------
-cb() {
-  local _scs_col="\e[0;32m"; local _wrn_col='\e[1;31m'; local _trn_col='\e[0;33m'
-  # Check that xclip is installed.
-  if ! type xclip > /dev/null 2>&1; then
-    echo -e "$_wrn_col""You must have the 'xclip' program installed.\e[0m"
-  # Check user is not root (root doesn't have access to user xorg server)
-  elif [[ "$USER" == "root" ]]; then
-    echo -e "$_wrn_col""Must be regular user (not root) to copy a file to the clipboard.\e[0m"
-  else
-    # If no tty, data should be available on stdin
-    if ! [[ "$( tty )" == /dev/* ]]; then
-      input="$(< /dev/stdin)"
-    # Else, fetch input from params
-    else
-      input="$*"
-    fi
-    if [ -z "$input" ]; then  # If no input, print usage message.
-      echo "Copies a string to the clipboard."
-      echo "Usage: cb <string>"
-      echo "       echo <string> | cb"
-    else
-      # Copy input to clipboard
-      echo -n "$input" | xclip -selection c
-      # Truncate text for status
-      if [ ${#input} -gt 80 ]; then input="$(echo $input | cut -c1-80)$_trn_col...\e[0m"; fi
-      # Print status.
-      echo -e "$_scs_col""Copied to clipboard:\e[0m $input"
-    fi
-  fi
-}
-# Aliases / functions leveraging the cb() function
-# ------------------------------------------------
-# Copy contents of a file
-function cbf() { cat "$1" | cb; }  
-# Copy SSH public key
-alias cbssh="cbf ~/.ssh/id_rsa.pub"  
-# Copy current working directory
-alias cbwd="pwd | cb"  
-# Copy most recent command in bash history
-alias cbhs="cat $HISTFILE | tail -n 1 | cb"  

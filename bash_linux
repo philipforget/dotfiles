@@ -4,3 +4,12 @@ export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python2
 if [ -f /usr/bin/virtualenvwrapper.sh ]; then
     . /usr/bin/virtualenvwrapper.sh
 fi
+
+# Monitors for dual setup at home
+if [ $(hostname) == "cleveland" ]; then
+    alias monleft="xrandr --output DVI-0 --auto --output DVI-1 --off"
+    alias monright="xrandr --output DVI-0 --off --output DVI-1 --auto"
+    alias monboth="xrandr --output DVI-0 --auto --output DVI-1 --auto --right-of DVI-0"
+fi
+
+export PATH="$PATH:~/.gem/ruby/2.0.0/bin"
