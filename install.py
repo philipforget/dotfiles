@@ -10,12 +10,17 @@ OUTPUT_DIR = os.path.expanduser("~")
 # A mapping of where to symlink our dotfiles
 SYMLINKS = {
     'aliases': '.aliases',
+    'aliases_linux': '.aliases_linux',
+    'aliases_mac': '.aliases_mac',
     'bash_custom': '.bash_custom',
+    'bash_linux': '.bash_linux',
+    'bash_mac': '.bash_mac',
+    'gitconfig': '.gitconfig',
     'hgrc': '.hgrc',
     'mpd': '.mpd',
+    'tmux.conf': '.tmux.conf',
     'vim': '.vim',
     'vimrc': '.vimrc',
-    'tmux.conf': '.tmux.conf',
 }
 
 
