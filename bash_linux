@@ -13,3 +13,7 @@ if [ $(hostname) == "cleveland" ]; then
 fi
 
 export PATH="$PATH:~/.gem/ruby/2.0.0/bin"
+
+if [ -f ~/.aliases_linux ]; then
+    . ~/.aliases_linux
+fi
