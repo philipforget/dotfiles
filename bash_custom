@@ -54,3 +54,7 @@ export WORKON_HOME=~/.virtualenvs
 if [ -f ~/.bash_secret ]; then
     . ~/.bash_secret
 fi
+
+if [ -f ~/.aliases ]; then
+    . ~/.aliases
+fi
