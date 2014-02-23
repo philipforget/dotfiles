@@ -12,6 +12,7 @@ filetype plugin indent on
 set smartindent
 
 colorscheme solarized
+set background=dark
 
 " Automatically reload file when changed outside of buffer
 set autoread

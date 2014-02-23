@@ -1,5 +1,7 @@
 # vim:set ft=sh:
 
+export TERM='xterm-256color'
+
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python2
 if [ -f /usr/bin/virtualenvwrapper.sh ]; then
     . /usr/bin/virtualenvwrapper.sh
