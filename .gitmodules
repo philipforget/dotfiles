@@ -73,3 +73,6 @@
 [submodule "vim/bundle/vim-haml"]
 	path = vim/bundle/vim-haml
 	url = https://github.com/tpope/vim-haml.git
+[submodule "vim/bundle/better-css-syntax-for-vim"]
+	path = vim/bundle/better-css-syntax-for-vim
+	url = https://github.com/ChrisYip/Better-CSS-Syntax-for-Vim.git
