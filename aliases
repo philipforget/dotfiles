@@ -37,3 +37,5 @@ alias pss='openssl aes-256-cbc -d -a -in $(if [ -f creds ]; then echo creds; els
 alias sshconfig='> ~/.ssh/config && for f in ~/.ssh/configs/*; do echo "# generated from $f" >> ~/.ssh/config && grep -hv ^# $f >> ~/.ssh/config; done'
 
 alias sshemallletgodsortemout="awsssh > ~/.ssh/configs/awsssh && sshconfig"
+
+alias lower="tr '[:upper:]' '[:lower:]'"
