@@ -13,7 +13,7 @@ if [ -f ~/.aliases_mac ]; then
     . ~/.aliases_mac
 fi
 
-export DOCKER_HOST=localhost
+export DOCKER_HOST=tcp://localhost:4243
 
 # homebrew installed vcprompt is from https://bitbucket.org/gward/vcprompt
 export VCPROMPT_FORMAT="%b%u%m"
