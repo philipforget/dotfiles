@@ -22,7 +22,11 @@ alias epubcheck='java -jar ~/bin/epubcheck/epubcheck-3.0b5.jar'
 # Tmux normally tries to run without 256 color mode.
 alias tmux='tmux -2'
 
-alias ctor='scp ~/Downloads/*.torrent cleveland.home:~/media/torrents/watch && rm ~/Downloads/*.torrent'
+if [ -d ~/media/torrents/watch ]; then
+    alias ctor='mv ~/Downloads/*.torrent ~/media/torrents/watch'
+else
+    alias ctor='scp ~/Downloads/*.torrent cleveland.home:~/media/torrents/watch && rm ~/Downloads/*.torrent'
+fi
 
 # Pipe to this to pretty-print json
 alias ppj='python -m json.tool'
@@ -43,3 +47,5 @@ alias sshemallletgodsortemout="awsssh > ~/.ssh/configs/awsssh && sshconfig"
 alias dl="docker ps -l -q"
 # Remove all stopped containers
 alias drm='docker rm $(docker ps -a -q)'
+
+alias lower="tr '[:upper:]' '[:lower:]'"

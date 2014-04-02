@@ -22,10 +22,11 @@ fi
 # White: newline, prompt
 PS1=$PS1"$WHITE\n# "
 
-export PATH="~/bin:/usr/local/bin:/usr/local/sbin:$PATH"
+export PATH="/home/philipforget/bin:/usr/local/bin:/usr/local/sbin:$PATH"
 
 # I love history
-export HISTSIZE=20000
+export HISTSIZE=""
+export HISTFILESIZE=""
 # Ignore duplicates and commands with leading whitespace
 export HISTCONTROL=ignoreboth
 
