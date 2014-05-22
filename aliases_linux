@@ -1,2 +1,8 @@
 # vim:set ft=sh:
 # Linux specific aliases
+
+if [ $(hostname) = 'chevalier' ]; then
+    alias monleft='xrandr --output HDMI-1 --off --output LVDS-1 --auto'
+    alias monright='xrandr --output HDMI-1 --auto --output LVDS-1 --off'
+    alias monboth='xrandr --output HDMI-1 --auto --output LVDS-1 --auto'
+fi
