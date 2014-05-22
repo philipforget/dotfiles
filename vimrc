@@ -17,6 +17,10 @@ set background=light
 " Automatically reload file when changed outside of buffer
 set autoread
 
+" Turn on modelines
+set modeline
+set modelines=1
+
 " Change buffers without saving them
 set hidden
 

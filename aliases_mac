@@ -1,2 +1,4 @@
 # vim:set ft=sh:
 # Mac specific aliases
+
+alias brew_openssl=/usr/local/Cellar/openssl/1.0.1g/bin/openssl

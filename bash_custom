@@ -22,8 +22,6 @@ fi
 # White: newline, prompt
 PS1=$PS1"$WHITE\n# "
 
-export PATH="/home/philipforget/bin:/usr/local/bin:/usr/local/sbin:$PATH"
-
 # I love history
 export HISTSIZE=""
 export HISTFILESIZE=""
