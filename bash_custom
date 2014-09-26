@@ -16,9 +16,7 @@ PS1=$PS1"$GREEN\h"
 PS1=$PS1"$WHITE:"
 PS1=$PS1"$MAGENTA\w "
 # Only include vcprompt if it's installed
-if hash vcprompt 2>/dev/null; then
-    PS1=$PS1"$PINK\$(vcprompt)"
-fi
+PS1=$PS1"$PINK\$(vcprompt)"
 # White: newline, prompt
 PS1=$PS1"$WHITE\n# "
 

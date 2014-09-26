@@ -11,8 +11,12 @@ filetype plugin indent on
 
 set smartindent
 
-colorscheme solarized
+" These are needed on mac with iterm and the solarized colors
+let g:solarized_termcolors = 16
+let g:solarized_termtrans = 1
+
 set background=light
+colorscheme solarized
 
 " Automatically reload file when changed outside of buffer
 set autoread
@@ -103,16 +107,10 @@ set number
 set ruler
 set cursorline
 
-" Insert Mode Map jj to esc
-imap jj <ESC>
-
 " set bash style word completion
 set wildmode=longest:full
 set wildmenu
 set wildignore=*.swp,*.bak,*.pyc,*.class
-
-set history=100000
-set undolevels=100000
 
 " Search Options
 " enable search highlighting

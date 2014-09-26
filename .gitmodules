@@ -100,3 +100,9 @@
 [submodule "vim/bundle/vim-exchange"]
 	path = vim/bundle/vim-exchange
 	url = git://github.com/tommcdo/vim-exchange.git
+[submodule "vim/bundle/vim-ansibe-yaml"]
+	path = vim/bundle/vim-ansibe-yaml
+	url = git://github.com/chase/vim-ansible-yaml.git
+[submodule "vim/bundle/Vim-Jinja2-Syntax"]
+	path = vim/bundle/Vim-Jinja2-Syntax
+	url = https://github.com/Glench/Vim-Jinja2-Syntax.git

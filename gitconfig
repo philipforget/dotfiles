@@ -11,3 +11,6 @@
 	email = philipforget@gmail.com
 [push]
 	default = current
+
+[fetch]
+    prune = true
