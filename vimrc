@@ -159,9 +159,6 @@ set listchars=tab:>.,trail:.,extends:#,nbsp:.
 set splitright
 set splitbelow
 
-" Python specific, override where necessary
-set foldmethod=indent
-set foldlevel=1000
 
 " Resize windows when loading sessions
 set sessionoptions+=resize
@@ -247,3 +244,9 @@ cnoreabbrev Set set
 
 " json-vim
 let g:vim_json_syntax_conceal = 0
+
+" Syntastic
+" Check syntax on open
+let g:syntastic_check_on_open=1
+" Populate the error window
+let g:syntastic_always_populate_loc_list = 1
