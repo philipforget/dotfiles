@@ -106,3 +106,6 @@
 [submodule "vim/bundle/Vim-Jinja2-Syntax"]
 	path = vim/bundle/Vim-Jinja2-Syntax
 	url = https://github.com/Glench/Vim-Jinja2-Syntax.git
+[submodule "vim/bundle/vim-rsi"]
+	path = vim/bundle/vim-rsi
+	url = git://github.com/tpope/vim-rsi.git
