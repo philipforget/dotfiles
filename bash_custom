@@ -47,6 +47,8 @@ fi
 export PYTHONDONTWRITEBYTECODE=1
 export WORKON_HOME=~/.virtualenvs
 
+export PATH="~/bin:$PATH"
+
 # Stuff not checked into the public repo
 if [ -f ~/.bash_secret ]; then
     . ~/.bash_secret
