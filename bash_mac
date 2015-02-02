@@ -13,5 +13,9 @@ if [ -f ~/.aliases_mac ]; then
     . ~/.aliases_mac
 fi
 
+export TERM=screen-256color
+
 # homebrew installed vcprompt is from https://bitbucket.org/gward/vcprompt
 export VCPROMPT_FORMAT="%b%u%m"
+
+export PATH="$PATH:~/packer"

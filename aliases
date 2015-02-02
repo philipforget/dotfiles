@@ -19,9 +19,6 @@ alias cnnp='ncmpcpp -h chevalier --now-playing'
 # For checking epub integrity
 alias epubcheck='java -jar ~/bin/epubcheck/epubcheck-3.0b5.jar'
 
-# Tmux normally tries to run without 256 color mode.
-alias tmux='tmux -2'
-
 if [ -d ~/media/torrents/watch ]; then
     alias ctor='mv ~/Downloads/*.torrent ~/media/torrents/watch'
 else

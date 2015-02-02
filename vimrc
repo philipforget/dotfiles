@@ -12,8 +12,8 @@ filetype plugin indent on
 set smartindent
 
 " These are needed on mac with iterm and the solarized colors
-let g:solarized_termcolors = 16
-let g:solarized_termtrans = 1
+let g:solarized_visibility = "high"
+let g:solarized_contrast = "high"
 
 set background=light
 colorscheme solarized
@@ -23,7 +23,7 @@ set autoread
 
 " Turn on modelines
 set modeline
-set modelines=1
+set modelines=3
 
 " Change buffers without saving them
 set hidden
@@ -74,6 +74,10 @@ imap <silent> <Down> <C-o>gj
 imap <silent> <Up> <C-o>gk
 nmap <silent> <Down> gj
 nmap <silent> <Up> gk
+
+" Allow L and H to go to beginning and end of line respectively
+nnoremap H 0
+nnoremap L $
 
 " I have yet to find a use for Ex mode
 nnoremap Q <Nop>
@@ -181,9 +185,7 @@ nmap <C-L> <C-W>l
 map gs <C-W>F
 
 " Turn on 256 colors if this is xterm or xterm compatible
-if &term == 'xterm'
-	set t_Co=256
-endif
+set t_Co=256
 
 " Remove some of the more annoying 'Press ENTER to continue' messages
 set shortmess=atI
