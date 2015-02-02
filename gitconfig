@@ -6,11 +6,16 @@
     hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
     type = cat-file -t
     dump = cat-file -p
+
 [user]
 	name = Philip Forget
 	email = philipforget@gmail.com
+
 [push]
-	default = current
+	default = simple
 
 [fetch]
     prune = true
+
+[core]
+	excludesfile = /Users/philipforget/.gitignore_global

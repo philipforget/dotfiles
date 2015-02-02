@@ -109,3 +109,6 @@
 [submodule "vim/bundle/vim-rsi"]
 	path = vim/bundle/vim-rsi
 	url = git://github.com/tpope/vim-rsi.git
+[submodule "vim/bundle/vim-logstash"]
+	path = vim/bundle/vim-logstash
+	url = git@github.com:robbles/logstash.vim.git
