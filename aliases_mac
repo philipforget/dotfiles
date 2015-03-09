@@ -7,3 +7,5 @@ alias ls="ls -G"
 alias mpc="mpc -h derp"
 
 alias cvlc='/Applications/VLC.app/Contents/MacOS/VLC'
+
+alias mpd="mpd ~/.mpd/mpd.mac.conf"
