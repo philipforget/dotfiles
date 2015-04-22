@@ -1,7 +1,8 @@
 # vim:set ft=sh:
 
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-    . $(brew --prefix)/etc/bash_completion;
+BREWFIX="$(brew --prefix)"
+if [ -f $BREWFIX/etc/bash_completion ]; then
+    . $BREWFIX/etc/bash_completion;
 fi
 
 export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
@@ -19,3 +20,7 @@ export TERM=screen-256color
 export VCPROMPT_FORMAT="%b%u%m"
 
 export PATH="$PATH:~/packer"
+
+export DOCKER_HOST=tcp://192.168.59.103:2376
+export DOCKER_CERT_PATH=/Users/philipforget/.boot2docker/certs/boot2docker-vm
+export DOCKER_TLS_VERIFY=1
