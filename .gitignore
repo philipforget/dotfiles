@@ -3,8 +3,4 @@
 *.tmp
 *.log
 
-mpd/mpd.db
-mpd/mpd.log
-mpd/mpd.pid
-mpd/mpdstate
 vim/.netrwhist
