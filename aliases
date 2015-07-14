@@ -36,7 +36,6 @@ alias pss='openssl aes-256-cbc -d -a -in $(if [ -f creds ]; then echo creds; els
 
 # Concat all ssh configs into one master config
 alias sshconfig='> ~/.ssh/config && for f in ~/.ssh/configs/*; do echo "# generated from $f" >> ~/.ssh/config && grep -hv ^# $f >> ~/.ssh/config; done'
-
 alias sshemallletgodsortemout="awsssh > ~/.ssh/configs/awsssh && sshconfig"
 
 # Docker stuff
@@ -46,3 +45,6 @@ alias dl="docker ps -l -q"
 alias drm='docker rm $(docker ps -a -q)'
 
 alias lower="tr '[:upper:]' '[:lower:]'"
+
+# Workspace aliases
+alias beatport="tmux new-session -s work -c ~/workspace/beatport-api-x"
