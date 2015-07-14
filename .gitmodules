@@ -33,7 +33,7 @@
 	url = https://github.com/vim-scripts/python.vim--Vasiliev.git
 [submodule "vim/bundle/fugitive"]
 	path = vim/bundle/fugitive
-	url = http://github.com/tpope/vim-fugitive.git
+	url = https://github.com/tpope/vim-fugitive.git
 [submodule "vim/bundle/rainbow_parenthesis"]
 	path = vim/bundle/rainbow_parenthesis
 	url = https://github.com/philipforget/rainbow_parentheses.vim.git
@@ -87,7 +87,7 @@
 	url = https://github.com/tpope/vim-fireplace.git
 [submodule "vim/bundle/vim-snipmate"]
 	path = vim/bundle/vim-snipmate
-	url = git@github.com:philipforget/vim-snipmate.git
+	url = https://github.com/philipforget/vim-snipmate.git
 [submodule "vim/bundle/tlib_vim"]
 	path = vim/bundle/tlib_vim
 	url = https://github.com/tomtom/tlib_vim.git
@@ -111,4 +111,4 @@
 	url = https://github.com/tpope/vim-rsi.git
 [submodule "vim/bundle/vim-logstash"]
 	path = vim/bundle/vim-logstash
-	url = git@github.com:robbles/logstash.vim.git
+	url = https://github.com/robbles/logstash.vim.git
