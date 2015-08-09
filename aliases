@@ -47,4 +47,9 @@ alias drm='docker rm $(docker ps -a -q)'
 alias lower="tr '[:upper:]' '[:lower:]'"
 
 # Workspace aliases
-alias beatport="tmux new-session -s work -c ~/workspace/beatport-api-x"
+alias beatport="tmux new-session -s work -c ~/workspace/beatport-api-x || tmux attach -t work"
+
+alias cleanbranches="git branch --merged | grep -v '^\*' | xargs git branch -d"
+function squash() {
+    git rebase --interactive $(git merge-base master $(git branch | grep \* | cut -d ' ' -f 2))
+}

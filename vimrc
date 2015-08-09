@@ -106,6 +106,9 @@ set sw=4 sts=4 ts=4 expandtab
 nnoremap <space> za
 vnoremap <space> zf
 
+" Search for the visually selected text
+vnoremap // y/<C-R>"<CR>
+
 " See lines numbers, ruler, and current line
 set number
 set ruler
