@@ -1,2 +1,5 @@
 # vim:set ft=sh:
 # Linux specific aliases
+function v() {
+    (($#)) && ponymix set-volume $1 || ponymix get-volume;
+}

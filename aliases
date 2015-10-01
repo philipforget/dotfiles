@@ -10,21 +10,10 @@ alias nr='ncmpcpp next && ncmpcpp prev' # Replay
 alias nt='ncmpcpp toggle'
 alias nnp='ncmpcpp --now-playing'
 
-# ncmpcpp on chevalier
-alias cn='ncmpcpp -h chevalier'
-alias cnn='ncmpcpp -h chevalier next'
-alias cnp='ncmpcpp -h chevalier prev'
-alias cnr='ncmpcpp -h chevalier next && ncmpcpp prev' # Replay
-alias cnt='ncmpcpp -h chevalier toggle'
-alias cnnp='ncmpcpp -h chevalier --now-playing'
-
-# For checking epub integrity
-alias epubcheck='java -jar ~/bin/epubcheck/epubcheck-3.0b5.jar'
-
 if [ -d ~/media/torrents/watch ]; then
-    alias ctor='mv ~/Downloads/*.torrent ~/media/torrents/watch'
+    alias ctor='rsync -avhP --no-group ~/Downloads/*.torrent ~/media/torrents/watch'
 else
-    alias ctor='scp ~/Downloads/*.torrent derp.home:~/media/torrents/watch && rm ~/Downloads/*.torrent'
+    alias ctor='rsync -avPh --no-group ~/Downloads/*.torrent derp.home:~/media/torrents/watch && rm ~/Downloads/*.torrent'
 fi
 
 # Pipe to this to pretty-print json
@@ -33,7 +22,6 @@ alias ppj='python -m json.tool'
 # Creds stuff
 alias credd='openssl aes-256-cbc -d -a -in creds -out creds.txt'
 alias crede='openssl aes-256-cbc -a -salt -in creds.txt -out creds'
-
 alias pss='openssl aes-256-cbc -d -a -in $(if [ -f creds ]; then echo creds; else echo ~/me/creds; fi) | grep -i -A 6 $1'
 
 # Concat all ssh configs into one master config
@@ -47,28 +35,70 @@ alias dl="docker ps -l -q"
 alias drm='docker rm $(docker ps -a -q)'
 
 alias lower="tr '[:upper:]' '[:lower:]'"
+alias upper="tr '[:lower:]' '[:upper:]'"
 
-# Workspace aliases
+function latest () {
+    ls -lth | head -n ${1:-10}
+}
 
 alias cleanbranches="git branch --merged | grep -v '^\*' | xargs git branch -d"
 function squash() {
     git rebase --interactive $(git merge-base master $(git branch | grep \* | cut -d ' ' -f 2))
 }
 
-function c() {
-    python -m 'calculate' $1
-}
+alias ivlc="cvlc -I ncurses"
 
 function t() {
     case $1 in
+        "" )
+            tmux ls
+            ;;
+        "ls" )
+            tmux ls
+            ;;
         "beatport" )
             tmux new-session -s beatport -c ~/workspace/beatport-api-x || tmux attach -t beatport
             ;;
         "lisa" )
             tmux new-session -s lisa -c ~/workspace/lisa || tmux attach -t lisa
             ;;
+        "music" )
+            tmux new-session -s music -c ~/Desktop/Music || tmux attach -t music
+            ;;
+        "time" )
+            tmux new-session -s time -c ~/workspace/project-mews || tmux attach -t time
+            ;;
+        "rdb" )
+            tmux new-session -s rdb -c ~/workspace/readability || tmux attach -t rdb
+            ;;
+        "cin" )
+            tmux new-session -s cin -c ~/workspace/cinematique || tmux attach -t cin
+            ;;
+        "readlists" )
+            tmux new-session -s readlists -c ~/workspace/readlists || tmux attach -t readlists
+            ;;
         *)
             tmux new-session -s $1 || tmux attach -t $1
             ;;
     esac
 }
+
+alias music="t music"
+
+function parse(){
+    curl -v "https://www.readability.com/api/content/v1/parser?token=$READABILITY_PARSER_TOKEN&url=$1" | python -m json.tool
+}
+
+alias whatismyip="curl httpbin.org/ip 2>/dev/null | grep origin | cut -d '\"' -f 4"
+
+function tea(){
+    time=${1:-240}
+    echo "Notification scheduled in $time seconds"
+    nohup sh -c 'sleep '" $time && osascript -e 'display notification "'"Your tea is ready!"'" with title "'"Tea Time"'"'" &>/dev/null &
+}
+
+alias open="xdg-open"
+
+alias rcp="rsync -avhP --no-group"
+
+alias hockey='~/.virtualenvs/hockeybox/bin/python -m hockeybox.core'

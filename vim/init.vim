@@ -1,27 +1,54 @@
-call pathogen#infect()
-
-" Disable compatibility with vi
+" Not necessary for nvim but wont bother anything if it's present
 set nocompatible
 
-" Turn on syntax highlighting
+if has("nvim")
+    " Fix issue in terminfo + neovim where C-h actually sends the ascii
+    " backspace character.
+    nmap <BS> <C-W>h
+    " Enable python plugin support
+    runtime! plugin/python_setup.vim
+endif
+
+call plug#begin('~/.nvim/plugged')
+
+" Plugins
+Plug 'SirVer/ultisnips'
+Plug 'altercation/vim-colors-solarized'
+Plug 'benekastah/neomake'
+Plug 'benmills/vimux'
+Plug 'honza/vim-snippets'
+Plug 'kien/rainbow_parentheses.vim'
+Plug 'rking/ag.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'tommcdo/vim-exchange'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-rsi'
+Plug 'tpope/vim-surround'
+Plug 'schickling/vim-bufonly'
+
+" Syntax highlighters
+Plug 'chase/vim-ansible-yaml'
+Plug 'ekalinin/Dockerfile.vim'
+Plug 'mxw/vim-jsx'
+Plug 'pangloss/vim-javascript'
+Plug 'saltstack/salt-vim'
+Plug 'smerrill/vcl-vim-plugin'
+
+call plug#end()
+
 syntax on
 
 " Indent Rules
 filetype plugin indent on
-
 set smartindent
-
-" These are needed on mac with iterm and the solarized colors
-let g:solarized_visibility = "high"
-let g:solarized_contrast = "high"
 
 set background=light
 colorscheme solarized
 
-" Automatically reload file when changed outside of buffer
-set autoread
-
-" Turn on modelines
+" Turn on 3 modelines, these allow us to set filetype etc using the first 3
+" commented lines of a given file.
 set modeline
 set modelines=3
 
@@ -31,14 +58,18 @@ set hidden
 " Use the already open buffer if it exists
 set switchbuf=useopen,usetab 
 
-" Filetype detection
+" Filetype detection based on extension for lesser known filetypes
 autocmd BufRead,BufNewFile *.as set filetype=actionscript
 autocmd BufRead,BufNewFile *.hx set filetype=haxe
-autocmd BufRead,BufNewFile *.json set filetype=json
 autocmd BufRead,BufNewFile *.ino set filetype=arduino
 autocmd BufRead,BufNewFile *.ncx set filetype=xml
 autocmd BufRead,BufNewFile *.opf set filetype=xml
 autocmd BufRead,BufNewFile *.jar,*.war,*.ear,*.sar,*.rar,*.epub set filetype=zip
+
+" babel and eslint config files ar ejson but dont end in .json
+autocmd BufRead,BufNewFile .babelrc,.eslintrc set filetype=json
+
+" Run neomake after writing any buffer
 autocmd BufWritePost * Neomake
 
 " Visual bell and no beep
@@ -49,19 +80,14 @@ set noerrorbells
 set bs=indent,eol,start
 
 " Change backup directory
-"set backupdir=/tmp
-" Change swp directory
-"set directory=/tmp
-" Turning these off as vim is messing up watching files
-" Fuck a swp file
-set nobackup
-set nowritebackup
+set backupdir=/tmp
+" I have more than 8k of memory, dont need swapfile thanks
 set noswapfile
 
 " Turn on mouse
 set mouse=a
 
-" wrapping options
+" Start without wrapping
 set nowrap
 
 " Allow j and k keys to move down physical lines on screen
@@ -96,12 +122,8 @@ set laststatus=2
 " Keep some space between the current line and the window frame
 set scrolloff=4
 
-" 4 spaces, expand tab by default
+" 4 spaces, expand tab by default, like a sane person
 set sw=4 sts=4 ts=4 expandtab
-
-" Enable folding with the spacebar
-nnoremap <space> za
-vnoremap <space> zf
 
 " Search for the visually selected text
 vnoremap // y/<C-R>"<CR>
@@ -129,8 +151,9 @@ set smartcase
 noremap * *N
 noremap # #N
 
-" Map shortcut leader to ',' instead of '/'
-let mapleader = ","
+" Leader stuff
+" Map shortcut leader to space
+let mapleader = "\<space>"
 
 " Clear the search highlight with <leader>n
 nmap <silent> <leader>n :noh<CR>
@@ -142,8 +165,22 @@ nmap <silent> <leader>w :set wrap! linebreak! textwidth=0<CR>
 " Toggle NERDTree
 map <leader>t :NERDTreeToggle<CR>
 
-" Toggle NERDTree
-vmap <leader>s :sort<CR>
+" Start Ag command
+map <leader>a :Ag 
+
+vnoremap <leader>so :sort<CR>
+
+" NERDTree
+let NERDTreeIgnore=['\.pyc']
+let NERDTreeShowHidden=1
+
+" Vimux leader shortcuts
+" Run last command executed by VimuxRunCommand
+map <Leader>vl :VimuxRunLastCommand<CR>
+" Prompt for a command to run map
+map <Leader>vp :VimuxPromptCommand<CR>
+ " Zoom the tmux runner page
+map <Leader>vz :VimuxZoomRunner<CR>
 
 " Opens an edit command with the path of the currently edited file filled in
 " Normal mode: <Leader>e
@@ -155,14 +192,12 @@ map <Leader>se :split <C-R>=expand("%:p:h") . "/" <CR>
 " Normal mode: <Leader>v
 map <Leader>ve :vsplit <C-R>=expand("%:p:h") . "/" <CR>
 
-let NERDTreeIgnore=['\.pyc']
-
 set listchars=tab:>.,trail:.,extends:#,nbsp:.
+set list
 
 " When splitting window, split to bottom and to right
 set splitright
 set splitbelow
-
 
 " Resize windows when loading sessions
 set sessionoptions+=resize
@@ -202,12 +237,8 @@ inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
 
-" In vim, C-c closes insert mode but doesnt trigger the events that ESC does
-" but ESC is so farrrrrrrrrrrrrrrrrrrr away. So important
+" Remap C-c to escape
 inoremap <C-c> <ESC>
-
-" I'm not quick enough when releasing shift
-command! W w
 
 " autocomplete on dashed-words, very useful for css
 set iskeyword+=-
@@ -230,9 +261,6 @@ au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
-" Compile coffeescript files on write
-au BufWritePost *.coffee silent CoffeeMake! -b | cwindow | redraw
-
 " I can't let go of the shift key fast enough :(
 cnoreabbrev Q q
 cnoreabbrev Qa qa
@@ -244,11 +272,9 @@ cnoreabbrev Wal wa
 cnoreabbrev Wall wa
 cnoreabbrev Set set
 
+" Add blank lines below cursor with Shift-Enter
+nmap <S-Enter> O<Esc>j
+nmap <CR> o<Esc>k
+
 " json-vim
 let g:vim_json_syntax_conceal = 0
-
-" Syntastic
-" Check syntax on open
-let g:syntastic_check_on_open=1
-" Populate the error window
-let g:syntastic_always_populate_loc_list = 1
