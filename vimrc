@@ -31,9 +31,6 @@ set hidden
 " Use the already open buffer if it exists
 set switchbuf=useopen,usetab 
 
-" For -x use, use something good
-set cryptmethod=blowfish
-
 " Filetype detection
 autocmd BufRead,BufNewFile *.as set filetype=actionscript
 autocmd BufRead,BufNewFile *.hx set filetype=haxe
@@ -42,6 +39,7 @@ autocmd BufRead,BufNewFile *.ino set filetype=arduino
 autocmd BufRead,BufNewFile *.ncx set filetype=xml
 autocmd BufRead,BufNewFile *.opf set filetype=xml
 autocmd BufRead,BufNewFile *.jar,*.war,*.ear,*.sar,*.rar,*.epub set filetype=zip
+autocmd BufWritePost * Neomake
 
 " Visual bell and no beep
 set vb
@@ -62,7 +60,6 @@ set noswapfile
 
 " Turn on mouse
 set mouse=a
-set ttymouse=xterm2
 
 " wrapping options
 set nowrap

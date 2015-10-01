@@ -1,6 +1,8 @@
 # vim:ft=sh
 # Aliases for all platforms
 
+alias vim=nvim
+
 alias n=ncmpcpp
 alias nn='ncmpcpp next'
 alias np='ncmpcpp prev'
@@ -47,9 +49,26 @@ alias drm='docker rm $(docker ps -a -q)'
 alias lower="tr '[:upper:]' '[:lower:]'"
 
 # Workspace aliases
-alias beatport="tmux new-session -s work -c ~/workspace/beatport-api-x || tmux attach -t work"
 
 alias cleanbranches="git branch --merged | grep -v '^\*' | xargs git branch -d"
 function squash() {
     git rebase --interactive $(git merge-base master $(git branch | grep \* | cut -d ' ' -f 2))
+}
+
+function c() {
+    python -m 'calculate' $1
+}
+
+function t() {
+    case $1 in
+        "beatport" )
+            tmux new-session -s beatport -c ~/workspace/beatport-api-x || tmux attach -t beatport
+            ;;
+        "lisa" )
+            tmux new-session -s lisa -c ~/workspace/lisa || tmux attach -t lisa
+            ;;
+        *)
+            tmux new-session -s $1 || tmux attach -t $1
+            ;;
+    esac
 }

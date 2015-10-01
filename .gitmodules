@@ -112,3 +112,6 @@
 [submodule "vim/bundle/vim-logstash"]
 	path = vim/bundle/vim-logstash
 	url = https://github.com/robbles/logstash.vim.git
+[submodule "vim/bundle/neomake"]
+	path = vim/bundle/neomake
+	url = git@github.com:benekastah/neomake.git
