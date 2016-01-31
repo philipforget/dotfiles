@@ -20,3 +20,9 @@ python dotfiles/setup.py
 I've been trying to use neovim recently when it's available. I'll make my vimrc
 as backwards compatible as possible in the meantime but some stuff may not work
 with older versions of Vim.
+
+On first run:
+
+```
+:PlugInstall
+```
