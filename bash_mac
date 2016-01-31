@@ -27,4 +27,5 @@ export DOCKER_TLS_VERIFY=1
 
 # NVM
 export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
+# This is slow :(
+#source $(brew --prefix nvm)/nvm.sh

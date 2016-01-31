@@ -9,3 +9,15 @@ alias mpc="mpc -h derp"
 alias cvlc='/Applications/VLC.app/Contents/MacOS/VLC'
 
 alias mpd="mpd ~/.mpd/mpd.mac.conf"
+
+function test_this_article () {
+    echo "Opening News preview with article.json"
+    /Applications/News\ Preview.app/Contents/MacOS/News\ Preview article.json & sleep 5
+    echo "Opening Simulator"
+    /Applications/Xcode-beta.app/Contents/Developer/Applications/Simulator.app/Contents/MacOS/Simulator -CurrentDeviceUDID 90451504-B7E3-42D5-BF88-B9D2677980B2 & sleep 10
+    echo "Taking screenshot"
+    screencapture -l $(GetWindowID "Simulator" "iPhone 5 - iPhone 5 / iOS 9.2 (13C5055d)") ~/Desktop/screenshot.png
+    open ~/Desktop/screenshot.png
+}
+
+alias update-neovim='echo "Current hash: $(git --git-dir /usr/local/Library/Taps/neovim/homebrew-neovim/.git rev-parse head)" && brew reinstall --HEAD neovim'

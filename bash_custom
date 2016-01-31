@@ -18,7 +18,8 @@ PS1=$PS1"$MAGENTA\w "
 # Only include vcprompt if it's installed
 PS1=$PS1"$PINK\$(vcprompt)"
 # White: newline, prompt
-PS1=$PS1"$WHITE\n☠ "
+#PS1=$PS1"$WHITE\n☃ "
+PS1=$PS1"$WHITE\n🌭  "
 
 # I love history
 export HISTSIZE=""
@@ -57,5 +58,3 @@ fi
 if [ -f ~/.aliases ]; then
     . ~/.aliases
 fi
-
-export PATH="~/bin:$PATH"
