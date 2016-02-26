@@ -35,30 +35,13 @@ export less=-r
 
 # Platform dependant stuff
 unamestr=$(uname)
-if [[ $unamestr == 'Linux' ]];
-then
-    . ~/.bash_linux
-elif [[ $unamestr == 'Darwin' ]];
-then
-    . ~/.bash_mac
-fi
+[ $unamestr == 'Linux' ] && . ~/.bash_linux
+[ $unamestr == 'Darwin' ] && . ~/.bash_mac
 
-# Don't write .pyc files, be sure to use the --distribute flag when making
-# virtualenvs if this is on.
 export PYTHONDONTWRITEBYTECODE=1
 export WORKON_HOME=~/.virtualenvs
-
 export PATH="~/bin:$PATH"
 
-# Stuff not checked into the public repo
-if [ -f ~/.bash_secret ]; then
-    . ~/.bash_secret
-fi
-
-if [ -f ~/.aliases ]; then
-    . ~/.aliases
-fi
-
-if [ -f ~/.distraction ]; then
-    . ~/.distraction
-fi
+[ -f ~/.bash_secret ] && . ~/.bash_secret
+[ -f ~/.aliases ] && . ~/.aliases
+[ -f ~/.distraction ] && . ~/.distraction
