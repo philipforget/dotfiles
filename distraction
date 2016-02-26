@@ -1,0 +1,43 @@
+#!/bin/bash
+
+# Paths to apps that are distractions
+apps=( '/Applications/Twitter.app' '/Applications/Flowdock.app' )
+
+function clear_dns () {
+    if [ $(uname) = "Darwin" ]; then
+        sudo dscacheutil -flushcache
+    fi
+}
+
+function conditional_mv () {
+    # Move a file to it's new location only if the file exists
+    if [ -d $1 ]; then
+        sudo mv "$1" "$2"
+    fi
+}
+
+function hide_apps () {
+    for app in "${apps[@]}"
+    do
+        conditional_mv "$app" "$(dirname $app)/.distraction.$(basename $app)"
+    done
+}
+
+function show_apps () {
+    for app in "${apps[@]}"
+    do
+        conditional_mv "$(dirname $app)/.distraction.$(basename $app)" "$app"
+    done
+}
+
+function concentrate () {
+    sed -e 's/\(^# *\)\(.*#distraction\)/\2/' /etc/hosts | sudo tee /etc/hosts > /dev/null
+    hide_apps
+    clear_dns
+}
+
+function distract () {
+    sed -e 's/^[^#].*#distraction/#&/' /etc/hosts | sudo tee /etc/hosts > /dev/null
+    show_apps
+    clear_dns
+}

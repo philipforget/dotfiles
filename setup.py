@@ -11,6 +11,7 @@ symlink_mapping = (
     ('bash_custom', '~/.bash_custom'),
     ('bash_linux', '~/.bash_linux'),
     ('bash_mac', '~/.bash_mac'),
+    ('distraction', '~/.distraction'),
     ('gitconfig', '~/.gitconfig'),
     ('hgrc', '~/.hgrc'),
     ('pylintrc', '~/.pylintrc'),
