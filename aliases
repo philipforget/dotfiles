@@ -100,8 +100,6 @@ function tea(){
     nohup sh -c 'sleep '" $time && osascript -e 'display notification "'"Your tea is ready!"'" with title "'"Tea Time"'"'" &>/dev/null &
 }
 
-alias open="xdg-open"
-
 alias rcp="rsync -avhP --no-group"
 
 alias hockey='~/.virtualenvs/hockeybox/bin/python -m hockeybox.core'
