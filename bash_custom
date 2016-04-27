@@ -16,7 +16,7 @@ PS1=$PS1"$GREEN\h"
 PS1=$PS1"$WHITE:"
 PS1=$PS1"$MAGENTA\w "
 # Only include vcprompt if it's installed
-PS1=$PS1"$PINK\$(vcprompt)"
+command -v vcprompt 2>&1 > /dev/null && PS1=$PS1"$PINK\$(vcprompt)"
 # White: newline, prompt
 #PS1=$PS1"$WHITE\n☃ "
 PS1=$PS1"$WHITE\n🌭  "
@@ -57,4 +57,8 @@ fi
 
 if [ -f ~/.aliases ]; then
     . ~/.aliases
+fi
+
+if [ -f ~/.distraction ]; then
+    . ~/.distraction
 fi

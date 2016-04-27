@@ -19,14 +19,15 @@ Plug 'benmills/vimux'
 Plug 'honza/vim-snippets'
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'rking/ag.vim'
+Plug 'schickling/vim-bufonly'
 Plug 'scrooloose/nerdtree'
 Plug 'tommcdo/vim-exchange'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-surround'
-Plug 'schickling/vim-bufonly'
 
 " Syntax highlighters
 Plug 'chase/vim-ansible-yaml'
@@ -278,3 +279,6 @@ nmap <CR> o<Esc>k
 
 " json-vim
 let g:vim_json_syntax_conceal = 0
+
+" vim-markdown
+let g:markdown_fenced_languages = ['html', 'python', 'bash=sh', 'javascript']

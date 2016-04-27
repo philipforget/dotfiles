@@ -1,5 +1,9 @@
 # vim:set ft=sh:
 # Linux specific aliases
+
+# Get or set volume
 function v() {
     (($#)) && ponymix set-volume $1 || ponymix get-volume;
 }
+
+alias open="xdg-open"
