@@ -57,25 +57,28 @@ function t() {
             tmux ls
             ;;
         "beatport" )
-            tmux new-session -s beatport -c ~/workspace/beatport-api-x || tmux attach -t beatport
+            tmux new-session -s $1 -c ~/workspace/beatport-api-x || tmux attach -t $1
             ;;
         "lisa" )
-            tmux new-session -s lisa -c ~/workspace/lisa || tmux attach -t lisa
+            tmux new-session -s $1 -c ~/workspace/lisa || tmux attach -t $1
             ;;
         "music" )
-            tmux new-session -s music -c ~/Desktop/Music || tmux attach -t music
+            tmux new-session -s $1 -c ~/Desktop/Music || tmux attach -t $1
             ;;
         "time" )
-            tmux new-session -s time -c ~/workspace/project-mews || tmux attach -t time
+            tmux new-session -s $1 -c ~/workspace/project-mews || tmux attach -t $1
             ;;
         "rdb" )
-            tmux new-session -s rdb -c ~/workspace/readability || tmux attach -t rdb
+            tmux new-session -s $1 -c ~/workspace/readability || tmux attach -t $1
             ;;
         "cin" )
-            tmux new-session -s cin -c ~/workspace/cinematique || tmux attach -t cin
+            tmux new-session -s $1 -c ~/workspace/cinematique || tmux attach -t $1
+            ;;
+        "mercury" )
+            tmux new-session -s $1 -c ~/workspace/mercury || tmux attach -t $1
             ;;
         "readlists" )
-            tmux new-session -s readlists -c ~/workspace/readlists || tmux attach -t readlists
+            tmux new-session -s $1 -c ~/workspace/readlists || tmux attach -t $1
             ;;
         *)
             tmux new-session -s $1 || tmux attach -t $1
