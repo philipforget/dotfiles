@@ -21,6 +21,6 @@ export VCPROMPT_FORMAT="%b%u%m"
 
 export PATH="$PATH:~/packer"
 
-docker-machine env &>/dev/null && eval $(docker-machine env)
+#docker-machine env &>/dev/null && eval $(docker-machine env)
 
 alias vlc="/Applications/VLC.app/Contents/MacOS/VLC"
