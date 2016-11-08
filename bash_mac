@@ -21,13 +21,6 @@ export VCPROMPT_FORMAT="%b%u%m"
 
 export PATH="$PATH:~/packer"
 
-export DOCKER_HOST=tcp://192.168.59.103:2376
-export DOCKER_CERT_PATH=/Users/philipforget/.boot2docker/certs/boot2docker-vm
-export DOCKER_TLS_VERIFY=1
-
-# NVM
-export NVM_DIR=~/.nvm
-# This is slow :(
-#source $(brew --prefix nvm)/nvm.sh
+#docker-machine env &>/dev/null && eval $(docker-machine env)
 
 alias vlc="/Applications/VLC.app/Contents/MacOS/VLC"

@@ -36,6 +36,7 @@ Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'
 Plug 'saltstack/salt-vim'
 Plug 'smerrill/vcl-vim-plugin'
+Plug 'robbles/logstash'
 
 call plug#end()
 
