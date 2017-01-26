@@ -56,29 +56,14 @@ function t() {
         "ls" )
             tmux ls
             ;;
-        "beatport" )
-            tmux new-session -s $1 -c ~/workspace/beatport-api-x || tmux attach -t $1
-            ;;
         "lisa" )
             tmux new-session -s $1 -c ~/workspace/lisa || tmux attach -t $1
             ;;
         "music" )
             tmux new-session -s $1 -c ~/Desktop/music || tmux attach -t $1
             ;;
-        "time" )
-            tmux new-session -s $1 -c ~/workspace/project-mews || tmux attach -t $1
-            ;;
-        "rdb" )
-            tmux new-session -s $1 -c ~/workspace/readability || tmux attach -t $1
-            ;;
-        "cin" )
-            tmux new-session -s $1 -c ~/workspace/cinematique || tmux attach -t $1
-            ;;
-        "mercury" )
-            tmux new-session -s $1 -c ~/workspace/mercury || tmux attach -t $1
-            ;;
-        "readlists" )
-            tmux new-session -s $1 -c ~/workspace/readlists || tmux attach -t $1
+        "envelope" )
+            tmux new-session -s $1 -c ~/workspace/envelope || tmux attach -t $1
             ;;
         *)
             tmux new-session -s $1 || tmux attach -t $1
@@ -105,6 +90,9 @@ function tea(){
 }
 
 alias rcp="rsync -avhP --no-group"
+
+alias todo='vim ~/todo'
+alias standup='vim ~/notes/envelope/standup'
 
 alias hockey='~/.virtualenvs/hockeybox/bin/python -m hockeybox.core'
 

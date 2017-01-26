@@ -14,13 +14,14 @@ if [ -f ~/.aliases_mac ]; then
     . ~/.aliases_mac
 fi
 
-export TERM=screen-256color
+# If we have a `default` python virtualenv, lets use it over anything on the system already
+if [ -d ~/.virtualenvs/default ]; then
+    export PATH="$HOME/.virtualenvs/default/bin:$PATH"
+fi
+
+export TERM=xterm-256color
 
 # homebrew installed vcprompt is from https://bitbucket.org/gward/vcprompt
 export VCPROMPT_FORMAT="%b%u%m"
-
-export PATH="$PATH:~/packer"
-
-#docker-machine env &>/dev/null && eval $(docker-machine env)
 
 alias vlc="/Applications/VLC.app/Contents/MacOS/VLC"

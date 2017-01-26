@@ -28,6 +28,7 @@ Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-surround'
+Plug 'zanglg/nova.vim'
 
 " Syntax highlighters
 Plug 'chase/vim-ansible-yaml'
@@ -37,6 +38,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'saltstack/salt-vim'
 Plug 'smerrill/vcl-vim-plugin'
 Plug 'robbles/logstash'
+Plug 'lepture/vim-jinja'
 
 call plug#end()
 
@@ -162,13 +164,17 @@ nmap <silent> <leader>n :noh<CR>
 
 " Paste mode toggle
 nmap <silent> <leader>p :set paste!<CR>
+
+" Paste mode toggle
+nmap <silent> <leader>d :r!date<CR>
+
 " Softwarp text
 nmap <silent> <leader>w :set wrap! linebreak! textwidth=0<CR>
 " Toggle NERDTree
 map <leader>t :NERDTreeToggle<CR>
 
 " Start Ag command
-map <leader>a :Ag 
+map <leader>a :AgFromSearch<CR>
 
 vnoremap <leader>so :sort<CR>
 

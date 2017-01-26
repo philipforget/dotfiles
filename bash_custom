@@ -8,18 +8,18 @@ GREEN="\[\033[01;32m\]"
 # Set the nice PS1
 PS1=""
 # Blue: User
-PS1=$PS1"$BLUE\u"
+PS1="$PS1$BLUE\u"
 # White: @
-PS1=$PS1"$WHITE@"
+PS1="$PS1$WHITE@"
 # Blue: Hostname
-PS1=$PS1"$GREEN\h"
-PS1=$PS1"$WHITE:"
-PS1=$PS1"$MAGENTA\w "
+PS1="$PS1$GREEN\h"
+PS1="$PS1$WHITE:"
+PS1="$PS1$MAGENTA\w "
 # Only include vcprompt if it's installed
-command -v vcprompt 2>&1 > /dev/null && PS1=$PS1"$PINK\$(vcprompt)"
+has_vcprompt=$(command -v vcprompt &> /dev/null)
+$has_vcprompt && PS1=$PS1"$PINK\$(vcprompt)"
 # White: newline, prompt
-#PS1=$PS1"$WHITE\n☃ "
-PS1=$PS1"$WHITE\n🌭  "
+PS1="$PS1$WHITE: "
 
 # I love history
 export HISTSIZE=""
@@ -48,7 +48,7 @@ fi
 export PYTHONDONTWRITEBYTECODE=1
 export WORKON_HOME=~/.virtualenvs
 
-export PATH="~/bin:$PATH"
+export PATH="$HOME/bin:$PATH"
 
 # Stuff not checked into the public repo
 if [ -f ~/.bash_secret ]; then

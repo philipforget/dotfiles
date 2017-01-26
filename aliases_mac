@@ -8,7 +8,14 @@ alias mpc="mpc -h derp"
 
 alias cvlc='/Applications/VLC.app/Contents/MacOS/VLC'
 
-alias mpd="mpd ~/.mpd/mpd.mac.conf"
+alias mpd="mpd ~/.config/mpd/mpd.mac.conf"
+
+alias n='ncmpcpp -h derp'
+alias nn='ncmpcpp next'
+alias np='ncmpcpp -h derp prev'
+alias nr='ncmpcpp -h derp next && ncmpcpp -h derp prev' # Replay
+alias nt='ncmpcpp -h derp toggle'
+alias nnp='ncmpcpp -h derp --now-playing'
 
 function test_this_article () {
     echo "Opening News preview with article.json"
