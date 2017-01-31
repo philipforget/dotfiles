@@ -10,11 +10,18 @@ alias nr='ncmpcpp next && ncmpcpp prev' # Replay
 alias nt='ncmpcpp toggle'
 alias nnp='ncmpcpp --now-playing'
 
-if [ -d "~/media/torrents/watch" ]; then
-    alias ctor='rsync -avhP --no-group ~/Downloads/*.torrent ~/media/torrents/watch && rm ~/Downloads/*.torrent'
-else
-    alias ctor='rsync -avPh --no-group ~/Downloads/*.torrent derp.home:~/media/torrents/watch && rm ~/Downloads/*.torrent'
-fi
+
+function ctor() {
+    # Copy all ~/Download/*.torrent files to local or remote watch folder
+
+    ls ~/Downloads/*.torrent &> /dev/null
+    if [ $? -eq 0 ]; then
+        location=$([ -d "$HOME/media/torrents/watch" ] && echo "" || echo "derp.home:")
+        rsync -avhP --no-group ~/Downloads/*.torrent "$location"'~/media/torrents/watch' && rm ~/Downloads/*.torrent
+    else
+        echo "No torrent files to copy"
+    fi
+}
 
 # Pipe to this to pretty-print json
 alias ppj='python -m json.tool'
