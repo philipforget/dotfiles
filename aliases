@@ -10,8 +10,8 @@ alias nr='ncmpcpp next && ncmpcpp prev' # Replay
 alias nt='ncmpcpp toggle'
 alias nnp='ncmpcpp --now-playing'
 
-if [ -d ~/media/torrents/watch ]; then
-    alias ctor='rsync -avhP --no-group ~/Downloads/*.torrent ~/media/torrents/watch'
+if [ -d "~/media/torrents/watch" ]; then
+    alias ctor='rsync -avhP --no-group ~/Downloads/*.torrent ~/media/torrents/watch && rm ~/Downloads/*.torrent'
 else
     alias ctor='rsync -avPh --no-group ~/Downloads/*.torrent derp.home:~/media/torrents/watch && rm ~/Downloads/*.torrent'
 fi
@@ -22,7 +22,7 @@ alias ppj='python -m json.tool'
 # Creds stuff
 alias credd='openssl aes-256-cbc -d -a -in creds -out creds.txt'
 alias crede='openssl aes-256-cbc -a -salt -in creds.txt -out creds'
-alias pss='openssl aes-256-cbc -d -a -in $(if [ -f creds ]; then echo creds; else echo ~/me/creds; fi) | grep -i -A 6 $1'
+alias pss='openssl aes-256-cbc -d -a -in $([ -f creds ] && echo creds || echo ~/me/creds) | grep -i -A 6 $1'
 
 # Concat all ssh configs into one master config
 alias sshconfig='> ~/.ssh/config && for f in ~/.ssh/configs/*; do echo "# generated from $f" >> ~/.ssh/config && grep -hv ^# $f >> ~/.ssh/config; done'
