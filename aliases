@@ -13,11 +13,15 @@ alias nnp='ncmpcpp --now-playing'
 
 function ctor() {
     # Copy all ~/Download/*.torrent files to local or remote watch folder
-
     ls ~/Downloads/*.torrent &> /dev/null
     if [ $? -eq 0 ]; then
-        location=$([ -d "$HOME/media/torrents/watch" ] && echo "" || echo "derp.home:")
-        rsync -avhP --no-group ~/Downloads/*.torrent "$location"'~/media/torrents/watch' && rm ~/Downloads/*.torrent
+        # Copy them to a local torrents watch folder if one is present
+        if [ -d "$HOME/media/torrents/watch" ]; then
+            rsync -avhP --no-group ~/Downloads/*.torrent ~/media/torrents/watch
+        else
+            rsync -avhP --no-group ~/Downloads/*.torrent derp.home:~/media/torrents/watch
+        fi
+        rm ~/Downloads/*.torrent
     else
         echo "No torrent files to copy"
     fi
