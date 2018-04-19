@@ -14,8 +14,9 @@ call plug#begin('~/.nvim/plugged')
 " Plugins
 Plug 'SirVer/ultisnips'
 Plug 'altercation/vim-colors-solarized'
-Plug 'benekastah/neomake'
 Plug 'benmills/vimux'
+Plug 'cespare/vim-toml'
+Plug 'christianrondeau/vim-base64'
 Plug 'honza/vim-snippets'
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'rking/ag.vim'
@@ -28,14 +29,14 @@ Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-surround'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'w0rp/ale'
 Plug 'zanglg/nova.vim'
 
 " Syntax highlighters
-Plug 'chase/vim-ansible-yaml'
 Plug 'ekalinin/Dockerfile.vim'
-Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'
-Plug 'saltstack/salt-vim'
 Plug 'smerrill/vcl-vim-plugin'
 Plug 'robbles/logstash'
 Plug 'lepture/vim-jinja'
@@ -47,6 +48,8 @@ syntax on
 " Indent Rules
 filetype plugin indent on
 set smartindent
+
+let g:airline#extensions#ale#enabled = 1
 
 set background=light
 colorscheme solarized
@@ -73,8 +76,18 @@ autocmd BufRead,BufNewFile *.jar,*.war,*.ear,*.sar,*.rar,*.epub set filetype=zip
 " babel and eslint config files ar ejson but dont end in .json
 autocmd BufRead,BufNewFile .babelrc,.eslintrc set filetype=json
 
-" Run neomake after writing any buffer
-autocmd BufWritePost * Neomake
+" Start at the beginning of the buffer for git commit messages
+au FileType gitcommit au! BufEnter COMMIT_EDITMSG call setpos('.', [0, 1, 1, 0])
+
+
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
 
 " Visual bell and no beep
 set vb
@@ -149,6 +162,7 @@ set hlsearch
 set incsearch
 " case-insensitive search
 set ignorecase
+set infercase
 " unless there's uppercase letters on the pattern
 set smartcase
 " do not move the cursor when highlighting
@@ -248,6 +262,9 @@ vnoremap <F1> <ESC>
 " Remap C-c to escape
 inoremap <C-c> <ESC>
 
+" Vim by default uses c-c for sql autocomplete
+let g:ftplugin_sql_omni_key = '<C-0>'
+
 " autocomplete on dashed-words, very useful for css
 set iskeyword+=-
 
@@ -279,10 +296,6 @@ cnoreabbrev Wa wa
 cnoreabbrev Wal wa
 cnoreabbrev Wall wa
 cnoreabbrev Set set
-
-" Add blank lines below cursor with Shift-Enter
-nmap <S-Enter> O<Esc>j
-nmap <CR> o<Esc>k
 
 " json-vim
 let g:vim_json_syntax_conceal = 0

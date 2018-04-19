@@ -15,15 +15,14 @@ PS1="$PS1$WHITE@"
 PS1="$PS1$GREEN\h"
 PS1="$PS1$WHITE:"
 PS1="$PS1$MAGENTA\w "
-# Only include vcprompt if it's installed
-has_vcprompt=$(command -v vcprompt &> /dev/null)
-$has_vcprompt && PS1=$PS1"$PINK\$(vcprompt)"
+PS1=$PS1"$PINK\$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/')"
 # White: newline, prompt
 PS1="$PS1$WHITE: "
 
 # I love history
 export HISTSIZE=""
 export HISTFILESIZE=""
+export PROMPT_COMMAND='history -a'
 # Ignore duplicates and commands with leading whitespace
 export HISTCONTROL=ignoreboth
 
@@ -49,6 +48,10 @@ export PYTHONDONTWRITEBYTECODE=1
 export WORKON_HOME=~/.virtualenvs
 
 export PATH="$HOME/bin:$PATH"
+
+if [ -f ~/.convox/completion.bash ]; then
+    . ~/.convox/completion.bash
+fi
 
 # Stuff not checked into the public repo
 if [ -f ~/.bash_secret ]; then

@@ -1,4 +1,6 @@
-# vim:ft=sh
+#!/bin/bash
+
+# vim:ft=bash
 # Aliases for all platforms
 
 alias vim=nvim
@@ -14,10 +16,12 @@ alias nnp='ncmpcpp --now-playing'
 function ctor() {
     # Copy all ~/Download/*.torrent files to local or remote watch folder
 
-    ls ~/Downloads/*.torrent &> /dev/null
-    if [ $? -eq 0 ]; then
-        location=$([ -d "$HOME/media/torrents/watch" ] && echo "" || echo "derp.home:")
-        rsync -avhP --no-group ~/Downloads/*.torrent "$location"'~/media/torrents/watch' && rm ~/Downloads/*.torrent
+    if ! [[ $(find ~/Downloads/ -name '*.torrent' | wc -l) = 0 ]]; then
+        if [[ -d "/mnt/media/torrents/watch" ]]; then
+            mv ~/Downloads/*.torrent /mnt/media/torrents/watch;
+        else
+            rsync -avhP --no-group ~/Downloads/*.torrent derp.home:/mnt/media/torrents/watch && rm ~/Downloads/*.torrent
+        fi
     else
         echo "No torrent files to copy"
     fi
@@ -27,9 +31,9 @@ function ctor() {
 alias ppj='python -m json.tool'
 
 # Creds stuff
-alias credd='openssl aes-256-cbc -d -a -in creds -out creds.txt'
-alias crede='openssl aes-256-cbc -a -salt -in creds.txt -out creds'
-alias pss='openssl aes-256-cbc -d -a -in $([ -f creds ] && echo creds || echo ~/me/creds) | grep -i -A 6 $1'
+alias credd='openssl aes-256-cbc -md sha256 -d -a -in creds -out creds.txt'
+alias crede='openssl aes-256-cbc -md sha256 -a -salt -in creds.txt -out creds'
+alias pss='openssl aes-256-cbc -md sha256 -d -a -in $([ -f creds ] && echo creds || echo ~/me/creds) | grep -i -A 6 $1'
 
 # Concat all ssh configs into one master config
 alias sshconfig='> ~/.ssh/config && for f in ~/.ssh/configs/*; do echo "# generated from $f" >> ~/.ssh/config && grep -hv ^# $f >> ~/.ssh/config; done'
@@ -67,7 +71,7 @@ function t() {
             tmux new-session -s $1 -c ~/workspace/lisa || tmux attach -t $1
             ;;
         "music" )
-            tmux new-session -s $1 -c ~/Desktop/music || tmux attach -t $1
+            tmux new-session -s $1 -c ~/media/Music || tmux attach -t $1
             ;;
         "envelope" )
             tmux new-session -s $1 -c ~/workspace/envelope || tmux attach -t $1
@@ -96,6 +100,8 @@ function tea(){
     nohup sh -c 'sleep '" $time && osascript -e 'display notification "'"Your tea is ready!"'" with title "'"Tea Time"'"'" &>/dev/null &
 }
 
+alias coffee="tea 300"
+
 alias rcp="rsync -avhP --no-group"
 
 alias todo='vim ~/todo'
@@ -105,4 +111,30 @@ alias hockey='~/.virtualenvs/hockeybox/bin/python -m hockeybox.core'
 
 function test_packet_loss() {
     ssh $2 "ip addr | grep 192" | awk '{print $2}' | cut -d '/' -f 1 | xargs -I {} ssh $1 "ping {}"
+}
+
+function recreate_db() {
+    echo "
+        SELECT pg_terminate_backend(pg_stat_activity.pid)
+        FROM pg_stat_activity
+        WHERE pg_stat_activity.datname = '$1'
+        AND pid <> pg_backend_pid();
+        DROP DATABASE $1;
+        CREATE DATABASE $1;
+    "
+}
+
+alias gcredentials="gcloud container clusters get-credentials $1"
+
+alias singlepod="kubectl get pods -o=jsonpath='{.items[0].metadata.name}' $@"
+
+function camfind() {
+    python3 -c '\
+import sys; \
+import subprocess; \
+lines=[x for x in open(sys.argv[1]).read().split("\n") if x]; \
+len(lines) == 0 and sys.exit(1); \
+file = lines[0] if len(lines) == 1 else lines[int(input("{}\nEnter Choice: ".format("\n".join(["{}: {}".format(i, e) for i, e in enumerate(lines)]))))]; \
+subprocess.run(["vim", file])\
+' <(find "$@")
 }

@@ -6,6 +6,7 @@
     hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
     type = cat-file -t
     dump = cat-file -p
+    lg = log --color --pretty=format:'%C(auto)%h %Cred %<(10,trunc)%an %Creset%C(auto)%s %Cgreen(%cr,%ar) %Creset%C(auto)%d'
 
 [user]
 	name = Philip Forget
@@ -20,7 +21,7 @@
 [core]
 	excludesfile = /Users/philipforget/.gitignore_global
 [filter "lfs"]
-	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
-	required = true
 	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f

@@ -1,14 +1,8 @@
 # vim:set ft=sh:
 
-BREWFIX="$(brew --prefix)"
-if [ -f $BREWFIX/etc/bash_completion ]; then
-    . $BREWFIX/etc/bash_completion;
-fi
-
-export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
-if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
-    . /usr/local/bin/virtualenvwrapper.sh
-fi
+if [ -f /usr/local/share/bash-completion/bash_completion ]; then
+    . /usr/local/share/bash-completion/bash_completion
+  fi
 
 if [ -f ~/.aliases_mac ]; then
     . ~/.aliases_mac
@@ -18,6 +12,8 @@ fi
 if [ -d ~/.virtualenvs/default ]; then
     export PATH="$HOME/.virtualenvs/default/bin:$PATH"
 fi
+
+export PATH="$PATH:/usr/local/sbin"
 
 export TERM=xterm-256color
 
