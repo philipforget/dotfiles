@@ -1,4 +1,6 @@
+#!/bin/bash
 # vim:ft=sh
+
 BLUE="\[\033[01;34m\]" WHITE="\[\033[01;00m\]"
 MAGENTA="\[\033[01;35m\]"
 PINK="\[\033[01;31m\]"
@@ -17,12 +19,14 @@ PS1="$PS1$MAGENTA\w "
 # Only include vcprompt if it's installed
 # has_vcprompt=$(command -v vcprompt &> /dev/null)
 # $has_vcprompt && PS1=$PS1"$PINK\$(vcprompt)"
+PS1=$PS1"$PINK\$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/')"
 # White: newline, prompt
 PS1="$PS1$WHITE: "
 
 # I love history
 export HISTSIZE=""
 export HISTFILESIZE=""
+export PROMPT_COMMAND='history -a'
 # Ignore duplicates and commands with leading whitespace
 export HISTCONTROL=ignoreboth
 
@@ -33,12 +37,9 @@ export PAGER=less
 export less=-r
 
 # Platform dependant stuff
-unamestr=$(uname)
-if [[ $unamestr == 'Linux' ]];
-then
+if [[ "$(uname)" == 'Linux' ]]; then
     . ~/.bash_linux
-elif [[ $unamestr == 'Darwin' ]];
-then
+elif [[ "$(uname)" == 'Darwin' ]]; then
     . ~/.bash_mac
 fi
 
@@ -50,18 +51,10 @@ fi
 
 export PATH="$HOME/bin:$PATH"
 
-# Stuff not checked into the public repo
-if [ -f ~/.bash_secret ]; then
-    . ~/.bash_secret
-fi
+[[ -f ~/.bash_secret ]] && . ~/.bash_secret
+[[ -f ~/.aliases ]] && . ~/.aliases
+[[ -f ~/.distraction ]] && . ~/.distraction
 
-if [ -f ~/.aliases ]; then
-    . ~/.aliases
-fi
-
-if [ -f ~/.distraction ]; then
-    . ~/.distraction
-fi
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/usr/lib/google-cloud-sdk/path.bash.inc' ]; then source '/usr/lib/google-cloud-sdk/path.bash.inc'; fi

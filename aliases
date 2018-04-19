@@ -1,36 +1,33 @@
+#!/bin/bash
 # vim:ft=sh
+
 
 function ctor() {
     # Copy all ~/Download/*.torrent files to local or remote watch folder
-    ls ~/Downloads/*.torrent &> /dev/null
-    if [ $? -eq 0 ]; then
-        # Copy them to a local torrents watch folder if one is present
-        if [ -d "$HOME/media/torrents/watch" ]; then
-            rsync -avhP --no-group ~/Downloads/*.torrent ~/media/torrents/watch
+    if ! [[ $(find ~/Downloads/ -name '*.torrent' | wc -l) = 0 ]]; then
+        if [[ -d "/mnt/media/torrents/watch" ]]; then
+            mv ~/Downloads/*.torrent /mnt/media/torrents/watch;
         else
-            rsync -avhP --no-group ~/Downloads/*.torrent derp.home:~/media/torrents/watch
+            rsync -avhP --no-group ~/Downloads/*.torrent derp.home:/mnt/media/torrents/watch && rm ~/Downloads/*.torrent
         fi
-        rm ~/Downloads/*.torrent
     else
         echo "No torrent files to copy"
     fi
 }
 
-# Pipe to this to pretty-print json
-alias ppj='python -m json.tool'
 
 # Creds stuff
-alias credd='openssl aes-256-cbc -d -a -in creds -out creds.txt'
-alias crede='openssl aes-256-cbc -a -salt -in creds.txt -out creds'
-alias pss='openssl aes-256-cbc -d -a -in $([ -f creds ] && echo creds || echo ~/me/creds) | grep -i -A 6 $1'
+alias credd='openssl aes-256-cbc -md sha256 -d -a -in creds -out creds.txt'
+alias crede='openssl aes-256-cbc -md sha256 -a -salt -in creds.txt -out creds'
+function pss () {
+    openssl aes-256-cbc -md sha256 -d -a -in "$([[ -f creds ]] && echo creds || echo ~/me/creds)" | grep -i -C 6 "${1}"
+}
 
 # Concat all ssh configs into one master config
 alias sshconfig='> ~/.ssh/config && for f in ~/.ssh/configs/*; do echo "# generated from $f" >> ~/.ssh/config && grep -hv ^# $f >> ~/.ssh/config; done'
-alias sshemallletgodsortemout="awsssh > ~/.ssh/configs/awsssh && sshconfig"
+
 
 # Docker stuff
-# Quickly get the last id of a docker container
-alias dl="docker ps -l -q"
 # Remove all stopped containers
 alias drm='docker rm $(docker ps -a -q)'
 
@@ -41,53 +38,39 @@ function latest () {
     ls -lth | head -n ${1:-10}
 }
 
-alias cleanbranches="git branch --merged | grep -v '^\*' | xargs git branch -d"
+alias cleanbranches="git branch --merged | grep -v '^\\*' | xargs git branch -d"
 function squash() {
     git rebase --interactive $(git merge-base master $(git branch | grep \* | cut -d ' ' -f 2))
 }
 
 alias ivlc="cvlc -I ncurses"
 
+
+# Tmux session helper. t <session> will either attach to the named session or start a new named session.
 function t() {
     case $1 in
         "" )
             tmux ls
             ;;
-        "ls" )
-            tmux ls
-            ;;
-        "lisa" )
-            tmux new-session -s $1 -c ~/workspace/lisa || tmux attach -t $1
-            ;;
-        "music" )
-            tmux new-session -s $1 -c ~/Desktop/music || tmux attach -t $1
-            ;;
-        "envelope" )
-            tmux new-session -s $1 -c ~/workspace/envelope || tmux attach -t $1
-            ;;
         *)
-            tmux new-session -s $1 || tmux attach -t $1
+            tmux new-session -s "${1}" || tmux attach -t "${1}"
             ;;
     esac
 }
 
-alias music="t music"
-
-function parse(){
-    curl -v "https://www.readability.com/api/content/v1/parser?token=$READABILITY_PARSER_TOKEN&url=$1" | python -m json.tool
-}
-
-alias whatismyip="curl httpbin.org/ip 2>/dev/null | grep origin | cut -d '\"' -f 4"
+alias whatismyip=curl httpbin.org/ip 2> /dev/null | jq -r .origin
 
 function notify() {
     osascript -e 'display notification "'"$1"'"' &>/dev/null
 }
 
-function tea(){
+function tea () {
     time=${1:-240}
     echo "Notification scheduled in $time seconds"
     nohup sh -c 'sleep '" $time && osascript -e 'display notification "'"Your tea is ready!"'" with title "'"Tea Time"'"'" &>/dev/null &
 }
+
+alias coffee="tea 300"
 
 alias rcp="rsync -avhP --no-group"
 
@@ -96,14 +79,20 @@ alias standup='vim ~/notes/envelope/standup'
 
 alias hockey='~/.virtualenvs/hockeybox/bin/python -m hockeybox.core'
 
-function test_packet_loss() {
-    ssh $2 "ip addr | grep 192" | awk '{print $2}' | cut -d '/' -f 1 | xargs -I {} ssh $1 "ping {}"
-}
-
 function fsffplay() {
     size=$(xrandr -q | grep \*\+ | awk '{print $1}') && \
     ffplay -fs \
-        -x $(echo $size | cut -d x -f 1) \
-        -y $(echo $size | cut -d x -f 2) \
+        -x "$(echo $size | cut -d x -f 1)" \
+        -y "$(echo $size | cut -d x -f 2)" \
     $1
+}
+
+function gcredentials() {
+    default_cluster=main
+    cluster=${1:-$default_cluster}
+    gcloud container clusters get-credentials "${cluster}"
+}
+
+function singlepod () {
+    kubectl get pods -o=jsonpath='{.items[0].metadata.name}' "${@}"
 }
