@@ -19,6 +19,7 @@ symlink_mapping = (
     ('vim', '~/.vim'),
     ('vim/init.vim', '~/.vimrc'),
     ('vim', '~/.config/nvim'),
+    ('xmodmap', '~/.xmodmap'),
 )
 
 def install_symlinks(force=False):

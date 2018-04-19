@@ -1,15 +1,4 @@
 # vim:ft=sh
-# Aliases for all platforms
-
-alias vim=nvim
-
-alias n=ncmpcpp
-alias nn='ncmpcpp next'
-alias np='ncmpcpp prev'
-alias nr='ncmpcpp next && ncmpcpp prev' # Replay
-alias nt='ncmpcpp toggle'
-alias nnp='ncmpcpp --now-playing'
-
 
 function ctor() {
     # Copy all ~/Download/*.torrent files to local or remote watch folder
@@ -109,4 +98,12 @@ alias hockey='~/.virtualenvs/hockeybox/bin/python -m hockeybox.core'
 
 function test_packet_loss() {
     ssh $2 "ip addr | grep 192" | awk '{print $2}' | cut -d '/' -f 1 | xargs -I {} ssh $1 "ping {}"
+}
+
+function fsffplay() {
+    size=$(xrandr -q | grep \*\+ | awk '{print $1}') && \
+    ffplay -fs \
+        -x $(echo $size | cut -d x -f 1) \
+        -y $(echo $size | cut -d x -f 2) \
+    $1
 }

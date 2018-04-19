@@ -49,7 +49,7 @@ filetype plugin indent on
 set smartindent
 
 set background=light
-colorscheme solarized
+colorscheme default
 
 " Turn on 3 modelines, these allow us to set filetype etc using the first 3
 " commented lines of a given file.
@@ -58,6 +58,8 @@ set modelines=3
 
 " Change buffers without saving them
 set hidden
+
+cmap w!! w !sudo tee > /dev/null %
 
 " Use the already open buffer if it exists
 set switchbuf=useopen,usetab 
