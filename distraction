@@ -3,6 +3,11 @@
 DISTRACTION_MAC_APPS=('Twitter.app' 'Flowdock.app')
 DISTRACTION_LINUX_APPS=( )
 
+INPLACE="-i"
+if [[ $(uname) = 'Darwin' ]]; then
+    INPLACE="-i ''"
+fi
+
 function concentrate_apps() {
     # Move all distracting apps to a hidden dotfile prefix
     if [[ $(uname) = 'Darwin' ]]; then
@@ -27,22 +32,22 @@ function distract_apps() {
 
 function distract_hosts() {
     # Comment out all lines in /etc/hosts ending in #distraction
-    sudo sed -i '' -e 's/\(^[^#].*\)#distraction$/#\1#distraction/' /etc/hosts
+    sudo sed $INPLACE -e 's/\(^[^#].*\)#distraction$/#\1#distraction/' /etc/hosts
 }
 
 function concentrate_hosts() {
     # Uncomment all lines in /etc/hosts ending in #distraction
-    sudo sed -i '' -e 's/^#\(.*\)#distraction$/\1#distraction/' /etc/hosts
+    sudo sed $INPLACE -e 's/^#\(.*\)#distraction$/\1#distraction/' /etc/hosts
 }
 
 function concentrate() {
     concentrate_hosts
     concentrate_apps
-    sudo dscacheutil -flushcache
+    [[ $(uname) = 'Darwin' ]] && sudo dscacheutil -flushcache
 }
 
 function distract() {
     distract_hosts
     distract_apps
-    sudo dscacheutil -flushcache
+    [[ $(uname) = 'Darwin' ]] && sudo dscacheutil -flushcache
 }

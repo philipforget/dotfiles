@@ -51,8 +51,14 @@ set smartindent
 
 let g:airline#extensions#ale#enabled = 1
 
+" Turn on 256 solarized mode for non-solarized terminals
+let g:solarized_termcolors=256
 set background=light
-colorscheme default
+colorscheme solarized
+
+" function ToggleSolarlizedColors()
+"     echo &solarized_termcolors
+" endfunction
 
 " Turn on 3 modelines, these allow us to set filetype etc using the first 3
 " commented lines of a given file.
@@ -65,7 +71,7 @@ set hidden
 cmap w!! w !sudo tee > /dev/null %
 
 " Use the already open buffer if it exists
-set switchbuf=useopen,usetab 
+set switchbuf=useopen,usetab
 
 " Filetype detection based on extension for lesser known filetypes
 autocmd BufRead,BufNewFile *.as set filetype=actionscript
@@ -244,7 +250,7 @@ nmap <C-L> <C-W>l
 map gs <C-W>F
 
 " Turn on 256 colors if this is xterm or xterm compatible
-set t_Co=256
+" set t_Co=256
 
 " Remove some of the more annoying 'Press ENTER to continue' messages
 set shortmess=atI

@@ -58,7 +58,7 @@ function t() {
     esac
 }
 
-alias whatismyip=curl httpbin.org/ip 2> /dev/null | jq -r .origin
+alias whatismyip="curl httpbin.org/ip 2> /dev/null | jq -r .origin"
 
 function notify() {
     osascript -e 'display notification "'"$1"'"' &>/dev/null
