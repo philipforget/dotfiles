@@ -1,23 +1,17 @@
 # vim:set ft=sh:
 
-if [ -f /usr/local/share/bash-completion/bash_completion ]; then
-    . /usr/local/share/bash-completion/bash_completion
-  fi
-
-if [ -f ~/.aliases_mac ]; then
-    . ~/.aliases_mac
-fi
+[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
+[ -f ~/.aliases_mac ] && . ~/.aliases_mac
 
 # If we have a `default` python virtualenv, lets use it over anything on the system already
-if [ -d ~/.virtualenvs/default ]; then
-    export PATH="$HOME/.virtualenvs/default/bin:$PATH"
-fi
+[ -d ~/.virtualenvs/default ] && export PATH="$HOME/.virtualenvs/default/bin:$PATH"
 
 export PATH="$PATH:/usr/local/sbin"
-
-export TERM=xterm-256color
 
 # homebrew installed vcprompt is from https://bitbucket.org/gward/vcprompt
 export VCPROMPT_FORMAT="%b%u%m"
 
 alias vlc="/Applications/VLC.app/Contents/MacOS/VLC"
+
+[ -f '/Users/philipforget/workspace/google-cloud-sdk/path.bash.inc' ] && . '/Users/philipforget/workspace/google-cloud-sdk/path.bash.inc'
+[ -f '/Users/philipforget/workspace/google-cloud-sdk/completion.bash.inc' ] && . '/Users/philipforget/workspace/google-cloud-sdk/completion.bash.inc'

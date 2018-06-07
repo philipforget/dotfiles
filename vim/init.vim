@@ -12,7 +12,6 @@ endif
 call plug#begin('~/.nvim/plugged')
 
 " Plugins
-Plug 'SirVer/ultisnips'
 Plug 'altercation/vim-colors-solarized'
 Plug 'benmills/vimux'
 Plug 'cespare/vim-toml'
@@ -52,7 +51,7 @@ set smartindent
 let g:airline#extensions#ale#enabled = 1
 
 " Turn on 256 solarized mode for non-solarized terminals
-let g:solarized_termcolors=256
+" let g:solarized_termcolors=256
 set background=light
 colorscheme solarized
 
