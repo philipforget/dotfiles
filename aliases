@@ -57,6 +57,7 @@ function t() {
             ;;
     esac
 }
+[[ -f ~/workspace/dotfiles/tcomplete.bash ]] && . ~/workspace/dotfiles/tcomplete.bash
 
 alias whatismyip="curl httpbin.org/ip 2> /dev/null | jq -r .origin"
 
