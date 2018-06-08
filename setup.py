@@ -1,10 +1,14 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+from pathlib import Path
+
 import argparse
 import os
 
+IS_MAC = os.uname().sysname == 'Darwin'
 
-symlink_mapping = (
+
+general = (
     ('aliases', '~/.aliases'),
     ('aliases_linux', '~/.aliases_linux'),
     ('aliases_mac', '~/.aliases_mac'),
@@ -22,25 +26,27 @@ symlink_mapping = (
     ('xmodmap', '~/.xmodmap'),
 )
 
-def install_symlinks(force=False):
-    print("Installing symlinks")
-    for path, symlink in symlink_mapping:
-        print("{}:".format(symlink))
-        file_path = os.path.abspath(os.path.join(os.path.dirname(__file__), path))
-        symlink_path = os.path.expanduser(symlink)
-        if os.path.islink(symlink_path) and force:
-            print("\tremoving existing symlink")
-            os.remove(symlink_path)
-        elif os.path.isfile(symlink_path) or os.path.islink(symlink_path):
-            print("\tfile exists at path")
+mac_only = (
+    ('Shortcuts.json', '~/Library/Application Support/Spectacle/Shortcuts.json'),
+)
+
+
+def create_symlinks(symlink_map):
+    for filename, location in symlink_map:
+        filepath = Path(filename)
+        target = Path(location).expanduser()
+
+        print("{} -> {}:".format(filepath, target))
+
+        if target.exists() or target.is_symlink():
+            print("\tfile exists at path, skipping")
             continue
-        print("\tcreating symlink")
-        os.symlink(file_path, symlink_path)
+
+        target.parent.mkdir(parents=True, exist_ok=True)
+        filepath.symlink_to(target)
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Set up your symlinks!")
-    parser.add_argument('-f', '--force', default=False, dest='force', action='store_true',
-        help="if a symlink already exists, overwrite it")
-    args = parser.parse_args()
-    install_symlinks(force=args.force)
+    create_symlinks(general)
+    if IS_MAC:
+        create_symlinks(mac_only)
