@@ -6,7 +6,7 @@ Assume all repos are to be located in `~/workspace`.
 
 ```bash
 mkdir -p  ~/workspace && cd ~/workspace
-git clone https://github.com/cameronhr/dotfiles.git
+git clone git@github.com:cameronhr/dotfiles.git
 python dotfiles/setup.py
 ```
 On first us of vim: `:PlugInstall`
