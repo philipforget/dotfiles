@@ -19,7 +19,7 @@ PS1="$PS1$MAGENTA\w "
 # Only include vcprompt if it's installed
 # has_vcprompt=$(command -v vcprompt &> /dev/null)
 # $has_vcprompt && PS1=$PS1"$PINK\$(vcprompt)"
-PS1=$PS1"$PINK\$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/')"
+PS1="$PS1$PINK\$(__git_ps1)"
 # White: newline, prompt
 PS1="$PS1$WHITE: "
 
@@ -61,5 +61,3 @@ if [ -f '/usr/lib/google-cloud-sdk/path.bash.inc' ]; then source '/usr/lib/googl
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/usr/lib/google-cloud-sdk/completion.bash.inc' ]; then source '/usr/lib/google-cloud-sdk/completion.bash.inc'; fi
-
-
