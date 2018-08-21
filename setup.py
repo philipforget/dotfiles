@@ -33,8 +33,8 @@ mac_only = (
 
 def create_symlinks(symlink_map):
     for filename, location in symlink_map:
-        filepath = Path(filename)
-        target = Path(location).expanduser()
+        filepath = Path(filename).resolve()
+        target = Path(location).expanduser().resolve()
 
         print("{} -> {}:".format(filepath, target))
 
@@ -43,7 +43,7 @@ def create_symlinks(symlink_map):
             continue
 
         target.parent.mkdir(parents=True, exist_ok=True)
-        filepath.symlink_to(target)
+        target.symlink_to(filepath)
 
 
 if __name__ == "__main__":
