@@ -30,6 +30,7 @@ Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-surround'
 Plug 'zanglg/nova.vim'
 Plug 'chrisbra/csv.vim'
+Plug 'jgdavey/tslime.vim'
 
 " Syntax highlighters
 Plug 'chase/vim-ansible-yaml'
@@ -290,3 +291,8 @@ let g:vim_json_syntax_conceal = 0
 
 " vim-markdown
 let g:markdown_fenced_languages = ['html', 'python', 'bash=sh', 'javascript']
+
+" Tslime plugin
+vmap <C-b><C-b> <Plug>SendSelectionToTmux
+nmap <C-b><C-b> <Plug>NormalModeSendToTmux
+nmap <C-b>r <Plug>SetTmuxVars

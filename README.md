@@ -9,7 +9,7 @@ mkdir -p  ~/workspace && cd ~/workspace
 git clone git@github.com:cameronhr/dotfiles.git
 python dotfiles/setup.py
 ```
-On first us of vim: `:PlugInstall`
+On first use of vim: `:PlugInstall`
 
 
 ## Other
