@@ -15,6 +15,7 @@ call plug#begin('~/.nvim/plugged')
 Plug 'altercation/vim-colors-solarized'
 Plug 'benmills/vimux'
 Plug 'cespare/vim-toml'
+Plug 'chrisbra/csv.vim'
 Plug 'christianrondeau/vim-base64'
 Plug 'honza/vim-snippets'
 Plug 'kien/rainbow_parentheses.vim'

@@ -56,10 +56,10 @@ export PATH="$HOME/bin:$PATH"
 [[ -f ~/.distraction ]] && . ~/.distraction
 
 
+
+
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/usr/lib/google-cloud-sdk/path.bash.inc' ]; then source '/usr/lib/google-cloud-sdk/path.bash.inc'; fi
+if [ -f '/home/philipforget/workspace/google-cloud-sdk/path.bash.inc' ]; then source '/home/philipforget/workspace/google-cloud-sdk/path.bash.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/usr/lib/google-cloud-sdk/completion.bash.inc' ]; then source '/usr/lib/google-cloud-sdk/completion.bash.inc'; fi
-
-
+if [ -f '/home/philipforget/workspace/google-cloud-sdk/completion.bash.inc' ]; then source '/home/philipforget/workspace/google-cloud-sdk/completion.bash.inc'; fi
