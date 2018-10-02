@@ -34,7 +34,7 @@ mac_only = (
 def create_symlinks(symlink_map):
     for filename, location in symlink_map:
         filepath = Path(filename).resolve()
-        target = Path(location).expanduser().resolve()
+        target = Path(location).expanduser()
 
         print("{} -> {}:".format(filepath, target))
 
