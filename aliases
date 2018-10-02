@@ -1,7 +1,6 @@
 #!/bin/bash
 # vim:ft=sh
 
-
 function ctor() {
     # Copy all ~/Download/*.torrent files to local or remote watch folder
     if ! [[ $(find ~/Downloads/ -name '*.torrent' | wc -l) = 0 ]]; then
@@ -19,6 +18,7 @@ function ctor() {
 # Creds stuff
 alias credd='openssl aes-256-cbc -md sha256 -d -a -in creds -out creds.txt'
 alias crede='openssl aes-256-cbc -md sha256 -a -salt -in creds.txt -out creds'
+alias psa=pss
 function pss () {
     openssl aes-256-cbc -md sha256 -d -a -in "$([[ -f creds ]] && echo creds || echo ~/me/creds)" | grep -i -C 6 "${1}"
 }
