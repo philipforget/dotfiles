@@ -54,7 +54,7 @@ let g:airline#extensions#ale#enabled = 1
 " Turn on 256 solarized mode for non-solarized terminals
 " let g:solarized_termcolors=256
 set background=light
-colorscheme default
+colorscheme solarized
 
 " function ToggleSolarlizedColors()
 "     echo &solarized_termcolors
