@@ -11,27 +11,25 @@ GIT_PS1_SHOWDIRTYSTATE=1
 GIT_PS1_SHOWSTASHSTATE=1
 GIT_PS1_SHOWUNTRACKEDFILES=1
 
-# Set the nice PS1
-PS1=""
-# Blue: User
-PS1="$PS1$BLUE\u"
-# White: @
-PS1="$PS1$WHITE@"
-# Blue: Hostname
-PS1="$PS1$GREEN\h"
-PS1="$PS1$WHITE:"
-PS1="$PS1$MAGENTA\w"
-# Git prompt
-PS1="$PS1$PINK\$(__git_ps1)"
-# White: newline, prompt
-PS1="$PS1$WHITE: "
+get_ps1() {
+    user="$BLUE\u$WHITE"
+    host="$GREEN\h$WHITE"
+    dir="$GREEN\w$WHITE"
+    time="$GREEN\$(date \"+%H:%M:%S\")$WHITE"
+    git="$PINK\$(__git_ps1)$WHITE"
+
+    echo "${user}@${host} ${dir} ${git}\n${time}: "
+}
+
+PS1="$(get_ps1)"
 
 # I love history
 export HISTSIZE=""
 export HISTFILESIZE=""
+# Allows for sharing of history across tmux session (-a appends to history)
 export PROMPT_COMMAND='history -a'
-# Ignore duplicates and commands with leading whitespace
-export HISTCONTROL=ignoreboth
+# Ignore and erase duplicates and commands with leading whitespace
+export HISTCONTROL=ignoreboth:erasedups
 
 export EDITOR=vim
 
@@ -52,13 +50,15 @@ if [[ -d "$HOME/.venvs/default" ]]; then
     export PYTHONPATH="$HOME/~/.venvs/default/lib/python3.6/site-packages"
 fi
 
-export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/bin:$HOME/go/bin:$PATH"
 
 [[ -f ~/.bash_secret ]] && . ~/.bash_secret
 [[ -f ~/.aliases ]] && . ~/.aliases
 [[ -f ~/.distraction ]] && . ~/.distraction
 
-
+command kubectl > /dev/null && source <(kubectl completion bash)
 
 if [ -f '/home/philipforget/workspace/google-cloud-sdk/path.bash.inc' ]; then source '/home/philipforget/workspace/google-cloud-sdk/path.bash.inc'; fi
 if [ -f '/usr/lib/google-cloud-sdk/completion.bash.inc' ]; then source '/usr/lib/google-cloud-sdk/completion.bash.inc'; fi
+
+[[ -f ~/.fzf.bash ]] && source ~/.fzf.bash

@@ -12,6 +12,7 @@ endif
 call plug#begin('~/.nvim/plugged')
 
 " Plugins
+Plug '/usr/local/opt/fzf'
 Plug 'altercation/vim-colors-solarized'
 Plug 'benmills/vimux'
 Plug 'cespare/vim-toml'
@@ -248,9 +249,6 @@ nmap <C-L> <C-W>l
 
 " Split to the file under the cursor and line number
 map gs <C-W>F
-
-" Turn on 256 colors if this is xterm or xterm compatible
-" set t_Co=256
 
 " Remove some of the more annoying 'Press ENTER to continue' messages
 set shortmess=atI

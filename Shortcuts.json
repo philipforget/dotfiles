@@ -12,7 +12,7 @@
     "shortcut_name" : "MoveToUpperLeft"
   },
   {
-    "shortcut_key_binding" : null,
+    "shortcut_key_binding" : "ctrl+cmd+k",
     "shortcut_name" : "MoveToUpperRight"
   },
   {
@@ -68,7 +68,7 @@
     "shortcut_name" : "MoveToPreviousThird"
   },
   {
-    "shortcut_key_binding" : null,
+    "shortcut_key_binding" : "ctrl+cmd+j",
     "shortcut_name" : "MoveToLowerRight"
   }
 ]

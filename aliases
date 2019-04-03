@@ -1,7 +1,7 @@
 #!/bin/bash
 # vim:ft=sh
 
-function ctor() {
+ctor() {
     # Copy all ~/Download/*.torrent files to local or remote watch folder
     if ! [[ $(find ~/Downloads/ -name '*.torrent' | wc -l) = 0 ]]; then
         if [[ -d "/mnt/media/torrents/watch" ]]; then
@@ -19,7 +19,7 @@ function ctor() {
 alias credd='openssl aes-256-cbc -md sha256 -d -a -in creds -out creds.txt'
 alias crede='openssl aes-256-cbc -md sha256 -a -salt -in creds.txt -out creds'
 alias psa=pss
-function pss () {
+pss() {
     openssl aes-256-cbc -md sha256 -d -a -in "$([[ -f creds ]] && echo creds || echo ~/me/creds)" | grep -i -C 6 "${1}"
 }
 
@@ -34,12 +34,12 @@ alias drm='docker rm $(docker ps -a -q)'
 alias lower="tr '[:upper:]' '[:lower:]'"
 alias upper="tr '[:lower:]' '[:upper:]'"
 
-function latest () {
+latest() {
     ls -lth | head -n ${1:-10}
 }
 
 alias cleanbranches="git branch --merged | grep -v '^\\*' | xargs git branch -d"
-function squash() {
+squash() {
     git rebase --interactive $(git merge-base master $(git branch | grep \* | cut -d ' ' -f 2))
 }
 
@@ -47,7 +47,7 @@ alias ivlc="cvlc -I ncurses"
 
 
 # Tmux session helper. t <session> will either attach to the named session or start a new named session.
-function t() {
+t() {
     case $1 in
         "" )
             tmux ls
@@ -61,11 +61,11 @@ function t() {
 
 alias whatismyip="curl httpbin.org/ip 2> /dev/null | jq -r .origin"
 
-function notify() {
+notify() {
     osascript -e 'display notification "'"$1"'"' &>/dev/null
 }
 
-function tea () {
+tea() {
     time=${1:-240}
     echo "Notification scheduled in $time seconds"
     nohup sh -c 'sleep '" $time && osascript -e 'display notification "'"Your tea is ready!"'" with title "'"Tea Time"'"'" &>/dev/null &
@@ -80,7 +80,7 @@ alias standup='vim ~/notes/envelope/standup'
 
 alias hockey='~/.virtualenvs/hockeybox/bin/python -m hockeybox.core'
 
-function fsffplay() {
+fsffplay() {
     size=$(xrandr -q | grep \*\+ | awk '{print $1}') && \
     ffplay -fs \
         -x "$(echo $size | cut -d x -f 1)" \
@@ -88,12 +88,17 @@ function fsffplay() {
     $1
 }
 
-function gcredentials() {
+gcredentials() {
     default_cluster=main
     cluster=${1:-$default_cluster}
     gcloud container clusters get-credentials "${cluster}"
 }
 
-function singlepod () {
+singlepod() {
     kubectl get pods -o=jsonpath='{.items[0].metadata.name}' "${@}"
+}
+
+# Generate a valid, random MAC address for KVM virtual machines
+kvm_random_mac(){
+    python3 -c 'from random import randint; import sys; sys.stdout.write(":".join(["{0:02X}".format(x) for x in [0x00, 0x16, 0x3e, randint(0x00, 0x75), randint(0x00, 0xff), randint(0x00, 0xff),]]))'
 }
