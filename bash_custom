@@ -1,6 +1,8 @@
 #!/bin/bash
 # vim:ft=sh
 
+# Allow __git_ps1 to work on arch linux
+[[ -f /usr/share/git/git-prompt.sh ]] && . /usr/share/git/git-prompt.sh
 
 GIT_PS1_SHOWDIRTYSTATE=1
 GIT_PS1_SHOWSTASHSTATE=1
@@ -59,9 +61,8 @@ export PATH="$HOME/bin:$HOME/go/bin:$PATH"
 [[ -f ~/.aliases ]] && . ~/.aliases
 [[ -f ~/.distraction ]] && . ~/.distraction
 
-command kubectl > /dev/null && source <(kubectl completion bash)
-
 if [ -f '/home/philipforget/workspace/google-cloud-sdk/path.bash.inc' ]; then source '/home/philipforget/workspace/google-cloud-sdk/path.bash.inc'; fi
 if [ -f '/usr/lib/google-cloud-sdk/completion.bash.inc' ]; then source '/usr/lib/google-cloud-sdk/completion.bash.inc'; fi
+command kubectl > /dev/null && source <(kubectl completion bash)
 
 [[ -f ~/.fzf.bash ]] && source ~/.fzf.bash
