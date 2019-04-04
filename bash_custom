@@ -1,24 +1,27 @@
 #!/bin/bash
 # vim:ft=sh
 
-BLUE="\[\033[01;34m\]"
-WHITE="\[\033[01;00m\]"
-MAGENTA="\[\033[01;35m\]"
-PINK="\[\033[01;31m\]"
-GREEN="\[\033[01;32m\]"
 
 GIT_PS1_SHOWDIRTYSTATE=1
 GIT_PS1_SHOWSTASHSTATE=1
 GIT_PS1_SHOWUNTRACKEDFILES=1
 
 get_ps1() {
-    user="$BLUE\u$WHITE"
-    host="$GREEN\h$WHITE"
-    dir="$GREEN\w$WHITE"
-    time="$GREEN\$(date \"+%H:%M:%S\")$WHITE"
-    git="$PINK\$(__git_ps1)$WHITE"
+    local blue="\[\033[01;34m\]"
+    local white="\[\033[01;00m\]"
+    local magenta="\[\033[01;35m\]"
+    local pink="\[\033[01;31m\]"
+    local green="\[\033[01;32m\]"
 
-    echo "${user}@${host} ${dir} ${git}\n${time}: "
+    local hostname_number=$(hostname | od | tr ' ' '\n' | awk '{total = total + $1}END{print 30 + (total % 6)}')
+    local hostname_color="\[\033[01;${hostname_number}m\]"
+    local user="${blue}\u${white}"
+    local host="${hostname_color}\h${white}"
+    local dir="${green}\w${white}"
+    local time="${green}\$(date \"+%H:%M:%S\")${white}"
+    local git="${green}\$(__git_ps1)${white}"
+
+    echo "${user}@${host} ${dir} ${git}\n${time} $ "
 }
 
 PS1="$(get_ps1)"
