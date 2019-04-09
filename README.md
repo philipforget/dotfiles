@@ -9,20 +9,8 @@ I like to keep all my repos in a `~/workspace` directory, so I'll assume the
 same for you.
 
 ```bash
-# The only requirement is git, so make sure that's installed
+# The only requirement is git and python3, so make sure those are available
 mkdir -p  ~/workspace && cd ~/workspace
 git clone https://github.com/philipforget/dotfiles.git
-python dotfiles/setup.py
-```
-
-## Vim / NeoVim
-
-I've been trying to use neovim recently when it's available. I'll make my vimrc
-as backwards compatible as possible in the meantime but some stuff may not work
-with older versions of Vim.
-
-On first run:
-
-```
-:PlugInstall
+./dotfiles/setup.py
 ```

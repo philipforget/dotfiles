@@ -15,14 +15,6 @@ ctor() {
 }
 
 
-# Creds stuff
-alias credd='openssl aes-256-cbc -md sha256 -d -a -in creds -out creds.txt'
-alias crede='openssl aes-256-cbc -md sha256 -a -salt -in creds.txt -out creds'
-alias psa=pss
-pss() {
-    openssl aes-256-cbc -md sha256 -d -a -in "$([[ -f creds ]] && echo creds || echo ~/me/creds)" | grep -i -C 6 "${1}"
-}
-
 # Concat all ssh configs into one master config
 alias sshconfig='> ~/.ssh/config && for f in ~/.ssh/configs/*; do echo "# generated from $f" >> ~/.ssh/config && grep -hv ^# $f >> ~/.ssh/config; done'
 

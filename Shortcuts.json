@@ -8,8 +8,8 @@
     "shortcut_name" : "MakeSmaller"
   },
   {
-    "shortcut_key_binding" : null,
-    "shortcut_name" : "MoveToUpperLeft"
+    "shortcut_key_binding" : "ctrl+cmd+j",
+    "shortcut_name" : "MoveToLowerRight"
   },
   {
     "shortcut_key_binding" : "ctrl+cmd+k",
@@ -65,10 +65,10 @@
   },
   {
     "shortcut_key_binding" : null,
-    "shortcut_name" : "MoveToPreviousThird"
+    "shortcut_name" : "MoveToUpperLeft"
   },
   {
-    "shortcut_key_binding" : "ctrl+cmd+j",
-    "shortcut_name" : "MoveToLowerRight"
+    "shortcut_key_binding" : null,
+    "shortcut_name" : "MoveToPreviousThird"
   }
 ]
