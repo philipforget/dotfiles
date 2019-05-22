@@ -12,7 +12,7 @@ endif
 call plug#begin('~/.nvim/plugged')
 
 " Plugins
-Plug '/usr/local/opt/fzf'
+Plug 'SirVer/ultisnips'
 Plug 'altercation/vim-colors-solarized'
 Plug 'benmills/vimux'
 Plug 'cespare/vim-toml'

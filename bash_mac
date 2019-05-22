@@ -8,6 +8,9 @@
 
 export PATH="$PATH:/usr/local/sbin"
 
+# Prioritize local version of openssl
+export PATH="/usr/local/opt/openssl@1.1/bin/:$PATH"
+
 alias vlc="/Applications/VLC.app/Contents/MacOS/VLC"
 
 [ -f '/Users/philipforget/workspace/google-cloud-sdk/path.bash.inc' ] && . '/Users/philipforget/workspace/google-cloud-sdk/path.bash.inc'
