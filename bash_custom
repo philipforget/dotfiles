@@ -21,7 +21,9 @@ get_ps1() {
     local host="${hostname_color}\h${white}"
     local dir="${green}\w${white}"
     local time="${green}\$(date \"+%H:%M:%S\")${white}"
-    local git="${green}\$(__git_ps1 '%s')${white}"
+
+    local git=""
+    command kubectl &> /dev/null && local git="${green}\$(__git_ps1 '%s')${white}"
 
     echo "${user}@${host} ${dir} ${git}\n${time} $ "
 }
