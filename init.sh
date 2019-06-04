@@ -14,18 +14,18 @@ setup_dotfiles() {
 
         if ! grep -Fxq 'source ~/.bash_custom' ~/.bashrc; then
             echo 'source ~/.bash_custom' >> ~/.bashrc
-            source ~/.bash_custom
         fi
     fi
     popd
 }
 
 setup_virtualenv() {
-    if [[ -d ~/.default_virtulenv ]]; then
+    local default_venv=~/.default_venv
+    if [[ -d ${default_venv} ]]; then
         echo "default virtualenv exists, skipping" && return 0
     fi
-    python3 -m venv ~/.default_virtulenv
-    source ~/.default_virtulenv/bin/activate
+    python3 -m venv ${default_venv}
+    source ${default_venv}/bin/activate
     python3 -m pip install -U pip ipython click
 }
 
@@ -36,10 +36,13 @@ init() {
         sudo apt-get install -yq vim git tmux python3 python3-pip python3-venv
     fi
 
+    mkdir -p ~/.ssh
     curl -L https://github.com/philipforget.keys >> ~/.ssh/authorized_keys
 
     setup_virtualenv
     setup_dotfiles
+
+    echo "setup complete, run 'source ~/.bashrc' to source changes"
 }
 
 init "$@"
