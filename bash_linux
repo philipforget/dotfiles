@@ -32,3 +32,4 @@ if [[ -d ~/.ssh ]]; then
         start_agent;
     fi
 fi
+export KUBECONFIG=/home/philipforget/.kube/config:/home/philipforget/.kube/kube_config_rancher-cluster.yml

@@ -20,6 +20,7 @@ Plug 'chrisbra/csv.vim'
 Plug 'christianrondeau/vim-base64'
 Plug 'honza/vim-snippets'
 Plug 'kien/rainbow_parentheses.vim'
+Plug 'psf/black'
 Plug 'rking/ag.vim'
 Plug 'schickling/vim-bufonly'
 Plug 'scrooloose/nerdtree'
@@ -54,13 +55,15 @@ let g:airline#extensions#ale#enabled = 1
 
 " Turn on 256 solarized mode for non-solarized terminals
 " let g:solarized_termcolors=256
-" set background=light
-colorscheme default
+set background=light
+colorscheme solarized
 
 " Turn on 3 modelines, these allow us to set filetype etc using the first 3
 " commented lines of a given file.
-set modeline
-set modelines=3
+" TODO: Turn this back on once the buig is fixed: https://arstechnica.com/information-technology/2019/06/if-you-havent-patched-vim-or-neovim-text-editors-you-really-really-should/
+" set modeline
+" set modelines=3
+set nomodeline
 
 " Change buffers without saving them
 set hidden
@@ -194,6 +197,9 @@ map <leader>t :NERDTreeToggle<CR>
 
 " Start Ag command
 map <leader>a :AgFromSearch<CR>
+
+" Format python code with `black`
+map <leader>b :Black<CR>
 
 vnoremap <leader>so :sort<CR>
 
