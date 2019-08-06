@@ -63,7 +63,7 @@ command kubectl &> /dev/null && source <(kubectl completion bash)
 
 export PYTHONDONTWRITEBYTECODE=1
 # Activate the default virtualenv if one isn't activated already
-default_venv="${HOME}/.default_venv"
+default_venv="${HOME}/.virtualenvs/default"
 if [[ -z ${VIRTUAL_ENV} ]] && [[ -d ${default_venv} ]]; then
     export VIRTUAL_ENV_DISABLE_PROMPT=1
     source ${default_venv}/bin/activate
