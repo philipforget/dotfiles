@@ -15,3 +15,7 @@ alias vlc="/Applications/VLC.app/Contents/MacOS/VLC"
 
 [ -f '/Users/philipforget/workspace/google-cloud-sdk/path.bash.inc' ] && . '/Users/philipforget/workspace/google-cloud-sdk/path.bash.inc'
 [ -f '/Users/philipforget/workspace/google-cloud-sdk/completion.bash.inc' ] && . '/Users/philipforget/workspace/google-cloud-sdk/completion.bash.inc'
+
+random_word() {
+    python3 -c 'from random import choice; print(choice(open("/usr/share/dict/words", "r").readlines()).strip().lower())'
+}

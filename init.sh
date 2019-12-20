@@ -29,12 +29,25 @@ setup_virtualenv() {
     python3 -m pip install -U pip ipython click
 }
 
-init() {
-    if grep -Fq Ubuntu /etc/issue; then
+install_packages() {
+    if grep -qE "Ubuntu|Debian|Raspbian" /etc/issue; then
         echo "Installing required packages"
         sudo apt-get update
-        sudo apt-get install -yq vim git tmux python3 python3-pip python3-venv
+        sudo apt-get install -yq \
+            git \
+            python3 \
+            python3-pip \
+            python3-venv \
+            tmux \
+            vim-nox
     fi
+}
+
+init() {
+    install_packages
+
+    # Set vim-nox as default system editor
+    sudo update-alternatives --set editor /usr/bin/vim.nox
 
     mkdir -p ~/.ssh
     curl -L https://github.com/philipforget.keys >> ~/.ssh/authorized_keys
