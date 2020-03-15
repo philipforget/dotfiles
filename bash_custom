@@ -1,6 +1,10 @@
 #!/bin/bash
 # vim:ft=sh
 
+# Enable tracing
+# set -x
+
+
 # Allow __git_ps1 to work on arch linux
 [[ -f /usr/share/git/git-prompt.sh ]] && . /usr/share/git/git-prompt.sh
 
@@ -22,8 +26,7 @@ get_ps1() {
     local dir="${green}\w${white}"
     local time="${green}\$(date \"+%H:%M:%S\")${white}"
 
-    local git=""
-    command kubectl &> /dev/null && local git="${green}\$(__git_ps1 '%s')${white}"
+    local git="${green}\$(__git_ps1 '%s')${white}"
 
     echo "${user}@${host} ${dir} ${git}\n${time} $ "
 }
@@ -59,7 +62,7 @@ export PATH="$HOME/bin:$HOME/go/bin:$PATH"
 
 if [ -f "/workspace/google-cloud-sdk/path.bash.inc" ]; then source '/home/philipforget/workspace/google-cloud-sdk/path.bash.inc'; fi
 if [ -f '/usr/lib/google-cloud-sdk/completion.bash.inc' ]; then source '/usr/lib/google-cloud-sdk/completion.bash.inc'; fi
-command kubectl &> /dev/null && source <(kubectl completion bash)
+# command kubectl &> /dev/null && source <(kubectl completion bash)
 
 export PYTHONDONTWRITEBYTECODE=1
 # Activate the default virtualenv if one isn't activated already
