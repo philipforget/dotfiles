@@ -20,7 +20,7 @@ setup_dotfiles() {
 }
 
 setup_virtualenv() {
-    local default_venv=~/.default_venv
+    local default_venv="~/.default_venv"
     if [[ -d ${default_venv} ]]; then
         echo "default virtualenv exists, skipping" && return 0
     fi
@@ -54,6 +54,9 @@ init() {
 
     setup_virtualenv
     setup_dotfiles
+
+    echo "Installing vim plugins"
+    vim +PlugInstall +qall > /dev/null
 
     echo "setup complete, run 'source ~/.bashrc' to source changes"
 }

@@ -57,7 +57,7 @@ let g:airline#extensions#ale#enabled = 1
 
 " Turn on 256 solarized mode for non-solarized terminals
 " let g:solarized_termcolors=256
-set background=light
+" set background=dark
 colorscheme solarized
 
 " Turn on 3 modelines, these allow us to set filetype etc using the first 3

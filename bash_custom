@@ -62,7 +62,7 @@ export PATH="$HOME/bin:$HOME/go/bin:$PATH"
 
 if [ -f "/workspace/google-cloud-sdk/path.bash.inc" ]; then source '/home/philipforget/workspace/google-cloud-sdk/path.bash.inc'; fi
 if [ -f '/usr/lib/google-cloud-sdk/completion.bash.inc' ]; then source '/usr/lib/google-cloud-sdk/completion.bash.inc'; fi
-# command kubectl &> /dev/null && source <(kubectl completion bash)
+command kubectl &> /dev/null && source <(kubectl completion bash)
 
 export PYTHONDONTWRITEBYTECODE=1
 # Activate the default virtualenv if one isn't activated already
