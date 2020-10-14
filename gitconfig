@@ -20,3 +20,5 @@
 
 [bash]
     showDirtyState = false
+[pull]
+    rebase = false
