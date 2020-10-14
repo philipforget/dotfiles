@@ -7,7 +7,7 @@ ctor() {
         if [[ -d "/mnt/media/torrents/watch" ]]; then
             mv ~/Downloads/*.torrent /mnt/media/torrents/watch;
         else
-            rsync -avhP --no-group ~/Downloads/*.torrent derp.mae:/mnt/media/torrents/watch && rm ~/Downloads/*.torrent
+            rsync -avhP --no-group ~/Downloads/*.torrent derp.mae:/mnt/fatso/media/torrents/watch && rm ~/Downloads/*.torrent
         fi
     else
         echo "No torrent files to copy"

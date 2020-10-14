@@ -1,11 +1,5 @@
 [alias]
-    co = checkout
-    ci = commit
-    st = status
-    br = branch
     hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
-    type = cat-file -t
-    dump = cat-file -p
     lg = log --color --pretty=format:'%C(auto)%h %Cred %<(10,trunc)%an %Creset%C(auto)%s %Cgreen(%cr,%ar) %Creset%C(auto)%d'
 
 [user]
@@ -17,12 +11,12 @@
 
 [fetch]
     prune = true
+
 [filter "lfs"]
-	required = true
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
+    required = true
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+
 [bash]
-	showDirtyState = false
-[gpg]
-	program = gpg
+    showDirtyState = false

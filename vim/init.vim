@@ -12,7 +12,7 @@ endif
 call plug#begin('~/.nvim/plugged')
 
 " Plugins
-Plug 'SirVer/ultisnips'
+" Plug 'SirVer/ultisnips'
 Plug 'altercation/vim-colors-solarized'
 Plug 'benmills/vimux'
 Plug 'cespare/vim-toml'
@@ -21,7 +21,7 @@ Plug 'christianrondeau/vim-base64'
 Plug 'honza/vim-snippets'
 Plug 'junegunn/goyo.vim'
 Plug 'kien/rainbow_parentheses.vim'
-Plug 'psf/black'
+" Plug 'psf/black'
 Plug 'rking/ag.vim'
 Plug 'schickling/vim-bufonly'
 Plug 'scrooloose/nerdtree'
