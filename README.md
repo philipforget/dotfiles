@@ -10,5 +10,5 @@ you should probably inspect it before running random bash scripts from the
 internet:
 
 ```bash
-curl -L init.chevalierforget.com | bash
+curl -fL init.chevalierforget.com | bash
 ```
