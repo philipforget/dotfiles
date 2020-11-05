@@ -12,3 +12,17 @@ internet:
 ```bash
 curl -fL init.chevalierforget.com | bash
 ```
+
+
+## Try it out in a Docker container
+
+Give this repo a try in a docker container using the Dockerfile:
+
+```bash
+curl -fL https://raw.githubusercontent.com/philipforget/dotfiles/master/Dockerfile | \
+  docker build -t dotfiles-test - && \
+  docker run --rm -it dotfiles-test  \
+    bash -c 'curl -fL init.chevalierforget.com | bash; /bin/bash'
+```
+
+You'll be dropped into a container after it finishes running `init.sh` for the `ubuntu` user.
