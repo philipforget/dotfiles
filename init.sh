@@ -112,6 +112,8 @@ init() {
     setup_virtualenv
     setup_dotfiles
 
+    source "${HOME}/.bashrc"
+
     echo "Installing vim plugins"
     vim -E +PlugInstall +qall # &> /dev/null
 
