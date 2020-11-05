@@ -1,16 +1,14 @@
 <div style="text-align:center"><img src ="/static/dotfiles.png" /></div>
 
-A collection of my config files. Tested (to various degrees) on OS X, Arch
-Linux, and Ubuntu.
+A collection of my config files. Tested (to various degrees) on OS X, Debian,
+Raspbian, and Ubuntu.
 
 ## Installation
 
-I like to keep all my repos in a `~/workspace` directory, so I'll assume the
-same for you.
+The installation [init.sh](./init.sh) script can be piped directly to bash, but
+you should probably inspect it before running random bash scripts from the
+internet:
 
 ```bash
-# The only requirement is git and python3, so make sure those are available
-mkdir -p  ~/workspace && cd ~/workspace
-git clone https://github.com/philipforget/dotfiles.git
-./dotfiles/setup.py
+curl -L init.chevalierforget.com | bash
 ```
