@@ -11,6 +11,9 @@ internet:
 
 ```bash
 curl -fL init.chevalierforget.com | bash
+
+# Or to use a specific branch, eg some-feature
+curl -fL init.chevalierforget.com/some-feature | bash
 ```
 
 
