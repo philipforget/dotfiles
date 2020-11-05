@@ -56,7 +56,7 @@ fi
 
 export PATH="$HOME/bin:$HOME/go/bin:$PATH"
 
-[[ -f ~/.bash_secret ]] && . ~/.bash_secret
+[[ -f ~/workspace/private/.bash_secret ]] && . ~/workspace/private/.bash_secret
 [[ -f ~/.aliases ]] && . ~/.aliases
 [[ -f ~/.distraction ]] && . ~/.distraction
 
@@ -73,5 +73,3 @@ if [[ -z ${VIRTUAL_ENV} ]] && [[ -d ${default_venv} ]]; then
 elif [ -n "$VIRTUAL_ENV" ]; then
   . "$VIRTUAL_ENV/bin/activate"
 fi
-
-
