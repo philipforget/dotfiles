@@ -86,6 +86,9 @@ autocmd BufRead,BufNewFile *.jar,*.war,*.ear,*.sar,*.rar,*.epub set filetype=zip
 " babel and eslint config files ar ejson but dont end in .json
 autocmd BufRead,BufNewFile .babelrc,.eslintrc set filetype=json
 
+" Run black on python files before writing
+" autocmd BufWritePre *.py silent! execute ':Black'
+
 " Start at the beginning of the buffer for git commit messages
 au FileType gitcommit au! BufEnter COMMIT_EDITMSG call setpos('.', [0, 1, 1, 0])
 
@@ -196,6 +199,7 @@ nmap <silent> <leader>d :r!date<CR>
 nmap <silent> <leader>w :set wrap! linebreak! textwidth=0<CR>
 " Toggle NERDTree
 map <leader>t :NERDTreeToggle<CR>
+
 
 " Start Ag command
 map <leader>a :AgFromSearch<CR>
