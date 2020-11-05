@@ -21,7 +21,7 @@ Give this repo a try in a docker container using the Dockerfile:
 ```bash
 curl -fL https://raw.githubusercontent.com/philipforget/dotfiles/master/Dockerfile | \
   docker build -t dotfiles-test - && \
-  docker run --rm -it dotfiles-test  \
+  docker run --rm -it -h dotfiles-test dotfiles-test  \
     bash -c 'curl -fL init.chevalierforget.com | bash; /bin/bash'
 ```
 
