@@ -113,7 +113,7 @@ init() {
     setup_dotfiles
 
     echo "Installing vim plugins"
-    vim -E +PlugInstall +qall &> /dev/null
+    vim -E +PlugInstall +qall # &> /dev/null
 
     echo "setup complete, run 'source ~/.bashrc' to source changes"
 }
