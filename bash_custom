@@ -1,5 +1,4 @@
 #!/bin/bash
-# vim:ft=sh
 
 
 # Allow __git_ps1 to work on arch linux
@@ -30,10 +29,14 @@ get_ps1() {
 
 PS1="$(get_ps1)"
 
-# I love history, give me unlimited amounts of it
-export HISTSIZE=""
-export HISTFILESIZE=""
-# Allows for sharing of history across tmux session (-a appends to history)
+export GOPATH=$HOME/go
+
+# Increase the amount of history bash will store and reload
+export HISTFILE=~/.history
+export HISTSIZE=
+export HISTFILESIZE=
+# Allows for sharing of history across tmux session
+# "-a" immediately appends new history to the histfile
 export PROMPT_COMMAND='history -a'
 # Ignore and erase duplicates and commands with leading whitespace
 export HISTCONTROL=ignoreboth:erasedups
