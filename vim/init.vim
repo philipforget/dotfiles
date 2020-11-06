@@ -58,7 +58,10 @@ let g:airline#extensions#ale#enabled = 1
 " Turn on 256 solarized mode for non-solarized terminals
 " let g:solarized_termcolors=256
 " set background=dark
-colorscheme solarized
+"
+" The `silent!` flag means this wont wait for user input if the colorscheme is
+" missing
+silent! colorscheme solarized
 
 " Turn on 3 modelines, these allow us to set filetype etc using the first 3
 " commented lines of a given file.

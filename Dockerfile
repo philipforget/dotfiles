@@ -7,6 +7,6 @@ RUN echo 'ubuntu ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
 
 RUN useradd ubuntu -m
 
-WORKDIR /home/ubuntu
-
 USER ubuntu
+
+WORKDIR /home/ubuntu/workspace/dotfiles/

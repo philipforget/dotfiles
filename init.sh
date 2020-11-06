@@ -23,35 +23,34 @@ setup_dotfiles() {
 
     if [[ -d "${DOTFILES}" ]]; then
         echo "dotfiles already cloned, skipping"
-        return 0
     else
         git clone https://github.com/philipforget/dotfiles.git "${DOTFILES}"
+    fi
 
-        # Set up symlinks
-        symlink "${DOTFILES}/aliases" ~/.aliases
-        symlink "${DOTFILES}/aliases_linux" ~/.aliases_linux
-        symlink "${DOTFILES}/aliases_mac" ~/.aliases_mac
-        symlink "${DOTFILES}/bash_custom" ~/.bash_custom
-        symlink "${DOTFILES}/bash_linux" ~/.bash_linux
-        symlink "${DOTFILES}/bash_mac" ~/.bash_mac
-        symlink "${DOTFILES}/distraction" ~/.distraction
-        symlink "${DOTFILES}/docker_config.json" ~/.docker/config.json
-        symlink "${DOTFILES}/gitconfig" ~/.gitconfig
-        symlink "${DOTFILES}/pylintrc" ~/.pylintrc
-        symlink "${DOTFILES}/tmux.conf" ~/.tmux.conf
-        symlink "${DOTFILES}/vim" ~/.config/nvim
-        symlink "${DOTFILES}/vim" ~/.vim
-        symlink "${DOTFILES}/vim/init.vim" ~/.vimrc
-        symlink "${DOTFILES}/xmodmap" ~/.xmodmap
+    # Set up symlinks
+    symlink "${DOTFILES}/aliases" ~/.aliases
+    symlink "${DOTFILES}/aliases_linux" ~/.aliases_linux
+    symlink "${DOTFILES}/aliases_mac" ~/.aliases_mac
+    symlink "${DOTFILES}/bash_custom" ~/.bash_custom
+    symlink "${DOTFILES}/bash_linux" ~/.bash_linux
+    symlink "${DOTFILES}/bash_mac" ~/.bash_mac
+    symlink "${DOTFILES}/distraction" ~/.distraction
+    symlink "${DOTFILES}/docker_config.json" ~/.docker/config.json
+    symlink "${DOTFILES}/gitconfig" ~/.gitconfig
+    symlink "${DOTFILES}/pylintrc" ~/.pylintrc
+    symlink "${DOTFILES}/tmux.conf" ~/.tmux.conf
+    symlink "${DOTFILES}/vim" ~/.config/nvim
+    symlink "${DOTFILES}/vim" ~/.vim
+    symlink "${DOTFILES}/vim/init.vim" ~/.vimrc
+    symlink "${DOTFILES}/xmodmap" ~/.xmodmap
 
-        # Mac only symlinks
-        if [[ $(uname) == "Darwin" ]]; then
-            symlink "${DOTFILES}/Shortcuts.json" "~/Library/Application Support/Spectacle/Shortcuts.json"
-        fi
+    # Mac only symlinks
+    if [[ $(uname) == "Darwin" ]]; then
+        symlink "${DOTFILES}/Shortcuts.json" "~/Library/Application Support/Spectacle/Shortcuts.json"
+    fi
 
-        if ! grep -Fxq 'source ~/.bash_custom' "${HOME}/.bashrc"; then
-            echo 'source ~/.bash_custom' >> "${HOME}/.bashrc"
-        fi
+    if ! grep -Fxq 'source ~/.bash_custom' "${HOME}/.bashrc"; then
+        echo 'source ~/.bash_custom' >> "${HOME}/.bashrc"
     fi
 }
 
@@ -113,7 +112,7 @@ init() {
     setup_dotfiles
 
     echo "Installing vim plugins"
-    vim -E +PlugInstall +qall &> /dev/null
+    vim +'PlugInstall --sync' +qall > /dev/null
 
     echo "setup complete, run 'source ~/.bashrc' to source changes"
 }
