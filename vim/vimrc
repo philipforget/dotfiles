@@ -1,19 +1,11 @@
 " Not necessary for nvim but wont bother anything if it's present
 set nocompatible
 
-if has("nvim")
-    " Fix issue in terminfo + neovim where C-h actually sends the ascii
-    " backspace character.
-    nmap <BS> <C-W>h
-    " Enable python plugin support
-    runtime! plugin/python_setup.vim
-endif
-
 call plug#begin('~/.nvim/plugged')
 
 " Plugins
 " Plug 'SirVer/ultisnips'
-Plug 'altercation/vim-colors-solarized'
+Plug 'lifepillar/vim-solarized8'
 Plug 'benmills/vimux'
 Plug 'cespare/vim-toml'
 Plug 'chrisbra/csv.vim'
@@ -55,17 +47,18 @@ set smartindent
 
 let g:airline#extensions#ale#enabled = 1
 
-" Turn on 256 solarized mode for non-solarized terminals
-" let g:solarized_termcolors=256
-" set background=dark
-colorscheme solarized
+" set Vim-specific sequences for RGB colors
+set termguicolors
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+
+set background=light
+" Don't complain if the colorscheme is missing
+silent! colorscheme solarized8
 
 " Turn on 3 modelines, these allow us to set filetype etc using the first 3
-" commented lines of a given file.
-" TODO: Turn this back on once the buig is fixed: https://arstechnica.com/information-technology/2019/06/if-you-havent-patched-vim-or-neovim-text-editors-you-really-really-should/
-" set modeline
-" set modelines=3
-set nomodeline
+set modeline
+set modelines=3
 
 " Change buffers without saving them
 set hidden

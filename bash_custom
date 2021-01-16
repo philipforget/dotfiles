@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# Enable tracing
-# set -x
-
 
 # Allow __git_ps1 to work on arch linux
 [[ -f /usr/share/git/git-prompt.sh ]] && . /usr/share/git/git-prompt.sh
