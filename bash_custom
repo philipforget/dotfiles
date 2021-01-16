@@ -59,7 +59,7 @@ fi
 
 export PATH="$HOME/bin:$HOME/go/bin:$PATH"
 
-[[ -f ~/workspace/private/.bash_secret ]] && . ~/workspace/private/.bash_secret
+[[ -f ~/.bash_secret ]] && . ~/.bash_secret
 [[ -f ~/.aliases ]] && . ~/.aliases
 [[ -f ~/.distraction ]] && . ~/.distraction
 
