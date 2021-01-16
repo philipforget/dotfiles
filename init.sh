@@ -39,9 +39,7 @@ setup_dotfiles() {
     symlink "${DOTFILES}/gitconfig" ~/.gitconfig
     symlink "${DOTFILES}/pylintrc" ~/.pylintrc
     symlink "${DOTFILES}/tmux.conf" ~/.tmux.conf
-    symlink "${DOTFILES}/vim" ~/.config/nvim
     symlink "${DOTFILES}/vim" ~/.vim
-    symlink "${DOTFILES}/vim/init.vim" ~/.vimrc
     symlink "${DOTFILES}/xmodmap" ~/.xmodmap
 
     # Mac only symlinks
@@ -51,6 +49,9 @@ setup_dotfiles() {
 
     if ! grep -Fxq 'source ~/.bash_custom' "${HOME}/.bashrc"; then
         echo 'source ~/.bash_custom' >> "${HOME}/.bashrc"
+    fi
+    if ! grep -Fxq 'source ~/.bash_custom' "${HOME}/.profile"; then
+        echo 'source ~/.bash_custom' >> "${HOME}/.profile"
     fi
 }
 
