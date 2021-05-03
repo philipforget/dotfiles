@@ -5,7 +5,7 @@ call plug#begin('~/.nvim/plugged')
 
 " Plugins
 " Plug 'SirVer/ultisnips'
-Plug 'lifepillar/vim-solarized8'
+Plug 'AndrewRadev/switch.vim'
 Plug 'benmills/vimux'
 Plug 'cespare/vim-toml'
 Plug 'chrisbra/csv.vim'
@@ -13,6 +13,7 @@ Plug 'christianrondeau/vim-base64'
 Plug 'honza/vim-snippets'
 Plug 'junegunn/goyo.vim'
 Plug 'kien/rainbow_parentheses.vim'
+Plug 'lifepillar/vim-solarized8'
 Plug 'psf/black'
 Plug 'rking/ag.vim'
 Plug 'schickling/vim-bufonly'

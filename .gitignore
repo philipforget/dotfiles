@@ -7,3 +7,4 @@ vim/.netrwhist
 vim/plugged
 vim/bundle
 vim/black
+vim/autoload/plug.vim.old
