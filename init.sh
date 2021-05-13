@@ -44,7 +44,7 @@ setup_dotfiles() {
 
     # Mac only symlinks
     if [[ $(uname) == "Darwin" ]]; then
-        symlink "${DOTFILES}/com.knollsoft.Rectangle.plist" "~/Library/Preferences/com.knollsoft.Rectangle.plist"
+        symlink "${DOTFILES}/Shortcuts.json" "~/Library/Application Support/Spectacle/Shortcuts.json"
     fi
 
     if ! grep -Fxq 'source ~/.bash_custom' "${HOME}/.bashrc"; then
@@ -82,6 +82,11 @@ install_packages() {
             tmux \
             vim
         brew install --cask rectangle
+
+        brew_bash="/usr/local/bin/bash"
+        echo "Adding ${brew_bash} to /etc/shells if not present"
+        grep ${brew_bash} /etc/shells || echo ${brew_bash} | sudo tee -a /etc/shells
+        [[ ${SHELL} = ${brew_bash} ]] || chsh -s ${brew_bash} $(whoami | xargs echo -n)
     else
         # Currently only working for Debian and Ubuntu based distros
         if grep -qE "Ubuntu|Debian|Raspbian" /etc/issue; then
