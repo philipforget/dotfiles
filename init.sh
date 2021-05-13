@@ -24,7 +24,7 @@ setup_dotfiles() {
     if [[ -d "${DOTFILES}" ]]; then
         echo "dotfiles already cloned, skipping"
     else
-        git clone https://github.com/philipforget/dotfiles.git "${DOTFILES}"
+        git clone git@github.com:philipforget/dotfiles.git "${DOTFILES}"
     fi
 
     # Set up symlinks
