@@ -85,8 +85,12 @@ install_packages() {
 
         brew_bash="/usr/local/bin/bash"
         echo "Adding ${brew_bash} to /etc/shells if not present"
-        grep ${brew_bash} /etc/shells || echo ${brew_bash} | sudo tee -a /etc/shells
+        grep ${brew_bash} /etc/shells &>/dev/null || echo ${brew_bash} | sudo tee -a /etc/shells
         [[ ${SHELL} = ${brew_bash} ]] || chsh -s ${brew_bash} $(whoami | xargs echo -n)
+
+        # Add ssh agent to system keychain on first unlock
+        ssh_agent_config="AddKeysToAgent yes"
+        grep "${ssh_agent_config}" ~/.ssh/config &>/dev/null || echo "${ssh_agent_config}" >> ~/.ssh/config
     else
         # Currently only working for Debian and Ubuntu based distros
         if grep -qE "Ubuntu|Debian|Raspbian" /etc/issue; then
