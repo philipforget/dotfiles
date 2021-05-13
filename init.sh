@@ -114,7 +114,7 @@ init() {
     install_packages
 
     # Set vim as default system editor on linux
-    [[ $(uname) == "Darwin" ]] && sudo update-alternatives --set editor /usr/bin/vim.nox
+    [[ $(uname) == "Linux" ]] && sudo update-alternatives --set editor /usr/bin/vim.nox
 
     mkdir -p "${HOME}/.ssh"
     curl -L https://github.com/philipforget.keys >> "${HOME}/.ssh/authorized_keys"
