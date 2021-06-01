@@ -4,14 +4,16 @@ set nocompatible
 call plug#begin('~/.nvim/plugged')
 
 " Plugins
-" Plug 'SirVer/ultisnips'
 Plug 'AndrewRadev/switch.vim'
+Plug 'SirVer/ultisnips'
+Plug 'altercation/vim-colors-solarized'
 Plug 'benmills/vimux'
 Plug 'cespare/vim-toml'
 Plug 'chrisbra/csv.vim'
 Plug 'christianrondeau/vim-base64'
 Plug 'honza/vim-snippets'
 Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'lifepillar/vim-solarized8'
 Plug 'psf/black'
@@ -49,13 +51,12 @@ set smartindent
 let g:airline#extensions#ale#enabled = 1
 
 " set Vim-specific sequences for RGB colors
-set termguicolors
-let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+" set termguicolors
+" let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+" let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
 set background=light
-" Don't complain if the colorscheme is missing
-silent! colorscheme solarized8
+silent! colorscheme solarized
 
 " Turn on 3 modelines, these allow us to set filetype etc using the first 3
 set modeline
