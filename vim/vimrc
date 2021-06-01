@@ -58,6 +58,11 @@ let g:airline#extensions#ale#enabled = 1
 set background=light
 silent! colorscheme solarized
 
+" Needed to use limelight with solarized
+let g:limelight_conceal_ctermfg = 245  " Solarized Base1
+let g:limelight_conceal_guifg = '#8a8a8a'  " Solarized Base1
+
+
 " Turn on 3 modelines, these allow us to set filetype etc using the first 3
 set modeline
 set modelines=3
@@ -288,6 +293,36 @@ function! <SID>SynStack()
   endif
   echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunc
+
+" Goyo config
+function! s:goyo_enter()
+  if executable('tmux') && strlen($TMUX)
+    silent !tmux set status off
+    silent !tmux list-panes -F '\#F' | grep -q Z || tmux resize-pane -Z
+  endif
+  set wrap
+  set noshowmode
+  set noshowcmd
+  set scrolloff=999
+  Limelight
+endfunction
+
+function! s:goyo_leave()
+  if executable('tmux') && strlen($TMUX)
+    silent !tmux set status on
+    silent !tmux list-panes -F '\#F' | grep -q Z && tmux resize-pane -Z
+  endif
+  set nowrap
+  set showmode
+  set showcmd
+  set scrolloff=5
+  Limelight!
+endfunction
+
+autocmd! User GoyoEnter nested call <SID>goyo_enter()
+autocmd! User GoyoLeave nested call <SID>goyo_leave()
+
+
 
 " Rainbow parenthesis
 au VimEnter * RainbowParenthesesToggle
