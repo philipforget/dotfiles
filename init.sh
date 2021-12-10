@@ -24,7 +24,7 @@ setup_dotfiles() {
     if [[ -d "${DOTFILES}" ]]; then
         echo "dotfiles already cloned, skipping"
     else
-        git clone git@github.com:philipforget/dotfiles.git "${DOTFILES}"
+        git clone https://github.com/philipforget/dotfiles.git "${DOTFILES}"
     fi
 
     # Set up symlinks
@@ -77,7 +77,9 @@ install_packages() {
         fi
         brew install \
             bash \
+            bash-complation \
             git \
+            mosh \
             python3 \
             tmux \
             vim
