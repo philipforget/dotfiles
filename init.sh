@@ -77,7 +77,7 @@ install_packages() {
         fi
         brew install \
             bash \
-            bash-complation \
+            bash-completion \
             git \
             mosh \
             python3 \
