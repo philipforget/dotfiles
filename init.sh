@@ -11,7 +11,7 @@ symlink() {
     local source="${1}"
     local target="${2}"
 
-    [[ -d ${target} || -f ${target} ]] && echo "`${target}` exists, skipping" && return
+    [[ -e ${target} ]] && echo "'${target}' exists, skipping" && return
 
     mkdir -p "$(dirname ${target})"
     ln -s "${source}" "${target}"
@@ -107,8 +107,8 @@ setup_system() {
             echo "Installing required packages"
             # Use sudo -E to inherit our current environment, including
             # DEBIAN_FRONTEND set above
-            sudo -E apt-get update
-            sudo -E apt-get install -yq \
+            sudo -E apt-get -qq update
+            sudo -E apt-get -qq install -y \
                 --no-install-recommends \
                 bash-completion \
                 curl \
@@ -141,7 +141,7 @@ init() {
     setup_dotfiles
 
     echo "Installing vim plugins"
-    vim +'PlugInstall --sync' +qall > /dev/null
+    vim +'PlugInstall --sync' +qall &> /dev/null
 
     echo "setup complete, run 'source ~/.bashrc' to source changes"
 }
