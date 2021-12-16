@@ -8,8 +8,10 @@ export DEBIAN_FRONTEND=noninteractive
 symlink() {
     # A symlink function that makes sure the target symlink's parent path
     # exists.
-    local source="${1}"
-    local target="${2}"
+
+    # Expand ~ to $HOME if present
+    local source="${1/#\~/$HOME}"
+    local target="${2/#\~/$HOME}"
 
     [[ -e ${target} ]] && echo "'${target}' exists, skipping" && return
 
@@ -51,7 +53,7 @@ setup_dotfiles() {
 
     # Mac only symlinks
     if [[ $(uname) == "Darwin" ]]; then
-        symlink "${dotfiles}/Shortcuts.json" "~/Library/Application Support/Spectacle/Shortcuts.json"
+        symlink "${dotfiles}/com.knollsoft.Rectangle.plist" "~/Library/Preferences/com.knollsoft.Rectangle.plist"
     fi
 
     if ! grep -Fxq 'source ~/.bash_custom' "${HOME}/.bashrc"; then
@@ -82,6 +84,7 @@ setup_system() {
             echo 'Requires user password'
             /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
         fi
+        echo "Installing packages with brew"
         brew install \
             bash \
             bash-completion \
@@ -93,10 +96,13 @@ setup_system() {
         brew install --cask rectangle
 
         # Install a newer bash than ships with MacOS and set it as the default shell
-        brew_bash="$(brew --prefix bash)"
-        echo "Adding ${brew_bash} to /etc/shells if not present"
-        grep ${brew_bash} /etc/shells &>/dev/null || echo ${brew_bash} | sudo tee -a /etc/shells
-        [[ ${SHELL} = ${brew_bash} ]] || chsh -s ${brew_bash} $(whoami | xargs echo -n)
+        brew_bash="$(brew --prefix)/bin/bash"
+        # Bail early if ${brew_bash} doesn't exist for any reason
+        [[ ! -f ${brew_bash} ]] && echo "Unable to set brew-installed bash as shell!" || {
+            echo "Adding ${brew_bash} to /etc/shells if not present"
+            grep ${brew_bash} /etc/shells &>/dev/null || echo ${brew_bash} | sudo tee -a /etc/shells
+            [[ ${SHELL} = ${brew_bash} ]] || chsh -s ${brew_bash} $(whoami | xargs echo -n)
+        }
 
         # Add ssh agent to system keychain on first unlock
         ssh_agent_config="AddKeysToAgent yes"
