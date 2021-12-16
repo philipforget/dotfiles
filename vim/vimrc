@@ -1,6 +1,3 @@
-" Not necessary for nvim but wont bother anything if it's present
-set nocompatible
-
 call plug#begin('~/.nvim/plugged')
 
 " Plugins
@@ -31,7 +28,6 @@ Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'w0rp/ale'
-Plug 'zanglg/nova.vim'
 
 " Syntax highlighters
 Plug 'ekalinin/Dockerfile.vim'
@@ -50,18 +46,13 @@ set smartindent
 
 let g:airline#extensions#ale#enabled = 1
 
-" set Vim-specific sequences for RGB colors
-" set termguicolors
-" let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-" let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-
 set background=light
+" Use solarized, but don't complain if it doesn't exist
 silent! colorscheme solarized
 
 " Needed to use limelight with solarized
 let g:limelight_conceal_ctermfg = 245  " Solarized Base1
 let g:limelight_conceal_guifg = '#8a8a8a'  " Solarized Base1
-
 
 " Turn on 3 modelines, these allow us to set filetype etc using the first 3
 set modeline
@@ -70,37 +61,24 @@ set modelines=3
 " Change buffers without saving them
 set hidden
 
+" Shortcut for "the sudo" trick, to write the open file using sudo with `w!!`
 cmap w!! w !sudo tee > /dev/null %
 
 " Use the already open buffer if it exists
 set switchbuf=useopen,usetab
 
 " Filetype detection based on extension for lesser known filetypes
-autocmd BufRead,BufNewFile *.as set filetype=actionscript
-autocmd BufRead,BufNewFile *.hx set filetype=haxe
 autocmd BufRead,BufNewFile *.ino set filetype=arduino
 autocmd BufRead,BufNewFile *.ncx set filetype=xml
 autocmd BufRead,BufNewFile *.opf set filetype=xml
 autocmd BufRead,BufNewFile *.jar,*.war,*.ear,*.sar,*.rar,*.epub set filetype=zip
 
-" babel and eslint config files ar ejson but dont end in .json
+" babel and eslint config files are json but don't end in .json
 autocmd BufRead,BufNewFile .babelrc,.eslintrc set filetype=json
-
-" Run black on python files before writing
-" autocmd BufWritePre *.py silent! execute ':Black'
 
 " Start at the beginning of the buffer for git commit messages
 au FileType gitcommit au! BufEnter COMMIT_EDITMSG call setpos('.', [0, 1, 1, 0])
 
-
-" set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-" set statusline+=%*
-
-" let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_auto_loc_list = 1
-" let g:syntastic_check_on_open = 1
-" let g:syntastic_check_on_wq = 0
 
 " Visual bell and no beep
 set vb
@@ -109,18 +87,19 @@ set noerrorbells
 " Allow backspacing over everything in insert mode
 set bs=indent,eol,start
 
-" Change backup directory
+" Change backup directory to not litter working directories
 set backupdir=/tmp
-" I have more than 8k of memory, dont need swapfile thanks
+" I have more than 8k of memory, don't need swapfile thanks
 set noswapfile
 
-" Turn on mouse
+" Turn on mouse support
 set mouse=a
 
 " Start without wrapping
 set nowrap
 
-" Allow j and k keys to move down physical lines on screen
+" Allow j and k keys to move down physical lines on screen, eg when `set wrap`
+" is set.
 nnoremap j gj
 nnoremap k gk
 imap <silent> <Down> <C-o>gj
@@ -128,18 +107,19 @@ imap <silent> <Up> <C-o>gk
 nmap <silent> <Down> gj
 nmap <silent> <Up> gk
 
-" Allow L and H to go to beginning and end of line respectively
+" Allow L and H to go to beginning and end of line respectively vs $ and 0
 nnoremap H 0
 nnoremap L $
 
-" I have yet to find a use for Ex mode
+" I have yet to find a use for Ex mode, maybe one day
 nnoremap Q <Nop>
 
 " Scroll 3 lines at a time with C-y and C-x
 nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
 
-" Make Y and D yank til the end of the line like other capital letters
+" Make Y and D yank til the end of the line like other capital letter commands
+" tend to do.
 map Y y$
 map D d$
 
@@ -155,7 +135,7 @@ set scrolloff=4
 " 4 spaces, expand tab by default, like a sane person
 set sw=4 sts=4 ts=4 expandtab
 
-" Search for the visually selected text
+" Search for the visually selected text with // in visual mode
 vnoremap // y/<C-R>"<CR>
 
 " See lines numbers, ruler, and current line
@@ -178,48 +158,39 @@ set ignorecase
 set infercase
 " unless there's uppercase letters on the pattern
 set smartcase
+
 " do not move the cursor when highlighting
 noremap * *N
 noremap # #N
 
-" Leader stuff
 " Map shortcut leader to space
 let mapleader = "\<space>"
 
 " Clear the search highlight with <leader>n
 nmap <silent> <leader>n :noh<CR>
 
-" Paste mode toggle
+" Toggle paste mode
 nmap <silent> <leader>p :set paste!<CR>
 
-" Paste mode toggle
+" Insert date on new line
 nmap <silent> <leader>d :r!date<CR>
 
-" Softwarp text
+" Softwrap text
 nmap <silent> <leader>w :set wrap! linebreak! textwidth=0<CR>
-" Toggle NERDTree
-map <leader>t :NERDTreeToggle<CR>
 
-
-" Start Ag command
+" Start Ag command using current search term
 map <leader>a :AgFromSearch<CR>
 
 " Format python code with `black`
 map <leader>b :Black<CR>
 
+" Sort the currently selected lines
 vnoremap <leader>so :sort<CR>
 
-" NERDTree
+" NERDTree config
+map <leader>t :NERDTreeToggle<CR>
 let NERDTreeIgnore=['\.pyc']
 let NERDTreeShowHidden=1
-
-" Vimux leader shortcuts
-" Run last command executed by VimuxRunCommand
-map <Leader>vl :VimuxRunLastCommand<CR>
-" Prompt for a command to run map
-map <Leader>vp :VimuxPromptCommand<CR>
- " Zoom the tmux runner page
-map <Leader>vz :VimuxZoomRunner<CR>
 
 " Opens an edit command with the path of the currently edited file filled in
 " Normal mode: <Leader>e
@@ -255,15 +226,16 @@ nmap <C-J> <C-W>j
 nmap <C-K> <C-W>k
 nmap <C-L> <C-W>l
 
-" Split to the file under the cursor and line number
-map gs <C-W>F
+" Split to the file under the cursor and line number with gs
+" First unmap the default for switch.vim which interferes with the map below
+let g:switch_mapping = ""
+nmap gs <C-W>F
 
 " Remove some of the more annoying 'Press ENTER to continue' messages
 set shortmess=atI
 
-" Automatically reload vimrc when save
-autocmd! BufWritePost .vimrc source %
-autocmd! BufWritePost .gvimrc source %
+" Automatically reload vimrc on save
+autocmd! BufWritePost vimrc source %
 
 " Remember cursor position on files
 autocmd BufReadPost * normal `"
@@ -273,13 +245,12 @@ inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
 
-" Remap C-c to escape
+" Vim by default uses c-c for SQL autocomplete but I use it as escape
+let g:ftplugin_sql_omni_key = '<C-0>'
+" Remap C-c to escape, my fingers are there already
 inoremap <C-c> <ESC>
 
-" Vim by default uses c-c for sql autocomplete
-let g:ftplugin_sql_omni_key = '<C-0>'
-
-" autocomplete on dashed-words, very useful for css
+" autocomplete on dashed-words, very useful for CSS
 set iskeyword+=-
 
 " Don't flicker when executing macros/functions
@@ -321,10 +292,10 @@ endfunction
 
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
 autocmd! User GoyoLeave nested call <SID>goyo_leave()
+map <silent> <leader>g :Goyo<CR>
 
 
-
-" Rainbow parenthesis
+" Enable rainbow parenthesis
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare

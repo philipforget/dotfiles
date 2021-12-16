@@ -3,6 +3,10 @@
 *.tmp
 *.log
 
+# Ignore vim's binary spelling files, vim will rebuild them when loading the
+# spelling file
+*.spl
+
 vim/.netrwhist
 vim/plugged
 vim/bundle

@@ -1,12 +1,25 @@
-FROM ubuntu:20.04
+FROM debian:stretch-slim
 
-RUN apt-get update && apt-get install -yq sudo curl
+ARG user=dotfiles
+ARG id=86758
+
+RUN apt-get update && apt-get install -yq \
+    curl \
+    locales-all \
+    procps \
+    sudo
 
 # Turn on passwordless sudo for ubuntu
-RUN echo 'ubuntu ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
+RUN echo "${user} ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 
-RUN useradd -m -s /usr/bin/bash ubuntu
+RUN groupadd --gid ${id} ${user} && \
+    useradd \
+      --create-home \
+      --shell /bin/bash \
+      --gid ${id} \
+      --uid ${id} \
+      ${user}
 
-USER ubuntu
+USER ${user}
 
-WORKDIR /home/ubuntu/workspace/dotfiles/
+WORKDIR /home/${user}
