@@ -1,20 +1,15 @@
 # vim:set ft=sh:
-
-[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
 [ -f ~/.aliases_mac ] && . ~/.aliases_mac
 
-# If we have a `default` python virtualenv, lets use it over anything on the system already
-[ -d ~/.virtualenvs/default ] && export PATH="$HOME/.virtualenvs/default/bin:$PATH"
+brewprefix="$(brew --prefix)"
 
-export PATH="$PATH:/usr/local/sbin"
-
-# Prioritize local version of openssl
-export PATH="/usr/local/opt/openssl@1.1/bin/:$PATH"
+[[ -f "${brewprefix}/etc/bash_completion" ]] && . "${brewprefix}/etc/bash_completion"
 
 alias vlc="/Applications/VLC.app/Contents/MacOS/VLC"
 
-[[ -f "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.bash.inc" ]] && source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.bash.inc"
-[[ -f "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.bash.inc" ]] && source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.bash.inc"
+# Add the brew-installed google-cloud-sdk bin to PATH and load autocomplete for it
+[[ -f "${brewprefix}/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.bash.inc" ]] && source "${brewprefix}/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.bash.inc"
+[[ -f "${brewprefix}/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.bash.inc" ]] && source "${brewprefix}/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.bash.inc"
 
 random_word() {
     python3 -c 'from random import choice; print(choice(open("/usr/share/dict/words", "r").readlines()).strip().lower())'

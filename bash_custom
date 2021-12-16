@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 # Allow __git_ps1 to work on arch linux
 [[ -f /usr/share/git/git-prompt.sh ]] && . /usr/share/git/git-prompt.sh
 
@@ -15,8 +14,10 @@ get_ps1() {
     local pink="\[\033[01;31m\]"
     local green="\[\033[01;32m\]"
 
+    # Assign a pseudo-random color to the hostname string based on hostname value
     local hostname_number=$(hostname | od | tr ' ' '\n' | awk '{total = total + $1}END{print 30 + (total % 6)}')
     local hostname_color="\[\033[01;${hostname_number}m\]"
+
     local user="${blue}\u${white}"
     local host="${hostname_color}\h${white}"
     local dir="${green}\w${white}"
@@ -35,7 +36,7 @@ export GOPATH=$HOME/go
 export HISTFILE=~/.history
 export HISTSIZE=
 export HISTFILESIZE=
-# Allows for sharing of history across tmux session
+# Allows for sharing of history across tmux sessions and panes
 # "-a" immediately appends new history to the histfile
 export PROMPT_COMMAND='history -a'
 # Ignore and erase duplicates and commands with leading whitespace
@@ -60,8 +61,6 @@ export PATH="$HOME/bin:$HOME/go/bin:$PATH"
 [[ -f ~/.aliases ]] && . ~/.aliases
 [[ -f ~/.distraction ]] && . ~/.distraction
 
-if [ -f "/workspace/google-cloud-sdk/path.bash.inc" ]; then source '/home/philipforget/workspace/google-cloud-sdk/path.bash.inc'; fi
-if [ -f '/usr/lib/google-cloud-sdk/completion.bash.inc' ]; then source '/usr/lib/google-cloud-sdk/completion.bash.inc'; fi
 command kubectl &> /dev/null && source <(kubectl completion bash)
 
 export PYTHONDONTWRITEBYTECODE=1

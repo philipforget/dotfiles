@@ -10,10 +10,15 @@ you should probably inspect it before running random bash scripts from the
 internet:
 
 ```bash
-curl -fL init.chevalierforget.com | bash
+# Make sure you pass this as the first argument, otherwise you'll be adding
+# _my_ public keys to your machine!
+$YOUR_GITHUB_USERNAME=philipforget
 
-# Or to use a specific branch, eg some-feature
-curl -fL init.chevalierforget.com/some-feature | bash
+# To use the main branch
+curl -fL init.chevalierforget.com | bash -s -- $YOUR_GITHUB_USERNAME
+
+# Or to use a specific branch, eg `some-feature`
+curl -fL init.chevalierforget.com/some-feature | bash -s -- $YOUR_GITHUB_USERNAME
 ```
 
 
@@ -29,7 +34,7 @@ docker run --rm -it -v ${PWD}:/home/ubuntu/workspace/dotfiles/:ro bash -c './ini
 
 ```bash
 # Or to build the Docker image and run the init script from github directly:
-curl -fL https://raw.githubusercontent.com/philipforget/dotfiles/master/Dockerfile | \
+curl -fL https://raw.githubusercontent.com/philipforget/dotfiles/main/Dockerfile | \
   docker build -t dotfiles-test - && \
   docker run --rm -it -h dotfiles-test dotfiles-test  \
     bash -c 'curl -fL init.chevalierforget.com | bash; /bin/bash'

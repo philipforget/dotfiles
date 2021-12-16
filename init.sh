@@ -1,50 +1,57 @@
 #!/usr/bin/env bash
 
 # Tell bash to fail immediately on any error as well as unset variables
-set -euo pipefail
+set -e -o pipefail
 
 export DEBIAN_FRONTEND=noninteractive
 
 symlink() {
-    local SOURCE="${1}"
-    local TARGET="${2}"
+    # A symlink function that makes sure the target symlink's parent path
+    # exists.
+    local source="${1}"
+    local target="${2}"
 
-    # Make sure the parent folder exists before creating the symklink
-    mkdir -p "$(dirname ${TARGET})"
+    [[ -d ${target} || -f ${target} ]] && echo "`${target}` exists, skipping" && return
 
-    ln -s "${SOURCE}" "${TARGET}"
+    mkdir -p "$(dirname ${target})"
+    ln -s "${source}" "${target}"
 }
 
 # Se up the dotfiles repository
 setup_dotfiles() {
-    local readonly WORKSPACE="${HOME}/workspace"
-    local readonly DOTFILES="${WORKSPACE}/dotfiles"
-    mkdir -p "${WORKSPACE}"
+    local readonly workspace="${HOME}/workspace"
+    local readonly dotfiles="${workspace}/dotfiles"
+    mkdir -p "${workspace}"
 
-    if [[ -d "${DOTFILES}" ]]; then
+    if [[ -d "${dotfiles}" ]]; then
         echo "dotfiles already cloned, skipping"
     else
-        git clone https://github.com/philipforget/dotfiles.git "${DOTFILES}"
+        {
+            git git@github.com:philipforget/dotfiles.git "${dotfiles}"
+        } || {
+            echo "Unable to clone via ssh, falling back to https"
+            git clone https://github.com/philipforget/dotfiles.git "${dotfiles}"
+        }
     fi
 
     # Set up symlinks
-    symlink "${DOTFILES}/aliases" ~/.aliases
-    symlink "${DOTFILES}/aliases_linux" ~/.aliases_linux
-    symlink "${DOTFILES}/aliases_mac" ~/.aliases_mac
-    symlink "${DOTFILES}/bash_custom" ~/.bash_custom
-    symlink "${DOTFILES}/bash_linux" ~/.bash_linux
-    symlink "${DOTFILES}/bash_mac" ~/.bash_mac
-    symlink "${DOTFILES}/distraction" ~/.distraction
-    symlink "${DOTFILES}/docker_config.json" ~/.docker/config.json
-    symlink "${DOTFILES}/gitconfig" ~/.gitconfig
-    symlink "${DOTFILES}/pylintrc" ~/.pylintrc
-    symlink "${DOTFILES}/tmux.conf" ~/.tmux.conf
-    symlink "${DOTFILES}/vim" ~/.vim
-    symlink "${DOTFILES}/xmodmap" ~/.xmodmap
+    symlink "${dotfiles}/aliases" ~/.aliases
+    symlink "${dotfiles}/aliases_linux" ~/.aliases_linux
+    symlink "${dotfiles}/aliases_mac" ~/.aliases_mac
+    symlink "${dotfiles}/bash_custom" ~/.bash_custom
+    symlink "${dotfiles}/bash_linux" ~/.bash_linux
+    symlink "${dotfiles}/bash_mac" ~/.bash_mac
+    symlink "${dotfiles}/distraction" ~/.distraction
+    symlink "${dotfiles}/docker_config.json" ~/.docker/config.json
+    symlink "${dotfiles}/gitconfig" ~/.gitconfig
+    symlink "${dotfiles}/pylintrc" ~/.pylintrc
+    symlink "${dotfiles}/tmux.conf" ~/.tmux.conf
+    symlink "${dotfiles}/vim" ~/.vim
+    symlink "${dotfiles}/xmodmap" ~/.xmodmap
 
     # Mac only symlinks
     if [[ $(uname) == "Darwin" ]]; then
-        symlink "${DOTFILES}/Shortcuts.json" "~/Library/Application Support/Spectacle/Shortcuts.json"
+        symlink "${dotfiles}/Shortcuts.json" "~/Library/Application Support/Spectacle/Shortcuts.json"
     fi
 
     if ! grep -Fxq 'source ~/.bash_custom' "${HOME}/.bashrc"; then
@@ -67,13 +74,13 @@ setup_virtualenv() {
     source ${default_venv}/bin/activate
 }
 
-install_packages() {
+setup_system() {
     if [[ $(uname) == "Darwin" ]]; then
         # On MacOS, install and use brew package manager
         if ! which brew &> /dev/null; then
             echo 'Installing `brew` package manager: https://brew.sh/'
             echo 'Requires user password'
-            /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+            /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
         fi
         brew install \
             bash \
@@ -85,7 +92,8 @@ install_packages() {
             vim
         brew install --cask rectangle
 
-        brew_bash="/usr/local/bin/bash"
+        # Install a newer bash than ships with MacOS and set it as the default shell
+        brew_bash="$(brew --prefix bash)"
         echo "Adding ${brew_bash} to /etc/shells if not present"
         grep ${brew_bash} /etc/shells &>/dev/null || echo ${brew_bash} | sudo tee -a /etc/shells
         [[ ${SHELL} = ${brew_bash} ]] || chsh -s ${brew_bash} $(whoami | xargs echo -n)
@@ -97,8 +105,11 @@ install_packages() {
         # Currently only working for Debian and Ubuntu based distros
         if grep -qE "Ubuntu|Debian|Raspbian" /etc/issue; then
             echo "Installing required packages"
+            # Use sudo -E to inherit our current environment, including
+            # DEBIAN_FRONTEND set above
             sudo -E apt-get update
             sudo -E apt-get install -yq \
+                --no-install-recommends \
                 bash-completion \
                 curl \
                 dnsutils \
@@ -108,18 +119,23 @@ install_packages() {
                 python3-venv \
                 tmux \
                 vim-nox
+
+            # Set vim as default system editor
+            [[ $(uname) == "Linux" ]] && sudo update-alternatives --set editor /usr/bin/vim.nox
         fi
     fi
 }
 
 init() {
-    install_packages
+    local github_username="${1}"
 
-    # Set vim as default system editor on linux
-    [[ $(uname) == "Linux" ]] && sudo update-alternatives --set editor /usr/bin/vim.nox
+    setup_system
 
-    mkdir -p "${HOME}/.ssh"
-    curl -L https://github.com/philipforget.keys >> "${HOME}/.ssh/authorized_keys"
+    # If a github username is provided, import its public keys
+    if [[ -n ${github_username} ]]; then
+        mkdir -p "${HOME}/.ssh"
+        curl -L https://github.com/philipforget.keys >> "${HOME}/.ssh/authorized_keys"
+    fi
 
     setup_virtualenv
     setup_dotfiles
