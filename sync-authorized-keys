@@ -1,0 +1,23 @@
+#! /bin/bash
+
+set -eu -o pipefail
+
+sync-authorized-keys() {
+    local key_url="https://github.com/philipforget.keys"
+
+    # create ~/.ssh/authorized_keys if it doesnt exist
+    >>~/.ssh/authorized_keys
+
+    # Send current keys and output from curl to sort / uniq to get unique keys.
+    # This is all sent to a temporary file so `-o pipefail` can bail if curl or
+    # cat fail before continuing with replacing authorized_keys
+    curl -fsL ${key_url} | \
+    cat - ~/.ssh/authorized_keys | \
+    sort | uniq > /tmp/new_keys
+
+    if grep -q '^ssh-rsa' /tmp/new_keys; then
+        mv /tmp/new_keys ~/.ssh/authorized_keys
+    fi
+}
+
+sync-authorized-keys

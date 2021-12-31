@@ -50,6 +50,7 @@ setup_dotfiles() {
     symlink "${dotfiles}/tmux.conf" ~/.tmux.conf
     symlink "${dotfiles}/vim" ~/.vim
     symlink "${dotfiles}/xmodmap" ~/.xmodmap
+    symlink "${dotfiles}/sync-authorized-keys" ~/bin/sync-authorized-keys
 
     # Mac only symlinks
     if [[ $(uname) == "Darwin" ]]; then
