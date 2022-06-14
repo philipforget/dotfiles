@@ -83,18 +83,34 @@ setup_system() {
         if ! which brew &> /dev/null; then
             echo 'Installing `brew` package manager: https://brew.sh/'
             echo 'Requires user password'
-            /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+            curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh
         fi
         echo "Installing packages with brew"
         brew install \
             bash \
             bash-completion \
             git \
+            git-lfs \
             mosh \
             python3 \
+            shellcheck \
             tmux \
             vim
-        brew install --cask rectangle
+
+        git lfs install
+
+        brew install --cask \
+            1password \
+            autodesk-fusion360 \
+            docker \
+            firefox \
+            google-chrome \
+            microsoft-remote-desktop \
+            rectangle \
+            rhino \
+            signal \
+            slack \
+            sonos
 
         # Install a newer bash than ships with MacOS and set it as the default shell
         brew_bash="$(brew --prefix)/bin/bash"
@@ -108,6 +124,7 @@ setup_system() {
         # Add ssh agent to system keychain on first unlock
         ssh_agent_config="AddKeysToAgent yes"
         grep "${ssh_agent_config}" ~/.ssh/config &>/dev/null || echo "${ssh_agent_config}" >> ~/.ssh/config
+
     else
         # Currently only working for Debian and Ubuntu based distros
         if grep -qE "Ubuntu|Debian|Raspbian" /etc/issue; then
@@ -121,14 +138,18 @@ setup_system() {
                 curl \
                 dnsutils \
                 git \
+                git-lfs \
                 python3 \
                 python3-pip \
                 python3-venv \
+                shellcheck \
                 tmux \
                 vim-nox
 
+            git lfs install
+
             # Set vim as default system editor
-            [[ $(uname) == "Linux" ]] && sudo update-alternatives --set editor /usr/bin/vim.nox
+            sudo update-alternatives --set editor /usr/bin/vim.nox
         fi
     fi
 }
