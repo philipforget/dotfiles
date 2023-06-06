@@ -22,7 +22,7 @@ alias lower="tr '[:upper:]' '[:lower:]'"
 alias upper="tr '[:lower:]' '[:upper:]'"
 
 latest() {
-    ls -lth | head -n ${1:-10}
+    ls -c | head -n ${1:-10}
 }
 
 alias cleanbranches="git branch --merged | grep -v '^\\*' | xargs git branch -d"

@@ -65,16 +65,6 @@ command kubectl &> /dev/null && source <(kubectl completion bash)
 
 export PYTHONDONTWRITEBYTECODE=1
 
-
-# Activate the default virtualenv if one isn't activated already
-default_venv="${HOME}/.virtualenvs/default"
-if [[ -z ${VIRTUAL_ENV} ]] && [[ -d ${default_venv} ]]; then
-    source ${default_venv}/bin/activate
-elif [ -n "$VIRTUAL_ENV" ]; then
-  . "$VIRTUAL_ENV/bin/activate"
-fi
-
-
 _poetry_0c1d51702c0313b5_complete()
 {
     local cur script coms opts com
