@@ -1,3 +1,6 @@
 {
-  "detachKeys" : "ctrl-z,z"
+	"auths": {},
+	"detachKeys": "ctrl-z,z",
+	"credsStore": "desktop",
+	"currentContext": "desktop-linux"
 }

@@ -1,3 +1,4 @@
+# vim: set ft=gitconfig :
 [alias]
     hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
     lg = log --color --pretty=format:'%C(auto)%h %Cred %<(10,trunc)%an %Creset%C(auto)%s %Cgreen(%cr,%ar) %Creset%C(auto)%d'
@@ -8,6 +9,7 @@
 
 [push]
     default = simple
+    autoSetupRemote = true
 
 [fetch]
     prune = true

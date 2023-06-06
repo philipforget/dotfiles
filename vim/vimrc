@@ -1,4 +1,4 @@
-call plug#begin('~/.nvim/plugged')
+call plug#begin()
 
 " Plugins
 Plug 'AndrewRadev/switch.vim'
@@ -15,7 +15,7 @@ Plug 'junegunn/limelight.vim'
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'lifepillar/vim-solarized8'
 Plug 'pedrohdz/vim-yaml-folds'
-Plug 'psf/black'
+Plug 'psf/black', { 'branch': 'stable' }
 Plug 'rking/ag.vim'
 Plug 'schickling/vim-bufonly'
 Plug 'scrooloose/nerdtree'
@@ -46,9 +46,13 @@ syntax on
 filetype plugin indent on
 set smartindent
 
+" Disable indentline by default, turn it on only for yaml if you need it
+let g:indentLine_enabled = 0
+
 let g:airline#extensions#ale#enabled = 1
 
 set background=light
+set background=dark
 " Use solarized, but don't complain if it doesn't exist
 silent! colorscheme solarized
 
@@ -184,6 +188,7 @@ nmap <silent> <leader>w :set wrap! linebreak! textwidth=0<CR>
 map <leader>a :AgFromSearch<CR>
 
 " Format python code with `black`
+let g:black_virtualenv="~/.virtualenvs/black"
 map <leader>b :Black<CR>
 
 " Sort the currently selected lines

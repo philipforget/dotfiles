@@ -101,16 +101,11 @@ setup_system() {
 
         brew install --cask \
             1password \
-            autodesk-fusion360 \
             docker \
-            firefox \
             google-chrome \
             microsoft-remote-desktop \
             rectangle \
-            rhino \
-            signal \
-            slack \
-            sonos
+            signal
 
         # Install a newer bash than ships with MacOS and set it as the default shell
         brew_bash="$(brew --prefix)/bin/bash"
