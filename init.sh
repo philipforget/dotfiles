@@ -1,9 +1,12 @@
 #!/usr/bin/env bash
 
 # Tell bash to fail immediately on any error as well as unset variables
-set -e -o pipefail
+# set -e -o pipefail
 
 export DEBIAN_FRONTEND=noninteractive
+export PYTHON_VERSION=3.11.6
+export PYENV_ROOT="$HOME/.pyenv"
+export DEFAULT_VENV="${HOME}/.virtualenvs/default"
 
 symlink() {
     # A symlink function that makes sure the target symlink's parent path
@@ -67,13 +70,10 @@ setup_dotfiles() {
 }
 
 setup_system() {
-    # Install rye for python management
-    curl -sSf https://rye-up.com/get | RYE_INSTALL_OPTION="--yes" bash
-
     if [[ $(uname) == "Darwin" ]]; then
         # On MacOS, install and use brew package manager
         if ! which brew &> /dev/null; then
-            echo 'Installing `brew` package manager: https://brew.sh/'
+            echo 'Installing brew package manager: https://brew.sh/'
             echo 'Requires user password'
             /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
         fi
@@ -84,6 +84,7 @@ setup_system() {
             git \
             git-lfs \
             mosh \
+            pyenv \
             python3 \
             shellcheck \
             tmux \
@@ -121,16 +122,31 @@ setup_system() {
             sudo -E apt-get -qq install -y \
                 --no-install-recommends \
                 bash-completion \
+                build-essential \
+                curl \
                 curl \
                 dnsutils \
                 git \
                 git-lfs \
-                python3 \
-                python3-pip \
-                python3-venv \
+                libbz2-dev \
+                libffi-dev \
+                liblzma-dev \
+                libncursesw5-dev \
+                libreadline-dev \
+                libsqlite3-dev \
+                libssl-dev \
+                libxml2-dev \
+                libxmlsec1-dev \
+                llvm \
                 shellcheck \
+                tk-dev \
                 tmux \
-                vim-nox
+                vim-nox \
+                xz-utils \
+                zlib1g-dev
+
+            # Install pyenv and install a new global python version
+            curl https://pyenv.run | bash
 
             git lfs install
 
@@ -138,12 +154,32 @@ setup_system() {
             sudo update-alternatives --set editor /usr/bin/vim.nox
         fi
     fi
+
+}
+
+setup_python() {
+    default_venv="${HOME}/.virtualenvs/default"
+    command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+    eval "$(pyenv init -)"
+
+    # With pyenv installed on the system, install our default virtualenv
+    pyenv install -s "${PYTHON_VERSION}"
+    pyenv global "${PYTHON_VERSION}"
+
+    "${PYENV_ROOT}/shims/python3" -m venv "${default_venv}"
+    "${default_venv}/bin/python3" -m pip install -U pip
+    "${default_venv}/bin/python3" -m pip install \
+      flask \
+      ipython \
+      requests
 }
 
 init() {
     local github_username="${1}"
 
     setup_system
+
+    setup_python
 
     # If a github username is provided, import its public keys
     if [[ -n ${github_username} ]]; then
@@ -159,4 +195,6 @@ init() {
     echo "setup complete, run 'source ~/.bashrc' to source changes"
 }
 
-init "$@"
+if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
+      init "$@"
+fi
