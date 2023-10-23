@@ -169,9 +169,12 @@ setup_python() {
     "${PYENV_ROOT}/shims/python3" -m venv "${default_venv}"
     "${default_venv}/bin/python3" -m pip install -U pip
     "${default_venv}/bin/python3" -m pip install \
+      black \
       flask \
       ipython \
-      requests
+      mypy \
+      requests \
+      ruff
 }
 
 init() {
