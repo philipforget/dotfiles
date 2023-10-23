@@ -21,42 +21,43 @@ symlink() {
 
 # Se up the dotfiles repository
 setup_dotfiles() {
-    local readonly workspace="${HOME}/workspace"
-    local readonly dotfiles="${workspace}/dotfiles"
+    local workspace="${HOME}/workspace"
+    local dotfiles_dir="${workspace}/dotfiles"
     mkdir -p "${workspace}"
 
-    if [[ -d "${dotfiles}" ]]; then
+    if [[ -d "${dotfiles_dir}" ]]; then
         echo "dotfiles already cloned, skipping"
     else
         {
-            git git@github.com:philipforget/dotfiles.git "${dotfiles}"
+            git git@github.com:philipforget/dotfiles.git "${dotfiles_dir}"
         } || {
             echo "Unable to clone via ssh, falling back to https"
-            git clone https://github.com/philipforget/dotfiles.git "${dotfiles}"
+            git clone https://github.com/philipforget/dotfiles.git "${dotfiles_dir}"
         }
     fi
 
     # Set up symlinks
-    symlink "${dotfiles}/aliases" ~/.aliases
-    symlink "${dotfiles}/aliases_linux" ~/.aliases_linux
-    symlink "${dotfiles}/aliases_mac" ~/.aliases_mac
-    symlink "${dotfiles}/bash_custom" ~/.bash_custom
-    symlink "${dotfiles}/bash_linux" ~/.bash_linux
-    symlink "${dotfiles}/bash_mac" ~/.bash_mac
-    symlink "${dotfiles}/distraction" ~/.distraction
-    symlink "${dotfiles}/docker_config.json" ~/.docker/config.json
-    symlink "${dotfiles}/gitconfig" ~/.gitconfig
-    symlink "${dotfiles}/pylintrc" ~/.pylintrc
-    symlink "${dotfiles}/tmux.conf" ~/.tmux.conf
-    symlink "${dotfiles}/vim" ~/.vim
-    symlink "${dotfiles}/xmodmap" ~/.xmodmap
-    symlink "${dotfiles}/sync-authorized-keys" ~/bin/sync-authorized-keys
+    symlink "${dotfiles_dir}/aliases" ~/.aliases
+    symlink "${dotfiles_dir}/aliases_linux" ~/.aliases_linux
+    symlink "${dotfiles_dir}/aliases_mac" ~/.aliases_mac
+    symlink "${dotfiles_dir}/bash_custom" ~/.bash_custom
+    symlink "${dotfiles_dir}/bash_linux" ~/.bash_linux
+    symlink "${dotfiles_dir}/bash_mac" ~/.bash_mac
+    symlink "${dotfiles_dir}/distraction" ~/.distraction
+    symlink "${dotfiles_dir}/docker_config.json" ~/.docker/config.json
+    symlink "${dotfiles_dir}/gitconfig" ~/.gitconfig
+    symlink "${dotfiles_dir}/pylintrc" ~/.pylintrc
+    symlink "${dotfiles_dir}/tmux.conf" ~/.tmux.conf
+    symlink "${dotfiles_dir}/vim" ~/.vim
+    symlink "${dotfiles_dir}/xmodmap" ~/.xmodmap
+    symlink "${dotfiles_dir}/sync-authorized-keys" ~/bin/sync-authorized-keys
 
     # Mac only symlinks
     if [[ $(uname) == "Darwin" ]]; then
-        symlink "${dotfiles}/com.knollsoft.Rectangle.plist" "~/Library/Preferences/com.knollsoft.Rectangle.plist"
+        symlink "${dotfiles_dir}/com.knollsoft.Rectangle.plist" "${HOME}/Library/Preferences/com.knollsoft.Rectangle.plist"
     fi
 
+    # Add sourcing of ~/.bash_custom to .bashrc and .profile if not present
     if ! grep -Fxq 'source ~/.bash_custom' "${HOME}/.bashrc"; then
         echo 'source ~/.bash_custom' >> "${HOME}/.bashrc"
     fi
@@ -65,25 +66,16 @@ setup_dotfiles() {
     fi
 }
 
-setup_virtualenv() {
-    local default_venv="${HOME}/.virtualenvs/default"
-    if [[ -d ${default_venv} ]]; then
-        echo "default virtualenv exists, skipping" && return 0
-    fi
-    python3 -m venv ${default_venv}
-    source ${default_venv}/bin/activate
-    python3 -m pip install -U pip ipython click
-    export VIRTUAL_ENV_DISABLE_PROMPT=1
-    source ${default_venv}/bin/activate
-}
-
 setup_system() {
+    # Install rye for python management
+    curl -sSf https://rye-up.com/get | RYE_INSTALL_OPTION="--yes" bash
+
     if [[ $(uname) == "Darwin" ]]; then
         # On MacOS, install and use brew package manager
         if ! which brew &> /dev/null; then
             echo 'Installing `brew` package manager: https://brew.sh/'
             echo 'Requires user password'
-            curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh
+            /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
         fi
         echo "Installing packages with brew"
         brew install \
@@ -121,7 +113,6 @@ setup_system() {
         grep "${ssh_agent_config}" ~/.ssh/config &>/dev/null || echo "${ssh_agent_config}" >> ~/.ssh/config
 
     else
-        # Currently only working for Debian and Ubuntu based distros
         if grep -qE "Ubuntu|Debian|Raspbian" /etc/issue; then
             echo "Installing required packages"
             # Use sudo -E to inherit our current environment, including
@@ -160,7 +151,6 @@ init() {
         curl -L https://github.com/philipforget.keys >> "${HOME}/.ssh/authorized_keys"
     fi
 
-    setup_virtualenv
     setup_dotfiles
 
     echo "Installing vim plugins"
