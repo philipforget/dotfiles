@@ -155,11 +155,13 @@ setup_system() {
         fi
     fi
 
+    # Install volta for managing node and npm versions
+    curl https://get.volta.sh | bash -s -- --skip-setup
 }
 
 setup_python() {
     default_venv="${HOME}/.virtualenvs/default"
-    command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+    export PATH="$PYENV_ROOT/bin:$PATH"
     eval "$(pyenv init -)"
 
     # With pyenv installed on the system, install our default virtualenv

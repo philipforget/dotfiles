@@ -74,3 +74,9 @@ if [[ -z ${VIRTUAL_ENV} ]] && [[ -d ${default_venv} ]]; then
 elif [ -n "$VIRTUAL_ENV" ]; then
   . "$VIRTUAL_ENV/bin/activate"
 fi
+
+
+. "$HOME/.cargo/env"
+
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
