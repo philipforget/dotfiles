@@ -79,6 +79,7 @@ setup_system() {
         fi
         echo "Installing packages with brew"
         brew install \
+            age \
             bash \
             bash-completion \
             git \
@@ -87,6 +88,7 @@ setup_system() {
             pyenv \
             python3 \
             shellcheck \
+            sops \
             tmux \
             vim
 
@@ -121,6 +123,7 @@ setup_system() {
             sudo -E apt-get -qq update
             sudo -E apt-get -qq install -y \
                 --no-install-recommends \
+                age \
                 bash-completion \
                 build-essential \
                 curl \
@@ -152,11 +155,15 @@ setup_system() {
 
             # Set vim as default system editor
             sudo update-alternatives --set editor /usr/bin/vim.nox
+
+            # Install sops from github releases
+            curl -L https://github.com/getsops/sops/releases/download/v3.8.1/sops-v3.8.1.linux.amd64 -o "${HOME}/bin/sops" && chmod +x "${HOME}/bin/sops"
         fi
     fi
 
     # Install volta for managing node and npm versions
     curl https://get.volta.sh | bash -s -- --skip-setup
+
 }
 
 setup_python() {
@@ -200,6 +207,9 @@ init() {
     echo "setup complete, run 'source ~/.bashrc' to source changes"
 }
 
-if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
-      init "$@"
+# When piping in from stdin (eg curl), BASH_SOURCE[0] will be unset, and
+# when executing via ./init.sh or bash init.sh, BASH_SOURCE[0] and ${0}
+# will be equal
+if [ "${BASH_SOURCE[0]}" == "${0}" ] || [ -z "${BASH_SOURCE[0]}" ]; then
+    init "$@"
 fi
