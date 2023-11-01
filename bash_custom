@@ -48,6 +48,8 @@ export EDITOR=vim
 export PAGER=less
 export less=-r
 
+export SOPS_AGE_KEY_FILE="${HOME}/workspace/dotfiles/secret/sops-age-key.txt"
+
 # Platform dependant stuff
 if [[ "$(uname)" == 'Linux' ]]; then
     . ~/.bash_linux
