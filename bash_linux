@@ -1,38 +1,36 @@
 #!/bin/bash
 
-export TERM='xterm-256color'
-
 [[ -f ~/.aliases_linux ]] && . ~/.aliases_linux
 
 export PATH="$PATH:/usr/local/go/bin"
 
 setup_ssh_agent() {
-    [[ ! -d ~/.ssh ]] && return
-    export XDG_RUNTIME_DIR="/run/user/$UID"
-    export DBUS_SESSION_BUS_ADDRESS="unix:path=${XDG_RUNTIME_DIR}/bus"
-    export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+	[[ ! -d ~/.ssh ]] && return
+	export XDG_RUNTIME_DIR="/run/user/$UID"
+	export DBUS_SESSION_BUS_ADDRESS="unix:path=${XDG_RUNTIME_DIR}/bus"
+	export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
-    SSH_ENV="$HOME/.ssh/environment"
+	SSH_ENV="$HOME/.ssh/environment"
 
-    start_agent() {
-        echo "Initializing new SSH agent..."
-        # spawn ssh-agent
-        /usr/bin/ssh-agent | sed 's/^echo/#echo/' > "${SSH_ENV}"
-        echo succeeded
-        chmod 600 "${SSH_ENV}"
-        . "${SSH_ENV}" > /dev/null
-        /usr/bin/ssh-add
-    }
+	start_agent() {
+		echo "Initializing new SSH agent..."
+		# spawn ssh-agent
+		/usr/bin/ssh-agent | sed 's/^echo/#echo/' >"${SSH_ENV}"
+		echo succeeded
+		chmod 600 "${SSH_ENV}"
+		. "${SSH_ENV}" >/dev/null
+		/usr/bin/ssh-add
+	}
 
-    # start the ssh-agent
-    if [ -f "${SSH_ENV}" ]; then
-         . "${SSH_ENV}" > /dev/null
-         ps -ef | grep ${SSH_AGENT_PID} | grep ssh-agent$ > /dev/null || {
-            start_agent;
-        }
-    else
-        start_agent;
-    fi
+	# start the ssh-agent
+	if [ -f "${SSH_ENV}" ]; then
+		. "${SSH_ENV}" >/dev/null
+		ps -ef | grep ${SSH_AGENT_PID} | grep ssh-agent$ >/dev/null || {
+			start_agent
+		}
+	else
+		start_agent
+	fi
 }
 
 setup_ssh_agent

@@ -52,6 +52,7 @@ setup_dotfiles() {
 	symlink "${dotfiles_dir}/pylintrc" ~/.pylintrc
 	symlink "${dotfiles_dir}/tmux.conf" ~/.tmux.conf
 	symlink "${dotfiles_dir}/vim" ~/.vim
+	symlink "${dotfiles_dir}/nvim" ~/.config/nvim
 	symlink "${dotfiles_dir}/xmodmap" ~/.xmodmap
 	symlink "${dotfiles_dir}/sync-authorized-keys" ~/bin/sync-authorized-keys
 
