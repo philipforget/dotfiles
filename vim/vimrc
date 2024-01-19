@@ -15,7 +15,7 @@ Plug 'junegunn/limelight.vim'
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'lifepillar/vim-solarized8'
 Plug 'pedrohdz/vim-yaml-folds'
-Plug 'psf/black', { 'branch': 'stable' }
+Plug 'psf/black'
 Plug 'rking/ag.vim'
 Plug 'schickling/vim-bufonly'
 Plug 'scrooloose/nerdtree'
