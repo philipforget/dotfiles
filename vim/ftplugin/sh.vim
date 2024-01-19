@@ -1,1 +1,1 @@
-setlocal sw=4 sts=4 ts=4 expandtab
+setlocal sw=2 sts=2 ts=2 expandtab

@@ -1,4 +1,4 @@
-FROM debian:stretch-slim
+FROM debian:bullseye-slim
 
 ARG user=dotfiles
 ARG id=86758
@@ -21,5 +21,4 @@ RUN groupadd --gid ${id} ${user} && \
       ${user}
 
 USER ${user}
-
 WORKDIR /home/${user}

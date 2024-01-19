@@ -9,10 +9,11 @@ Plug 'benmills/vimux'
 Plug 'cespare/vim-toml'
 Plug 'chrisbra/csv.vim'
 Plug 'christianrondeau/vim-base64'
+Plug 'frazrepo/vim-rainbow'
 Plug 'honza/vim-snippets'
+Plug 'joshdick/onedark.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
-Plug 'kien/rainbow_parentheses.vim'
 Plug 'lifepillar/vim-solarized8'
 Plug 'pedrohdz/vim-yaml-folds'
 Plug 'psf/black'
@@ -28,6 +29,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'w0rp/ale'
 
@@ -51,8 +53,11 @@ let g:indentLine_enabled = 0
 
 let g:airline#extensions#ale#enabled = 1
 
-set background=light
-set background=dark
+if $ITERM_PROFILE =~? 'Dark'
+    set background=dark
+else
+    set background=light
+endif
 " Use solarized, but don't complain if it doesn't exist
 silent! colorscheme solarized
 
@@ -138,8 +143,7 @@ set laststatus=2
 " Keep some space between the current line and the window frame
 set scrolloff=4
 
-" 4 spaces, expand tab by default, like a sane person
-set sw=4 sts=4 ts=4 expandtab
+set sw=2 sts=2 ts=2 expandtab
 
 " Search for the visually selected text with // in visual mode
 vnoremap // y/<C-R>"<CR>
@@ -188,7 +192,7 @@ nmap <silent> <leader>w :set wrap! linebreak! textwidth=0<CR>
 map <leader>a :AgFromSearch<CR>
 
 " Format python code with `black`
-let g:black_virtualenv="~/.virtualenvs/black"
+" let g:black_virtualenv="~/.virtualenvs/black"
 map <leader>b :Black<CR>
 
 " Sort the currently selected lines
@@ -224,8 +228,8 @@ vnoremap > >gv
 vnoremap < <gv
 
 " Run current line/selection as Python code and replace with output
-nmap gp :.!python<CR>
-vmap gp :!python<CR>
+nmap gp :.!python3<CR>
+vmap gp :!python3<CR>
 
 " Move between windows with ctrl + movement keys
 nmap <C-H> <C-W>h
@@ -275,28 +279,28 @@ endfunc
 " Goyo config
 function! s:goyo_enter()
   if executable('tmux') && strlen($TMUX)
-    " silent !tmux set status off
-    " silent !tmux list-panes -F '\#F' | grep -q Z || tmux resize-pane -Z
+    silent !tmux set status off
+    silent !tmux list-panes -F '\#F' | grep -q Z || tmux resize-pane -Z
   endif
   set wrap
   set linebreak
   set noshowmode
   set noshowcmd
-  set scrolloff=999
-  Limelight
+  " set scrolloff=20
+  " Limelight
 endfunction
 
 function! s:goyo_leave()
   if executable('tmux') && strlen($TMUX)
-    " silent !tmux set status on
-    " silent !tmux list-panes -F '\#F' | grep -q Z && tmux resize-pane -Z
+    silent !tmux set status on
+    silent !tmux list-panes -F '\#F' | grep -q Z && tmux resize-pane -Z
   endif
   set nowrap
   set nolinebreak
   set showmode
   set showcmd
-  set scrolloff=5
-  Limelight!
+  " set scrolloff=5
+  " Limelight!
 endfunction
 
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
@@ -304,11 +308,7 @@ autocmd! User GoyoLeave nested call <SID>goyo_leave()
 map <silent> <leader>g :Goyo<CR>
 
 
-" Enable rainbow parenthesis
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
+let g:rainbow_active = 1
 
 " I can't let go of the shift key fast enough :(
 cnoreabbrev Q q
@@ -325,4 +325,4 @@ cnoreabbrev Set set
 let g:vim_json_syntax_conceal = 0
 
 " vim-markdown
-let g:markdown_fenced_languages = ['html', 'python', 'bash=sh', 'javascript']
+let g:markdown_fenced_languages = ['html', 'python', 'bash=sh', 'js=javascript', 'json']
