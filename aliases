@@ -1,5 +1,7 @@
 #!/bin/bash
 
+alias vim=nvim
+
 ctor() {
     # Copy all ~/Download/*.torrent files to local or remote watch folder
     if ! [[ $(find ~/Downloads/ -name '*.torrent' | wc -l) = 0 ]]; then
@@ -22,7 +24,7 @@ alias lower="tr '[:upper:]' '[:lower:]'"
 alias upper="tr '[:lower:]' '[:upper:]'"
 
 latest() {
-    ls -c | head -n ${1:-10}
+    ls -t | head -n ${1:-10}
 }
 
 alias cleanbranches="git branch --merged | grep -v '^\\*' | xargs git branch -d"
