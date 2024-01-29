@@ -4,7 +4,6 @@ call plug#begin()
 Plug 'AndrewRadev/switch.vim'
 Plug 'SirVer/ultisnips'
 Plug 'Yggdroot/indentLine'
-Plug 'altercation/vim-colors-solarized'
 Plug 'benmills/vimux'
 Plug 'cespare/vim-toml'
 Plug 'chrisbra/csv.vim'
@@ -14,7 +13,7 @@ Plug 'honza/vim-snippets'
 Plug 'joshdick/onedark.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
-Plug 'lifepillar/vim-solarized8'
+Plug 'catppuccin/vim', { 'as': 'catppuccin' }
 Plug 'pedrohdz/vim-yaml-folds'
 Plug 'psf/black'
 Plug 'rking/ag.vim'
@@ -30,7 +29,6 @@ Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'dense-analysis/ale'
 
@@ -54,17 +52,8 @@ let g:indentLine_enabled = 0
 
 let g:airline#extensions#ale#enabled = 1
 
-if $ITERM_PROFILE =~? 'Dark'
-    set background=dark
-else
-    set background=light
-endif
-" Use solarized, but don't complain if it doesn't exist
-silent! colorscheme solarized
-
-" Needed to use limelight with solarized
-let g:limelight_conceal_ctermfg = 245  " Solarized Base1
-let g:limelight_conceal_guifg = '#8a8a8a'  " Solarized Base1
+set termguicolors
+silent! colorscheme catppuccin_mocha
 
 " Turn on 3 modelines, these allow us to set filetype etc using the first 3
 set modeline
@@ -175,7 +164,7 @@ noremap * *N
 noremap # #N
 
 " Map shortcut leader to space
-let mapleader = "\<space>"
+let mapleader = " "
 
 " Clear the search highlight with <leader>n
 nmap <silent> <leader>n :noh<CR>

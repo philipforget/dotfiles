@@ -8,5 +8,5 @@ setlocal shiftwidth=4 softtabstop=4 expandtab
 
 
 let b:ale_linters = { "python": ["ruff"] }
-let b:ale_fixers = { "python": ["black", "ruff"] }
+let b:ale_fixers = { "python": ["ruff"] }
 let b:ale_fix_on_save = 1
