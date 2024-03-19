@@ -57,7 +57,7 @@ elif [[ "$(uname)" == 'Darwin' ]]; then
 	. ~/.bash_mac
 fi
 
-export PATH="$HOME/bin:$HOME/go/bin:$PATH"
+export PATH="$HOME/.local/bin:$HOME/bin:$HOME/go/bin:$PATH"
 
 [[ -f ~/.bash_secret ]] && . ~/.bash_secret
 [[ -f ~/.aliases ]] && . ~/.aliases
@@ -70,11 +70,13 @@ eval "$(pyenv init -)"
 export PYTHONDONTWRITEBYTECODE=1
 
 # Activate the default virtualenv if one isn't activated already
-if [[ -z ${VIRTUAL_ENV} ]]; then
-	pyenv activate default
-fi
+# if [[ -z ${VIRTUAL_ENV} ]]; then
+# 	pyenv activate default
+# fi
 
 [[ -f "$HOME/.cargo/env" ]] && . "$HOME/.cargo/env"
 
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
+
+export NOVA_HOST=http://localhost:8080

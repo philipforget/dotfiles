@@ -1,24 +1,26 @@
 return {
   {
-    "folke/zen-mode.nvim",
+    'folke/zen-mode.nvim',
     dependencies = {
-      { "folke/twilight.nvim" },
+      { 'folke/twilight.nvim' },
     },
     keys = {
-      { "<Leader>z", ":ZenMode <Cr>", desc = "Toggle ZenMode" },
+      { '<Leader>z', ':ZenMode <Cr>', desc = 'Toggle ZenMode' },
     },
     opts = {
+      plugins = {
+        twilight = { enabled = false },
+      },
       window = {
-        -- backdrop = 0.95, -- shade the backdrop of the Zen window. Set to 1 to keep the same as Normal
-        backdrop = 1, -- shade the backdrop of the Zen window. Set to 1 to keep the same as Normal
+        backdrop = 1,
         width = 80,
         options = {
-          signcolumn = "no",
+          signcolumn = 'no',
           number = false,
           relativenumber = false,
           cursorline = false,
           cursorcolumn = false,
-          foldcolumn = "0",
+          foldcolumn = '0',
           list = false,
         },
       },

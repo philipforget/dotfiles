@@ -263,7 +263,7 @@ vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = tr
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
-vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
+-- vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
 
 
@@ -276,6 +276,13 @@ vim.keymap.set('n', '<C-L>', '<C-W>l', { silent = true })
 -- Reselect visual selection after indentation movement
 vim.keymap.set('v', '<', '<gv', { silent = true })
 vim.keymap.set('v', '>', '>gv', { silent = true })
+
+vim.keymap.set('n', 'gs', '<C-W>F', { silent = true })
+
+-- Opens an edit command with the path of the currently edited file filled in
+vim.keymap.set('n', '<Leader>e', ':e <C-R>=expand("%:p:h") . "/" <CR>', { silent = false })
+-- Opens a split command with the path of the currently edited file filled in
+vim.keymap.set('n', '<Leader>se', ':split <C-R>=expand("%:p:h") . "/" <CR>', { silent = false })
 
 
 
@@ -524,6 +531,7 @@ local servers = {
   -- clangd = {},
   -- gopls = {},
   -- pyright = {},
+  -- mypy = {},
   -- rust_analyzer = {},
   -- tsserver = {},
   -- html = { filetypes = { 'html', 'twig', 'hbs'} },
@@ -540,6 +548,7 @@ local servers = {
 
 -- Setup neovim lua configuration
 require('neodev').setup()
+
 
 -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
 local capabilities = vim.lsp.protocol.make_client_capabilities()

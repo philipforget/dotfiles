@@ -23,6 +23,13 @@ config.keys = {
   },
 }
 
+config.window_padding = {
+  left = 40,
+  right = 40,
+  top = 40,
+  bottom = 40,
+}
+
 config.window_decorations = "RESIZE"
 
 function recompute_padding(window)
@@ -31,7 +38,7 @@ function recompute_padding(window)
 
   if window_dims.is_full_screen then
     overrides.window_padding = {
-      top = 40,
+      top = 80,
     }
   end
   window:set_config_overrides(overrides)
