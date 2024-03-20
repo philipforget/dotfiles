@@ -54,6 +54,7 @@ let g:airline#extensions#ale#enabled = 1
 
 set termguicolors
 silent! colorscheme catppuccin_mocha
+" silent! colorscheme solarized
 
 " Turn on 3 modelines, these allow us to set filetype etc using the first 3
 set modeline
@@ -82,7 +83,7 @@ au FileType gitcommit au! BufEnter COMMIT_EDITMSG call setpos('.', [0, 1, 1, 0])
 
 
 " Visual bell and no beep
-set vb
+" set vb
 set noerrorbells
 
 " Allow backspacing over everything in insert mode
