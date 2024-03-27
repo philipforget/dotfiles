@@ -6,6 +6,7 @@ return {
       -- Snippet Engine & its associated nvim-cmp source
       {
         'L3MON4D3/LuaSnip',
+        dependencies = { 'rafamadriz/friendly-snippets' },
         build = (function()
           -- Build Step is needed for regex support in snippets
           -- This step is not supported in many windows environments
@@ -87,8 +88,14 @@ return {
           { name = 'nvim_lsp' },
           { name = 'luasnip' },
           { name = 'path' },
+          { name = 'emoji' },
         },
       }
+
+      -- Set up vs-code style snippets for friendly-snippets
+      require('luasnip.loaders.from_vscode').lazy_load()
+      -- Load any custom snippets
+      require('luasnip.loaders.from_lua').lazy_load { paths = { vim.fn.stdpath 'config' .. '/snippets' } }
     end,
   },
 }

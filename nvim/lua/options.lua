@@ -49,13 +49,19 @@ vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
 vim.opt.foldlevelstart = 20
 
 -- Set completeopt to have a better completion experience
-vim.o.completeopt = 'menuone,noselect'
+vim.opt.completeopt = 'menuone,noselect'
 
-vim.o.termguicolors = true
+vim.opt.termguicolors = true
 
 -- Tab completion options
-vim.o.wildmode = 'longest:full'
-vim.o.wildmenu = true
-vim.o.wildignore = '*.swp,*.bak,*.pyc,*.class'
+vim.opt.wildmode = 'longest:full'
+vim.opt.wildmenu = true
+vim.opt.wildignore = '*.swp,*.bak,*.pyc,*.class'
+
+-- Default to 2 spaces
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.expandtab = true
+vim.bo.softtabstop = 2
 
 -- vim: ts=2 sts=2 sw=2 et
