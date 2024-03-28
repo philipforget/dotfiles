@@ -1,18 +1,19 @@
 #!/bin/bash
 
-ctor() {
-    # Copy all ~/Download/*.torrent files to local or remote watch folder
-    if ! [[ $(find ~/Downloads/ -name '*.torrent' | wc -l) = 0 ]]; then
-        if [[ -d "/mnt/media/torrents/watch" ]]; then
-            mv ~/Downloads/*.torrent /mnt/media/torrents/watch;
-        else
-            rsync -avhP --no-group ~/Downloads/*.torrent derp.cf:/mnt/fatso/media/torrents/watch && rm ~/Downloads/*.torrent
-        fi
-    else
-        echo "No torrent files to copy"
-    fi
-}
+alias vim=nvim
 
+ctor() {
+  # Copy all ~/Download/*.torrent files to local or remote watch folder
+  if ! [[ $(find ~/Downloads/ -name '*.torrent' | wc -l) = 0 ]]; then
+    if [[ -d "/mnt/media/torrents/watch" ]]; then
+      mv ~/Downloads/*.torrent /mnt/media/torrents/watch
+    else
+      rsync -avhP --no-group ~/Downloads/*.torrent derp.cf:/mnt/fatso/media/torrents/watch && rm ~/Downloads/*.torrent
+    fi
+  else
+    echo "No torrent files to copy"
+  fi
+}
 
 # Docker stuff
 # Remove all stopped containers
@@ -22,24 +23,24 @@ alias lower="tr '[:upper:]' '[:lower:]'"
 alias upper="tr '[:lower:]' '[:upper:]'"
 
 latest() {
-    ls -c | head -n ${1:-10}
+	ls -t | head -n ${1:-10}
 }
 
 alias cleanbranches="git branch --merged | grep -v '^\\*' | xargs git branch -d"
 squash() {
-    git rebase --interactive $(git merge-base master $(git branch | grep \* | cut -d ' ' -f 2))
+	git rebase --interactive $(git merge-base master $(git branch | grep \* | cut -d ' ' -f 2))
 }
 
 # Tmux session helper. t <session> will either attach to the named session or start a new named session.
 t() {
-    case $1 in
-        "" )
-            tmux ls
-            ;;
-        *)
-            tmux new-session -s "${1}" || tmux attach -t "${1}"
-            ;;
-    esac
+	case $1 in
+	"")
+		tmux ls
+		;;
+	*)
+		tmux new-session -s "${1}" || tmux attach -t "${1}"
+		;;
+	esac
 }
 [[ -f ~/workspace/dotfiles/tcomplete.bash ]] && . ~/workspace/dotfiles/tcomplete.bash
 
@@ -55,12 +56,12 @@ alias todo='vim ~/todo'
 # Useful since most deployments will specify more than one replica and
 # sometimes you just want to describe or see the logs for any one instance.
 singlepod() {
-    kubectl get pods -o=jsonpath='{.items[0].metadata.name}' "${@}"
+	kubectl get pods -o=jsonpath='{.items[0].metadata.name}' "${@}"
 }
 
 # Generate a valid, random MAC address for KVM virtual machines
-kvm_random_mac(){
-    python3 -c 'from random import randint; import sys; sys.stdout.write(":".join(["{0:02X}".format(x) for x in [0x00, 0x16, 0x3e, randint(0x00, 0x75), randint(0x00, 0xff), randint(0x00, 0xff),]]))'
+kvm_random_mac() {
+	python3 -c 'from random import randint; import sys; sys.stdout.write(":".join(["{0:02X}".format(x) for x in [0x00, 0x16, 0x3e, randint(0x00, 0x75), randint(0x00, 0xff), randint(0x00, 0xff),]]))'
 }
 
 alias k=kubectl
