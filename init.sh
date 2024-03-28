@@ -35,8 +35,8 @@ setup_dotfiles() {
 			git git@github.com:philipforget/dotfiles.git "${dotfiles_dir}"
 		} || {
 			echo "Unable to clone via ssh, falling back to https"
-			git clone https://github.com/philipforget/dotfiles.git "${dotfiles_dir}"
-		}
+					git clone https://github.com/philipforget/dotfiles.git "${dotfiles_dir}"
+				}
 	fi
 
 	# Set up symlinks
@@ -93,7 +93,8 @@ setup_system() {
 			shellcheck \
 			sops \
 			tmux \
-			vim
+			vim \
+			wezterm
 
 		git lfs install
 
@@ -110,9 +111,9 @@ setup_system() {
 		# Bail early if ${brew_bash} doesn't exist for any reason
 		[[ ! -f ${brew_bash} ]] && echo "Unable to set brew-installed bash as shell!" || {
 			echo "Adding ${brew_bash} to /etc/shells if not present"
-			grep ${brew_bash} /etc/shells &>/dev/null || echo ${brew_bash} | sudo tee -a /etc/shells
-			[[ ${SHELL} = ${brew_bash} ]] || chsh -s ${brew_bash} $(whoami | xargs echo -n)
-		}
+					grep ${brew_bash} /etc/shells &>/dev/null || echo ${brew_bash} | sudo tee -a /etc/shells
+					[[ ${SHELL} = ${brew_bash} ]] || chsh -s ${brew_bash} $(whoami | xargs echo -n)
+				}
 
 		# Add ssh agent to system keychain on first unlock
 		ssh_agent_config="AddKeysToAgent yes"
@@ -165,7 +166,7 @@ setup_system() {
 			# Install sops from github releases
 			curl -L https://github.com/getsops/sops/releases/download/v3.8.1/sops-v3.8.1.linux.amd64 -o "${HOME}/bin/sops" && chmod +x "${HOME}/bin/sops"
 		fi
-	fi
+			fi
 
 	# Install volta for managing node and npm versions
 	curl https://get.volta.sh | bash -s -- --skip-setup
@@ -190,14 +191,14 @@ setup_python() {
 		mypy \
 		requests \
 		ruff
-}
+	}
 
-init() {
-	local github_username="${1}"
+	init() {
+		local github_username="${1}"
 
-	setup_system
+		setup_system
 
-	setup_python
+		setup_python
 
 	# If a github username is provided, import its public keys
 	if [[ -n ${github_username} ]]; then
