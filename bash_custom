@@ -80,3 +80,5 @@ export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 
 export NOVA_HOST=http://localhost:8080
+eval "$(/Users/philipforget/.local/bin/mise activate bash)"
+source <(mise completion bash)
