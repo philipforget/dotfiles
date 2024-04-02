@@ -38,7 +38,7 @@ function recompute_padding(window)
 
 	if window_dims.is_full_screen then
 		overrides.window_padding = {
-			top = 70,
+			-- top = 70,
 		}
 	end
 	window:set_config_overrides(overrides)
