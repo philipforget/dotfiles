@@ -2,8 +2,11 @@ return {
   'NvChad/nvim-colorizer.lua',
   config = function()
     require('colorizer').setup {
-      names = false, -- "Name" codes like Blue or blue
-      css = false,
+      filetypes = { '*' },
+      user_default_options = {
+        names = false, -- "Name" codes like Blue or blue
+        -- mode = 'virtualtext',
+      },
     }
   end,
 }
