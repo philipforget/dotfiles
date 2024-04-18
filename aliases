@@ -64,6 +64,8 @@ kvm_random_mac() {
 	python3 -c 'from random import randint; import sys; sys.stdout.write(":".join(["{0:02X}".format(x) for x in [0x00, 0x16, 0x3e, randint(0x00, 0x75), randint(0x00, 0xff), randint(0x00, 0xff),]]))'
 }
 
+alias poop='mpv --ontop --geometry=0%x10%+100%+100%'
+
 alias k=kubectl
 complete -F __start_kubectl k
 alias ctx=kubectx

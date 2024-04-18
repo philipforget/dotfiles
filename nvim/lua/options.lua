@@ -43,11 +43,6 @@ vim.opt.cursorline = true
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
 
--- Use treesetter fold expressions for folding
-vim.opt.foldmethod = 'expr'
-vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
-vim.opt.foldlevelstart = 20
-
 -- Set completeopt to have a better completion experience
 vim.opt.completeopt = 'menuone,noselect'
 
@@ -63,5 +58,10 @@ vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 vim.bo.softtabstop = 2
+
+-- Use treesetter fold expressions for folding
+-- vim.opt.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+-- vim.opt.foldtext = 'v:lua.vim.treesitter.foldtext()'
+-- vim.opt.foldlevelstart = 20
 
 -- vim: ts=2 sts=2 sw=2 et
