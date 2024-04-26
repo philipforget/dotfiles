@@ -133,9 +133,29 @@ return {
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
         -- mypy = {},
+        -- Holy shit is this slow
+        -- pylsp = {
+        --   settings = {
+        --     pylsp = {
+        --       plugins = {
+        --         autopep8 = { enabled = false },
+        --         flake8 = { enabled = false },
+        --         pyflakes = { enabled = false },
+        --         pycodestyle = { enabled = false },
+        --         pylint = { enabled = false },
+        --         black = { enabled = false },
+        --         isort = { enabled = false },
+        --         yapf = { enabled = false },
+        --         rope_autoimport = { enabled = true },
+        --         mypy = { enabled = true },
+        --         jedi_completion = { fuzzy = true },
+        --       },
+        --     },
+        --   },
+        -- },
         -- clangd = {},
         -- gopls = {},
-        -- pyright = {},
+        pyright = {},
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --

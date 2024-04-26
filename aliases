@@ -69,3 +69,6 @@ alias poop='mpv --ontop --geometry=0%x10%+100%+100%'
 alias k=kubectl
 complete -F __start_kubectl k
 alias ctx=kubectx
+
+# pipe stdin to nvim quickfix buffer
+alias qf="nvim -c 'cbuffer | copen | bdelete! 1'"
