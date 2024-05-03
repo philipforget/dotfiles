@@ -1,11 +1,14 @@
 #!/usr/bin/env bash
 
-
 export DEBIAN_FRONTEND=noninteractive
+
+readonly local_bin="${HOME}/.local/bin"
+readonly workspace_dir="${HOME}/workspace"
+readonly dotfiles_dir="${workspace_dir}/dotfiles"
 
 symlink() {
   # A symlink function that makes sure the target symlink's parent path
-  # exists.
+  # exists before creating the link
 
   # Expand ~ to $HOME if present
   local source="${1/#\~/$HOME}"
@@ -19,8 +22,9 @@ symlink() {
 
 
 install_prerequisites() {
+  echo "Installing prerequisites"
+
   if [[ $(uname) == "Linux" ]]; then
-    echo "Installing prerequisites"
     sudo -E apt -yqq update
     sudo -E apt -yqq install \
         curl \
@@ -28,17 +32,19 @@ install_prerequisites() {
         python3-launchpadlib \
         software-properties-common
   fi
+  if [[ $(uname) == "Darwin" ]]; then
+    # On MacOS, install and use brew package manager
+    if ! which brew &>/dev/null; then
+      echo 'Installing brew package manager: https://brew.sh/'
+      echo 'Requires user password'
+      /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    fi
+  fi
 }
 
 
 setup_dotfiles_repo() {
-  # Here's a nice place to add binaries
-  local local_bin="${HOME}/.local/bin"
-  mkdir -p "${local_bin}"
-
   # Set up the dotfiles repository
-  local workspace_dir="${HOME}/workspace"
-  local dotfiles_dir="${workspace_dir}/dotfiles"
   mkdir -p "${workspace_dir}"
 
   # Attempt to clone the repo if it doesnt exist on disk yet
@@ -52,6 +58,12 @@ setup_dotfiles_repo() {
       git clone --recursive https://github.com/philipforget/dotfiles.git "${dotfiles_dir}"
     }
   fi
+}
+
+setup_symlinks() {
+  mkdir -p "${workspace_dir}"
+  mkdir -p "${dotfiles_dir}"
+  mkdir -p "${local_bin}"
 
   # Set up symlinks
   symlink "${dotfiles_dir}/aliases" ~/.aliases
@@ -74,12 +86,12 @@ setup_dotfiles_repo() {
   symlink "${dotfiles_dir}/gitconfig" ~/.gitconfig
 
   if [[ $(uname) == "Darwin" ]]; then
-    # Mac only symlinks
-    symlink "${dotfiles_dir}/com.knollsoft.Rectangle.plist" "${HOME}/Library/Preferences/com.knollsoft.Rectangle.plist"
+    # Mac-only symlinks
+    symlink "{$dotfiles_dir}/RectangleConfig.json" ~/Library/Application Support/Rectangle/RectangleConfig.json
     symlink "${dotfiles_dir}/docker_config.mac.json" ~/.docker/config.json
   fi
   if [[ $(uname) == "Linux" ]]; then
-    # Linux only symlinks
+    # Linux-only symlinks
     symlink "${dotfiles_dir}/docker_config.json" ~/.docker/config.json
   fi
 
@@ -94,17 +106,9 @@ setup_dotfiles_repo() {
 
 setup_system() {
   # Here's a nice place to add binaries
-  local local_bin="${HOME}/.local/bin"
   mkdir -p "${local_bin}"
 
   if [[ $(uname) == "Darwin" ]]; then
-    # On MacOS, install and use brew package manager
-    if ! which brew &>/dev/null; then
-      echo 'Installing brew package manager: https://brew.sh/'
-      echo 'Requires user password'
-      /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-    fi
-
     echo "Installing packages with brew"
     brew install \
       age \
@@ -117,8 +121,7 @@ setup_system() {
       ripgrep \
       shellcheck \
       sops \
-      tmux \
-      vim
+      tmux
 
     git lfs install
 
@@ -188,20 +191,23 @@ setup_system() {
       curl -L \
         https://github.com/getsops/sops/releases/download/v3.8.1/sops-v3.8.1.linux.amd64 \
         -o "${local_bin}/sops" && chmod +x "${local_bin}/sops"
-
     fi
   fi
 }
 
 setup_mise() {
+  mkdir -p "${local_bin}"
   # Install mise from their install script
   curl https://mise.run | sh
+
   eval "$(${HOME}/.local/bin/mise activate bash)"
   mise trust ~/.config/mise/config.toml
 
   mise plugin add usage
   mise use -g python@3.12
 
+  # Mise gives us a nice cross-platform way of installing neovim, might as well
+  # use it
   mise install -y neovim
   mise use -g neovim
 
@@ -222,9 +228,11 @@ init() {
   sync_public_keys "${github_username}"
 
   setup_system
+  setup_symlinks
   setup_dotfiles_repo
   setup_mise
 
+  echo "All done, launching a new shell process"
   exec bash
 }
 
