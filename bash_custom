@@ -3,34 +3,32 @@
 # Allow __git_ps1 to work on arch linux
 [[ -f /usr/share/git/git-prompt.sh ]] && . /usr/share/git/git-prompt.sh
 
-GIT_PS1_SHOWDIRTYSTATE=1
-GIT_PS1_SHOWSTASHSTATE=1
-GIT_PS1_SHOWUNTRACKEDFILES=1
+export GIT_PS1_SHOWDIRTYSTATE=1
+export GIT_PS1_SHOWSTASHSTATE=1
+export GIT_PS1_SHOWUNTRACKEDFILES=1
 
 get_ps1() {
-	local blue="\[\033[01;34m\]"
-	local white="\[\033[01;00m\]"
-	local magenta="\[\033[01;35m\]"
-	local pink="\[\033[01;31m\]"
-	local green="\[\033[01;32m\]"
+  local blue="\[\033[01;34m\]"
+  local white="\[\033[01;00m\]"
+  local magenta="\[\033[01;35m\]"
+  local pink="\[\033[01;31m\]"
+  local green="\[\033[01;32m\]"
 
-	# Assign a pseudo-random color to the hostname string based on hostname value
-	local hostname_number=$(hostname | od | tr ' ' '\n' | awk '{total = total + $1}END{print 30 + (total % 6)}')
-	local hostname_color="\[\033[01;${hostname_number}m\]"
+  # Assign a pseudo-random color to the hostname string based on hostname value
+  local hostname_number=$(hostname | od | tr ' ' '\n' | awk '{total = total + $1}END{print 30 + (total % 6)}')
+  local hostname_color="\[\033[01;${hostname_number}m\]"
 
-	local user="${blue}\u${white}"
-	local host="${hostname_color}\h${white}"
-	local dir="${green}\w${white}"
-	local time="${green}\$(date \"+%H:%M:%S\")${white}"
+  local user="${blue}\u${white}"
+  local host="${hostname_color}\h${white}"
+  local dir="${green}\w${white}"
+  local time="${green}\$(date \"+%H:%M:%S\")${white}"
 
-	local git="${green}\$(__git_ps1 '%s')${white}"
+  local git="${green}\$(__git_ps1 '%s')${white}"
 
-	echo "${user}@${host} ${dir} ${git}\n${time} $ "
+  echo "${user}@${host} ${dir} ${git}\n${time} $ "
 }
 
 PS1="$(get_ps1)"
-
-export GOPATH=$HOME/go
 
 # Increase the amount of history bash will store and reload
 export HISTFILE=~/.history
@@ -44,30 +42,27 @@ export HISTCONTROL=ignoreboth:erasedups
 
 export EDITOR=nvim
 
-# ipython needs these two
-export PAGER=less
-export less=-r
-
 export SOPS_AGE_KEY_FILE="${HOME}/workspace/dotfiles/secret/sops-age-key.txt"
-
-# Platform dependant stuff
-if [[ "$(uname)" == 'Linux' ]]; then
-	. ~/.bash_linux
-elif [[ "$(uname)" == 'Darwin' ]]; then
-	. ~/.bash_mac
-fi
-
-export PATH="$HOME/.local/bin:$HOME/bin:$HOME/go/bin:$PATH"
-
-[[ -f ~/.bash_secret ]] && . ~/.bash_secret
-[[ -f ~/.aliases ]] && . ~/.aliases
-[[ -f ~/.distraction ]] && . ~/.distraction
 
 export PYTHONDONTWRITEBYTECODE=1
 
+
+# Platform dependant stuff
+if [[ "$(uname)" == 'Linux' ]]; then
+  . "${HOME}/.bash_linux"
+  . "${HOME}/.alias_linux"
+elif [[ "$(uname)" == 'Darwin' ]]; then
+  . "${HOME}/.bash_mac"
+  . "${HOME}/.alias_mac"
+fi
+
+[[ -f ~/.aliases ]] && . ~/.aliases
+[[ -f ~/.bash_secret ]] && . ~/.bash_secret
+[[ -f ~/.distraction ]] && . ~/.distraction
+
 [[ -f "$HOME/.cargo/env" ]] && . "$HOME/.cargo/env"
 
-export NOVA_HOST=http://localhost:8080
+export PATH="$HOME/.local/bin:$HOME/bin:$HOME/go/bin:$PATH"
 
 eval "$(${HOME}/.local/bin/mise activate bash)"
 source <(mise completion bash)

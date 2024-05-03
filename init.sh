@@ -2,9 +2,9 @@
 
 export DEBIAN_FRONTEND=noninteractive
 
-readonly local_bin="${HOME}/.local/bin"
-readonly workspace_dir="${HOME}/workspace"
-readonly dotfiles_dir="${workspace_dir}/dotfiles"
+local_bin="${HOME}/.local/bin"
+workspace_dir="${HOME}/workspace"
+dotfiles_dir="${workspace_dir}/dotfiles"
 
 symlink() {
   # A symlink function that makes sure the target symlink's parent path
@@ -25,12 +25,11 @@ install_prerequisites() {
   echo "Installing prerequisites"
 
   if [[ $(uname) == "Linux" ]]; then
-    sudo -E apt -yqq update
-    sudo -E apt -yqq install \
+    sudo -E apt-get -yqq update > /dev/null
+    sudo -E apt-get -yqq install \
         curl \
         git \
-        python3-launchpadlib \
-        software-properties-common
+        > /dev/null
   fi
   if [[ $(uname) == "Darwin" ]]; then
     # On MacOS, install and use brew package manager
@@ -156,13 +155,12 @@ setup_system() {
       echo "Installing required packages"
       # Use sudo -E to inherit our current environment, including
       # DEBIAN_FRONTEND set above
-      sudo -E apt-get -qq update
+      sudo -E apt-get -qq update > /dev/null
       sudo -E apt-get -qq install -y \
         --no-install-recommends \
         age \
         bash-completion \
         build-essential \
-        curl \
         curl \
         dnsutils \
         git \
@@ -181,14 +179,16 @@ setup_system() {
         shellcheck \
         tk-dev \
         tmux \
+        unzip \
         vim-nox \
         xz-utils \
-        zlib1g-dev
+        zlib1g-dev \
+        > /dev/null
 
       git lfs install
 
       # Install sops from github releases
-      curl -L \
+      curl --no-progress-meter -L \
         https://github.com/getsops/sops/releases/download/v3.8.1/sops-v3.8.1.linux.amd64 \
         -o "${local_bin}/sops" && chmod +x "${local_bin}/sops"
     fi
@@ -198,10 +198,10 @@ setup_system() {
 setup_mise() {
   mkdir -p "${local_bin}"
   # Install mise from their install script
-  curl https://mise.run | sh
+  curl --no-progress-meter https://mise.run | sh
 
   eval "$(${HOME}/.local/bin/mise activate bash)"
-  mise trust ~/.config/mise/config.toml
+  mise trust ~/.config/mise/config.toml || echo "No global mise config, not trusting"
 
   mise plugin add usage
   mise use -g python@3.12
@@ -211,14 +211,16 @@ setup_mise() {
   mise install -y neovim
   mise use -g neovim
 
-  python3 -m pip install \
-    ipython \
-    requests
+  if [[ -f ~/.config/mise/config.toml ]]; then
+    mise exec python -- python3 -m pip install \
+      ipython \
+      requests
+  fi
 }
 
 sync_public_keys() {
   mkdir -p "${HOME}/.ssh"
-  curl -L "https://github.com/${1}" >>"${HOME}/.ssh/authorized_keys"
+  curl --no-progress-meter -L "https://github.com/${1}" >>"${HOME}/.ssh/authorized_keys"
 }
 
 init() {

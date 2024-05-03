@@ -1,6 +1,8 @@
 services:
   dotfiles:
-    build: .
+    build:
+      context: .
+      platforms:
+        - "linux/amd64"
     volumes:
       - "./:/home/dotfiles/workspace/dotfiles"
-      # - "./:/home/dotfiles/workspace/dotfiles:ro"

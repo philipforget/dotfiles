@@ -15,7 +15,6 @@ ctor() {
   fi
 }
 
-# Docker stuff
 # Remove all stopped containers
 alias drm='docker rm $(docker ps -a -q)'
 
@@ -23,26 +22,8 @@ alias lower="tr '[:upper:]' '[:lower:]'"
 alias upper="tr '[:lower:]' '[:upper:]'"
 
 latest() {
-	ls -t | head -n ${1:-10}
+  ls -t | head -n ${1:-10}
 }
-
-alias cleanbranches="git branch --merged | grep -v '^\\*' | xargs git branch -d"
-squash() {
-	git rebase --interactive $(git merge-base master $(git branch | grep \* | cut -d ' ' -f 2))
-}
-
-# Tmux session helper. t <session> will either attach to the named session or start a new named session.
-t() {
-	case $1 in
-	"")
-		tmux ls
-		;;
-	*)
-		tmux new-session -s "${1}" || tmux attach -t "${1}"
-		;;
-	esac
-}
-[[ -f ~/workspace/dotfiles/tcomplete.bash ]] && . ~/workspace/dotfiles/tcomplete.bash
 
 alias whatismyip="curl httpbin.org/ip 2> /dev/null | jq -r .origin"
 
@@ -61,10 +42,10 @@ singlepod() {
 
 # Generate a valid, random MAC address for KVM virtual machines
 kvm_random_mac() {
-	python3 -c 'from random import randint; import sys; sys.stdout.write(":".join(["{0:02X}".format(x) for x in [0x00, 0x16, 0x3e, randint(0x00, 0x75), randint(0x00, 0xff), randint(0x00, 0xff),]]))'
+  python3 -c 'from random import randint; import sys; sys.stdout.write(":".join(["{0:02X}".format(x) for x in [0x00, 0x16, 0x3e, randint(0x00, 0x75), randint(0x00, 0xff), randint(0x00, 0xff),]]))'
 }
 
-alias poop='mpv --ontop --geometry=0%x10%+100%+100%'
+alias mmpv='mpv --ontop --geometry=0%x10%+100%+100%'
 
 alias k=kubectl
 complete -F __start_kubectl k
@@ -72,3 +53,16 @@ alias ctx=kubectx
 
 # pipe stdin to nvim quickfix buffer
 alias qf="nvim -c 'cbuffer | copen | bdelete! 1'"
+
+# Tmux session helper. t <session> will either attach to the named session or start a new named session.
+t() {
+  case $1 in
+    "")
+      tmux ls
+      ;;
+    *)
+      tmux new-session -s "${1}" || tmux attach -t "${1}"
+      ;;
+  esac
+}
+[[ -f ~/workspace/dotfiles/tcomplete.bash ]] && . ~/workspace/dotfiles/tcomplete.bash
