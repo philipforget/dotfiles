@@ -50,10 +50,10 @@ export PYTHONDONTWRITEBYTECODE=1
 # Platform dependant stuff
 if [[ "$(uname)" == 'Linux' ]]; then
   . "${HOME}/.bash_linux"
-  . "${HOME}/.alias_linux"
+  . "${HOME}/.aliases_linux"
 elif [[ "$(uname)" == 'Darwin' ]]; then
   . "${HOME}/.bash_mac"
-  . "${HOME}/.alias_mac"
+  . "${HOME}/.aliases_mac"
 fi
 
 [[ -f ~/.aliases ]] && . ~/.aliases
