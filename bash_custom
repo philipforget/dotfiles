@@ -63,22 +63,11 @@ export PATH="$HOME/.local/bin:$HOME/bin:$HOME/go/bin:$PATH"
 [[ -f ~/.aliases ]] && . ~/.aliases
 [[ -f ~/.distraction ]] && . ~/.distraction
 
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-
 export PYTHONDONTWRITEBYTECODE=1
-
-# Activate the default virtualenv if one isn't activated already
-# if [[ -z ${VIRTUAL_ENV} ]]; then
-# 	pyenv activate default
-# fi
 
 [[ -f "$HOME/.cargo/env" ]] && . "$HOME/.cargo/env"
 
-export VOLTA_HOME="$HOME/.volta"
-export PATH="$VOLTA_HOME/bin:$PATH"
-
 export NOVA_HOST=http://localhost:8080
-eval "$(/Users/philipforget/.local/bin/mise activate bash)"
+
+eval "$(${HOME}/.local/bin/mise activate bash)"
 source <(mise completion bash)

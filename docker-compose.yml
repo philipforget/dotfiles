@@ -1,6 +1,6 @@
-version: "3.7"
 services:
   dotfiles:
     build: .
     volumes:
-      - "./:/home/dotfiles/workspace/dotfiles:ro"
+      - "./:/home/dotfiles/workspace/dotfiles"
+      # - "./:/home/dotfiles/workspace/dotfiles:ro"

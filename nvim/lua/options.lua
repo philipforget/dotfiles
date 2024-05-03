@@ -10,6 +10,8 @@ vim.opt.showmode = false
 -- Enable break indent
 vim.opt.breakindent = true
 
+vim.opt.iskeyword:append({ '-' , ',' })
+
 -- Save undo history
 -- vim.opt.undofile = true
 

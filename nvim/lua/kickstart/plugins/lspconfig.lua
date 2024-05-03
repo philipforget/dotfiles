@@ -165,6 +165,8 @@ return {
         -- But for many setups, the LSP (`tsserver`) will work just fine
         -- tsserver = {},
         --
+        shellcheck = {},
+        bashls = {},
 
         lua_ls = {
           -- cmd = {...},

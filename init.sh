@@ -1,222 +1,238 @@
 #!/usr/bin/env bash
 
-# Tell bash to fail immediately on any error as well as unset variables
-# set -e -o pipefail
 
 export DEBIAN_FRONTEND=noninteractive
-export PYTHON_VERSION=3.11.6
-export PYENV_ROOT="$HOME/.pyenv"
-export DEFAULT_VENV="${HOME}/.virtualenvs/default"
 
 symlink() {
-	# A symlink function that makes sure the target symlink's parent path
-	# exists.
+  # A symlink function that makes sure the target symlink's parent path
+  # exists.
 
-	# Expand ~ to $HOME if present
-	local source="${1/#\~/$HOME}"
-	local target="${2/#\~/$HOME}"
+  # Expand ~ to $HOME if present
+  local source="${1/#\~/$HOME}"
+  local target="${2/#\~/$HOME}"
 
-	[[ -e ${target} ]] && echo "'${target}' exists, skipping" && return
+  [[ -e ${target} ]] && echo "'${target}' exists, skipping" && return
 
-	mkdir -p "$(dirname ${target})"
-	ln -s "${source}" "${target}"
+  mkdir -p "$(dirname ${target})"
+  ln -s "${source}" "${target}"
 }
 
-# Se up the dotfiles repository
-setup_dotfiles() {
-	local workspace="${HOME}/workspace"
-	local dotfiles_dir="${workspace}/dotfiles"
-	mkdir -p "${workspace}"
 
-	if [[ -d "${dotfiles_dir}" ]]; then
-		echo "dotfiles already cloned, skipping"
-	else
-		{
-			git git@github.com:philipforget/dotfiles.git "${dotfiles_dir}"
-		} || {
-			echo "Unable to clone via ssh, falling back to https"
-					git clone https://github.com/philipforget/dotfiles.git "${dotfiles_dir}"
-				}
-	fi
+install_prerequisites() {
+  if [[ $(uname) == "Linux" ]]; then
+    echo "Installing prerequisites"
+    sudo -E apt -yqq update
+    sudo -E apt -yqq install \
+        curl \
+        git \
+        python3-launchpadlib \
+        software-properties-common
+  fi
+}
 
-	# Set up symlinks
-	symlink "${dotfiles_dir}/aliases" ~/.aliases
-	symlink "${dotfiles_dir}/aliases_linux" ~/.aliases_linux
-	symlink "${dotfiles_dir}/aliases_mac" ~/.aliases_mac
-	symlink "${dotfiles_dir}/bash_custom" ~/.bash_custom
-	symlink "${dotfiles_dir}/bash_linux" ~/.bash_linux
-	symlink "${dotfiles_dir}/bash_mac" ~/.bash_mac
-	symlink "${dotfiles_dir}/distraction" ~/.distraction
-	symlink "${dotfiles_dir}/docker_config.json" ~/.docker/config.json
-	symlink "${dotfiles_dir}/gitconfig" ~/.gitconfig
-	symlink "${dotfiles_dir}/pylintrc" ~/.pylintrc
-	symlink "${dotfiles_dir}/tmux.conf" ~/.tmux.conf
-	symlink "${dotfiles_dir}/vim" ~/.vim
-	symlink "${dotfiles_dir}/nvim" ~/.config/nvim
-	symlink "${dotfiles_dir}/xmodmap" ~/.xmodmap
-	symlink "${dotfiles_dir}/sync-authorized-keys" ~/bin/sync-authorized-keys
 
-	# Mac only symlinks
-	if [[ $(uname) == "Darwin" ]]; then
-		symlink "${dotfiles_dir}/com.knollsoft.Rectangle.plist" "${HOME}/Library/Preferences/com.knollsoft.Rectangle.plist"
-	fi
+setup_dotfiles_repo() {
+  # Here's a nice place to add binaries
+  local local_bin="${HOME}/.local/bin"
+  mkdir -p "${local_bin}"
 
-	# Add sourcing of ~/.bash_custom to .bashrc and .profile if not present
-	if ! grep -Fxq 'source ~/.bash_custom' "${HOME}/.bashrc"; then
-		echo 'source ~/.bash_custom' >>"${HOME}/.bashrc"
-	fi
-	if ! grep -Fxq 'source ~/.bash_custom' "${HOME}/.profile"; then
-		echo 'source ~/.bash_custom' >>"${HOME}/.profile"
-	fi
+  # Set up the dotfiles repository
+  local workspace_dir="${HOME}/workspace"
+  local dotfiles_dir="${workspace_dir}/dotfiles"
+  mkdir -p "${workspace_dir}"
+
+  # Attempt to clone the repo if it doesnt exist on disk yet
+  if [[ -d "${dotfiles_dir}" ]]; then
+    echo "dotfiles folder already exists, skipping"
+  else
+    {
+      git clone --recursive git@github.com:philipforget/dotfiles.git "${dotfiles_dir}"
+    } || {
+      echo "Unable to clone via ssh, falling back to https"
+      git clone --recursive https://github.com/philipforget/dotfiles.git "${dotfiles_dir}"
+    }
+  fi
+
+  # Set up symlinks
+  symlink "${dotfiles_dir}/aliases" ~/.aliases
+  symlink "${dotfiles_dir}/aliases_linux" ~/.aliases_linux
+  symlink "${dotfiles_dir}/aliases_mac" ~/.aliases_mac
+  symlink "${dotfiles_dir}/bash_custom" ~/.bash_custom
+  symlink "${dotfiles_dir}/bash_linux" ~/.bash_linux
+  symlink "${dotfiles_dir}/bash_mac" ~/.bash_mac
+  symlink "${dotfiles_dir}/distraction" ~/.distraction
+  symlink "${dotfiles_dir}/tmux" ~/.config/tmux
+  symlink "${dotfiles_dir}/vim" ~/.vim
+  symlink "${dotfiles_dir}/nvim" ~/.config/nvim
+  symlink "${dotfiles_dir}/xmodmap" ~/.xmodmap
+  symlink "${dotfiles_dir}/mise.toml" ~/.config/mise/config.toml
+
+  symlink "${dotfiles_dir}/sync-authorized-keys" "${local_bin}/sync-authorized-keys"
+
+  # Delete the system-installed .gitconfig first if it exists
+  rm "${HOME}/.gitconfig" || 1
+  symlink "${dotfiles_dir}/gitconfig" ~/.gitconfig
+
+  if [[ $(uname) == "Darwin" ]]; then
+    # Mac only symlinks
+    symlink "${dotfiles_dir}/com.knollsoft.Rectangle.plist" "${HOME}/Library/Preferences/com.knollsoft.Rectangle.plist"
+    symlink "${dotfiles_dir}/docker_config.mac.json" ~/.docker/config.json
+  fi
+  if [[ $(uname) == "Linux" ]]; then
+    # Linux only symlinks
+    symlink "${dotfiles_dir}/docker_config.json" ~/.docker/config.json
+  fi
+
+  # Add sourcing of ~/.bash_custom to .bashrc and .profile if not present
+  if ! grep -Fxq 'source ~/.bash_custom' "${HOME}/.bashrc"; then
+    echo 'source ~/.bash_custom' >>"${HOME}/.bashrc"
+  fi
+  if ! grep -Fxq 'source ~/.bash_custom' "${HOME}/.profile"; then
+    echo 'source ~/.bash_custom' >>"${HOME}/.profile"
+  fi
 }
 
 setup_system() {
-	if [[ $(uname) == "Darwin" ]]; then
-		# On MacOS, install and use brew package manager
-		if ! which brew &>/dev/null; then
-			echo 'Installing brew package manager: https://brew.sh/'
-			echo 'Requires user password'
-			/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-		fi
-		echo "Installing packages with brew"
-		brew install \
-			age \
-			bash \
-			bash-completion \
-			git \
-			git-lfs \
-			mosh \
-			neovim \
-			pyenv \
-			python3 \
-			ripgrep \
-			shellcheck \
-			sops \
-			tmux \
-			vim \
-			wezterm
+  # Here's a nice place to add binaries
+  local local_bin="${HOME}/.local/bin"
+  mkdir -p "${local_bin}"
 
-		git lfs install
+  if [[ $(uname) == "Darwin" ]]; then
+    # On MacOS, install and use brew package manager
+    if ! which brew &>/dev/null; then
+      echo 'Installing brew package manager: https://brew.sh/'
+      echo 'Requires user password'
+      /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    fi
 
-		brew install --cask \
-			1password \
-			docker \
-			google-chrome \
-			microsoft-remote-desktop \
-			rectangle \
-			signal
+    echo "Installing packages with brew"
+    brew install \
+      age \
+      bash \
+      bash-completion \
+      git \
+      git-lfs \
+      mise \
+      mosh \
+      ripgrep \
+      shellcheck \
+      sops \
+      tmux \
+      vim
 
-		# Install a newer bash than ships with MacOS and set it as the default shell
-		brew_bash="$(brew --prefix)/bin/bash"
-		# Bail early if ${brew_bash} doesn't exist for any reason
-		[[ ! -f ${brew_bash} ]] && echo "Unable to set brew-installed bash as shell!" || {
-			echo "Adding ${brew_bash} to /etc/shells if not present"
-					grep ${brew_bash} /etc/shells &>/dev/null || echo ${brew_bash} | sudo tee -a /etc/shells
-					[[ ${SHELL} = ${brew_bash} ]] || chsh -s ${brew_bash} $(whoami | xargs echo -n)
-				}
+    git lfs install
 
-		# Add ssh agent to system keychain on first unlock
-		ssh_agent_config="AddKeysToAgent yes"
-		grep "${ssh_agent_config}" ~/.ssh/config &>/dev/null || echo "${ssh_agent_config}" >>~/.ssh/config
+    brew install --cask \
+      1password \
+      docker \
+      google-chrome \
+      microsoft-remote-desktop \
+      rectangle \
+      signal \
+      wezterm
 
-	else
-		if grep -qE "Ubuntu|Debian|Raspbian" /etc/issue; then
-			echo "Installing required packages"
-			# Use sudo -E to inherit our current environment, including
-			# DEBIAN_FRONTEND set above
-			sudo add-apt-repository -y ppa:neovim-ppa/stable
-			sudo -E apt-get -qq update
-			sudo -E apt-get -qq install -y \
-				--no-install-recommends \
-				age \
-				bash-completion \
-				build-essential \
-				curl \
-				curl \
-				dnsutils \
-				git \
-				git-lfs \
-				libbz2-dev \
-				libffi-dev \
-				liblzma-dev \
-				libncursesw5-dev \
-				libreadline-dev \
-				libsqlite3-dev \
-				libssl-dev \
-				libxml2-dev \
-				libxmlsec1-dev \
-				llvm \
-				shellcheck \
-				tk-dev \
-				neovim \
-				ripgrep \
-				tmux \
-				vim-nox \
-				xz-utils \
-				zlib1g-dev
+    # Set the brew-installed bash as the default shell
+    brew_bash="$(brew --prefix)/bin/bash"
+    # Bail early if ${brew_bash} doesn't exist for any reason
+    if [[ ! -f "${brew_bash}" ]]; then
+      echo "Unable to set brew-installed bash as shell!"
+    else
+      echo "Adding ${brew_bash} to /etc/shells if not present"
+      grep "${brew_bash}" /etc/shells &>/dev/null || echo "${brew_bash}" | sudo tee -a /etc/shells
+      if [[ "${SHELL}" != "${brew_bash}" ]]; then
+        chsh -s "${brew_bash}" "$(whoami | xargs echo -n)"
+      fi
+    fi
 
-			# Install pyenv and install a new global python version
-			curl https://pyenv.run | bash
+    # Add ssh agent to system keychain on first unlock
+    ssh_agent_config="AddKeysToAgent yes"
+    grep "${ssh_agent_config}" ~/.ssh/config &>/dev/null || echo "${ssh_agent_config}" >>~/.ssh/config
 
-			git lfs install
+  else
+    if grep -qE "Ubuntu|Debian|Raspbian" /etc/issue; then
+      echo "Installing required packages"
+      # Use sudo -E to inherit our current environment, including
+      # DEBIAN_FRONTEND set above
+      sudo -E apt-get -qq update
+      sudo -E apt-get -qq install -y \
+        --no-install-recommends \
+        age \
+        bash-completion \
+        build-essential \
+        curl \
+        curl \
+        dnsutils \
+        git \
+        git-lfs \
+        libbz2-dev \
+        libffi-dev \
+        liblzma-dev \
+        libncursesw5-dev \
+        libreadline-dev \
+        libsqlite3-dev \
+        libssl-dev \
+        libxml2-dev \
+        libxmlsec1-dev \
+        llvm \
+        ripgrep \
+        shellcheck \
+        tk-dev \
+        tmux \
+        vim-nox \
+        xz-utils \
+        zlib1g-dev
 
-			# Set vim as default system editor
-			sudo update-alternatives --set editor /usr/bin/vim.nox
+      git lfs install
 
-			# Install sops from github releases
-			curl -L https://github.com/getsops/sops/releases/download/v3.8.1/sops-v3.8.1.linux.amd64 -o "${HOME}/bin/sops" && chmod +x "${HOME}/bin/sops"
-		fi
-			fi
+      # Install sops from github releases
+      curl -L \
+        https://github.com/getsops/sops/releases/download/v3.8.1/sops-v3.8.1.linux.amd64 \
+        -o "${local_bin}/sops" && chmod +x "${local_bin}/sops"
 
-	# Install volta for managing node and npm versions
-	curl https://get.volta.sh | bash -s -- --skip-setup
-
+    fi
+  fi
 }
 
-setup_python() {
-	default_venv="${HOME}/.virtualenvs/default"
-	export PATH="$PYENV_ROOT/bin:$PATH"
-	eval "$(pyenv init -)"
+setup_mise() {
+  # Install mise from their install script
+  curl https://mise.run | sh
+  eval "$(${HOME}/.local/bin/mise activate bash)"
+  mise trust ~/.config/mise/config.toml
 
-	# With pyenv installed on the system, install our default virtualenv
-	pyenv install -s "${PYTHON_VERSION}"
-	pyenv global "${PYTHON_VERSION}"
+  mise plugin add usage
+  mise use -g python@3.12
 
-	"${PYENV_ROOT}/shims/python3" -m venv "${default_venv}"
-	"${default_venv}/bin/python3" -m pip install -U pip
-	"${default_venv}/bin/python3" -m pip install \
-		black \
-		flask \
-		ipython \
-		mypy \
-		requests \
-		ruff
-	}
+  mise install -y neovim
+  mise use -g neovim
 
-	init() {
-		local github_username="${1}"
+  python3 -m pip install \
+    ipython \
+    requests
+}
 
-		setup_system
+sync_public_keys() {
+  mkdir -p "${HOME}/.ssh"
+  curl -L "https://github.com/${1}" >>"${HOME}/.ssh/authorized_keys"
+}
 
-		setup_python
+init() {
+  install_prerequisites
 
-	# If a github username is provided, import its public keys
-	if [[ -n ${github_username} ]]; then
-		mkdir -p "${HOME}/.ssh"
-		curl -L https://github.com/philipforget.keys >>"${HOME}/.ssh/authorized_keys"
-	fi
+  local github_username="${1:-philipforget}"
+  sync_public_keys "${github_username}"
 
-	setup_dotfiles
+  setup_system
+  setup_dotfiles_repo
+  setup_mise
 
-	echo "Installing vim plugins"
-	vim +'PlugInstall --sync' +qall &>/dev/null
-
-	echo "setup complete, run 'source ~/.bashrc' to source changes"
+  exec bash
 }
 
 # When piping in from stdin (eg curl), BASH_SOURCE[0] will be unset, and
 # when executing via ./init.sh or bash init.sh, BASH_SOURCE[0] and ${0}
 # will be equal
 if [ "${BASH_SOURCE[0]}" == "${0}" ] || [ -z "${BASH_SOURCE[0]}" ]; then
-	init "$@"
+  # Tell bash to fail immediately on any error as well as unset variables
+  set -eu -o pipefail
+  init "$@"
 fi
