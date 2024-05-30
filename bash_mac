@@ -1,5 +1,4 @@
 # vim:set ft=sh:
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-[ -f ~/.aliases_mac ] && . ~/.aliases_mac
 [[ -f "/opt/homebrew/etc/bash_completion" ]] && . "/opt/homebrew/etc/bash_completion"
