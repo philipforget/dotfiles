@@ -1,0 +1,11 @@
+[settings]
+trusted_config_paths = ['~/workspace/arena']
+
+[tools]
+python = "3.12"
+node = "lts"
+neovim = "latest"
+usage = "latest"
+
+[env]
+_.python.venv = { path = "{{env.HOME}}/.venv", create = true }
