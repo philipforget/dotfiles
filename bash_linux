@@ -1,7 +1,4 @@
 #!/bin/bash
-
-[[ -f ~/.aliases_linux ]] && . ~/.aliases_linux
-
 export PATH="$PATH:/usr/local/go/bin"
 
 setup_ssh_agent() {

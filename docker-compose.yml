@@ -1,6 +1,8 @@
-version: "3.7"
 services:
   dotfiles:
-    build: .
+    build:
+      context: .
+      platforms:
+        - "linux/amd64"
     volumes:
-      - "./:/home/dotfiles/workspace/dotfiles:ro"
+      - "./:/home/dotfiles/workspace/dotfiles"
