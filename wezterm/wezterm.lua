@@ -49,12 +49,11 @@ wezterm.on("window-resized", function(window, pane)
 end)
 
 function scheme_for_appearance(appearance)
-	return "Catppuccin Mocha"
-	-- if appearance:find("Dark") then
-	--   return "Catppuccin Mocha"
-	-- else
-	--   return "Catppuccin Latte"
-	-- end
+	if appearance:find("Dark") then
+		return "Catppuccin Mocha"
+	else
+		return "Catppuccin Latte"
+	end
 end
 
 wezterm.on("window-config-reloaded", function(window, pane)

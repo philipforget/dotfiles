@@ -1,5 +1,6 @@
 [settings]
 trusted_config_paths = ['~/workspace/arena']
+experimental = true
 
 [tools]
 python = "3.12"
