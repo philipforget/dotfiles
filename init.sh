@@ -77,6 +77,7 @@ setup_symlinks() {
   symlink "${dotfiles_dir}/nvim" ~/.config/nvim
   symlink "${dotfiles_dir}/xmodmap" ~/.xmodmap
   symlink "${dotfiles_dir}/mise.toml" ~/.config/mise/config.toml
+  symlink "${dotfiles_dir}/starship.toml" ~/.config/starship.toml
 
   symlink "${dotfiles_dir}/sync-authorized-keys" "${local_bin}/sync-authorized-keys"
 
@@ -106,6 +107,9 @@ setup_symlinks() {
 setup_system() {
   # Here's a nice place to add binaries
   mkdir -p "${local_bin}"
+
+  # Install starship shell prompt to $local_bin, https://starship.rs/
+  curl -sS https://starship.rs/install.sh | sh -s -- --force --bin-dir "${local_bin}"
 
   if [[ $(uname) == "Darwin" ]]; then
     echo "Installing packages with brew"
