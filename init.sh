@@ -16,7 +16,8 @@ symlink() {
 
   [[ -e ${target} ]] && echo "'${target}' exists, skipping" && return
 
-  mkdir -p "$(dirname ${target})"
+  echo mkdir -p "$(dirname "${target}")"
+  mkdir -p "$(dirname "${target}")"
   ln -s "${source}" "${target}"
 }
 
@@ -87,8 +88,8 @@ setup_symlinks() {
 
   if [[ $(uname) == "Darwin" ]]; then
     # Mac-only symlinks
-    symlink "{$dotfiles_dir}/RectangleConfig.json" ~/Library/Application Support/Rectangle/RectangleConfig.json
-    symlink "${dotfiles_dir}/docker_config.mac.json" ~/.docker/config.json
+    symlink "{$dotfiles_dir}/RectangleConfig.json" "~/Library/Application Support/Rectangle/RectangleConfig.json"
+    symlink "${dotfiles_dir}/docker_config.mac.json" "~/.docker/config.json"
   fi
   if [[ $(uname) == "Linux" ]]; then
     # Linux-only symlinks
@@ -204,7 +205,7 @@ setup_mise() {
   # Install mise from their install script
   curl --no-progress-meter https://mise.run | sh
 
-  eval "$(${HOME}/.local/bin/mise activate bash)"
+  eval "$("${HOME}"/.local/bin/mise activate bash)"
   mise trust ~/.config/mise/config.toml || echo "No global mise config, not trusting"
 
   mise plugin add usage
