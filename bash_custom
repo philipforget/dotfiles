@@ -28,7 +28,8 @@ get_ps1() {
   echo "${user}@${host} ${dir} ${git}\n${time} $ "
 }
 
-PS1="$(get_ps1)"
+# Lets try starship for now
+# PS1="$(get_ps1)"
 
 # Increase the amount of history bash will store and reload
 export HISTFILE=~/.history
@@ -66,3 +67,5 @@ export PATH="$HOME/.local/bin:$HOME/bin:$HOME/go/bin:$PATH"
 
 eval "$(${HOME}/.local/bin/mise activate bash)"
 source <(mise completion bash)
+
+eval "$(starship init bash)"
