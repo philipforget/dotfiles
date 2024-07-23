@@ -16,7 +16,6 @@ symlink() {
 
   [[ -e ${target} ]] && echo "'${target}' exists, skipping" && return
 
-  echo mkdir -p "$(dirname "${target}")"
   mkdir -p "$(dirname "${target}")"
   ln -s "${source}" "${target}"
 }
