@@ -65,5 +65,6 @@ vim.bo.softtabstop = 2
 vim.opt.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
 vim.opt.foldmethod = 'expr'
 vim.opt.foldlevelstart = 20
+vim.opt.smartindent = false
 
 -- vim: ts=2 sts=2 sw=2 et

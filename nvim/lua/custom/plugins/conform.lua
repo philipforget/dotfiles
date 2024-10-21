@@ -11,7 +11,7 @@ return {
         javascriptreact = { 'prettierd' },
         typescriptreact = { 'prettierd' },
         html = { 'prettierd' },
-        json = { 'prettierd' },
+        htmldjango = { 'djlint' },
         yaml = { 'prettierd' },
         markdown = { 'prettierd' },
         graphql = { 'prettierd' },
