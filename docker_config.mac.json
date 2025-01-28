@@ -1,17 +1,7 @@
 {
-	"auths": {},
-	"detachKeys": "ctrl-z,z",
-	"credsStore": "desktop",
-	"currentContext": "desktop-linux",
-	"plugins": {
-		"debug": {
-			"hooks": "exec"
-		},
-		"scout": {
-			"hooks": "pull,buildx build"
-		}
-	},
-	"features": {
-		"hooks": "true"
-	}
+  "auths": {},
+  "detachKeys": "ctrl-z,z",
+  "credsStore": "osxkeychain",
+  "currentContext": "colima",
+  "cliPluginsExtraDirs": ["/opt/homebrew/lib/docker/cli-plugins"]
 }

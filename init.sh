@@ -116,7 +116,9 @@ setup_system() {
     brew install \
       age \
       bash \
-      bash-completion \
+      bash-completion@2 \
+      colima \
+      docker \
       git \
       git-lfs \
       mise \
@@ -130,7 +132,6 @@ setup_system() {
 
     brew install --cask \
       1password \
-      docker \
       google-chrome \
       microsoft-remote-desktop \
       rectangle \
