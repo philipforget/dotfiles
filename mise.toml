@@ -1,5 +1,4 @@
 [settings]
-trusted_config_paths = ['~/workspace/arena']
 experimental = true
 
 [tools]

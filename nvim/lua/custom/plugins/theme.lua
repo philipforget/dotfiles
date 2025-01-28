@@ -18,17 +18,19 @@ return {
               },
             },
           }
+          -- vim.cmd.colorscheme 'catppuccin-mocha'
+          vim.cmd.colorscheme 'catppuccin-latte'
         end,
       },
     },
-    config = {
-      set_dark_mode = function()
-        vim.cmd.colorscheme 'catppuccin-mocha'
-      end,
-      set_light_mode = function()
-        vim.cmd.colorscheme 'catppuccin-latte'
-      end,
-    },
+    -- config = {
+    --   set_dark_mode = function()
+    --     vim.cmd.colorscheme 'catppuccin-mocha'
+    --   end,
+    --   set_light_mode = function()
+    --     vim.cmd.colorscheme 'catppuccin-latte'
+    --   end,
+    -- },
   },
 }
 
