@@ -79,10 +79,10 @@ setup_symlinks() {
   symlink "${dotfiles_dir}/mise.toml" ~/.config/mise/config.toml
   symlink "${dotfiles_dir}/starship.toml" ~/.config/starship.toml
 
-  symlink "${dotfiles_dir}/sync-authorized-keys" "${local_bin}/sync-authorized-keys"
+  symlink "${dotfiles_dir}/bin/sync-authorized-keys" "${local_bin}/sync-authorized-keys"
 
   # Delete the system-installed .gitconfig first if it exists
-  rm "${HOME}/.gitconfig" || 1
+  rm "${HOME}/.gitconfig" || true
   symlink "${dotfiles_dir}/gitconfig" ~/.gitconfig
 
   if [[ $(uname) == "Darwin" ]]; then

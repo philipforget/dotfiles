@@ -12,6 +12,8 @@ return {
       { 'j-hui/fidget.nvim', opts = {} },
     },
     config = function()
+      -- local lspconfig = require 'lspconfig'
+      -- lspconfig['sourcekit'].setup {}
       -- Brief Aside: **What is LSP?**
       --
       -- LSP is an acronym you've probably heard, but might not understand what it is.
@@ -134,6 +136,7 @@ return {
       local servers = {
         -- mypy = {},
         -- Holy shit is this slow
+        -- sourcekit = {},
         -- pylsp = {
         --   settings = {
         --     pylsp = {
@@ -167,7 +170,6 @@ return {
         --
         shellcheck = {},
         bashls = {},
-
         lua_ls = {
           -- cmd = {...},
           -- filetypes { ...},
