@@ -10,7 +10,7 @@ vim.opt.showmode = false
 -- Enable break indent
 vim.opt.breakindent = true
 
-vim.opt.iskeyword:append({ '-' , ',' })
+vim.opt.iskeyword:append { '-' }
 
 -- Save undo history
 -- vim.opt.undofile = true
@@ -62,8 +62,9 @@ vim.opt.expandtab = true
 vim.bo.softtabstop = 2
 
 -- Use treesetter fold expressions for folding
--- vim.opt.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
--- vim.opt.foldtext = 'v:lua.vim.treesitter.foldtext()'
--- vim.opt.foldlevelstart = 20
+vim.opt.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+vim.opt.foldmethod = 'expr'
+vim.opt.foldlevelstart = 20
+vim.opt.smartindent = false
 
 -- vim: ts=2 sts=2 sw=2 et

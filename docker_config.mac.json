@@ -1,7 +1,7 @@
 {
   "auths": {},
   "detachKeys": "ctrl-z,z",
-  "credsStore": "desktop",
-  "currentContext": "desktop-linux"
+  "credsStore": "osxkeychain",
+  "currentContext": "colima",
+  "cliPluginsExtraDirs": ["/opt/homebrew/lib/docker/cli-plugins"]
 }
-

@@ -16,7 +16,7 @@ symlink() {
 
   [[ -e ${target} ]] && echo "'${target}' exists, skipping" && return
 
-  mkdir -p "$(dirname ${target})"
+  mkdir -p "$(dirname "${target}")"
   ln -s "${source}" "${target}"
 }
 
@@ -77,17 +77,18 @@ setup_symlinks() {
   symlink "${dotfiles_dir}/nvim" ~/.config/nvim
   symlink "${dotfiles_dir}/xmodmap" ~/.xmodmap
   symlink "${dotfiles_dir}/mise.toml" ~/.config/mise/config.toml
+  symlink "${dotfiles_dir}/starship.toml" ~/.config/starship.toml
 
-  symlink "${dotfiles_dir}/sync-authorized-keys" "${local_bin}/sync-authorized-keys"
+  symlink "${dotfiles_dir}/bin/sync-authorized-keys" "${local_bin}/sync-authorized-keys"
 
   # Delete the system-installed .gitconfig first if it exists
-  rm "${HOME}/.gitconfig" || 1
+  rm "${HOME}/.gitconfig" || true
   symlink "${dotfiles_dir}/gitconfig" ~/.gitconfig
 
   if [[ $(uname) == "Darwin" ]]; then
     # Mac-only symlinks
-    symlink "{$dotfiles_dir}/RectangleConfig.json" ~/Library/Application Support/Rectangle/RectangleConfig.json
-    symlink "${dotfiles_dir}/docker_config.mac.json" ~/.docker/config.json
+    symlink "{$dotfiles_dir}/RectangleConfig.json" "~/Library/Application Support/Rectangle/RectangleConfig.json"
+    symlink "${dotfiles_dir}/docker_config.mac.json" "~/.docker/config.json"
   fi
   if [[ $(uname) == "Linux" ]]; then
     # Linux-only symlinks
@@ -107,12 +108,17 @@ setup_system() {
   # Here's a nice place to add binaries
   mkdir -p "${local_bin}"
 
+  # Install starship shell prompt to $local_bin, https://starship.rs/
+  curl -sS https://starship.rs/install.sh | sh -s -- --force --bin-dir "${local_bin}"
+
   if [[ $(uname) == "Darwin" ]]; then
     echo "Installing packages with brew"
     brew install \
       age \
       bash \
-      bash-completion \
+      bash-completion@2 \
+      colima \
+      docker \
       git \
       git-lfs \
       mise \
@@ -126,7 +132,6 @@ setup_system() {
 
     brew install --cask \
       1password \
-      docker \
       google-chrome \
       microsoft-remote-desktop \
       rectangle \
@@ -200,7 +205,7 @@ setup_mise() {
   # Install mise from their install script
   curl --no-progress-meter https://mise.run | sh
 
-  eval "$(${HOME}/.local/bin/mise activate bash)"
+  eval "$("${HOME}"/.local/bin/mise activate bash)"
   mise trust ~/.config/mise/config.toml || echo "No global mise config, not trusting"
 
   mise plugin add usage

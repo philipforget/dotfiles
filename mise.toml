@@ -1,9 +1,9 @@
 [settings]
-trusted_config_paths = ['~/workspace/arena']
+experimental = true
 
 [tools]
 python = "3.12"
-node = "lts"
+node = "latest"
 neovim = "latest"
 usage = "latest"
 
